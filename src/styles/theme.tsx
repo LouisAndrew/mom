@@ -20,12 +20,18 @@ export interface Theme {
         heading: number;
     };
     shadows: {
-        small: string;
-        large: string;
+        blend: string;
+        bigAcc1: string;
+        bigAcc2: string;
+        smallAcc1: string;
+        smallAcc2: string;
     };
     // customize if needed.
     colors: ColorTheme;
 }
+
+const bigShadow = `20px 20px 0`;
+const smallShadow = `10px 10px 0`;
 
 const theme: Theme = {
     // use breakpoints in ems under the assumption that 1em = 16px.
@@ -55,8 +61,13 @@ const theme: Theme = {
         heading: 1.25,
     },
     shadows: {
-        small: '0 0 4px rgba(0, 0, 0, .125)',
-        large: '0 0 24px rgba(0, 0, 0, .125)',
+        // used often in cards-like components.
+        blend: '1px 2px 2px rgba(0, 0, 0, .1)',
+        // used often in product images!
+        bigAcc1: `${bigShadow} ${colors.accent[0]}`,
+        bigAcc2: `${bigShadow} ${colors.accent[1]}`,
+        smallAcc1: `${smallShadow} ${colors.accent[0]}`,
+        smallAcc2: `${smallShadow} ${colors.accent[1]}`,
     },
 
     colors,
