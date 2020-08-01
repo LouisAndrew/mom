@@ -101,7 +101,7 @@ const H5: React.FC<WithChildrenProps & FullSystemProps> = ({
     ...rest // eslint-disable-line @typescript-eslint/tslint/config
 }: WithChildrenProps & FullSystemProps) => {
     return (
-        <SH5 fontFamily="heading" {...rest} fontSize={[1, 1, 2, 2]}>
+        <SH5 fontFamily="heading" {...rest} fontSize={[0, 0, 1, 1]}>
             {children}
         </SH5>
     );
@@ -112,7 +112,7 @@ const P: React.FC<WithChildrenProps & FullSystemProps> = ({
     ...rest // eslint-disable-line @typescript-eslint/tslint/config
 }: WithChildrenProps & FullSystemProps) => {
     return (
-        <SP fontFamily="body" fontSize={[1, 1, 2, 3]} {...rest}>
+        <SP fontFamily="body" fontSize={[2, 2, 3, 3]} {...rest}>
             {children}
         </SP>
     );

@@ -20,7 +20,7 @@ const ToggleDebugButton = styled(motion.button).attrs(() => ({
     z-index: 5000;
 `;
 
-const getDebugStyles = ({ debug, color }: ComponentProps): string => {
+const getDebugStyles = ({ debug, color }: any): string => {
     if (!debug) {
         return '';
     }
@@ -60,11 +60,12 @@ const CSSDebugger: React.FC<CSSDebuggerProps> = ({
         color?: string;
     }>`
     html, * {
-      ${props => getDebugStyles(props)};
+      ${(props: CSSDebuggerProps) => getDebugStyles(props)};
     }
   
     html {
-      ${props => props.debug && props.showGrid && gridStyles};
+      ${(props: CSSDebuggerProps) =>
+          props.debug && props.showGrid && gridStyles};
     }
   `;
 
