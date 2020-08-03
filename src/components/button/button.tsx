@@ -25,6 +25,13 @@ type SProps = ColorProps &
 
 const SButton: React.FC<SProps> = styled.button`
 
+    background: none;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+
+    transition: .2s;
+
     ${btnVariant({
         variants: {
             primary: {
@@ -32,7 +39,7 @@ const SButton: React.FC<SProps> = styled.button`
                 color: 'bg',
             },
             secondary: {
-                bg: 'accent.2',
+                bg: 'accent.0',
                 color: 'dark.0',
             },
         },
@@ -43,6 +50,18 @@ const SButton: React.FC<SProps> = styled.button`
     ${flexbox}
     ${space}
     ${layout}
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &:active {
+        transform: scale(.95);
+    } 
+
+    & > svg {
+        margin-right: 8px;
+    }
 `;
 
 type Props = {
@@ -55,7 +74,15 @@ type Props = {
 
 const Button: React.FC<Props> = ({ children, handleClick, ...rest }) => {
     return (
-        <SButton onClick={handleClick} {...rest}>
+        <SButton
+            onClick={handleClick}
+            px={[2, 2, 3, 3]}
+            py={[1, 1, 2, 2]}
+            fontSize={[1, 1, 2, 2]}
+            fontFamily="body"
+            fontWeight="bold"
+            {...rest}
+        >
             {children}
         </SButton>
     );

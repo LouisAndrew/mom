@@ -6,7 +6,7 @@ const useGoogleFonts = () => {
         const link: HTMLLinkElement = document.createElement('link');
 
         link.href =
-            'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Raleway&display=swap';
+            'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Raleway:wght@400;700&display=swap';
         link.rel = 'stylesheet';
 
         return link;
