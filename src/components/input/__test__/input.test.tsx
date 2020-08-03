@@ -17,12 +17,14 @@ describe('Input element', () => {
     afterEach(cleanup);
     const el: React.ReactElement = (
         <Input
+            id="input"
             placeholderText={mockPlaceholderText}
             handleChange={mockHandleChange}
         />
     );
     const elWithIcon: React.ReactElement = (
         <Input
+            id="input"
             placeholderText={mockPlaceholderText}
             handleChange={mockHandleChange}
             icon={<Icon icon={accessibleIcon} data-testid="icon" />}

@@ -64,7 +64,7 @@ const theme: Theme = {
     },
     shadows: {
         // used often in cards-like components.
-        blend: '1px 2px 2px rgba(0, 0, 0, .1)',
+        blend: '1px 2px 2px rgba(0, 0, 0, .15)',
         // used often in product images!
         bigAcc1: `${bigShadow} ${colors.accent[0]}`,
         bigAcc2: `${bigShadow} ${colors.accent[1]}`,
