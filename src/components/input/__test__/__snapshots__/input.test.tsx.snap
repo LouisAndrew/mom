@@ -1,43 +1,51 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Input element matches snapshot 1`] = `
-Array [
-  <input
-    className="sc-AxjAm cjVecg"
-    onChange={
-      [MockFunction] {
-        "calls": Array [
-          Array [
-            SyntheticEvent {
-              "_dispatchInstances": null,
-              "_dispatchListeners": null,
-              "_targetInst": null,
-              "bubbles": null,
-              "cancelable": null,
-              "currentTarget": [Function],
-              "defaultPrevented": null,
-              "dispatchConfig": null,
-              "eventPhase": null,
-              "isDefaultPrevented": [Function],
-              "isPropagationStopped": [Function],
-              "isTrusted": null,
-              "nativeEvent": null,
-              "target": null,
-              "timeStamp": [Function],
-              "type": null,
-            },
-          ],
-        ],
-        "results": Array [
-          Object {
-            "type": "return",
-            "value": undefined,
+<input
+  className="sc-AxgMl kxfDk"
+  fontFamily="body"
+  fontSize={
+    Array [
+      1,
+      1,
+      2,
+      2,
+    ]
+  }
+  fontWeight="bold"
+  id="input"
+  onChange={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          SyntheticEvent {
+            "_dispatchInstances": null,
+            "_dispatchListeners": null,
+            "_targetInst": null,
+            "bubbles": null,
+            "cancelable": null,
+            "currentTarget": [Function],
+            "defaultPrevented": null,
+            "dispatchConfig": null,
+            "eventPhase": null,
+            "isDefaultPrevented": [Function],
+            "isPropagationStopped": [Function],
+            "isTrusted": null,
+            "nativeEvent": null,
+            "target": null,
+            "timeStamp": [Function],
+            "type": null,
           },
         ],
-      }
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
     }
-    placeholder="input here"
-  />,
-  ";",
-]
+  }
+  placeholder="input here"
+/>
 `;

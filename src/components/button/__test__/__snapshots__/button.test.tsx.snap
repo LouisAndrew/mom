@@ -2,7 +2,7 @@
 
 exports[`Button element matches snapshot 1`] = `
 <button
-  className="sc-AxjAm iFqNLL"
+  className="sc-AxjAm fvhgPa"
   fontFamily="body"
   fontSize={
     Array [

@@ -7,6 +7,7 @@ import {
     space,
     layout,
     variant as btnVariant,
+    grid,
 } from 'styled-system';
 
 import { PositioningProps, StylingProps } from 'styles';
@@ -44,6 +45,7 @@ const SButton: React.FC<SProps> = styled.button`
     ${flexbox}
     ${space}
     ${layout}
+    ${grid}
 
     &:hover {
         cursor: pointer;

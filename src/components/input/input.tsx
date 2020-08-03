@@ -9,29 +9,30 @@ import {
     borderColor,
     boxShadow,
     variant as inVariant,
+    grid,
     BorderColorProps,
     BoxShadowProps,
 } from 'styled-system';
 
 import { StylingProps, PositioningProps, theme } from 'styles';
 
-type Props = PositioningProps &
-    BoxShadowProps & {
-        placeholderText: string;
-        // for labeling!
-        id: string;
-        icon?: React.ReactNode;
-        variant?: string;
-        // custom input type if needed.
-        inputType?: string;
-        color?: string;
-        borderColor?: string;
-        handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-    };
+type Props = PositioningProps & {
+    placeholderText: string;
+    // for labeling!
+    id: string;
+    icon?: React.ReactNode;
+    variant?: string;
+    // custom input type if needed.
+    inputType?: string;
+    color?: string;
+    borderColor?: string;
+    handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+};
 
 type SProps = PositioningProps &
     StylingProps &
-    BorderColorProps & {
+    BorderColorProps &
+    BoxShadowProps & {
         placeholderText: string;
         variant?: string;
         inputType?: string;
@@ -74,6 +75,7 @@ const SInput: React.FC<SProps> = styled.input.attrs(
     ${space}
     ${layout}
     ${boxShadow}
+    ${grid}
 
     &:focus, &:active {
         ${inVariant({

@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Img with border component! matches snapshot 1`] = `
+<div
+  className="sc-AxjAm ePUdrK"
+>
+  <img
+    alt="lakers-logo"
+    src="../../../images/lakers-logo.png"
+  />
+</div>
+`;

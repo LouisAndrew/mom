@@ -30,8 +30,8 @@ export interface Theme {
     colors: ColorTheme;
 }
 
-const bigShadow = `20px 20px 0`;
-const smallShadow = `10px 10px 0`;
+export const bigShadow = `20px 20px 0`;
+export const smallShadow = `10px 10px 0`;
 
 const theme: Theme = {
     // use breakpoints in ems under the assumption that 1em = 16px.

@@ -8,6 +8,7 @@ import {
     FlexboxProps,
     SpaceProps,
     LayoutProps,
+    GridProps,
 } from 'styled-system';
 
 import theme, { Theme } from './theme';
@@ -20,7 +21,8 @@ export { GlobalStyles } from './global-styles';
 export interface PositioningProps
     extends FlexboxProps,
         SpaceProps,
-        LayoutProps {}
+        LayoutProps,
+        GridProps {}
 
 export interface StylingProps extends ColorProps, TypographyProps {}
 
