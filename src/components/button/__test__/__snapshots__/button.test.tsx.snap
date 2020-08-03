@@ -2,7 +2,17 @@
 
 exports[`Button element matches snapshot 1`] = `
 <button
-  className="sc-AxjAm epWluo"
+  className="sc-AxjAm iFqNLL"
+  fontFamily="body"
+  fontSize={
+    Array [
+      1,
+      1,
+      2,
+      2,
+    ]
+  }
+  fontWeight="bold"
   onClick={
     [MockFunction] {
       "calls": Array [

@@ -7,20 +7,14 @@ import {
     space,
     layout,
     variant as btnVariant,
-    ColorProps,
-    TypographyProps,
-    FlexboxProps,
-    SpaceProps,
-    LayoutProps,
 } from 'styled-system';
 
-type SProps = ColorProps &
-    TypographyProps &
-    FlexboxProps &
-    SpaceProps &
-    LayoutProps &
-    React.HTMLProps<HTMLButtonElement> & {
+import { PositioningProps, StylingProps } from 'styles';
+
+type SProps = PositioningProps &
+    StylingProps & {
         variant?: string;
+        onClick: () => void;
     };
 
 const SButton: React.FC<SProps> = styled.button`
@@ -64,7 +58,7 @@ const SButton: React.FC<SProps> = styled.button`
     }
 `;
 
-type Props = {
+type Props = PositioningProps & {
     children?: React.ReactNode;
     variant?: string;
     color?: string;
