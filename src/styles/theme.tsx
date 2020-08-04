@@ -21,6 +21,7 @@ export interface Theme {
     };
     shadows: {
         blend: string;
+        blendLarge: string;
         bigAcc1: string;
         bigAcc2: string;
         smallAcc1: string;
@@ -65,6 +66,7 @@ const theme: Theme = {
     shadows: {
         // used often in cards-like components.
         blend: '1px 2px 2px rgba(0, 0, 0, .15)',
+        blendLarge: '2px 4px 4px rgba(0, 0, 0, .15)',
         // used often in product images!
         bigAcc1: `${bigShadow} ${colors.accent[0]}`,
         bigAcc2: `${bigShadow} ${colors.accent[1]}`,

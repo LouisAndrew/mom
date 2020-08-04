@@ -23,19 +23,23 @@ import { PositioningProps, StylingProps, theme } from 'styles';
  * key: actual rendered text
  * value: value that would be returned when the option is selected (key text clicked)
  */
-export type SelectItem = PositioningProps & {
+export type SelectItem = {
     key: string;
     value: string;
 };
 
-type Props = PositioningProps & {
-    items: SelectItem[];
-    id: string; // should not contain whitespace!
-    defaultOption?: string;
-    multiple?: boolean;
-    variant?: string;
-    handleSelect: (value: string) => void;
-};
+type Props = PositioningProps &
+    PositionProps & {
+        items: SelectItem[];
+        id: string; // should not contain whitespace!
+        optionWidth?: string | string[] | number[];
+        defaultOption?: string;
+        optionPadX?: string[];
+        optionPadY?: string[];
+        multiple?: boolean;
+        variant?: string;
+        handleSelect: (value: string) => void;
+    };
 
 type SelectContainerProps = PositioningProps &
     PositionProps & {
@@ -159,6 +163,8 @@ const Input: React.FC<InputProps> = styled.label.attrs((props: InputProps) => ({
     ${typography} 
     ${color}
     ${space}
+    ${position}
+    ${layout}
 
     svg {
         margin-left: 8px;
@@ -179,6 +185,8 @@ const Options: React.FC<OptionsProps> = styled.div<OptionsProps>`
     ${typography}
     ${color}
     ${space}
+    ${position}
+    ${layout}
 
     ${selectVariant({
         variants: {
@@ -205,6 +213,9 @@ const Select: React.FC<Props> = ({
     defaultOption,
     multiple,
     variant,
+    optionWidth,
+    optionPadX,
+    optionPadY,
     handleSelect,
     ...rest
 }) => {
@@ -279,10 +290,11 @@ const Select: React.FC<Props> = ({
             <Input
                 for={id}
                 variant={variant}
-                py={[1, 1, 2, 2]}
-                px={[2, 2, 3, 3]}
+                py={optionPadY ? optionPadY : [1, 1, 2, 2]}
+                px={optionPadX ? optionPadX : [2, 2, 3, 3]}
                 expand={expand}
                 alignItems="center"
+                width={optionWidth}
                 {...typographyStyle}
             >
                 {inputDisplay}
@@ -305,8 +317,9 @@ const Select: React.FC<Props> = ({
                             key={item.value}
                             onClick={() => handleClickOption(item.value)}
                             variant={variant}
-                            py={[1, 1, 2, 2]}
-                            px={[2, 2, 3, 3]}
+                            py={optionPadY ? optionPadY : [1, 1, 2, 2]}
+                            px={optionPadX ? optionPadX : [2, 2, 3, 3]}
+                            width={optionWidth}
                             {...typographyStyle}
                         >
                             {item.key}

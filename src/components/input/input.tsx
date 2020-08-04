@@ -226,6 +226,7 @@ const Input: React.FC<Props> = ({
                 fontFamily="body"
                 fontWeight="bold"
                 boxShadow="blend"
+                {...rest}
             >
                 {appendContent}
             </SAppend>
