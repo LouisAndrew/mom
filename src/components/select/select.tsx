@@ -132,7 +132,7 @@ const Input: React.FC<InputProps> = styled.label.attrs((props: InputProps) => ({
     }
 
     border-radius: 4px;
-    border: 1px solid rgba(0, 0, 0, 0);
+    border: 2px solid rgba(0, 0, 0, 0);
 
     display: flex;
     width: fit-content;

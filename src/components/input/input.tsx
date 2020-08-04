@@ -64,7 +64,7 @@ const SInput: React.FC<SProps> = styled.input.attrs(
     transition: .2s;
     /* border: none; */
     border-style: solid;
-    border: -2px solid rgba(0, 0, 0, 0);
+    border: 2px solid rgba(0, 0, 0, 0);
     border-radius: 4px;
 
     position: relative;
@@ -116,6 +116,16 @@ const SInput: React.FC<SProps> = styled.input.attrs(
                     },
                 })}
         }
+    }
+
+    /* if type: number -> remove arrows. */
+    &[type=number] {
+        --moz-appearance: textfield;
+    }
+
+    &::-webkit-outer-spin-button, &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
     }
 
     & + svg {
@@ -175,6 +185,7 @@ const Input: React.FC<Props> = ({
     handleChange,
     ...rest
 }) => {
+    // provide append element to add element at the end of the input
     return !append ? (
         <>
             <SInput

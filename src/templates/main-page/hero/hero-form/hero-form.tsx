@@ -35,6 +35,7 @@ const Label: React.FC<LabelProps> = styled.label.attrs((props: LabelProps) => ({
 
 const HeroForm: React.FC<Props> = ({ headingText, bodyText, allLocations }) => {
     const [selectedLocation, setSelectedLocation] = useState('');
+    const [selectedArea, setSelectedArea] = useState(0);
 
     const handleSelect = (value: string) => {};
     const handleChangeArea = (event: React.ChangeEvent<HTMLInputElement>) => {};
@@ -78,6 +79,9 @@ const HeroForm: React.FC<Props> = ({ headingText, bodyText, allLocations }) => {
                         variant="secondary"
                         handleChange={handleChangeArea}
                         width={[52, 52, 64]}
+                        append={true}
+                        appendContent="m²"
+                        inputType="number"
                     />
                 </Label>
             </Form>
