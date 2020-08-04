@@ -44,4 +44,14 @@ story
             placeholderText="Change here!"
             borderColor={theme.colors.dark[0]}
         />
+    ))
+    .add('Appended input element', () => (
+        <Input
+            id="input"
+            handleChange={action('user-change')}
+            placeholderText="Change here!"
+            variant="primary"
+            append={true}
+            appendContent="Buah"
+        />
     ));

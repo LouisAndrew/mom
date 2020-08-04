@@ -10,8 +10,10 @@ import {
     boxShadow,
     variant as inVariant,
     grid,
+    position,
     BorderColorProps,
     BoxShadowProps,
+    PositionProps,
 } from 'styled-system';
 
 import { StylingProps, PositioningProps, theme } from 'styles';
@@ -26,6 +28,8 @@ type Props = PositioningProps & {
     inputType?: string;
     color?: string;
     borderColor?: string;
+    append?: boolean;
+    appendContent?: string;
     handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
@@ -36,8 +40,18 @@ type SProps = PositioningProps &
         placeholderText: string;
         variant?: string;
         inputType?: string;
+        append?: boolean;
         onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
     };
+
+type SAppendProps = PositioningProps &
+    StylingProps &
+    PositionProps &
+    BoxShadowProps & {};
+
+type InputGroupProps = PositioningProps & {
+    children?: React.ReactNode;
+};
 
 const SInput: React.FC<SProps> = styled.input.attrs(
     ({ inputType, placeholderText }: SProps) => ({
@@ -54,6 +68,8 @@ const SInput: React.FC<SProps> = styled.input.attrs(
     border-radius: 4px;
 
     position: relative;
+    display: block;
+    width: fit-content;
 
     ${inVariant({
         variants: {
@@ -68,14 +84,9 @@ const SInput: React.FC<SProps> = styled.input.attrs(
         },
     })}
 
-    ${borderColor}
-    ${color}
-    ${typography}
-    ${flexbox}
-    ${space}
-    ${layout}
-    ${boxShadow}
-    ${grid}
+    &::after {
+        content: '%'
+    }
 
     &:focus, &:active {
         ${inVariant({
@@ -88,6 +99,23 @@ const SInput: React.FC<SProps> = styled.input.attrs(
                 },
             },
         })}
+
+        & + span {
+            ${({ append }: SProps) =>
+                append &&
+                inVariant({
+                    variants: {
+                        primary: {
+                            bg: 'accent.1',
+                            color: 'bg',
+                        },
+                        secondary: {
+                            bg: 'accent.0',
+                            color: 'dark.0',
+                        },
+                    },
+                })}
+        }
     }
 
     & + svg {
@@ -103,24 +131,95 @@ const SInput: React.FC<SProps> = styled.input.attrs(
             transform: translate(-20px, 4px) !important;
         }
     }
+
+    ${borderColor}
+    ${color}
+    ${typography}
+    ${flexbox}
+    ${space}
+    ${layout}
+    ${boxShadow}
+    ${grid}
+
+    border-right: ${({ append }: SProps) =>
+        append && '0px solid rgba(0, 0, 0, 0)'};
+    border-top-right-radius: ${({ append }: SProps) => append && '0px'};
+    border-bottom-right-radius: ${({ append }: SProps) => append && '0px'};
 `;
 
-const Input: React.FC<Props> = ({ icon, handleChange, ...rest }) => (
-    <>
-        <SInput
-            onChange={handleChange}
-            pr={[2, 2, 3, 3]}
-            py={[1, 1, 2, 2]}
-            pl={icon ? [4, 4, 5, 5] : [2, 2, 3, 3]}
-            bg="accent.3"
-            fontSize={[1, 1, 2, 2]}
-            fontFamily="body"
-            fontWeight="bold"
-            boxShadow="blend"
-            {...rest}
-        />
-        {icon}
-    </>
-);
+const SAppend: React.FC<SAppendProps> = styled.span<SAppendProps>`
+
+    /* display: block; */
+    position: relative;
+
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+
+    transition: .2s;
+
+    ${typography}
+    ${boxShadow}
+    ${position}
+    ${space}
+    ${color}
+`;
+
+const InputGroup: React.FC<InputGroupProps> = styled.div<InputGroupProps>`
+    display: flex;
+`;
+
+const Input: React.FC<Props> = ({
+    icon,
+    append,
+    appendContent,
+    handleChange,
+    ...rest
+}) => {
+    return !append ? (
+        <>
+            <SInput
+                onChange={handleChange}
+                pr={[2, 2, 3]}
+                py={[1, 1, 2]}
+                pl={icon ? [4, 4, 5, 5] : [2, 2, 3, 3]}
+                bg="accent.3"
+                fontSize={[1, 1, 2, 2]}
+                fontFamily="body"
+                fontWeight="bold"
+                boxShadow="blend"
+                {...rest}
+            />
+            {icon}
+        </>
+    ) : (
+        <InputGroup>
+            <SInput
+                onChange={handleChange}
+                pr={[2, 2, 3]}
+                py={[1, 1, 2]}
+                pl={icon ? [4, 4, 5, 5] : [2, 2, 3, 3]}
+                bg="accent.3"
+                fontSize={[1, 1, 2, 2]}
+                fontFamily="body"
+                fontWeight="bold"
+                boxShadow="blend"
+                append={append}
+                {...rest}
+            />
+            {icon}
+            <SAppend
+                bg="accent.2"
+                py={[1, 1, 2]}
+                px={[2, 2, 3]}
+                fontSize={[1, 1, 2, 2]}
+                fontFamily="body"
+                fontWeight="bold"
+                boxShadow="blend"
+            >
+                {appendContent}
+            </SAppend>
+        </InputGroup>
+    );
+};
 
 export { Input };

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import renderer from 'react-test-renderer';
+import renderer from 'react-test-renderer';
 
 import { render, cleanup, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
@@ -70,10 +70,11 @@ describe('Select component', () => {
         fireEvent.click(option1);
 
         expect(mockHandleSelect).toBeCalled();
+        expect(defaultOption).toHaveTextContent(mockOptions[0].key);
     });
 
-    // it('matches snapshot', () => {
-    //     const tree = renderer.create().toJSON();
-    //     expect(tree).toMatchSnapshot();
-    // });
+    it('matches snapshot', () => {
+        const tree = renderer.create(el).toJSON();
+        expect(tree).toMatchSnapshot();
+    });
 });

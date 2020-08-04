@@ -80,6 +80,7 @@ const SelectContainer: React.FC<SelectContainerProps> = styled.div<
         width: fit-content;
 
         position: absolute;
+        z-index: 2;
 
         ${selectVariant({
             variants: {
