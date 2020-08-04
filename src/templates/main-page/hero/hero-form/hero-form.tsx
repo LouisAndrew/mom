@@ -13,6 +13,7 @@ import {
     SpaceProps,
     FlexboxProps,
 } from 'styled-system';
+import { debounce } from 'lodash';
 
 import Select from 'components/select';
 import Input from 'components/input';
@@ -25,6 +26,7 @@ type Props = {
     headingText: string;
     bodyText: string;
     allLocations: string[];
+    submitForm: (location: string, area: number) => void;
 };
 
 type ContainerProps = StylingProps &
@@ -65,9 +67,16 @@ const Label: React.FC<LabelProps> = styled.label.attrs((props: LabelProps) => ({
     ${space}
 `;
 
-const HeroForm: React.FC<Props> = ({ headingText, bodyText, allLocations }) => {
+const HeroForm: React.FC<Props> = ({
+    headingText,
+    bodyText,
+    allLocations,
+    submitForm,
+}) => {
     const [selectedLocation, setSelectedLocation] = useState('');
     const [selectedArea, setSelectedArea] = useState(0);
+
+    const submitDebounced = debounce(submitForm, 1000);
 
     const handleSelect = (value: string) => {
         const userInput: string[] = allLocations.filter(
@@ -83,7 +92,7 @@ const HeroForm: React.FC<Props> = ({ headingText, bodyText, allLocations }) => {
     };
 
     const handleClick = () => {
-        console.log('click');
+        submitDebounced(selectedLocation, selectedArea);
     };
 
     return (

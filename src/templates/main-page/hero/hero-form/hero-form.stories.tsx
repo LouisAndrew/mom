@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { text } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
 
 import HeroForm from '.';
 // import more addons
@@ -18,8 +19,13 @@ story.add('Hero Form', () => {
     );
     const allLocations: string[] = ['PIK', 'Muara Karang', 'BSD'];
 
+    const mockSubmitForm = (location: string, area: number) => {
+        console.log({ location, area });
+    };
+
     return (
         <HeroForm
+            submitForm={mockSubmitForm}
             allLocations={allLocations}
             headingText={headingText}
             bodyText={bodyText}
