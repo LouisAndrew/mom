@@ -101,7 +101,7 @@ const HeroForm: React.FC<Props> = ({
             // gridGap={[3, 3, 4]}
             flexDirection="column"
             alignItems={['center', 'center', 'flex-start']}
-            width={[1, 1, 3 / 5, 1 / 2]}
+            width={[1, 1, 3 / 5, 0.45]}
             py={[4, 4, 5, 5]}
             px={[4, 6, 5, 5]}
             borderWidth="2px"
@@ -112,7 +112,7 @@ const HeroForm: React.FC<Props> = ({
             bg="light.0"
             color="dark.0"
         >
-            <H1 fontWeight="heading" textAlign={['center', 'center', 'left']}>
+            <H1 textAlign={['center', 'center', 'left']} color="dark.0">
                 {headingText}
             </H1>
             <P textAlign={['center', 'center', 'left']} my={[3, 4, 5]}>
@@ -131,7 +131,7 @@ const HeroForm: React.FC<Props> = ({
                 >
                     Daerah
                     <Select
-                        optionPadX={['4', '4', '3']}
+                        optionPadX={['4', '4', '8']}
                         mt={[1, 1, 2]}
                         mb={[2, 2, 3]}
                         items={allLocations.map(location => {

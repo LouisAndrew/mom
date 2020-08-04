@@ -13,8 +13,10 @@ import {
     FlexboxProps,
 } from 'styled-system';
 
+import { theme } from 'styles';
+
 interface WithChildrenProps {
-    children: string;
+    children: string | React.ReactNode;
 }
 
 interface FullSystemProps
@@ -64,12 +66,25 @@ const SP: React.FC<FullSystemProps> = styled.p<FullSystemProps>`
         ${flexbox}
 `;
 
+// provide max-width to inner elements.
+const SOuterWrapper: React.FC<FullSystemProps> = styled.div<FullSystemProps>`
+    ${space}
+    ${layout}
+    ${color}
+    ${flexbox}
+`;
+
 const H1: React.FC<WithChildrenProps & FullSystemProps> = ({
     children,
     ...rest // eslint-disable-line @typescript-eslint/tslint/config
 }: WithChildrenProps & FullSystemProps) => {
     return (
-        <SH1 fontFamily="heading" fontSize={[5, 5, 6, 6]} {...rest}>
+        <SH1
+            fontFamily="heading"
+            fontWeight="extraBold"
+            fontSize={[5, 5, 6, 6]}
+            {...rest}
+        >
             {children}
         </SH1>
     );
@@ -112,10 +127,27 @@ const P: React.FC<WithChildrenProps & FullSystemProps> = ({
     ...rest // eslint-disable-line @typescript-eslint/tslint/config
 }: WithChildrenProps & FullSystemProps) => {
     return (
-        <SP fontFamily="body" fontSize={[2, 2, 3, 3]} {...rest}>
+        <SP fontFamily="body" fontSize={[1, 1, 2, 2]} {...rest}>
             {children}
         </SP>
     );
 };
 
-export { H1, H2, H3, H5, P };
+const OuterWrapper: React.FC<WithChildrenProps & FullSystemProps> = ({
+    children,
+    ...rest
+}) => (
+    <SOuterWrapper
+        maxWidth={[
+            '100%',
+            theme.breakpoints[0],
+            theme.breakpoints[1],
+            theme.breakpoints[2],
+        ]}
+        {...rest}
+    >
+        {children}
+    </SOuterWrapper>
+);
+
+export { H1, H2, H3, H5, P, OuterWrapper };

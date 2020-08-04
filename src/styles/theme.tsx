@@ -14,6 +14,7 @@ export interface Theme {
         body: number;
         heading: number;
         bold: number;
+        extraBold: number;
     };
     lineHeights: {
         body: number;
@@ -58,6 +59,7 @@ const theme: Theme = {
         body: 400,
         heading: 700,
         bold: 600,
+        extraBold: 800,
     },
     lineHeights: {
         body: 1.5,

@@ -14,7 +14,7 @@ import {
 import theme, { Theme } from './theme';
 import 'modern-css-reset/dist/reset.min.css';
 
-export { H1, H2, H3, H5, P } from './global-elements';
+export { H1, H2, H3, H5, P, OuterWrapper } from './global-elements';
 export { theme, Theme };
 export { GlobalStyles } from './global-styles';
 
