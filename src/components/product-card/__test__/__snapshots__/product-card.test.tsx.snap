@@ -1,0 +1,134 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Product card component matches snapshot 1`] = `
+<div
+  className="sc-Axmtr lnJLWr"
+>
+  <div
+    className="sc-AxgMl igBLxz"
+    height={
+      Array [
+        200,
+        250,
+        300,
+      ]
+    }
+    width={
+      Array [
+        200,
+        250,
+        300,
+      ]
+    }
+  >
+    <img
+      alt="github-icon"
+      src="https://res.cloudinary.com/dsvdffre0/image/upload/v1596016031/github-icon.png"
+    />
+  </div>
+  <div
+    className="sc-AxmLO eSDxzk"
+    width={
+      Array [
+        1,
+        0.8,
+        0.5,
+      ]
+    }
+  >
+    <h3
+      className="sc-AxiKw ddVZVi"
+      fontFamily="heading"
+      fontSize={
+        Array [
+          3,
+          3,
+          4,
+          4,
+        ]
+      }
+    >
+      Heading
+    </h3>
+    <p
+      className="sc-AxhUy hNTERn"
+      fontFamily="body"
+      fontSize={
+        Array [
+          2,
+          2,
+          3,
+          3,
+        ]
+      }
+    >
+      Body
+    </p>
+    <button
+      className="sc-AxheI kSSMLT"
+      fontFamily="body"
+      fontSize={
+        Array [
+          1,
+          1,
+          2,
+          2,
+        ]
+      }
+      fontWeight="bold"
+      onClick={
+        [MockFunction] {
+          "calls": Array [
+            Array [
+              Class {
+                "_dispatchInstances": null,
+                "_dispatchListeners": null,
+                "_targetInst": null,
+                "altKey": null,
+                "bubbles": null,
+                "button": null,
+                "buttons": null,
+                "cancelable": null,
+                "clientX": null,
+                "clientY": null,
+                "ctrlKey": null,
+                "currentTarget": [Function],
+                "defaultPrevented": null,
+                "detail": null,
+                "dispatchConfig": null,
+                "eventPhase": null,
+                "getModifierState": [Function],
+                "isDefaultPrevented": [Function],
+                "isPropagationStopped": [Function],
+                "isTrusted": null,
+                "metaKey": null,
+                "movementX": [Function],
+                "movementY": [Function],
+                "nativeEvent": null,
+                "pageX": null,
+                "pageY": null,
+                "relatedTarget": [Function],
+                "screenX": null,
+                "screenY": null,
+                "shiftKey": null,
+                "target": null,
+                "timeStamp": [Function],
+                "type": null,
+                "view": null,
+              },
+            ],
+          ],
+          "results": Array [
+            Object {
+              "type": "return",
+              "value": undefined,
+            },
+          ],
+        }
+      }
+    >
+      More info
+    </button>
+  </div>
+</div>
+`;

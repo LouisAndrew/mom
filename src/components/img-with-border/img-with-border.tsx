@@ -57,10 +57,12 @@ const ImgWithBorder: React.FC<Props> = ({ imgComponent, variant, ...rest }) => {
         ];
     }
 
+    const sizes: number[] = [200, 250, 300];
+
     return (
         <ImgWrapper
-            width={[250, 250, 375, 375]}
-            height={[250, 250, 375, 375]}
+            width={sizes}
+            height={sizes}
             boxShadow={boxShadowVariant}
             {...rest}
         >

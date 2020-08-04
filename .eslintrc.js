@@ -79,7 +79,7 @@ module.exports = {
                     'jsx-equals-spacing': true,
                     'jsx-key': true,
                     'jsx-no-bind': true,
-                    'jsx-no-lambda': true,
+                    'jsx-no-lambda': false,
                     'jsx-no-multiline-js': false,
                     'jsx-no-string-ref': true,
                     'jsx-self-close': true,
@@ -107,7 +107,7 @@ module.exports = {
                     ],
                     'prefer-conditional-expression': true,
                     'trailing-comma': [
-                        true,
+                        false,
                         {
                             multiline: {
                                 arrays: 'ignore',

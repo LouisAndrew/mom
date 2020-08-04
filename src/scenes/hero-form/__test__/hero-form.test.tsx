@@ -2,25 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
 
-import { cleanup } from '@testing-library/react';
+import { render, cleanup } from '@testing-library/react';
 import '@testing-library/jest-dom';
+import { HeroForm } from '../hero-form';
 
-import ImgWithBorder from '..';
-
-describe('Img with border component!', () => {
+describe('Hero form component', () => {
+    const mockHandleSubmit = jest.fn(() => {});
     afterEach(cleanup);
-
-    const img: React.ReactElement = (
-        <img
-            src="https://res.cloudinary.com/dsvdffre0/image/upload/v1596031267/w3ufcacls7mqfmhbwpe4.png"
-            alt="lakers-logo"
-        />
-    );
-    const el: React.ReactElement = <ImgWithBorder imgComponent={img} />;
+    const el: React.ReactElement = <HeroForm handleSubmit={mockHandleSubmit} />;
 
     it('renders without crashing', () => {
         const div = document.createElement('div');
         ReactDOM.render(el, div);
+    });
+
+    it('should react to user input correctly', () => {
+        const { getByTestId } = render(el);
     });
 
     it('matches snapshot', () => {

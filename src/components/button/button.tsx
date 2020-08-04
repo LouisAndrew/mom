@@ -18,7 +18,7 @@ type SProps = PositioningProps &
         onClick: () => void;
     };
 
-const SButton: React.FC<SProps> = styled.button`
+const SButton: React.FC<SProps> = styled.button<SProps>`
 
     background: none;
     border: none;
