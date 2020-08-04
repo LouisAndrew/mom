@@ -2,10 +2,11 @@
 
 exports[`Select component matches snapshot 1`] = `
 <div
-  className="sc-AxgMl kTjUac"
+  className="sc-AxheI iyhIJK"
+  width={1}
 >
   <label
-    className="sc-AxheI bCbrCW"
+    className="sc-Axmtr bBzQJN"
     fontFamily="body"
     fontSize={
       Array [
@@ -23,7 +24,7 @@ exports[`Select component matches snapshot 1`] = `
     <svg
       dangerouslySetInnerHTML={
         Object {
-          "__html": "<path d=\\"M17.71 11.29a1 1 0 0 0-1.42 0L13 14.59V7a1 1 0 0 0-2 0v7.59l-3.29-3.3a1 1 0 0 0-1.42 1.42l5 5a1 1 0 0 0 .33.21a.94.94 0 0 0 .76 0a1 1 0 0 0 .33-.21l5-5a1 1 0 0 0 0-1.42z\\" fill=\\"#C3C2C2\\"/>",
+          "__html": "<path d=\\"M17 9.17a1 1 0 0 0-1.41 0L12 12.71L8.46 9.17a1 1 0 0 0-1.41 0a1 1 0 0 0 0 1.42l4.24 4.24a1 1 0 0 0 1.42 0L17 10.59a1 1 0 0 0 0-1.42z\\" fill=\\"#C3C2C2\\"/>",
         }
       }
       focusable={false}

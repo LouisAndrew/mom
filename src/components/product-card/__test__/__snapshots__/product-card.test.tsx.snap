@@ -2,10 +2,10 @@
 
 exports[`Product card component matches snapshot 1`] = `
 <div
-  className="sc-Axmtr lnJLWr"
+  className="sc-AxmLO ljJVhi"
 >
   <div
-    className="sc-AxgMl igBLxz"
+    className="sc-AxheI jFHUsp"
     height={
       Array [
         200,
@@ -27,7 +27,7 @@ exports[`Product card component matches snapshot 1`] = `
     />
   </div>
   <div
-    className="sc-AxmLO eSDxzk"
+    className="sc-fzozJi fvxFuZ"
     width={
       Array [
         1,
@@ -51,21 +51,21 @@ exports[`Product card component matches snapshot 1`] = `
       Heading
     </h3>
     <p
-      className="sc-AxhUy hNTERn"
+      className="sc-AxhUy ffKmGj"
       fontFamily="body"
       fontSize={
         Array [
+          1,
+          1,
           2,
           2,
-          3,
-          3,
         ]
       }
     >
       Body
     </p>
     <button
-      className="sc-AxheI kSSMLT"
+      className="sc-Axmtr ctITow"
       fontFamily="body"
       fontSize={
         Array [

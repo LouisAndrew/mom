@@ -12,7 +12,7 @@ import {
     PositionProps,
 } from 'styled-system';
 import { Icon } from '@iconify/react';
-import arrowIcon from '@iconify/icons-uil/arrow-down';
+import arrowIcon from '@iconify/icons-uil/angle-down';
 import { CSSTransition } from 'react-transition-group';
 
 import { PositioningProps, StylingProps, theme } from 'styles';
@@ -34,8 +34,8 @@ type Props = PositioningProps &
         id: string; // should not contain whitespace!
         optionWidth?: string | string[] | number[];
         defaultOption?: string;
-        optionPadX?: string[];
-        optionPadY?: string[];
+        optionPadX?: number[];
+        optionPadY?: number[];
         multiple?: boolean;
         variant?: string;
         handleSelect: (value: string) => void;
@@ -54,7 +54,8 @@ type OptionsProps = PositioningProps &
     };
 
 type InputProps = PositioningProps &
-    StylingProps & {
+    StylingProps &
+    PositionProps & {
         for: string;
         expand: boolean;
         variant?: string;
@@ -68,11 +69,6 @@ const SelectContainer: React.FC<SelectContainerProps> = styled.div<
 
     position: relative;
 
-    ${flexbox}
-    ${layout}
-    ${space}
-    ${grid}
-
     .option-container {
         overflow: hidden;
         border-bottom-left-radius: 4px;
@@ -84,7 +80,12 @@ const SelectContainer: React.FC<SelectContainerProps> = styled.div<
         width: fit-content;
 
         position: absolute;
-        z-index: 2;
+        z-index: 1;
+        transform: translate(-5%); // unaligned to the left!
+
+        transition: .2s;
+
+        ${position} // positioning from styled-system props!
 
         ${selectVariant({
             variants: {
@@ -99,19 +100,18 @@ const SelectContainer: React.FC<SelectContainerProps> = styled.div<
             },
         })}
 
-        ${position}
+        /* classnames generated from csstransition! */
 
         &.options-enter {
             opacity: 0;
             max-height: 0;
-            transform: scale(0.9);
+            transform: scale(0.9) translate(-5%);
         }
 
         &.options-enter-active {
             opacity: 1;
-            transform: translateX(0);
+            transform: scale(1) translate(-5%);
             max-height: fit-content;
-            transition: transform 100, max-height 200;
         }
 
         &.options-exit {
@@ -126,6 +126,11 @@ const SelectContainer: React.FC<SelectContainerProps> = styled.div<
             max-height: fit-content;
         }
     }
+
+    ${flexbox}
+    ${layout}
+    ${space}
+    ${grid}
 `;
 
 const Input: React.FC<InputProps> = styled.label.attrs((props: InputProps) => ({
@@ -140,6 +145,8 @@ const Input: React.FC<InputProps> = styled.label.attrs((props: InputProps) => ({
 
     display: flex;
     width: fit-content;
+
+    position: relative;
 
     ${({ expand }: InputProps) =>
         selectVariant({
@@ -167,10 +174,16 @@ const Input: React.FC<InputProps> = styled.label.attrs((props: InputProps) => ({
     ${layout}
 
     svg {
-        margin-left: 8px;
+
+        /* add absolute positioning here? */
+
+        position: absolute;
+        ${position} /* Positions expand arrow based on padding provided.. */
+
+        /* margin-left: 8px; */
         transition: .2s;
         transform: ${({ expand }: InputProps) =>
-            expand && 'rotate(180deg)'} translateY(-1px) !important;
+            expand && 'rotate(180deg)'} scale(1.2) !important;
     }
 
     &:hover {
@@ -284,6 +297,7 @@ const Select: React.FC<Props> = ({
             variant={variant}
             flexDirection="column"
             alignItems="center"
+            width={1} // provides 100% of parent's width to the children
             top={[inputHeightM, inputHeightM, inputHeightD, inputHeightD]}
             {...rest}
         >
@@ -291,7 +305,9 @@ const Select: React.FC<Props> = ({
                 for={id}
                 variant={variant}
                 py={optionPadY ? optionPadY : [1, 1, 2, 2]}
-                px={optionPadX ? optionPadX : [2, 2, 3, 3]}
+                pl={optionPadX ? optionPadX : [2, 2, 3, 3]}
+                pr={optionPadX ? optionPadX.map(pad => 2 * pad) : [4, 4, 5, 5]}
+                right={optionPadX ? optionPadX : [1, 1, 2, 2]}
                 expand={expand}
                 alignItems="center"
                 width={optionWidth}

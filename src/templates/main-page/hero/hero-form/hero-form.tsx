@@ -11,7 +11,6 @@ import {
     BorderProps,
     BoxShadowProps,
     SpaceProps,
-    FlexboxProps,
 } from 'styled-system';
 import { debounce } from 'lodash';
 
@@ -34,7 +33,7 @@ type ContainerProps = StylingProps &
     BorderProps &
     BoxShadowProps & {};
 
-type FormProps = FlexboxProps & {};
+type FormProps = PositioningProps & {};
 
 type LabelProps = StylingProps &
     SpaceProps & {
@@ -58,6 +57,7 @@ const Form: React.FC<FormProps> = styled.form<FormProps>`
     display: flex;
 
     ${flexbox}
+    ${layout}
 `;
 
 const Label: React.FC<LabelProps> = styled.label.attrs((props: LabelProps) => ({
@@ -97,8 +97,6 @@ const HeroForm: React.FC<Props> = ({
 
     return (
         <Container
-            // gridTemplateRows="repeat(4, auto)"
-            // gridGap={[3, 3, 4]}
             flexDirection="column"
             alignItems={['center', 'center', 'flex-start']}
             width={[1, 1, 3 / 5, 0.45]}
@@ -120,6 +118,7 @@ const HeroForm: React.FC<Props> = ({
             </P>
             <Form
                 flexDirection="column"
+                width={1}
                 alignItems={['center', 'center', 'flex-start']}
             >
                 <Label
@@ -131,7 +130,8 @@ const HeroForm: React.FC<Props> = ({
                 >
                     Daerah
                     <Select
-                        optionPadX={['4', '4', '8']}
+                        // optionPadX={['4', '4', '8']}
+                        optionWidth={[1]}
                         mt={[1, 1, 2]}
                         mb={[2, 2, 3]}
                         items={allLocations.map(location => {

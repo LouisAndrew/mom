@@ -1,0 +1,204 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form on hero component matches snapshot 1`] = `
+<div
+  className="sc-fznyAO kaznbD"
+  color="dark.0"
+  width={
+    Array [
+      1,
+      1,
+      0.6,
+      0.45,
+    ]
+  }
+>
+  <h1
+    className="sc-AxjAm efDtZD"
+    color="dark.0"
+    fontFamily="heading"
+    fontSize={
+      Array [
+        5,
+        5,
+        6,
+        6,
+      ]
+    }
+    fontWeight="extraBold"
+  >
+    Heading text about finding a house
+  </h1>
+  <p
+    className="sc-AxhUy bTlWZo"
+    fontFamily="body"
+    fontSize={
+      Array [
+        1,
+        1,
+        2,
+        2,
+      ]
+    }
+  >
+    Exercitation aute eu nostrud do sit labore ex minim reprehenderit ut ipsum veniam ad laborum. Minim eiusmod sint officia ipsum ad dolore Lorem sunt tempor ut. Esse in elit exercitation elit ex laborum nulla do veniam amet. Ut est reprehenderit nisi laboris. In amet ea ut elit nulla officia ex. Est exercitation aliqua sunt nostrud enim velit non duis ipsum ea officia.
+  </p>
+  <form
+    className="sc-fznKkj cYkfgV"
+    width={1}
+  >
+    <label
+      className="sc-fznZeY hgPCde"
+      fontFamily="body"
+      fontSize={
+        Array [
+          1,
+          1,
+          2,
+          2,
+        ]
+      }
+      fontWeight="bold"
+      for="hero-form-location"
+      htmlFor="hero-form-location"
+    >
+      Daerah
+      <div
+        className="sc-AxheI gMnwVn"
+        width={1}
+      >
+        <label
+          className="sc-Axmtr cmOmJu"
+          fontFamily="body"
+          fontSize={
+            Array [
+              1,
+              1,
+              2,
+              2,
+            ]
+          }
+          fontWeight="bold"
+          for="hero-form-location"
+          htmlFor="hero-form-location"
+          width={
+            Array [
+              1,
+            ]
+          }
+        >
+          
+          <svg
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<path d=\\"M17 9.17a1 1 0 0 0-1.41 0L12 12.71L8.46 9.17a1 1 0 0 0-1.41 0a1 1 0 0 0 0 1.42l4.24 4.24a1 1 0 0 0 1.42 0L17 10.59a1 1 0 0 0 0-1.42z\\" fill=\\"#2E282A\\"/>",
+              }
+            }
+            focusable={false}
+            height="1em"
+            preserveAspectRatio="xMidYMid meet"
+            style={
+              Object {
+                "transform": "rotate(360deg)",
+              }
+            }
+            viewBox="0 0 24 24"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          />
+          <input
+            id="hero-form-location"
+            onChange={[Function]}
+            type="checkbox"
+          />
+        </label>
+      </div>
+    </label>
+    <label
+      className="sc-fznZeY hgPCde"
+      fontFamily="body"
+      fontSize={
+        Array [
+          1,
+          1,
+          2,
+          2,
+        ]
+      }
+      fontWeight="bold"
+      for="hero-form-area"
+      htmlFor="hero-form-area"
+    >
+      Luas
+      <div
+        className="sc-fzpans fQGGNO"
+      >
+        <input
+          className="sc-fzozJi fAjMCR"
+          fontFamily="body"
+          fontSize={
+            Array [
+              1,
+              1,
+              2,
+              2,
+            ]
+          }
+          fontWeight="bold"
+          id="hero-form-area"
+          onChange={[Function]}
+          placeholder="100"
+          type="number"
+          width={
+            Array [
+              52,
+              52,
+              64,
+            ]
+          }
+        />
+        <span
+          className="sc-fzoLsD jSrrCW"
+          fontFamily="body"
+          fontSize={
+            Array [
+              1,
+              1,
+              2,
+              2,
+            ]
+          }
+          fontWeight="bold"
+          id="hero-form-area"
+          width={
+            Array [
+              52,
+              52,
+              64,
+            ]
+          }
+        >
+          m²
+        </span>
+      </div>
+    </label>
+  </form>
+  <button
+    className="sc-fzplWN bbmQgL"
+    fontFamily="body"
+    fontSize={
+      Array [
+        1,
+        1,
+        2,
+        2,
+      ]
+    }
+    fontWeight="bold"
+    onClick={[Function]}
+    width="fit-content"
+  >
+    Cari Sekarang!
+  </button>
+</div>
+`;
