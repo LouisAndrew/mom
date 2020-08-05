@@ -92,6 +92,14 @@ module.exports = {
                 // graphqlTag: 'default',
             },
         },
+        // {
+        //     resolve: 'gatsby-plugin-react-svg',
+        //     options: {
+        //         rule: {
+        //             include: 'src/images',
+        //         },
+        //     },
+        // },
         `gatsby-plugin-offline`,
     ],
 };

@@ -35,7 +35,7 @@ const SButton: React.FC<SProps> = styled.button<SProps>`
             },
             secondary: {
                 bg: 'accent.0',
-                color: 'dark.0',
+                color: 'bg',
             },
         },
     })} 

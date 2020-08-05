@@ -12,11 +12,11 @@ story
     .add('Hero Form', () => {
         const headingText: string = text(
             'Heading text',
-            'Heading text about finding a house'
+            'Siapa bilang cari rumah jaman searang susah?'
         );
         const bodyText: string = text(
             'Body text',
-            'Exercitation aute eu nostrud do sit labore ex minim reprehenderit ut ipsum veniam ad laborum. Minim eiusmod sint officia ipsum ad dolore Lorem sunt tempor ut. Esse in elit exercitation elit ex laborum nulla do veniam amet. Ut est reprehenderit nisi laboris. In amet ea ut elit nulla officia ex.'
+            'Cari rumah idamanmu sekarang! Cukup cantumkan kriteria mu, tanpa ribet'
         );
         const allLocations: string[] = ['PIK', 'Muara Karang', 'BSD'];
 

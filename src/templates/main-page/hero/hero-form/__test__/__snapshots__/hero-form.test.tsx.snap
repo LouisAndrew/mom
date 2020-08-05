@@ -2,13 +2,13 @@
 
 exports[`Form on hero component matches snapshot 1`] = `
 <div
-  className="sc-fznyAO kaznbD"
+  className="sc-fznKkj bMvMSb"
   color="dark.0"
   width={
     Array [
-      1,
-      1,
+      0.8,
       0.6,
+      0.5,
       0.45,
     ]
   }
@@ -44,11 +44,11 @@ exports[`Form on hero component matches snapshot 1`] = `
     Exercitation aute eu nostrud do sit labore ex minim reprehenderit ut ipsum veniam ad laborum. Minim eiusmod sint officia ipsum ad dolore Lorem sunt tempor ut. Esse in elit exercitation elit ex laborum nulla do veniam amet. Ut est reprehenderit nisi laboris. In amet ea ut elit nulla officia ex. Est exercitation aliqua sunt nostrud enim velit non duis ipsum ea officia.
   </p>
   <form
-    className="sc-fznKkj cYkfgV"
+    className="sc-fznZeY jdftdp"
     width={1}
   >
     <label
-      className="sc-fznZeY hgPCde"
+      className="sc-fzokOt hOxDcv"
       fontFamily="body"
       fontSize={
         Array [
@@ -61,61 +61,63 @@ exports[`Form on hero component matches snapshot 1`] = `
       fontWeight="bold"
       for="hero-form-location"
       htmlFor="hero-form-location"
+      width={1}
     >
       Daerah
-      <div
-        className="sc-AxheI gMnwVn"
-        width={1}
-      >
-        <label
-          className="sc-Axmtr cmOmJu"
-          fontFamily="body"
-          fontSize={
-            Array [
-              1,
-              1,
-              2,
-              2,
-            ]
-          }
-          fontWeight="bold"
-          for="hero-form-location"
-          htmlFor="hero-form-location"
-          width={
-            Array [
-              1,
-            ]
-          }
-        >
-          
-          <svg
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "<path d=\\"M17 9.17a1 1 0 0 0-1.41 0L12 12.71L8.46 9.17a1 1 0 0 0-1.41 0a1 1 0 0 0 0 1.42l4.24 4.24a1 1 0 0 0 1.42 0L17 10.59a1 1 0 0 0 0-1.42z\\" fill=\\"#2E282A\\"/>",
-              }
-            }
-            focusable={false}
-            height="1em"
-            preserveAspectRatio="xMidYMid meet"
-            style={
-              Object {
-                "transform": "rotate(360deg)",
-              }
-            }
-            viewBox="0 0 24 24"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          />
-          <input
-            id="hero-form-location"
-            onChange={[Function]}
-            type="checkbox"
-          />
-        </label>
-      </div>
     </label>
+    <div
+      className="sc-AxheI eosWqM"
+      width={1}
+    >
+      <label
+        className="sc-AxmLO fPFTiL"
+        fontFamily="body"
+        fontSize={
+          Array [
+            1,
+            1,
+            2,
+            2,
+          ]
+        }
+        fontWeight="bold"
+        for="hero-form-location"
+        htmlFor="hero-form-location"
+        width={
+          Array [
+            1,
+          ]
+        }
+      >
+        
+        <svg
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "<path d=\\"M17 9.17a1 1 0 0 0-1.41 0L12 12.71L8.46 9.17a1 1 0 0 0-1.41 0a1 1 0 0 0 0 1.42l4.24 4.24a1 1 0 0 0 1.42 0L17 10.59a1 1 0 0 0 0-1.42z\\" fill=\\"#2E282A\\"/>",
+            }
+          }
+          focusable={false}
+          height="1em"
+          preserveAspectRatio="xMidYMid meet"
+          style={
+            Object {
+              "transform": "rotate(360deg)",
+            }
+          }
+          viewBox="0 0 24 24"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        />
+        <input
+          id="hero-form-location"
+          onChange={[Function]}
+          type="checkbox"
+        />
+      </label>
+    </div>
     <label
-      className="sc-fznZeY hgPCde"
+      className="sc-fzokOt fGYpih"
+      display="flex"
       fontFamily="body"
       fontSize={
         Array [
@@ -128,13 +130,14 @@ exports[`Form on hero component matches snapshot 1`] = `
       fontWeight="bold"
       for="hero-form-area"
       htmlFor="hero-form-area"
+      width={1}
     >
       Luas
       <div
-        className="sc-fzpans fQGGNO"
+        className="sc-fzplWN czaqLz"
       >
         <input
-          className="sc-fzozJi fAjMCR"
+          className="sc-fzoLsD gviYzG"
           fontFamily="body"
           fontSize={
             Array [
@@ -158,7 +161,7 @@ exports[`Form on hero component matches snapshot 1`] = `
           }
         />
         <span
-          className="sc-fzoLsD jSrrCW"
+          className="sc-fzpans ewQpsq"
           fontFamily="body"
           fontSize={
             Array [
@@ -184,7 +187,7 @@ exports[`Form on hero component matches snapshot 1`] = `
     </label>
   </form>
   <button
-    className="sc-fzplWN bbmQgL"
+    className="sc-fznyAO jYAtkP"
     fontFamily="body"
     fontSize={
       Array [

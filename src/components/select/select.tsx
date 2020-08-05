@@ -14,6 +14,7 @@ import {
 import { Icon } from '@iconify/react';
 import arrowIcon from '@iconify/icons-uil/angle-down';
 import { CSSTransition } from 'react-transition-group';
+import { debounce } from 'lodash';
 
 import { PositioningProps, StylingProps, theme } from 'styles';
 
@@ -41,10 +42,7 @@ type Props = PositioningProps &
         handleSelect: (value: string) => void;
     };
 
-type SelectContainerProps = PositioningProps &
-    PositionProps & {
-        variant?: string;
-    };
+type SelectContainerProps = PositioningProps & PositionProps & {};
 
 type OptionsProps = PositioningProps &
     StylingProps & {
@@ -61,6 +59,9 @@ type InputProps = PositioningProps &
         variant?: string;
     };
 
+type OptionContainerProps = PositioningProps &
+    PositionProps & { variant?: string };
+
 const SelectContainer: React.FC<SelectContainerProps> = styled.div<
     SelectContainerProps
 >`
@@ -69,68 +70,71 @@ const SelectContainer: React.FC<SelectContainerProps> = styled.div<
 
     position: relative;
 
-    .option-container {
-        overflow: hidden;
-        border-bottom-left-radius: 4px;
-        border-bottom-right-radius: 4px;
-        border: 1px solid rgba(0, 0, 0, 0);
-
-        display: flex;
-        flex-direction: column;
-        width: fit-content;
-
-        position: absolute;
-        z-index: 1;
-        transform: translate(-5%); // unaligned to the left!
-
-        transition: .2s;
-
-        ${position} // positioning from styled-system props!
-
-        ${selectVariant({
-            variants: {
-                primary: {
-                    borderColor: 'accent.2',
-                    boxShadow: 'blend',
-                },
-                secondary: {
-                    borderColor: 'accent.2',
-                    boxShadow: 'blend',
-                },
-            },
-        })}
-
-        /* classnames generated from csstransition! */
-
-        &.options-enter {
-            opacity: 0;
-            max-height: 0;
-            transform: scale(0.9) translate(-5%);
-        }
-
-        &.options-enter-active {
-            opacity: 1;
-            transform: scale(1) translate(-5%);
-            max-height: fit-content;
-        }
-
-        &.options-exit {
-            opacity: 1;
-            max-height: 0;
-        }
-
-        &.options-exit-active {
-            opacity: 0;
-            /* transform: translate(0);s */
-            transform: scale(0.9);
-            max-height: fit-content;
-        }
-    }
-
     ${flexbox}
     ${layout}
     ${space}
     ${grid}
+`;
+
+const OptionContainer: React.FC<OptionContainerProps> = styled.div<
+    OptionContainerProps
+>`
+    overflow: hidden;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0);
+
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+
+    position: absolute;
+    z-index: 1;
+    /* transform: translate(-5%); */
+
+    transition: 0.2s;
+
+    ${selectVariant({
+        variants: {
+            primary: {
+                borderColor: 'accent.2',
+                boxShadow: 'blend',
+            },
+            secondary: {
+                borderColor: 'accent.2',
+                boxShadow: 'blend',
+            },
+        },
+    })}
+
+    /* classnames generated from csstransition! */
+
+        &.options-enter {
+        opacity: 0;
+        max-height: 0;
+        transform: scale(0.9) translate(-5%);
+    }
+
+    &.options-enter-active {
+        opacity: 1;
+        transform: scale(1) translate(-5%);
+        max-height: fit-content;
+    }
+
+    &.options-exit {
+        opacity: 1;
+        max-height: 0;
+    }
+
+    &.options-exit-active {
+        opacity: 0;
+        /* transform: translate(0);s */
+        transform: scale(0.9);
+        max-height: fit-content;
+    }
+
+    ${position} /* positioning from styled-system props! */
+    ${layout}
 `;
 
 const Input: React.FC<InputProps> = styled.label.attrs((props: InputProps) => ({
@@ -241,6 +245,8 @@ const Select: React.FC<Props> = ({
     const [selectedValue, setSelectedValue] = useState('');
     const [expand, setExpand] = useState(false);
 
+    const debouncedExpand = debounce(setExpand, 200);
+
     useEffect(() => {
         if (defaultOption) {
             setDefaultDisplay(defaultOption);
@@ -262,21 +268,21 @@ const Select: React.FC<Props> = ({
         } else {
             setInputDisplay(defaultDisplay);
         }
-    }, [items, multiple, selectedValue, defaultDisplay, handleSelect]);
+    }, [selectedValue]);
 
     useEffect(() => {
-        if (expand) {
+        if (expand && selectedValue !== '') {
             setSelectedValue('');
         }
     }, [expand]);
 
     const handleChangeExpand = () => {
-        setExpand(expand => !expand); // eslint-disable-line @typescript-eslint/tslint/config
+        debouncedExpand(expand => !expand); // eslint-disable-line @typescript-eslint/tslint/config
     };
 
     const handleClickOption = (value: string) => {
         setSelectedValue(value);
-        setExpand(expand => !expand); // eslint-disable-line @typescript-eslint/tslint/config
+        debouncedExpand(expand => !expand); // eslint-disable-line @typescript-eslint/tslint/config
     };
 
     const typographyStyle: {
@@ -294,11 +300,9 @@ const Select: React.FC<Props> = ({
 
     return (
         <SelectContainer
-            variant={variant}
             flexDirection="column"
-            alignItems="center"
+            // alignItems="center"
             width={1} // provides 100% of parent's width to the children
-            top={[inputHeightM, inputHeightM, inputHeightD, inputHeightD]}
             {...rest}
         >
             <Input
@@ -327,7 +331,16 @@ const Select: React.FC<Props> = ({
                 classNames="options"
                 unmountOnExit={true}
             >
-                <div className="option-container">
+                <OptionContainer
+                    variant={variant}
+                    width={optionWidth}
+                    top={[
+                        inputHeightM,
+                        inputHeightM,
+                        inputHeightD,
+                        inputHeightD,
+                    ]}
+                >
                     {items.map(item => (
                         <Options
                             key={item.value}
@@ -335,13 +348,13 @@ const Select: React.FC<Props> = ({
                             variant={variant}
                             py={optionPadY ? optionPadY : [1, 1, 2, 2]}
                             px={optionPadX ? optionPadX : [2, 2, 3, 3]}
-                            width={optionWidth}
+                            width={1}
                             {...typographyStyle}
                         >
                             {item.key}
                         </Options>
                     ))}
-                </div>
+                </OptionContainer>
             </CSSTransition>
         </SelectContainer>
     );

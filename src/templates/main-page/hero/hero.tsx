@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { flexbox } from 'styled-system';
+import { layout, flexbox } from 'styled-system';
 
 import Img from './img';
 import HeroForm from './hero-form';
@@ -13,6 +13,10 @@ type ContainerProps = PositioningProps & {};
 const Container: React.FC<ContainerProps> = styled.div<ContainerProps>`
     display: grid;
     place-items: center;
+
+    #img-hero {
+        ${layout}
+    }
 `;
 
 const Hero: React.FC<Props> = () => {
@@ -28,11 +32,12 @@ const Hero: React.FC<Props> = () => {
 
     return (
         <>
-            <Container>
+            <Container width={[200, 250, 'auto']} height={[200, 250, 'auto']}>
                 <OuterWrapper
                     display="flex"
                     alignItems="center"
                     justifyContent="space-between"
+                    flexDirection={['column-reverse', 'column-reverse', 'row']}
                 >
                     <HeroForm
                         headingText={mockheadingText}

@@ -2,11 +2,11 @@
 
 exports[`Select component matches snapshot 1`] = `
 <div
-  className="sc-AxheI iyhIJK"
+  className="sc-AxheI ilifEw"
   width={1}
 >
   <label
-    className="sc-Axmtr bBzQJN"
+    className="sc-AxmLO jfZaFA"
     fontFamily="body"
     fontSize={
       Array [

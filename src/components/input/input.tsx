@@ -120,7 +120,7 @@ const SInput: React.FC<SProps> = styled.input.attrs(
 
     /* if type: number -> remove arrows. */
     &[type=number] {
-        --moz-appearance: textfield;
+        -moz-appearance: textfield;
     }
 
     &::-webkit-outer-spin-button, &::-webkit-inner-spin-button {
