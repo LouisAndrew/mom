@@ -39,6 +39,7 @@ const theme: Theme = {
     // use breakpoints in ems under the assumption that 1em = 16px.
     // usage of breakpoints here is mobile-first, meaning: <Button width={[1, 1/2, 1/4, 1/8]} />
     // width of the button on 64em and larger is 12.5%, width on screen size 52em and larger is 25%, and so on.
+    //            640px,   832px   1024px
     breakpoints: ['40em', '52em', '64em'],
 
     // for layout! an array of strings...

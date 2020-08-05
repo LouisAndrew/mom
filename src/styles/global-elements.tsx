@@ -6,11 +6,13 @@ import {
     layout,
     color,
     flexbox,
+    position,
     SpaceProps,
     TypographyProps,
     LayoutProps,
     ColorProps,
     FlexboxProps,
+    PositionProps,
 } from 'styled-system';
 
 import { theme } from 'styles';
@@ -67,11 +69,14 @@ const SP: React.FC<FullSystemProps> = styled.p<FullSystemProps>`
 `;
 
 // provide max-width to inner elements.
-const SOuterWrapper: React.FC<FullSystemProps> = styled.div<FullSystemProps>`
+const SOuterWrapper: React.FC<FullSystemProps & PositionProps> = styled.div<
+    FullSystemProps & PositionProps
+>`
     ${space}
     ${layout}
     ${color}
     ${flexbox}
+    ${position}
 `;
 
 const H1: React.FC<WithChildrenProps & FullSystemProps> = ({
@@ -82,7 +87,7 @@ const H1: React.FC<WithChildrenProps & FullSystemProps> = ({
         <SH1
             fontFamily="heading"
             fontWeight="extraBold"
-            fontSize={[5, 5, 6, 6]}
+            fontSize={[4, 5, 6, 6]}
             {...rest}
         >
             {children}
@@ -133,10 +138,9 @@ const P: React.FC<WithChildrenProps & FullSystemProps> = ({
     );
 };
 
-const OuterWrapper: React.FC<WithChildrenProps & FullSystemProps> = ({
-    children,
-    ...rest
-}) => (
+const OuterWrapper: React.FC<WithChildrenProps &
+    FullSystemProps &
+    PositionProps> = ({ children, ...rest }) => (
     <SOuterWrapper
         maxWidth={[
             '100%',

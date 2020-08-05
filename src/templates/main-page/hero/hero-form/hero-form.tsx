@@ -5,11 +5,13 @@ import {
     flexbox,
     typography,
     layout,
-    grid,
     border,
+    color,
     boxShadow,
+    position,
     BorderProps,
     BoxShadowProps,
+    PositionProps,
 } from 'styled-system';
 import { debounce } from 'lodash';
 
@@ -27,7 +29,7 @@ type Props = {
     submitForm: (location: string, area: number) => void;
 };
 
-type ContainerProps = StylingProps & PositioningProps & {};
+type ContainerProps = StylingProps & PositioningProps & PositionProps & {};
 
 type FormProps = PositioningProps & BorderProps & BoxShadowProps & {};
 
@@ -44,7 +46,7 @@ const Container: React.FC<ContainerProps> = styled.div<ContainerProps>`
     ${space}
     ${flexbox}
     ${layout}
-    ${grid}
+    ${position}
 `;
 
 const Form: React.FC<FormProps> = styled.form<FormProps>`
@@ -55,6 +57,7 @@ const Form: React.FC<FormProps> = styled.form<FormProps>`
     ${border}
     ${boxShadow}
     ${space}
+    ${color}
 
     span.select-span { 
 
@@ -146,6 +149,8 @@ const HeroForm: React.FC<Props> = ({
             alignItems={['center', 'center', 'flex-start']}
             py={[4, 4, 5, 5]}
             px={[4, 6, 5, 5]}
+            position={'relative'}
+            zIndex={2}
         >
             <H1 textAlign="center" color="dark.0">
                 {headingText}
@@ -165,8 +170,8 @@ const HeroForm: React.FC<Props> = ({
                 boxShadow="blend"
                 px={[3, 3, 4, 4]}
                 py={[2, 2, 3, 3]}
-                // bg="light.0"
-                // color="dark.0"
+                bg="light.0"
+                color="dark.0"
             >
                 <span className="select-span" style={{ width: '100%' }}>
                     <Label
