@@ -9,7 +9,7 @@ import { Input } from './input';
 import { theme } from 'styles';
 // import more addons
 
-const story = storiesOf('Input element', module);
+const story = storiesOf('Component.Input element', module);
 
 story
     .add('Primary input element', () => (

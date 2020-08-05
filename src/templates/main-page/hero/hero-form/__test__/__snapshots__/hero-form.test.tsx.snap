@@ -2,24 +2,15 @@
 
 exports[`Form on hero component matches snapshot 1`] = `
 <div
-  className="sc-fznKkj bMvMSb"
-  color="dark.0"
-  width={
-    Array [
-      0.8,
-      0.6,
-      0.5,
-      0.45,
-    ]
-  }
+  className="sc-fznKkj kINJkk"
 >
   <h1
-    className="sc-AxjAm efDtZD"
+    className="sc-AxjAm gsPmOE"
     color="dark.0"
     fontFamily="heading"
     fontSize={
       Array [
-        5,
+        4,
         5,
         6,
         6,
@@ -30,7 +21,7 @@ exports[`Form on hero component matches snapshot 1`] = `
     Heading text about finding a house
   </h1>
   <p
-    className="sc-AxhUy bTlWZo"
+    className="sc-AxhUy cSSlpT"
     fontFamily="body"
     fontSize={
       Array [
@@ -40,37 +31,25 @@ exports[`Form on hero component matches snapshot 1`] = `
         2,
       ]
     }
+    width={1}
   >
     Exercitation aute eu nostrud do sit labore ex minim reprehenderit ut ipsum veniam ad laborum. Minim eiusmod sint officia ipsum ad dolore Lorem sunt tempor ut. Esse in elit exercitation elit ex laborum nulla do veniam amet. Ut est reprehenderit nisi laboris. In amet ea ut elit nulla officia ex. Est exercitation aliqua sunt nostrud enim velit non duis ipsum ea officia.
   </p>
   <form
-    className="sc-fznZeY jdftdp"
+    className="sc-fznZeY dpqyGJ"
+    color="dark.0"
     width={1}
   >
-    <label
-      className="sc-fzokOt hOxDcv"
-      fontFamily="body"
-      fontSize={
-        Array [
-          1,
-          1,
-          2,
-          2,
-        ]
+    <span
+      className="select-span"
+      style={
+        Object {
+          "width": "100%",
+        }
       }
-      fontWeight="bold"
-      for="hero-form-location"
-      htmlFor="hero-form-location"
-      width={1}
-    >
-      Daerah
-    </label>
-    <div
-      className="sc-AxheI eosWqM"
-      width={1}
     >
       <label
-        className="sc-AxmLO fPFTiL"
+        className="sc-fzokOt hOxDcv"
         fontFamily="body"
         fontSize={
           Array [
@@ -83,40 +62,65 @@ exports[`Form on hero component matches snapshot 1`] = `
         fontWeight="bold"
         for="hero-form-location"
         htmlFor="hero-form-location"
-        width={
-          Array [
-            1,
-          ]
-        }
+        width={1}
       >
-        
-        <svg
-          dangerouslySetInnerHTML={
-            Object {
-              "__html": "<path d=\\"M17 9.17a1 1 0 0 0-1.41 0L12 12.71L8.46 9.17a1 1 0 0 0-1.41 0a1 1 0 0 0 0 1.42l4.24 4.24a1 1 0 0 0 1.42 0L17 10.59a1 1 0 0 0 0-1.42z\\" fill=\\"#2E282A\\"/>",
-            }
-          }
-          focusable={false}
-          height="1em"
-          preserveAspectRatio="xMidYMid meet"
-          style={
-            Object {
-              "transform": "rotate(360deg)",
-            }
-          }
-          viewBox="0 0 24 24"
-          width="1em"
-          xmlns="http://www.w3.org/2000/svg"
-        />
-        <input
-          id="hero-form-location"
-          onChange={[Function]}
-          type="checkbox"
-        />
+        Daerah
       </label>
-    </div>
+      <div
+        className="sc-AxheI eosWqM"
+        width={1}
+      >
+        <label
+          className="sc-AxmLO hNJrFt"
+          fontFamily="body"
+          fontSize={
+            Array [
+              1,
+              1,
+              2,
+              2,
+            ]
+          }
+          fontWeight="bold"
+          for="hero-form-location"
+          htmlFor="hero-form-location"
+          width={
+            Array [
+              1,
+              1,
+              0.8,
+            ]
+          }
+        >
+          
+          <svg
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<path d=\\"M17 9.17a1 1 0 0 0-1.41 0L12 12.71L8.46 9.17a1 1 0 0 0-1.41 0a1 1 0 0 0 0 1.42l4.24 4.24a1 1 0 0 0 1.42 0L17 10.59a1 1 0 0 0 0-1.42z\\" fill=\\"#2E282A\\"/>",
+              }
+            }
+            focusable={false}
+            height="1em"
+            preserveAspectRatio="xMidYMid meet"
+            style={
+              Object {
+                "transform": "rotate(360deg)",
+              }
+            }
+            viewBox="0 0 24 24"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          />
+          <input
+            id="hero-form-location"
+            onChange={[Function]}
+            type="checkbox"
+          />
+        </label>
+      </div>
+    </span>
     <label
-      className="sc-fzokOt fGYpih"
+      className="sc-fzokOt jQyvyL"
       display="flex"
       fontFamily="body"
       fontSize={
@@ -130,7 +134,13 @@ exports[`Form on hero component matches snapshot 1`] = `
       fontWeight="bold"
       for="hero-form-area"
       htmlFor="hero-form-area"
-      width={1}
+      width={
+        Array [
+          "fit-content",
+          "fit-content",
+          "100%",
+        ]
+      }
     >
       Luas
       <div
@@ -185,23 +195,120 @@ exports[`Form on hero component matches snapshot 1`] = `
         </span>
       </div>
     </label>
+    <span
+      className="select-span type"
+    >
+      <label
+        className="sc-fzokOt fcsjyK"
+        display="flex"
+        fontFamily="body"
+        fontSize={
+          Array [
+            1,
+            1,
+            2,
+            2,
+          ]
+        }
+        fontWeight="bold"
+        for="hero-form-type"
+        htmlFor="hero-form-type"
+        width={
+          Array [
+            1,
+          ]
+        }
+      >
+        Jual/Beli
+      </label>
+      <div
+        className="sc-AxheI eosWqM"
+        width={1}
+      >
+        <label
+          className="sc-AxmLO emALWw"
+          fontFamily="body"
+          fontSize={
+            Array [
+              1,
+              1,
+              2,
+              2,
+            ]
+          }
+          fontWeight="bold"
+          for="hero-form-type"
+          htmlFor="hero-form-type"
+        >
+          
+          <svg
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<path d=\\"M17 9.17a1 1 0 0 0-1.41 0L12 12.71L8.46 9.17a1 1 0 0 0-1.41 0a1 1 0 0 0 0 1.42l4.24 4.24a1 1 0 0 0 1.42 0L17 10.59a1 1 0 0 0 0-1.42z\\" fill=\\"#2E282A\\"/>",
+              }
+            }
+            focusable={false}
+            height="1em"
+            preserveAspectRatio="xMidYMid meet"
+            style={
+              Object {
+                "transform": "rotate(360deg)",
+              }
+            }
+            viewBox="0 0 24 24"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          />
+          <input
+            id="hero-form-type"
+            onChange={[Function]}
+            type="checkbox"
+          />
+        </label>
+      </div>
+    </span>
+    <label
+      className="sc-fzokOt jsRqVY"
+      display="flex"
+      fontFamily="body"
+      fontSize={
+        Array [
+          1,
+          1,
+          2,
+          2,
+        ]
+      }
+      fontWeight="bold"
+      for="hero-form-area"
+      htmlFor="hero-form-area"
+      width={1}
+    >
+      Tunggu apa lagi?
+      <button
+        className="sc-fznyAO cbgwim"
+        fontFamily="body"
+        fontSize={
+          Array [
+            1,
+            1,
+            2,
+            2,
+          ]
+        }
+        fontWeight="bold"
+        onClick={[Function]}
+        width={
+          Array [
+            "100%",
+            "100%",
+            "fit-content",
+          ]
+        }
+      >
+        Cari Sekarang!
+      </button>
+    </label>
   </form>
-  <button
-    className="sc-fznyAO jYAtkP"
-    fontFamily="body"
-    fontSize={
-      Array [
-        1,
-        1,
-        2,
-        2,
-      ]
-    }
-    fontWeight="bold"
-    onClick={[Function]}
-    width="fit-content"
-  >
-    Cari Sekarang!
-  </button>
 </div>
 `;

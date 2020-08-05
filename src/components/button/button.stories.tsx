@@ -8,7 +8,7 @@ import accessibleIcon from '@iconify/icons-uil/accessible-icon-alt';
 import { theme } from 'styles';
 import Button from '.';
 
-const story = storiesOf('button component', module);
+const story = storiesOf('Component.Button', module);
 
 story
     .add('Primary button', () => (

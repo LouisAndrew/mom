@@ -5,7 +5,7 @@ import { SelectItem } from './select';
 import Select from '.';
 // import more addons
 
-const story = storiesOf('Select element', module);
+const story = storiesOf('Component.Select element', module);
 
 story
     .add('Primary select element', () => {

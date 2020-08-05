@@ -1,6 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
-import { layout, flexbox, space, position, PositionProps } from 'styled-system';
+import {
+    layout,
+    flexbox,
+    space,
+    position,
+    color,
+    PositionProps,
+    ColorProps,
+} from 'styled-system';
 
 import Img from './img';
 import ImgSmall from './img-small';
@@ -9,7 +17,7 @@ import { PositioningProps, OuterWrapper, theme } from 'styles';
 
 type Props = {};
 
-type ContainerProps = PositioningProps & {};
+type ContainerProps = PositioningProps & ColorProps & {};
 
 type BackgroundProps = PositioningProps & PositionProps & {};
 
@@ -17,14 +25,13 @@ const Container: React.FC<ContainerProps> = styled.div<ContainerProps>`
     display: grid;
     place-items: center;
 
-    /* overflow: hidden; */
-    overflow-y: hidden;
-    overflow-x: hidden;
+    overflow: hidden;
+
+    ${color}
+    ${space}
 `;
 
 const Background: React.FC<BackgroundProps> = styled.div<BackgroundProps>`
-
-    /* overflow: hidden; */
 
     ${position}
     ${flexbox}
@@ -75,7 +82,6 @@ const Background: React.FC<BackgroundProps> = styled.div<BackgroundProps>`
             transform: scale(0.6);
             bottom: 0;
             left: -32%;
-            /* box-shadow: 1px 2px 2px rgba(0, 0, 0, .15); */
         }
     }
 
@@ -84,7 +90,6 @@ const Background: React.FC<BackgroundProps> = styled.div<BackgroundProps>`
         #img-hero {
             position: relative;
 
-            /* width: 80vw; */
             left: 0;
             bottom: 10%;
             transform: scale(1.1);
@@ -93,7 +98,7 @@ const Background: React.FC<BackgroundProps> = styled.div<BackgroundProps>`
 `;
 
 const Hero: React.FC<Props> = () => {
-    const mockheadingText = 'Siapa bilang cari rumah jaman searang susah?';
+    const mockheadingText = 'Siapa bilang cari rumah jaman sekarang susah?';
     const mockBodyText =
         'Cari rumah idamanmu sekarang! Cukup cantumkan kriteria mu, tanpa ribet';
     const mockAllLocations: string[] = ['PIK', 'Muara Karang', 'BSD'];
@@ -104,13 +109,13 @@ const Hero: React.FC<Props> = () => {
         type: 'buy' | 'rent' | ''
     ) => {
         // naivgate to search page
-        console.log('submit');
+        console.log({ location, area, type });
         return;
     };
 
     return (
         <>
-            <Container>
+            <Container bg="bg" pt={[0, 0, '10%']}>
                 <OuterWrapper
                     position="relative"
                     display="flex"

@@ -26,7 +26,11 @@ type Props = {
     headingText: string;
     bodyText: string;
     allLocations: string[];
-    submitForm: (location: string, area: number, type: 'buy' | 'sell') => void;
+    submitForm: (
+        location: string,
+        area: number,
+        type: 'buy' | 'rent' | ''
+    ) => void;
 };
 
 type ContainerProps = StylingProps & PositioningProps & PositionProps & {};
@@ -94,7 +98,7 @@ const HeroForm: React.FC<Props> = ({
 }) => {
     const [selectedLocation, setSelectedLocation] = useState('');
     const [selectedArea, setSelectedArea] = useState(0);
-    const [selectedType, setSelectedType] = useState('');
+    const [selectedType, setSelectedType] = useState<'buy' | 'rent' | ''>('');
 
     const types: SelectItem[] = [
         {

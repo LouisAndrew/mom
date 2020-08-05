@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions';
 import { Card } from './card';
 // import more addons
 
-const story = storiesOf('Product card element', module);
+const story = storiesOf('Component.Product card element', module);
 
 story.add('Regular product card', () => (
     <Card

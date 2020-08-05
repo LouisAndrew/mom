@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import ImgWithBorder from '.';
 // import more addons
 
-const story = storiesOf('A responsive img wrapped in a border', module);
+const story = storiesOf('Component.Responsive img wrapped in a border', module);
 
 const imgSrc =
     'https://res.cloudinary.com/dsvdffre0/image/upload/v1596016031/github-icon.png';
