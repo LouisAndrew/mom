@@ -26,12 +26,15 @@ type Props = {
     headingText: string;
     bodyText: string;
     allLocations: string[];
-    submitForm: (location: string, area: number) => void;
+    submitForm: (location: string, area: number, type: 'buy' | 'sell') => void;
 };
 
 type ContainerProps = StylingProps & PositioningProps & PositionProps & {};
 
-type FormProps = PositioningProps & BorderProps & BoxShadowProps & {};
+type FormProps = PositioningProps &
+    BorderProps &
+    BoxShadowProps &
+    StylingProps & {};
 
 type LabelProps = StylingProps &
     PositioningProps & {
@@ -123,6 +126,8 @@ const HeroForm: React.FC<Props> = ({
         );
         if (userInput.length > 0) {
             setSelectedLocation(userInput[0]);
+        } else {
+            setSelectedLocation('');
         }
     };
 
@@ -134,13 +139,18 @@ const HeroForm: React.FC<Props> = ({
         const userInput: SelectItem[] = types.filter(
             type => type.value === value
         );
-        if (userInput.length > 0) {
-            setSelectedLocation(userInput[0].value);
+        if (
+            (userInput.length > 0 && userInput[0].value === 'buy') ||
+            userInput[0].value === 'rent'
+        ) {
+            setSelectedType(userInput[0].value);
+        } else {
+            setSelectedType('');
         }
     };
 
     const handleClick = () => {
-        submitDebounced(selectedLocation, selectedArea);
+        submitDebounced(selectedLocation, selectedArea, selectedType);
     };
 
     return (
@@ -185,7 +195,7 @@ const HeroForm: React.FC<Props> = ({
                         Daerah
                     </Label>
                     <Select
-                        optionWidth={[1]}
+                        optionWidth={[1, 1, 0.8]}
                         mt={[1, 1, 2]}
                         mb={[2, 2, 3]}
                         items={locationItems}

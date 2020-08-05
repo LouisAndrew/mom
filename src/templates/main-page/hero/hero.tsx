@@ -98,8 +98,13 @@ const Hero: React.FC<Props> = () => {
         'Cari rumah idamanmu sekarang! Cukup cantumkan kriteria mu, tanpa ribet';
     const mockAllLocations: string[] = ['PIK', 'Muara Karang', 'BSD'];
 
-    const submitForm = (location: string, area: number) => {
+    const submitForm = (
+        location: string,
+        area: number,
+        type: 'buy' | 'rent' | ''
+    ) => {
         // naivgate to search page
+        console.log('submit');
         return;
     };
 
