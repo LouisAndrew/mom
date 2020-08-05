@@ -47,7 +47,7 @@ exports[`Hot List component matches snapshot 1`] = `
         />
       </div>
       <div
-        className="sc-fzozJi fvxFuZ"
+        className="sc-fzozJi BSBjC"
         width={
           Array [
             1,
@@ -128,7 +128,7 @@ exports[`Hot List component matches snapshot 1`] = `
         />
       </div>
       <div
-        className="sc-fzozJi fvxFuZ"
+        className="sc-fzozJi BSBjC"
         width={
           Array [
             1,
@@ -209,7 +209,7 @@ exports[`Hot List component matches snapshot 1`] = `
         />
       </div>
       <div
-        className="sc-fzozJi fvxFuZ"
+        className="sc-fzozJi BSBjC"
         width={
           Array [
             1,

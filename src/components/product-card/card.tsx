@@ -59,6 +59,7 @@ const Card: React.FC<Props> = ({
                     fluid ? (
                         <Img fluid={fluid} alt={alt} />
                     ) : (
+                        // TODO: change / to a remote url: show that image is not found
                         <img src={src ? src : '/'} alt={alt} />
                     )
                 }
