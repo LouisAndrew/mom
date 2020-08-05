@@ -40,7 +40,7 @@ const About: React.FC<Props> = ({ imgAlt, imgSrc, imgFluidSrc }) => {
         'Quis ut sunt labore commodo amet velit laborum eu laboris. Lorem officia consectetur reprehenderit in ut ad anim cillum. Aute proident quis consequat nisi nulla non. Est ex minim aute qui commodo. Reprehenderit exercitation consectetur tempor aliquip nulla tempor cillum. Qui sint reprehenderit in anim aliqua labore veniam magna enim.';
 
     return (
-        <Container bg="dark.0" py={[5, 5, 6, 6]}>
+        <Container bg="dark.0" py={[6, 6, 7, 7]}>
             <OuterWrapper display="flex" justifyContent="center">
                 <Wrapper
                     width={4 / 5}
