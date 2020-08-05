@@ -7,7 +7,7 @@ import { PositioningProps, H3, P } from 'styles';
 import ImgWithBorder from 'components/img-with-border';
 import Button from 'components/button';
 
-type Props = PositioningProps & {
+export type Props = PositioningProps & {
     headingText: string;
     bodyText: string;
     alt: string;
@@ -24,6 +24,8 @@ const Container: React.FC<ContainerProps> = styled.div<ContainerProps>`
     display: flex;
 
     ${flexbox}
+    ${space}
+    ${layout}
 `;
 
 const DetailsContainer: React.FC<DetailsContainerProps> = styled.div<
@@ -43,12 +45,14 @@ const Card: React.FC<Props> = ({
     src,
     alt,
     navigate,
+    ...rest
 }) => {
     return (
         <Container
             flexDirection={['column', 'column', 'row']}
             alignItems="center"
             justifyContent={['center', 'center', 'space-evenly']}
+            {...rest}
         >
             <ImgWithBorder
                 imgComponent={
@@ -64,7 +68,7 @@ const Card: React.FC<Props> = ({
                 flexDirection="column"
                 alignItems={['center', 'center', 'flex-start']}
                 px={2}
-                ml={[0, 0, 5]}
+                ml={[0, 0, 7]}
                 mt={[4, 5, 0]}
                 width={[1, 0.8, 0.5]}
             >

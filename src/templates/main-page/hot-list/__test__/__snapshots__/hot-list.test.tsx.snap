@@ -1,0 +1,269 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Hot List component matches snapshot 1`] = `
+<div
+  className="sc-fzoLsD bLndvm"
+>
+  <div
+    className="sc-AxgMl iLFEOm"
+  >
+    <h2
+      className="sc-AxirZ cqAmIm"
+      fontFamily="heading"
+      fontSize={
+        Array [
+          4,
+          4,
+          5,
+          5,
+        ]
+      }
+    >
+      Lagi hot!! 🔥🔥🔥
+    </h2>
+    <div
+      className="sc-AxmLO cIETuh"
+    >
+      <div
+        className="sc-AxheI jFHUsp"
+        height={
+          Array [
+            200,
+            250,
+            300,
+          ]
+        }
+        width={
+          Array [
+            200,
+            250,
+            300,
+          ]
+        }
+      >
+        <img
+          alt="Handsome boy"
+          src="https://res.cloudinary.com/dsvdffre0/image/upload/v1595340453/ovmhcixqqpfjla4mxovf.jpg"
+        />
+      </div>
+      <div
+        className="sc-fzozJi fvxFuZ"
+        width={
+          Array [
+            1,
+            0.8,
+            0.5,
+          ]
+        }
+      >
+        <h3
+          className="sc-AxiKw ddVZVi"
+          fontFamily="heading"
+          fontSize={
+            Array [
+              3,
+              3,
+              4,
+              4,
+            ]
+          }
+        >
+          Rumah 1
+        </h3>
+        <p
+          className="sc-AxhUy ffKmGj"
+          fontFamily="body"
+          fontSize={
+            Array [
+              1,
+              1,
+              2,
+              2,
+            ]
+          }
+        >
+          jalan Mangga 24 blok G nomor 167
+        </p>
+        <button
+          className="sc-Axmtr ctITow"
+          fontFamily="body"
+          fontSize={
+            Array [
+              1,
+              1,
+              2,
+              2,
+            ]
+          }
+          fontWeight="bold"
+          onClick={[Function]}
+        >
+          More info
+        </button>
+      </div>
+    </div>
+    <div
+      className="sc-AxmLO cIETuh"
+    >
+      <div
+        className="sc-AxheI jFHUsp"
+        height={
+          Array [
+            200,
+            250,
+            300,
+          ]
+        }
+        width={
+          Array [
+            200,
+            250,
+            300,
+          ]
+        }
+      >
+        <img
+          alt="Lakers logo"
+          src="https://res.cloudinary.com/dsvdffre0/image/upload/v1596031267/w3ufcacls7mqfmhbwpe4.png"
+        />
+      </div>
+      <div
+        className="sc-fzozJi fvxFuZ"
+        width={
+          Array [
+            1,
+            0.8,
+            0.5,
+          ]
+        }
+      >
+        <h3
+          className="sc-AxiKw ddVZVi"
+          fontFamily="heading"
+          fontSize={
+            Array [
+              3,
+              3,
+              4,
+              4,
+            ]
+          }
+        >
+          Rumah 2
+        </h3>
+        <p
+          className="sc-AxhUy ffKmGj"
+          fontFamily="body"
+          fontSize={
+            Array [
+              1,
+              1,
+              2,
+              2,
+            ]
+          }
+        >
+          jalan Mangga 25 blok F nomor 167
+        </p>
+        <button
+          className="sc-Axmtr ctITow"
+          fontFamily="body"
+          fontSize={
+            Array [
+              1,
+              1,
+              2,
+              2,
+            ]
+          }
+          fontWeight="bold"
+          onClick={[Function]}
+        >
+          More info
+        </button>
+      </div>
+    </div>
+    <div
+      className="sc-AxmLO cIETuh"
+    >
+      <div
+        className="sc-AxheI jFHUsp"
+        height={
+          Array [
+            200,
+            250,
+            300,
+          ]
+        }
+        width={
+          Array [
+            200,
+            250,
+            300,
+          ]
+        }
+      >
+        <img
+          alt="No image provided"
+          src="/"
+        />
+      </div>
+      <div
+        className="sc-fzozJi fvxFuZ"
+        width={
+          Array [
+            1,
+            0.8,
+            0.5,
+          ]
+        }
+      >
+        <h3
+          className="sc-AxiKw ddVZVi"
+          fontFamily="heading"
+          fontSize={
+            Array [
+              3,
+              3,
+              4,
+              4,
+            ]
+          }
+        >
+          Apartment 2
+        </h3>
+        <p
+          className="sc-AxhUy ffKmGj"
+          fontFamily="body"
+          fontSize={
+            Array [
+              1,
+              1,
+              2,
+              2,
+            ]
+          }
+        >
+          jalan Mangga 25 blok F nomor 167
+        </p>
+        <button
+          className="sc-Axmtr ctITow"
+          fontFamily="body"
+          fontSize={
+            Array [
+              1,
+              1,
+              2,
+              2,
+            ]
+          }
+          fontWeight="bold"
+          onClick={[Function]}
+        >
+          More info
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

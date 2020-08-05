@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`About component matches snapshot 1`] = `
+<div
+  className="sc-AxheI cUuJuJ"
+>
+  <div
+    className="sc-AxgMl iuzaKW"
+    display="flex"
+  >
+    <div
+      className="sc-Axmtr emMfcN"
+      display="flex"
+      width={0.8}
+    >
+      <img
+        alt="github-icon"
+      />
+      <h2
+        className="sc-AxirZ civzpU"
+        color="light.0"
+        fontFamily="heading"
+        fontSize={
+          Array [
+            4,
+            4,
+            5,
+            5,
+          ]
+        }
+      >
+        Siapakah saya yang sebenarnya? Mengapa anda perlu peduli?
+      </h2>
+      <p
+        className="sc-AxhUy kMiyoj"
+        color="light.0"
+        fontFamily="body"
+        fontSize={
+          Array [
+            1,
+            1,
+            2,
+            2,
+          ]
+        }
+      >
+        Quis ut sunt labore commodo amet velit laborum eu laboris. Lorem officia consectetur reprehenderit in ut ad anim cillum. Aute proident quis consequat nisi nulla non. Est ex minim aute qui commodo. Reprehenderit exercitation consectetur tempor aliquip nulla tempor cillum. Qui sint reprehenderit in anim aliqua labore veniam magna enim.
+      </p>
+    </div>
+  </div>
+</div>
+`;
