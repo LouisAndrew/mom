@@ -1,35 +1,38 @@
 import React from 'react';
-// import { Link } from 'gatsby';
-// import { Link } from 'gatsby-link';
+// import link from gatsby is not possible -> it breaks storybook
 import { Link } from '@reach/router';
 
 import styled from 'styled-components';
-import { space, typography, layout, flexbox } from 'styled-system';
+import {
+    space,
+    typography,
+    layout,
+    flexbox,
+    color,
+    position,
+    PositionProps,
+} from 'styled-system';
 
 import HouseSvg from './assets/house';
 import HomeOfficeSvg from './assets/home-office';
 import KavlingSvg from './assets/kavling';
 import ApartmentSvg from './assets/apartment';
-import { PositioningProps, StylingProps } from 'styles';
-// import Links from '../links';
+import { PositioningProps, StylingProps, theme } from 'styles';
 
 type Props = {};
 
-type ContainerProps = PositioningProps & {
-    items: DropdownItem[];
-};
+type ContainerProps = PositioningProps & StylingProps & {};
 
-type ImgContainerProps = {
-    items: DropdownItem[];
-};
+type ImgContainerProps = PositionProps & PositioningProps & {};
 
-type LinksContainerProps = {};
+type LinksContainerProps = PositioningProps & {};
 
-type SLinkProps = {
-    id: string;
-    onMouseEnter: () => void;
-    onMouseLeave: () => void;
-};
+type SLinkProps = StylingProps &
+    PositioningProps & {
+        id: string;
+        onMouseEnter: () => void;
+        onMouseLeave: () => void;
+    };
 
 /**
  * type to map the dropdown item's properties.
@@ -43,25 +46,44 @@ type DropdownItem = {
 
 const LinksContainer: React.FC<LinksContainerProps> = styled.ul<
     LinksContainerProps
->``;
+>`
+    ${layout}
+    ${space}
+`;
 
-const SLink: React.FC<SLinkProps> = styled.li<SLinkProps>``;
+const SLink: React.FC<SLinkProps> = styled.li<SLinkProps>`
+
+    ${space}
+    ${typography}
+    ${color}
+`;
+
+const ImgContainer: React.FC<ImgContainerProps> = styled.div<ImgContainerProps>`
+
+    ${layout}
+    ${flexbox}
+    ${space}
+    ${position}
+
+    svg {
+        transition: .2s;
+        opacity: 0;
+
+        position: absolute;
+        left: 0;
+
+        &.active {
+            opacity: 1;
+        }
+    }
+`;
 
 const Container: React.FC<ContainerProps> = styled.div<ContainerProps>`
     ${space}
     ${typography}
     ${layout}
     ${flexbox}
-`;
-
-const ImgContainer: React.FC<ImgContainerProps> = styled.div<ImgContainerProps>`
-    svg {
-        opacity: 0;
-
-        &.active {
-            opacity: 1;
-        }
-    }
+    ${color}
 `;
 
 const Dropdown: React.FC<Props> = () => {
@@ -93,34 +115,64 @@ const Dropdown: React.FC<Props> = () => {
     ];
     const imgDisplayClassName = 'active';
 
-    const displayImg = (id: string) => {
+    // Dynamically add class name to img (svg) element everytime user hovers on a text content
+    const toggleImgDisplay = (id: string, show: boolean) => {
         const el: HTMLElement | null = document.getElementById(`${id}-svg`);
-        if (el && !el.classList.contains(imgDisplayClassName)) {
-            el.classList.toggle(imgDisplayClassName);
-        }
-    };
-    const removeImg = (id: string) => {
-        const el: HTMLElement | null = document.getElementById(`${id}-svg`);
-        if (el && el.classList.contains(imgDisplayClassName)) {
-            el.classList.toggle(imgDisplayClassName);
+        if (el) {
+            el.classList.toggle(imgDisplayClassName, show);
         }
     };
 
     return (
-        <Container display="flex" items={dropdownItems}>
-            <LinksContainer>
+        <Container
+            display="flex"
+            px={[4, 4, 5]}
+            pt={[3, 3, 8]}
+            pb={[3, 3, 6]}
+            width={[1, 1, 'fit-content']}
+            bg="dark.0"
+        >
+            <LinksContainer display="block">
                 {dropdownItems.map(item => (
                     <SLink
                         key={item.id}
                         id={item.id}
-                        onMouseEnter={() => displayImg(item.id)}
-                        onMouseLeave={() => removeImg(item.id)}
+                        onMouseEnter={() => toggleImgDisplay(item.id, true)}
+                        onMouseLeave={() => toggleImgDisplay(item.id, false)}
+                        my={[2, 2, 3]}
+                        pr={[0, 0, 6]}
+                        fontFamily="body"
+                        fontWeight="bold" // ternary -> based on active. TODO
+                        fontSize={[1, 2, 2]}
+                        color="bg"
+                        css={`
+                            a {
+                                color: ${theme.colors.bg};
+                                text-decoration: none;
+                            }
+                        `}
                     >
                         <Link to={item.to}>{item.textContent}</Link>
                     </SLink>
                 ))}
             </LinksContainer>
-            <ImgContainer items={dropdownItems}>
+            <ImgContainer
+                position="relative"
+                display="flex"
+                alignItems="center"
+                width={[0, 0, '220px']}
+                css={`
+                    svg {
+                        display: none;
+
+                        @media screen and (min-width: ${theme.breakpoints[1]}) {
+                            & {
+                                display: block;
+                            }
+                        }
+                    }
+                `}
+            >
                 {dropdownItems.map(item => item.imgContent)}
             </ImgContainer>
         </Container>
