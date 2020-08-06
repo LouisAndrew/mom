@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import renderer from 'react-test-renderer';
+import renderer from 'react-test-renderer';
 
 import { render, cleanup, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
@@ -14,7 +14,7 @@ describe('Tag component', () => {
     afterEach(cleanup);
 
     const el: React.ReactElement = (
-        <Tag content={mockContent} handleClick={mockHandleClick} />
+        <Tag handleClick={mockHandleClick}>{mockContent}</Tag>
     );
 
     it('renders without crashing', () => {
@@ -40,9 +40,8 @@ describe('Tag component', () => {
         expect(mockHandleClick).toBeCalled();
     });
 
-    // it('matches snapshot', () => {
-
-    //     const tree = renderer.create(el).toJSON()
-    //     expect(tree).toMatchSnapshot()
-    // })
+    it('matches snapshot', () => {
+        const tree = renderer.create(el).toJSON();
+        expect(tree).toMatchSnapshot();
+    });
 });
