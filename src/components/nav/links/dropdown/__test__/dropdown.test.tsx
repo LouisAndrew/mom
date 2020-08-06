@@ -11,7 +11,7 @@ describe('', () => {
     // expect(true).toBe(true);
     afterEach(cleanup);
 
-    const el: React.ReactElement = <Dropdown />;
+    const el: React.ReactElement = <Dropdown expand={true} />;
     it('renders without crashing', () => {
         const div = document.createElement('div');
         ReactDOM.render(el, div);

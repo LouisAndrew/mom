@@ -10,7 +10,9 @@ import {
     flexbox,
     color,
     position,
+    opacity,
     PositionProps,
+    OpacityProps,
 } from 'styled-system';
 
 import HouseSvg from './assets/house';
@@ -19,9 +21,11 @@ import KavlingSvg from './assets/kavling';
 import ApartmentSvg from './assets/apartment';
 import { PositioningProps, StylingProps, theme } from 'styles';
 
-type Props = {};
+type Props = {
+    expand: boolean;
+};
 
-type ContainerProps = PositioningProps & StylingProps & {};
+type ContainerProps = PositioningProps & StylingProps & PositionProps & {};
 
 type ImgContainerProps = PositionProps & PositioningProps & {};
 
@@ -80,13 +84,13 @@ const ImgContainer: React.FC<ImgContainerProps> = styled.div<ImgContainerProps>`
 
 const Container: React.FC<ContainerProps> = styled.div<ContainerProps>`
     ${space}
-    ${typography}
     ${layout}
-    ${flexbox}
     ${color}
+    ${position}
+    ${opacity}
 `;
 
-const Dropdown: React.FC<Props> = () => {
+const Dropdown: React.FC<Props> = ({ expand }) => {
     const dropdownItems: DropdownItem[] = [
         {
             textContent: 'Rumah',
@@ -125,12 +129,22 @@ const Dropdown: React.FC<Props> = () => {
 
     return (
         <Container
+            position="absolute"
+            top={0}
+            left={0}
+            zIndex={-1}
+            overflow="hidden"
             display="flex"
-            px={[4, 4, 5]}
-            pt={[3, 3, 8]}
-            pb={[3, 3, 6]}
-            width={[1, 1, 'fit-content']}
+            px={[4, 4, expand ? 5 : 0]}
+            pt={[3, 3, expand ? 7 : 0]}
+            pb={[3, 3, expand ? 6 : 0]}
+            width={expand ? [1, 1, 'fit-content'] : [1, 1, 0]}
+            opacity={[1, 1, expand ? 1 : 0]}
+            // maxHeight={expand ? 'auto' : 0}
             bg="dark.0"
+            css={`
+                transition: 0.2s;
+            `}
         >
             <LinksContainer display="block">
                 {dropdownItems.map(item => (
@@ -147,7 +161,7 @@ const Dropdown: React.FC<Props> = () => {
                         color="bg"
                         css={`
                             a {
-                                color: ${theme.colors.bg};
+                                color: ${theme.colors.bg} !important;
                                 text-decoration: none;
                             }
                         `}
