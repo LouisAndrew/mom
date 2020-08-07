@@ -1,28 +1,27 @@
-// import React from 'react'
-// import ReactDOM from 'react-dom'
-// import renderer from 'react-test-renderer'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import renderer from 'react-test-renderer';
 
-// import { render, cleanup } from '@testing-library/react'
-// import '@testing-library/jest-dom'
+import { cleanup } from '@testing-library/react';
+import '@testing-library/jest-dom';
+
+import Links from '..';
 
 describe('Link component on navigation', () => {
-    expect(true).toBe(true);
-    // afterEach(cleanup)
+    const mockClickButton = jest.fn(() => {});
+    const el: React.ReactElement = (
+        <Links clickButton={mockClickButton} displayMenu={true} />
+    );
 
-    // it('renders without crashing', () => {
+    afterEach(cleanup);
 
-    //     const div = document.createElement('div')
-    //     ReactDOM.render(, div)
-    // })
+    it('renders without crashing', () => {
+        const div = document.createElement('div');
+        ReactDOM.render(el, div);
+    });
 
-    // it('renders correctly', () => {
-
-    //     const { getByTestId } = render()
-    // })
-
-    // it('matches snapshot', () => {
-
-    //     const tree = renderer.create().toJSON()
-    //     expect(tree).toMatchSnapshot()
-    // })
+    it('matches snapshot', () => {
+        const tree = renderer.create(el).toJSON();
+        expect(tree).toMatchSnapshot();
+    });
 });

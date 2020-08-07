@@ -25,7 +25,10 @@ type Props = {
     expand: boolean;
 };
 
-type ContainerProps = PositioningProps & StylingProps & PositionProps & {};
+type ContainerProps = PositioningProps &
+    StylingProps &
+    PositionProps &
+    OpacityProps & {};
 
 type ImgContainerProps = PositionProps & PositioningProps & {};
 

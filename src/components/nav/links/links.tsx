@@ -20,8 +20,12 @@ import expandIcon from '@iconify/icons-uil/angle-down';
 
 import { PositioningProps, StylingProps, theme } from 'styles';
 import Dropdown from './dropdown';
+import Button from 'components/button';
 
-type Props = {};
+type Props = PositionProps & {
+    displayMenu: boolean;
+    clickButton: () => void;
+};
 
 type LinkItemProps = SLinkItemProps & {
     children: React.ReactNode;
@@ -32,7 +36,7 @@ type LinkItemProps = SLinkItemProps & {
     onMouseLeave?: () => void;
 };
 
-type ContainerProps = PositioningProps & StylingProps & {};
+type ContainerProps = PositioningProps & StylingProps & PositionProps & {};
 
 type SLinkItemProps = StylingProps &
     PositioningProps &
@@ -44,9 +48,9 @@ type SLinkItemProps = StylingProps &
 const Container: React.FC<ContainerProps> = styled.ul<ContainerProps>`
     ${layout}
     ${flexbox}
-    ${layout}
     ${color}
     ${space}
+    ${position}
 `;
 
 const SLinkItem: React.FC<SLinkItemProps> = styled.li<SLinkItemProps>`
@@ -55,24 +59,40 @@ const SLinkItem: React.FC<SLinkItemProps> = styled.li<SLinkItemProps>`
     ${position}
 `;
 
-const Links: React.FC<Props> = () => {
+const Links: React.FC<Props> = ({ displayMenu, clickButton }) => {
     const [expand, setExpand] = useState(false);
 
     return (
         <Container
             display="flex"
             flexDirection={['column', 'column', 'row']}
+            alignItems="flex-start"
+            alignSelf={'flex-start'}
+            flexGrow={1}
+            position={['absolute', 'absolute', 'relative']}
+            top={0}
+            left={[0, 0, '32px']}
+            width={[1, 1, 'auto']}
+            zIndex={[-1, -1, 2]}
+            overflow={['hidden', 'hidden', 'visible']}
             bg={['dark.0', 'dark.0', 'rgba(0, 0, 0, 0)']}
+            height={[
+                displayMenu ? 'fit-content' : 0,
+                displayMenu ? 'fit-content' : 0,
+                'fit-content',
+            ]}
+            css={`
+                transition: height 0.2s;
+            `}
         >
-            <LinkItem to="/" px={[3]} py={[2, 2, 3]} mt={[3, 0]}>
+            <LinkItem to="/" px={[4, 5, 3]} py={[2, 2, 3]} mt={[7, 7, 0]}>
                 <InlineIcon icon={homeIcon} />
                 Home
             </LinkItem>
             <LinkItem
                 to="/"
-                px={[3]}
+                px={[4, 5, 3]}
                 py={[2, 2, 3]}
-                mb={[3, 0]}
                 position="relative"
                 top={0}
                 left={0}
@@ -86,6 +106,16 @@ const Links: React.FC<Props> = () => {
                 Katalog
                 <InlineIcon icon={expandIcon} id="expand-svg" />
             </LinkItem>
+            <Button
+                handleClick={clickButton}
+                variant="primary"
+                mx={[4, 5]}
+                my={[2]}
+                mb={3}
+                display={['block', 'block', 'none']}
+            >
+                Hubungi Saya!
+            </Button>
         </Container>
     );
 };
