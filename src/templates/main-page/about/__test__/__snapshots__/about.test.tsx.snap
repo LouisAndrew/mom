@@ -5,7 +5,7 @@ exports[`About component matches snapshot 1`] = `
   className="sc-AxheI cUuJuJ"
 >
   <div
-    className="sc-AxgMl iuzaKW"
+    className="sc-AxgMl gYiaHV"
     display="flex"
   >
     <div
@@ -17,7 +17,7 @@ exports[`About component matches snapshot 1`] = `
         alt="github-icon"
       />
       <h2
-        className="sc-AxirZ civzpU"
+        className="sc-AxirZ ruPxh"
         color="light.0"
         fontFamily="heading"
         fontSize={
@@ -32,7 +32,7 @@ exports[`About component matches snapshot 1`] = `
         Siapakah saya yang sebenarnya? Mengapa anda perlu peduli?
       </h2>
       <p
-        className="sc-AxhUy kMiyoj"
+        className="sc-AxhUy iXceYA"
         color="light.0"
         fontFamily="body"
         fontSize={

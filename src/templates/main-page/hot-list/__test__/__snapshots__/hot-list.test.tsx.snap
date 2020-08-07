@@ -5,10 +5,10 @@ exports[`Hot List component matches snapshot 1`] = `
   className="sc-fzoLsD bLndvm"
 >
   <div
-    className="sc-AxgMl iLFEOm"
+    className="sc-AxgMl iCGIdZ"
   >
     <h2
-      className="sc-AxirZ cqAmIm"
+      className="sc-AxirZ eWTEun"
       fontFamily="heading"
       fontSize={
         Array [
@@ -57,7 +57,7 @@ exports[`Hot List component matches snapshot 1`] = `
         }
       >
         <h3
-          className="sc-AxiKw ddVZVi"
+          className="sc-AxiKw fFjwmx"
           fontFamily="heading"
           fontSize={
             Array [
@@ -71,7 +71,7 @@ exports[`Hot List component matches snapshot 1`] = `
           Rumah 1
         </h3>
         <p
-          className="sc-AxhUy ffKmGj"
+          className="sc-AxhUy kubdPM"
           fontFamily="body"
           fontSize={
             Array [
@@ -138,7 +138,7 @@ exports[`Hot List component matches snapshot 1`] = `
         }
       >
         <h3
-          className="sc-AxiKw ddVZVi"
+          className="sc-AxiKw fFjwmx"
           fontFamily="heading"
           fontSize={
             Array [
@@ -152,7 +152,7 @@ exports[`Hot List component matches snapshot 1`] = `
           Rumah 2
         </h3>
         <p
-          className="sc-AxhUy ffKmGj"
+          className="sc-AxhUy kubdPM"
           fontFamily="body"
           fontSize={
             Array [
@@ -219,7 +219,7 @@ exports[`Hot List component matches snapshot 1`] = `
         }
       >
         <h3
-          className="sc-AxiKw ddVZVi"
+          className="sc-AxiKw fFjwmx"
           fontFamily="heading"
           fontSize={
             Array [
@@ -233,7 +233,7 @@ exports[`Hot List component matches snapshot 1`] = `
           Apartment 2
         </h3>
         <p
-          className="sc-AxhUy ffKmGj"
+          className="sc-AxhUy kubdPM"
           fontFamily="body"
           fontSize={
             Array [

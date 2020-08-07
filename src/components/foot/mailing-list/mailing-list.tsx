@@ -8,8 +8,9 @@ import {
     space,
     color,
     flexbox,
-    grid,
+    borderRadius,
     PositionProps,
+    BorderRadiusProps,
 } from 'styled-system';
 
 import { H3, P, PositioningProps, StylingProps, theme } from 'styles';
@@ -22,7 +23,7 @@ type Props = {
     imgFluidSrc?: FluidObject | FluidObject[];
 };
 
-type ContainerProps = PositioningProps & PositionProps & {};
+type ContainerProps = PositioningProps & PositionProps & BorderRadiusProps & {};
 
 type BackgroundProps = PositioningProps & PositionProps & {};
 
@@ -33,6 +34,8 @@ const Container: React.FC<ContainerProps> = styled.div<ContainerProps>`
     ${position}
     ${flexbox}
     ${space}
+    ${borderRadius}
+
 `;
 
 const Background: React.FC<BackgroundProps> = styled.div<BackgroundProps>`
@@ -43,7 +46,6 @@ const Background: React.FC<BackgroundProps> = styled.div<BackgroundProps>`
 const Modal: React.FC<ModalProps> = styled.div<ModalProps>`
     ${space}
     ${color}
-    /* ${grid} */
     ${layout}
     ${flexbox}
 `;
@@ -58,6 +60,7 @@ const MailingList: React.FC<Props> = ({ imgFluidSrc }) => {
     const altImg = 'aesthetic interior';
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        console.log(event);
         return;
     };
 
@@ -75,6 +78,7 @@ const MailingList: React.FC<Props> = ({ imgFluidSrc }) => {
             height={[375, 375, 450]}
             width={[1, 1, 1, 945]}
             p={[0, 0, 6]}
+            borderRadius={[0, 0, 4]}
         >
             <Background
                 position="absolute"

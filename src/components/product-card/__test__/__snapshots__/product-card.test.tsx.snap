@@ -37,7 +37,7 @@ exports[`Product card component matches snapshot 1`] = `
     }
   >
     <h3
-      className="sc-AxiKw ddVZVi"
+      className="sc-AxiKw fFjwmx"
       fontFamily="heading"
       fontSize={
         Array [
@@ -51,7 +51,7 @@ exports[`Product card component matches snapshot 1`] = `
       Heading
     </h3>
     <p
-      className="sc-AxhUy ffKmGj"
+      className="sc-AxhUy kubdPM"
       fontFamily="body"
       fontSize={
         Array [
