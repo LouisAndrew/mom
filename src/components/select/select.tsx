@@ -46,9 +46,12 @@ type SelectContainerProps = PositioningProps & PositionProps & {};
 
 type OptionsProps = PositioningProps &
     StylingProps & {
+        role: string;
+        tabIndex: number;
         children?: React.ReactNode;
         variant?: string;
         onClick: () => void;
+        onKeyDown: () => void;
     };
 
 type InputProps = PositioningProps &
@@ -341,7 +344,7 @@ const Select: React.FC<Props> = ({
                         inputHeightD,
                     ]}
                 >
-                    {items.map(item => (
+                    {items.map((item, i) => (
                         <Options
                             key={item.value}
                             onClick={() => handleClickOption(item.value)}
@@ -349,6 +352,9 @@ const Select: React.FC<Props> = ({
                             py={optionPadY ? optionPadY : [1, 1, 2, 2]}
                             px={optionPadX ? optionPadX : [2, 2, 3, 3]}
                             width={1}
+                            onKeyPress={() => handleClickOption(item.value)}
+                            role="button"
+                            tabIndex={i}
                             {...typographyStyle}
                         >
                             {item.key}

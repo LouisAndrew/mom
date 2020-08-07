@@ -7,12 +7,14 @@ import {
     color,
     flexbox,
     position,
+    grid,
     SpaceProps,
     TypographyProps,
     LayoutProps,
     ColorProps,
     FlexboxProps,
     PositionProps,
+    GridProps,
 } from 'styled-system';
 
 import { theme } from 'styles';
@@ -26,7 +28,8 @@ interface FullSystemProps
         LayoutProps,
         TypographyProps,
         ColorProps,
-        FlexboxProps {}
+        FlexboxProps,
+        GridProps {}
 
 const SH1: React.FC<FullSystemProps> = styled.h1<FullSystemProps>`
         ${space}
@@ -34,6 +37,7 @@ const SH1: React.FC<FullSystemProps> = styled.h1<FullSystemProps>`
         ${layout}
         ${color}
         ${flexbox}
+        ${grid}
 `;
 
 const SH2: React.FC<FullSystemProps> = styled.h2<FullSystemProps>`
@@ -42,6 +46,7 @@ const SH2: React.FC<FullSystemProps> = styled.h2<FullSystemProps>`
         ${layout}
         ${color}
         ${flexbox}
+        ${grid}
 `;
 
 const SH3: React.FC<FullSystemProps> = styled.h3<FullSystemProps>`
@@ -50,6 +55,8 @@ const SH3: React.FC<FullSystemProps> = styled.h3<FullSystemProps>`
         ${layout}
         ${color}
         ${flexbox}
+        ${grid}
+
 `;
 
 const SH5: React.FC<FullSystemProps> = styled.h5<FullSystemProps>`
@@ -58,6 +65,8 @@ const SH5: React.FC<FullSystemProps> = styled.h5<FullSystemProps>`
         ${typography}
         ${layout}
         ${flexbox}
+        ${grid}
+
 `;
 
 const SP: React.FC<FullSystemProps> = styled.p<FullSystemProps>`
@@ -66,6 +75,8 @@ const SP: React.FC<FullSystemProps> = styled.p<FullSystemProps>`
         ${layout}
         ${color}
         ${flexbox}
+        ${grid}
+
 `;
 
 // provide max-width to inner elements.
@@ -77,6 +88,8 @@ const SOuterWrapper: React.FC<FullSystemProps & PositionProps> = styled.div<
     ${color}
     ${flexbox}
     ${position}
+        ${grid}
+
 `;
 
 const H1: React.FC<WithChildrenProps & FullSystemProps> = ({

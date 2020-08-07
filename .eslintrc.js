@@ -33,6 +33,7 @@ module.exports = {
         'prettier/@typescript-eslint',
         'plugin:import/typescript',
         'plugin:jest/recommended',
+        'plugin:styled-components-a11y/recommended',
     ],
     plugins: [
         '@typescript-eslint',
@@ -41,6 +42,7 @@ module.exports = {
         'immutable',
         'jsx-a11y',
         'react-hooks',
+        'styled-components-a11y',
     ],
     rules: {
         '@typescript-eslint/adjacent-overload-signatures': 2,

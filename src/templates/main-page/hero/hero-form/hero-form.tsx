@@ -9,6 +9,7 @@ import {
     color,
     boxShadow,
     position,
+    grid,
     BorderProps,
     BoxShadowProps,
     PositionProps,
@@ -81,13 +82,16 @@ const Form: React.FC<FormProps> = styled.form<FormProps>`
     }
 `;
 
-const Label: React.FC<LabelProps> = styled.label.attrs((props: LabelProps) => ({
-    htmlFor: props.for,
-}))<LabelProps>`
+export const Label: React.FC<LabelProps> = styled.label.attrs(
+    (props: LabelProps) => ({
+        htmlFor: props.for,
+    })
+)<LabelProps>`
     ${typography}
     ${space}
     ${layout} /* 100% width */
     ${flexbox} /* flexbox properties for the second label */
+    ${grid}
 `;
 
 const HeroForm: React.FC<Props> = ({

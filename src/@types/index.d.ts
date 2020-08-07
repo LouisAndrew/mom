@@ -22,6 +22,10 @@ declare module '*.svg' {
     export default content;
 }
 
+declare module '*.jpg' {
+    // const value: any;
+    // export default value;
+}
 // Add support for Jest configuration
 declare global {
     namespace NodeJS {

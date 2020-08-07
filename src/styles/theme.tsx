@@ -54,7 +54,7 @@ const theme: Theme = {
     // customize accordingly with google fonts!
     fonts: {
         body: 'Raleway, sans-serif',
-        heading: 'Monstseraat, sans-serif',
+        heading: 'Montserrat, sans-serif',
         monospace: 'Menlo, monospace',
     },
     fontWeights: {
