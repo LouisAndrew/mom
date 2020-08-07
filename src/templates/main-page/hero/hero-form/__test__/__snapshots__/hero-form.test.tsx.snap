@@ -286,7 +286,7 @@ exports[`Form on hero component matches snapshot 1`] = `
     >
       Tunggu apa lagi?
       <button
-        className="sc-fznyAO cbgwim"
+        className="sc-fznyAO jkPYUK"
         fontFamily="body"
         fontSize={
           Array [

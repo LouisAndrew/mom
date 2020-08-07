@@ -734,7 +734,7 @@ exports[`Navigation component matches snapshot 1`] = `
       </div>
     </li>
     <button
-      className="sc-fzoLsD eIikWn"
+      className="sc-fzoLsD dDccGz"
       display={
         Array [
           "block",
@@ -784,7 +784,7 @@ exports[`Navigation component matches snapshot 1`] = `
     />
   </span>
   <button
-    className="sc-fzoLsD iWWScf"
+    className="sc-fzoLsD bMvQDv"
     display={
       Array [
         "none",

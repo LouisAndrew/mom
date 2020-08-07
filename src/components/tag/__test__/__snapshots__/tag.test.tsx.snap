@@ -2,7 +2,7 @@
 
 exports[`Tag component matches snapshot 1`] = `
 <span
-  className="sc-AxheI kcGPrF"
+  className="sc-AxheI buEslG"
   color="dark.3"
   fontFamily="body"
   fontSize={

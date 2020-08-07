@@ -7,15 +7,35 @@ import { Card } from './card';
 
 const story = storiesOf('Component.Product card element', module);
 
-story.add('Regular product card', () => (
-    <Card
-        src="https://res.cloudinary.com/dsvdffre0/image/upload/v1596016031/github-icon.png"
-        alt="github-icon"
-        headingText={text('Heading text', 'This is a heading text')}
-        bodyText={text(
-            'Body text',
-            'Occaecat id sint est anim anim qui tempor officia quis cupidatat laborum. Minim eu cillum ipsum ex do cupidatat elit. Nulla magna adipisicing eu irure.'
-        )}
-        navigate={action('click-navigate')}
-    />
-));
+story
+    .add('Component', () => (
+        <Card
+            src="https://res.cloudinary.com/dsvdffre0/image/upload/v1596838654/felix-lam-J7fxkhtOqt0-unsplash_wcncna.jpg"
+            alt="github-icon"
+            headingText={text('Heading text', 'This is a heading text')}
+            bodyText={text('Body text', 'Isi alamat rumah disini, sbg contoh')}
+            navigate={action('click-navigate')}
+        />
+    ))
+    .add('Component with tags', () => (
+        <Card
+            src="https://res.cloudinary.com/dsvdffre0/image/upload/v1596838654/felix-lam-J7fxkhtOqt0-unsplash_wcncna.jpg"
+            alt="github-icon"
+            headingText={text('Heading text', 'This is a heading text')}
+            bodyText={text('Body text', 'Isi alamat rumah disini, sbg contoh')}
+            tags={[
+                {
+                    text: 'Sell',
+                    tagType: 'SALE_TYPE',
+                    handleClick: action('click-sell'),
+                },
+                {
+                    text: 'Rumah',
+                    tagType: 'PROPERTY_TYPE',
+                    handleClick: action('click-rumah'),
+                },
+            ]}
+            price="1.3 M"
+            navigate={action('click-navigate')}
+        />
+    ));

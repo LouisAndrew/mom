@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Links on footer component matches snapshot 1`] = `
+<ul
+  className="sc-AxheI btopJg"
+>
+  <li
+    className="sc-Axmtr epJlBq"
+    fontFamily="heading"
+    fontSize={
+      Array [
+        2,
+        2,
+      ]
+    }
+  >
+    <a
+      aria-current="page"
+      href="/"
+      onClick={[Function]}
+    >
+      Home
+    </a>
+  </li>
+  <li
+    className="sc-Axmtr epJlBq"
+    fontFamily="heading"
+    fontSize={
+      Array [
+        2,
+        2,
+      ]
+    }
+  >
+    <a
+      aria-current="page"
+      href="/"
+      onClick={[Function]}
+    >
+      Katalog
+    </a>
+  </li>
+</ul>
+`;

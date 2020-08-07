@@ -717,7 +717,7 @@ exports[`Link component on navigation matches snapshot 1`] = `
     </div>
   </li>
   <button
-    className="sc-fzoLsD eIikWn"
+    className="sc-fzoLsD dDccGz"
     display={
       Array [
         "block",

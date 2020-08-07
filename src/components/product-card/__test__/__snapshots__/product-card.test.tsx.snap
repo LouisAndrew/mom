@@ -2,42 +2,20 @@
 
 exports[`Product card component matches snapshot 1`] = `
 <div
-  className="sc-AxmLO HkHWW"
+  className="sc-AxmLO hsJuql"
+  width="fit-content"
 >
+  <img
+    alt="github-icon"
+    src="https://res.cloudinary.com/dsvdffre0/image/upload/v1596016031/github-icon.png"
+  />
   <div
-    className="sc-AxheI jFHUsp"
-    height={
-      Array [
-        200,
-        250,
-        300,
-      ]
-    }
-    width={
-      Array [
-        200,
-        250,
-        300,
-      ]
-    }
-  >
-    <img
-      alt="github-icon"
-      src="https://res.cloudinary.com/dsvdffre0/image/upload/v1596016031/github-icon.png"
-    />
-  </div>
-  <div
-    className="sc-fzozJi BSBjC"
-    width={
-      Array [
-        1,
-        0.8,
-        0.5,
-      ]
-    }
+    className="sc-fzozJi hMofS"
+    display="flex"
+    width={1}
   >
     <h3
-      className="sc-AxiKw fFjwmx"
+      className="sc-AxiKw dsegVB"
       fontFamily="heading"
       fontSize={
         Array [
@@ -51,7 +29,7 @@ exports[`Product card component matches snapshot 1`] = `
       Heading
     </h3>
     <p
-      className="sc-AxhUy kubdPM"
+      className="sc-AxhUy iPnAqk"
       fontFamily="body"
       fontSize={
         Array [
@@ -64,8 +42,23 @@ exports[`Product card component matches snapshot 1`] = `
     >
       Body
     </p>
+    <div
+      className="sc-fzoLsD cwA-duP"
+    />
+    <h2
+      className="sc-AxirZ jrdOBY"
+      fontFamily="heading"
+      fontSize={
+        Array [
+          4,
+          4,
+          5,
+          5,
+        ]
+      }
+    />
     <button
-      className="sc-Axmtr ctITow"
+      className="sc-AxheI cjQULr"
       fontFamily="body"
       fontSize={
         Array [
@@ -125,6 +118,11 @@ exports[`Product card component matches snapshot 1`] = `
             },
           ],
         }
+      }
+      width={
+        Array [
+          1,
+        ]
       }
     >
       More info

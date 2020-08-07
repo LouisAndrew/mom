@@ -300,7 +300,7 @@ exports[`Hero element matches snapshot 1`] = `
         >
           Tunggu apa lagi?
           <button
-            className="sc-fznyAO cbgwim"
+            className="sc-fznyAO jkPYUK"
             fontFamily="body"
             fontSize={
               Array [

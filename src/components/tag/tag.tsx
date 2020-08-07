@@ -11,7 +11,7 @@ import {
 
 import { StylingProps, PositioningProps, theme } from 'styles';
 
-type Props = {
+type Props = PositioningProps & {
     children: React.ReactNode;
     tabIndex?: number;
     variant?: string;
@@ -30,6 +30,7 @@ type ContainerProps = StylingProps &
 const Container: React.FC<ContainerProps> = styled.span<ContainerProps>`
 
     border-radius: 4px;
+    transition: .2s;
 
     ${tagVariant({
         variants: {
@@ -52,6 +53,7 @@ const Container: React.FC<ContainerProps> = styled.span<ContainerProps>`
 
     &:hover {
         cursor: pointer;
+        filter: brightness(.9);
     }
 
     & > svg {

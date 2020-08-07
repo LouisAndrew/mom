@@ -1,41 +1,64 @@
 import React from 'react';
 import styled from 'styled-components';
-import { flexbox, space, layout } from 'styled-system';
+import {
+    flexbox,
+    space,
+    layout,
+    color,
+    border,
+    boxShadow,
+    BorderProps,
+    BoxShadowProps,
+} from 'styled-system';
 import Img, { FluidObject } from 'gatsby-image';
 
-import { PositioningProps, H3, P } from 'styles';
-import ImgWithBorder from 'components/img-with-border';
+import { PositioningProps, H3, H2, P, StylingProps } from 'styles';
 import Button from 'components/button';
+import Tag from 'components/tag';
 
 export type Props = PositioningProps & {
     headingText: string;
     bodyText: string;
     alt: string;
+    price?: string;
     src?: string;
+    tags?: {
+        text: string;
+        tagType: 'SALE_TYPE' | 'PROPERTY_TYPE' | string;
+        handleClick?: () => void;
+    }[];
     fluid?: FluidObject | FluidObject[] | undefined;
     navigate: () => void;
 };
 
-type ContainerProps = PositioningProps & {};
+type ContainerProps = PositioningProps & BoxShadowProps & {};
 
-type DetailsContainerProps = PositioningProps & {};
+type DetailsContainerProps = PositioningProps & StylingProps & BorderProps & {};
+
+type TagsWrapperProps = PositioningProps & {};
 
 const Container: React.FC<ContainerProps> = styled.div<ContainerProps>`
-    display: flex;
 
     ${flexbox}
     ${space}
+    ${color}
     ${layout}
+    ${boxShadow}
 `;
 
 const DetailsContainer: React.FC<DetailsContainerProps> = styled.div<
     DetailsContainerProps
 >`
-    display: flex;
-
     ${flexbox}
     ${space}
     ${layout}
+    ${border}
+    ${color}
+`;
+
+const TagsWrapper: React.FC<TagsWrapperProps> = styled.div<TagsWrapperProps>`
+    ${layout}
+    ${flexbox}
 `;
 
 const Card: React.FC<Props> = ({
@@ -43,41 +66,95 @@ const Card: React.FC<Props> = ({
     bodyText,
     fluid,
     src,
+    price,
     alt,
+    tags,
     navigate,
     ...rest
 }) => {
     return (
         <Container
-            flexDirection={['column', 'column', 'row']}
+            flexDirection="column"
             alignItems="center"
             justifyContent={['center', 'center', 'space-evenly']}
+            boxShadow="blend"
+            width="fit-content"
+            css={`
+                & > img {
+                    /* height: 300px; */
+                    /* width: 300px; */
+                    width: 100%;
+                    max-width: 465px;
+                    /* img aspect ratio is about 4:3 */
+
+                    border-top-right-radius: 4px;
+                    border-top-left-radius: 4px;
+                }
+            `}
             {...rest}
         >
-            <ImgWithBorder
-                imgComponent={
-                    fluid ? (
-                        <Img fluid={fluid} alt={alt} />
-                    ) : (
-                        // TODO: change / to a remote url: show that image is not found
-                        <img src={src ? src : '/'} alt={alt} />
-                    )
-                }
-                variant="primary"
-            />
+            {fluid ? (
+                <Img fluid={fluid} alt={alt} />
+            ) : (
+                // TODO: change / to a remote url: show that image is not found
+                <img src={src ? src : '/'} alt={alt} />
+            )}
             <DetailsContainer
+                display="flex"
                 flexDirection="column"
-                alignItems={['center', 'center', 'flex-start']}
-                px={2}
-                ml={[0, 0, 7]}
-                mt={[4, 5, 0]}
-                width={[1, 0.8, 0.5]}
+                alignItems={['flex-start']}
+                px={[3, 3, 4]}
+                py={[3, 3, 4]}
+                width={1}
+                maxWidth={465}
+                bg="light.0"
+                borderWidth={1}
+                borderStyle="solid"
+                borderColor="accent.2"
+                css={`
+                    border-bottom-right-radius: 4px;
+                    border-bottom-left-radius: 4px;
+                `}
             >
-                <H3 textAlign={['center', 'center', 'left']}>{headingText}</H3>
-                <P my={3} textAlign={['center', 'center', 'left']}>
+                <H3 textAlign={'left'}>{headingText}</H3>
+                <P my={3} textAlign={['left']}>
                     {bodyText}
                 </P>
-                <Button handleClick={navigate} variant="primary">
+                <TagsWrapper
+                    alignSelf={['flex-start']}
+                    css={`
+                        width: fit-content;
+                    `}
+                >
+                    {tags &&
+                        tags.map((tag, i) => (
+                            <Tag
+                                key={`${headingText}-${tag.text}`}
+                                handleClick={tag.handleClick}
+                                variant={
+                                    tag.tagType === 'SALE_TYPE'
+                                        ? 'primary'
+                                        : tag.tagType === 'PROPERTY_TYPE'
+                                        ? 'secondary'
+                                        : 'default'
+                                }
+                                tabIndex={i}
+                                mx={[2]}
+                            >
+                                {tag.text}
+                            </Tag>
+                        ))}
+                </TagsWrapper>
+                <H2 textAlign="right" py={[2]} alignSelf="flex-end">
+                    {price}
+                </H2>
+                <Button
+                    handleClick={navigate}
+                    variant="primary-outer"
+                    ml={[2]}
+                    alignSelf={['center']}
+                    width={[1]}
+                >
                     More info
                 </Button>
             </DetailsContainer>

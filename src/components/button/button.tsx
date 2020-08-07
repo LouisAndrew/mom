@@ -26,6 +26,7 @@ const SButton: React.FC<SProps> = styled.button<SProps>`
     border-radius: 4px;
 
     transition: .2s;
+    white-space: nowrap;
 
     ${btnVariant({
         variants: {
@@ -36,6 +37,28 @@ const SButton: React.FC<SProps> = styled.button<SProps>`
             secondary: {
                 bg: 'accent.0',
                 color: 'bg',
+            },
+            'primary-outer': {
+                bg: 'rgba(0, 0, 0, 0)',
+                color: 'accent.1',
+                borderWidth: 1,
+                borderStyle: 'solid',
+                borderColor: 'accent.1',
+                '&:hover': {
+                    bg: 'accent.1',
+                    color: 'bg',
+                },
+            },
+            'secondary-outer': {
+                bg: 'rgba(0, 0, 0, 0)',
+                color: 'accent.0',
+                borderWidth: 1,
+                borderStyle: 'solid',
+                borderColor: 'accent.0',
+                '&:hover': {
+                    bg: 'accent.0',
+                    color: 'bg',
+                },
             },
         },
     })} 
@@ -73,7 +96,7 @@ const Button: React.FC<Props> = ({ children, handleClick, ...rest }) => {
         <SButton
             onClick={handleClick}
             px={[2, 2, 3, 3]}
-            py={[1, 1, 2, 2]}
+            py={[2]}
             fontSize={[1, 1, 2, 2]}
             fontFamily="body"
             fontWeight="bold"
