@@ -32,16 +32,21 @@ type LinkItemProps = SLinkItemProps & {
     onMouseLeave?: () => void;
 };
 
-type ContainerProps = PositioningProps & {
-    onMouseEnter?: () => void;
-    onMouseLeave?: () => void;
-};
+type ContainerProps = PositioningProps & StylingProps & {};
 
-type SLinkItemProps = StylingProps & PositioningProps & PositionProps & {};
+type SLinkItemProps = StylingProps &
+    PositioningProps &
+    PositionProps & {
+        onMouseEnter?: () => void;
+        onMouseLeave?: () => void;
+    };
 
 const Container: React.FC<ContainerProps> = styled.ul<ContainerProps>`
     ${layout}
     ${flexbox}
+    ${layout}
+    ${color}
+    ${space}
 `;
 
 const SLinkItem: React.FC<SLinkItemProps> = styled.li<SLinkItemProps>`
@@ -54,15 +59,20 @@ const Links: React.FC<Props> = () => {
     const [expand, setExpand] = useState(false);
 
     return (
-        <Container display="flex" flexDirection={['column', 'column', 'row']}>
-            <LinkItem to="/" px={[2, 2, 3]} py={[2, 2, 3]}>
+        <Container
+            display="flex"
+            flexDirection={['column', 'column', 'row']}
+            bg={['dark.0', 'dark.0', 'rgba(0, 0, 0, 0)']}
+        >
+            <LinkItem to="/" px={[3]} py={[2, 2, 3]} mt={[3, 0]}>
                 <InlineIcon icon={homeIcon} />
                 Home
             </LinkItem>
             <LinkItem
                 to="/"
-                px={[2, 2, 3]}
+                px={[3]}
                 py={[2, 2, 3]}
+                mb={[3, 0]}
                 position="relative"
                 top={0}
                 left={0}
@@ -94,24 +104,21 @@ const LinkItem: React.FC<LinkItemProps> = ({
         fontWeight="heading"
         fontSize={[1, 2]}
         css={`
-
             a {
                 text-decoration: none;
-                color: ${expand ? theme.colors.bg : theme.colors.dark[0]};
+                color: ${theme.colors.bg};
             }
 
             svg {
-
-                transition: .2s;
+                transition: 0.2s;
 
                 &:first-child {
                     margin-right: 4px;
                 }
 
                 /* means is a last-child, but not a first child */
-                #expand-svg {
+                &#expand-svg {
                     margin-left: 4px;
-
                     ${expand &&
                         `
                         transform: rotate(180deg) !important;
@@ -119,14 +126,19 @@ const LinkItem: React.FC<LinkItemProps> = ({
                 }
             }
 
-            @media screen and (min-width: ${theme.breakpoints[2]}) {
+            @media screen and (min-width: ${theme.breakpoints[1]}) {
+                a {
+                    color: ${expand ? theme.colors.bg : theme.colors.dark[0]};
+                }
+
                 svg {
                     &:first-child {
                         margin-right: 8px;
                     }
 
-                    &:last-child:not(:first-child) {
+                    &#expand-svg {
                         margin-left: 8px;
+                    }
                 }
             }
         `}
@@ -134,8 +146,8 @@ const LinkItem: React.FC<LinkItemProps> = ({
         onMouseLeave={onMouseLeave}
         {...rest}
     >
-        {dropdownElement}
         <Link to={to}>{children}</Link>
+        {dropdownElement}
     </SLinkItem>
 );
 

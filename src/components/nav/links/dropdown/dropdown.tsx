@@ -129,16 +129,19 @@ const Dropdown: React.FC<Props> = ({ expand }) => {
 
     return (
         <Container
-            position="absolute"
+            position={['relative', 'relative', 'absolute']}
             top={0}
             left={0}
             zIndex={-1}
             overflow="hidden"
             display="flex"
-            px={[4, 4, expand ? 5 : 0]}
-            pt={[3, 3, expand ? 7 : 0]}
-            pb={[3, 3, expand ? 6 : 0]}
+            px={expand ? [4, 4, 5] : 0}
+            pt={expand ? [2, 3, 7] : 0}
+            pb={expand ? [2, 3, 6] : 0}
             width={expand ? [1, 1, 'fit-content'] : [1, 1, 0]}
+            height={
+                expand ? ['fit-content', 'fit-content', 'auto'] : [0, 0, 'auto']
+            }
             opacity={[1, 1, expand ? 1 : 0]}
             // maxHeight={expand ? 'auto' : 0}
             bg="dark.0"
