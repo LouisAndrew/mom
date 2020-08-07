@@ -2,50 +2,58 @@
 
 exports[`About component matches snapshot 1`] = `
 <div
-  className="sc-AxheI cUuJuJ"
+  className="sc-AxheI lmchzG"
 >
   <div
     className="sc-AxgMl gYiaHV"
     display="flex"
   >
     <div
-      className="sc-Axmtr emMfcN"
+      className="sc-Axmtr jofyog"
       display="flex"
-      width={0.8}
+      width={
+        Array [
+          0.9,
+        ]
+      }
     >
       <img
         alt="github-icon"
       />
-      <h2
-        className="sc-AxirZ ruPxh"
-        color="light.0"
-        fontFamily="heading"
-        fontSize={
-          Array [
-            4,
-            4,
-            5,
-            5,
-          ]
-        }
+      <div
+        className="sc-AxmLO jNJDTw"
       >
-        Siapakah saya yang sebenarnya? Mengapa anda perlu peduli?
-      </h2>
-      <p
-        className="sc-AxhUy iXceYA"
-        color="light.0"
-        fontFamily="body"
-        fontSize={
-          Array [
-            1,
-            1,
-            2,
-            2,
-          ]
-        }
-      >
-        Quis ut sunt labore commodo amet velit laborum eu laboris. Lorem officia consectetur reprehenderit in ut ad anim cillum. Aute proident quis consequat nisi nulla non. Est ex minim aute qui commodo. Reprehenderit exercitation consectetur tempor aliquip nulla tempor cillum. Qui sint reprehenderit in anim aliqua labore veniam magna enim.
-      </p>
+        <h2
+          className="sc-AxirZ gUaKjt"
+          color="dark.0"
+          fontFamily="heading"
+          fontSize={
+            Array [
+              4,
+              4,
+              5,
+              5,
+            ]
+          }
+        >
+          Siapakah saya yang sebenarnya? Mengapa anda perlu peduli?
+        </h2>
+        <p
+          className="sc-AxhUy gwdvli"
+          color="dark.0"
+          fontFamily="body"
+          fontSize={
+            Array [
+              1,
+              1,
+              2,
+              2,
+            ]
+          }
+        >
+          Quis ut sunt labore commodo amet velit laborum eu laboris. Lorem officia consectetur reprehenderit in ut ad anim cillum. Aute proident quis consequat nisi nulla non. Est ex minim aute qui commodo. Reprehenderit exercitation consectetur tempor aliquip nulla tempor cillum. Qui sint reprehenderit in anim aliqua labore veniam magna enim.
+        </p>
+      </div>
     </div>
   </div>
 </div>
