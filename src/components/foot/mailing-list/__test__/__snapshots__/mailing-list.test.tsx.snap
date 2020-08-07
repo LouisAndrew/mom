@@ -1,0 +1,153 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Mailing list component on footer matches snapshot 1`] = `
+<div
+  className="sc-fzqBZW jJuffP"
+  display="flex"
+  height={
+    Array [
+      375,
+      375,
+      450,
+    ]
+  }
+  overflow="hidden"
+  width={
+    Array [
+      1,
+      1,
+      1,
+      945,
+    ]
+  }
+>
+  <div
+    className="sc-fzqNJr cmOZrs"
+  >
+    <img
+      alt="aesthetic interior"
+      src="https://res.cloudinary.com/dsvdffre0/image/upload/v1596797190/jarek-ceborski-jn7uVeCdf6U-unsplash_n7xbxx.jpg"
+    />
+  </div>
+  <div
+    className="sc-fzoyAV flshlG"
+    color="bg"
+    display="flex"
+    height="fit-content"
+    width={
+      Array [
+        "80vw",
+        "80vw",
+        "560px",
+      ]
+    }
+  >
+    <h3
+      className="sc-AxiKw dtruNh"
+      fontFamily="heading"
+      fontSize={
+        Array [
+          3,
+          3,
+          4,
+          4,
+        ]
+      }
+      width={
+        Array [
+          "fit-content",
+          "fit-content",
+          1,
+        ]
+      }
+    >
+      Tertarik untuk?
+    </h3>
+    <p
+      className="sc-AxhUy hCxfQc"
+      fontFamily="body"
+      fontSize={
+        Array [
+          1,
+          1,
+          2,
+          2,
+        ]
+      }
+      width={
+        Array [
+          "fit-content",
+          "fit-content",
+          1,
+        ]
+      }
+    >
+      Daftar ke mailing list kammiiii?
+    </p>
+    <label
+      className="sc-fzokOt fgLxTH"
+      fontFamily="body"
+      fontSize={
+        Array [
+          1,
+          1,
+          2,
+        ]
+      }
+      fontWeight="bold"
+      for="mailing-list"
+      htmlFor="mailing-list"
+      width={
+        Array [
+          1,
+          1,
+          0.5,
+        ]
+      }
+    >
+      Alamat email
+      <input
+        className="sc-AxheI kvCOGc"
+        fontFamily="body"
+        fontSize={
+          Array [
+            1,
+            1,
+            2,
+            2,
+          ]
+        }
+        fontWeight="bold"
+        id="mailing-list"
+        onChange={[Function]}
+        placeholder="Isi alamat emailmu disini"
+        width={
+          Array [
+            1,
+            1,
+            0.9,
+          ]
+        }
+      />
+    </label>
+    <button
+      className="sc-fznyAO byndnX"
+      fontFamily="body"
+      fontSize={
+        Array [
+          1,
+          1,
+          2,
+          2,
+        ]
+      }
+      fontWeight="bold"
+      height="fit-content"
+      onClick={[Function]}
+      width="fit-content"
+    >
+      Daftarkan email
+    </button>
+  </div>
+</div>
+`;

@@ -8,9 +8,7 @@ import {
     layout,
     flexbox,
     position,
-    border,
     PositionProps,
-    BorderProps,
 } from 'styled-system';
 import { InlineIcon } from '@iconify/react';
 import chatIcon from '@iconify/icons-uil/comment-dots';
@@ -23,7 +21,7 @@ import Logo from 'components/logo';
 
 type Props = {};
 
-type ContainerProps = StylingProps & PositioningProps & BorderProps & {};
+type ContainerProps = StylingProps & PositioningProps & {};
 type FootContainerProps = StylingProps & PositioningProps & PositionProps & {};
 type ContactContainerProps = PositioningProps & {};
 type SContactProps = StylingProps & PositioningProps & {};

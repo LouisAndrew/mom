@@ -5,7 +5,7 @@ exports[`Hero element matches snapshot 1`] = `
   className="sc-fzqBZW dkGjSl"
 >
   <div
-    className="sc-AxgMl iUQpnV"
+    className="sc-AxgMl RrhEy"
     display="flex"
     height={
       Array [
@@ -19,7 +19,7 @@ exports[`Hero element matches snapshot 1`] = `
       className="sc-fznKkj kINJkk"
     >
       <h1
-        className="sc-AxjAm gsPmOE"
+        className="sc-AxjAm csPxEV"
         color="dark.0"
         fontFamily="heading"
         fontSize={
@@ -35,7 +35,7 @@ exports[`Hero element matches snapshot 1`] = `
         Siapa bilang cari rumah jaman sekarang susah?
       </h1>
       <p
-        className="sc-AxhUy cSSlpT"
+        className="sc-AxhUy dLUeTM"
         fontFamily="body"
         fontSize={
           Array [
@@ -63,7 +63,7 @@ exports[`Hero element matches snapshot 1`] = `
           }
         >
           <label
-            className="sc-fzokOt hOxDcv"
+            className="sc-fzokOt fhoVCF"
             fontFamily="body"
             fontSize={
               Array [
@@ -134,7 +134,7 @@ exports[`Hero element matches snapshot 1`] = `
           </div>
         </span>
         <label
-          className="sc-fzokOt jQyvyL"
+          className="sc-fzokOt gSFrd"
           display="flex"
           fontFamily="body"
           fontSize={
@@ -213,7 +213,7 @@ exports[`Hero element matches snapshot 1`] = `
           className="select-span type"
         >
           <label
-            className="sc-fzokOt fcsjyK"
+            className="sc-fzokOt iwKsXs"
             display="flex"
             fontFamily="body"
             fontSize={
@@ -282,7 +282,7 @@ exports[`Hero element matches snapshot 1`] = `
           </div>
         </span>
         <label
-          className="sc-fzokOt jsRqVY"
+          className="sc-fzokOt joBVJa"
           display="flex"
           fontFamily="body"
           fontSize={

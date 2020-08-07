@@ -13,14 +13,18 @@ import { StylingProps, PositioningProps, theme } from 'styles';
 
 type Props = {
     children: React.ReactNode;
+    tabIndex?: number;
     variant?: string;
     handleClick?: () => void;
 };
 
 type ContainerProps = StylingProps &
     PositioningProps & {
+        role: string;
         variant?: string;
+        tabIndex: number;
         onClick?: () => void;
+        onKeyDown?: () => void;
     };
 
 const Container: React.FC<ContainerProps> = styled.span<ContainerProps>`
@@ -59,7 +63,7 @@ const Container: React.FC<ContainerProps> = styled.span<ContainerProps>`
     }
 `;
 
-const Tag: React.FC<Props> = ({ children, handleClick, ...rest }) => {
+const Tag: React.FC<Props> = ({ children, tabIndex, handleClick, ...rest }) => {
     return (
         <Container
             fontFamily="body"
@@ -69,6 +73,9 @@ const Tag: React.FC<Props> = ({ children, handleClick, ...rest }) => {
             bg="accent.3"
             color="dark.3"
             onClick={handleClick}
+            onKeyDown={handleClick}
+            tabIndex={tabIndex ? tabIndex : 1}
+            role="button"
             {...rest}
         >
             {children}

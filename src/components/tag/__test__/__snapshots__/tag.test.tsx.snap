@@ -63,6 +63,58 @@ exports[`Tag component matches snapshot 1`] = `
       ],
     }
   }
+  onKeyDown={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          Class {
+            "_dispatchInstances": null,
+            "_dispatchListeners": null,
+            "_targetInst": null,
+            "altKey": null,
+            "bubbles": null,
+            "button": null,
+            "buttons": null,
+            "cancelable": null,
+            "clientX": null,
+            "clientY": null,
+            "ctrlKey": null,
+            "currentTarget": [Function],
+            "defaultPrevented": null,
+            "detail": null,
+            "dispatchConfig": null,
+            "eventPhase": null,
+            "getModifierState": [Function],
+            "isDefaultPrevented": [Function],
+            "isPropagationStopped": [Function],
+            "isTrusted": null,
+            "metaKey": null,
+            "movementX": [Function],
+            "movementY": [Function],
+            "nativeEvent": null,
+            "pageX": null,
+            "pageY": null,
+            "relatedTarget": [Function],
+            "screenX": null,
+            "screenY": null,
+            "shiftKey": null,
+            "target": null,
+            "timeStamp": [Function],
+            "type": null,
+            "view": null,
+          },
+        ],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  role="button"
+  tabIndex={1}
 >
   A tag!
 </span>

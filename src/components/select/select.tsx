@@ -352,7 +352,7 @@ const Select: React.FC<Props> = ({
                             py={optionPadY ? optionPadY : [1, 1, 2, 2]}
                             px={optionPadX ? optionPadX : [2, 2, 3, 3]}
                             width={1}
-                            onKeyPress={() => handleClickOption(item.value)}
+                            onKeyDown={() => handleClickOption(item.value)}
                             role="button"
                             tabIndex={i}
                             {...typographyStyle}
