@@ -8,9 +8,7 @@ import {
     space,
     color,
     flexbox,
-    borderRadius,
     PositionProps,
-    BorderRadiusProps,
 } from 'styled-system';
 
 import { H3, P, PositioningProps, StylingProps, theme } from 'styles';
@@ -23,7 +21,7 @@ type Props = {
     imgFluidSrc?: FluidObject | FluidObject[];
 };
 
-type ContainerProps = PositioningProps & PositionProps & BorderRadiusProps & {};
+type ContainerProps = PositioningProps & PositionProps & {};
 
 type BackgroundProps = PositioningProps & PositionProps & {};
 
@@ -34,8 +32,6 @@ const Container: React.FC<ContainerProps> = styled.div<ContainerProps>`
     ${position}
     ${flexbox}
     ${space}
-    ${borderRadius}
-
 `;
 
 const Background: React.FC<BackgroundProps> = styled.div<BackgroundProps>`
@@ -74,11 +70,17 @@ const MailingList: React.FC<Props> = ({ imgFluidSrc }) => {
             alignItems={['center', 'center', 'flex-end']}
             justifyContent={['center', 'center', 'flex-start']}
             position="relative"
+            top={[0, 0, 48]}
+            zIndex={2}
             overflow="hidden"
             height={[375, 375, 450]}
             width={[1, 1, 1, 945]}
             p={[0, 0, 6]}
-            borderRadius={[0, 0, 4]}
+            css={`
+                @media screen and (min-width: 945px) {
+                    border-radius: 8px;
+                }
+            `}
         >
             <Background
                 position="absolute"
@@ -154,6 +156,7 @@ const MailingList: React.FC<Props> = ({ imgFluidSrc }) => {
                         handleChange={handleChange}
                         id="mailing-list"
                         variant="primary"
+                        width={[1, 1, 0.9]}
                     />
                 </Label>
                 <Button
@@ -163,6 +166,9 @@ const MailingList: React.FC<Props> = ({ imgFluidSrc }) => {
                     height="fit-content"
                     py={[2]}
                     mt={[0, 0, 33]}
+                    css={`
+                        border: 2px solid ${theme.colors.accent[1]};
+                    `}
                 >
                     Daftarkan email
                 </Button>

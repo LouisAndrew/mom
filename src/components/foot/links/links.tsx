@@ -59,7 +59,7 @@ const Links: React.FC<Props> = ({ ...rest }) => {
 const LinkItem: React.FC<LinkItemProps> = ({ children, to }) => {
     return (
         <SLinkItem
-            fontSize={[2, 2, 3]}
+            fontSize={[2, 2]}
             fontFamily="heading"
             textAlign={['center', 'center', 'left']}
             css={`
