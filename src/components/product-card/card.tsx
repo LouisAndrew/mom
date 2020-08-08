@@ -24,7 +24,7 @@ export type Props = PositioningProps & {
     src?: string;
     tags?: {
         text: string;
-        tagType: 'SALE_TYPE' | 'PROPERTY_TYPE' | string;
+        tagType: string;
         handleClick?: () => void;
     }[];
     fluid?: FluidObject | FluidObject[] | undefined;
@@ -149,13 +149,7 @@ const Card: React.FC<Props> = ({
                             <Tag
                                 key={`${headingText}-${tag.text}`}
                                 handleClick={tag.handleClick}
-                                variant={
-                                    tag.tagType === 'SALE_TYPE'
-                                        ? 'primary'
-                                        : tag.tagType === 'PROPERTY_TYPE'
-                                        ? 'secondary'
-                                        : 'default'
-                                }
+                                variant={tag.tagType}
                                 tabIndex={i}
                                 mx={[2]}
                             >

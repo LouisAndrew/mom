@@ -26,12 +26,12 @@ story
             tags={[
                 {
                     text: 'Sell',
-                    tagType: 'SALE_TYPE',
+                    tagType: 'sell',
                     handleClick: action('click-sell'),
                 },
                 {
                     text: 'Rumah',
-                    tagType: 'PROPERTY_TYPE',
+                    tagType: 'house',
                     handleClick: action('click-rumah'),
                 },
             ]}
