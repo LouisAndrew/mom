@@ -27,4 +27,9 @@ story
             {text('Content', 'Click')}
             <InlineIcon icon={home} color="#F3F0F0" />
         </Tag>
+    ))
+    .add('House tag', () => (
+        <Tag variant="house" handleClick={action('span-click')}>
+            {text('Content', 'Click')}
+        </Tag>
     ));

@@ -42,6 +42,30 @@ const Container: React.FC<ContainerProps> = styled.span<ContainerProps>`
                 bg: 'accent.0',
                 color: 'bg',
             },
+            sell: {
+                bg: 'badges.saleType.sell',
+                color: '#fff',
+            },
+            rent: {
+                bg: 'badges.sellType.rent',
+                color: '#fff',
+            },
+            house: {
+                bg: 'badges.propertyType.house',
+                color: '#fff',
+            },
+            apartment: {
+                bg: 'badges.propertyType.apartment',
+                color: '#000',
+            },
+            'home-office': {
+                bg: 'badges.propertyType.homeOffice',
+                color: '#000',
+            },
+            kavling: {
+                bg: 'badges.propertyType.kavling',
+                color: '#fff',
+            },
         },
     })}
 
