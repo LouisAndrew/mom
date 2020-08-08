@@ -2,18 +2,11 @@
 
 exports[`Hero element matches snapshot 1`] = `
 <div
-  className="sc-fzqBZW dkGjSl"
+  className="sc-fzqBZW fyYBrl"
 >
   <div
-    className="sc-AxgMl RrhEy"
+    className="sc-AxgMl iMjOvJ"
     display="flex"
-    height={
-      Array [
-        "100vh",
-        "80vh",
-        "100vh",
-      ]
-    }
   >
     <div
       className="sc-fznKkj kINJkk"
@@ -326,7 +319,7 @@ exports[`Hero element matches snapshot 1`] = `
       </form>
     </div>
     <div
-      className="sc-fzqNJr lfUuPO"
+      className="sc-fzqNJr cIovoO"
       display="flex"
       height={
         Array [
@@ -335,11 +328,13 @@ exports[`Hero element matches snapshot 1`] = `
           "50%",
         ]
       }
+      width={1}
     >
       <svg
         className="img"
         fill="none"
         id="img-hero"
+        viewBox="0 0 1308 487"
       >
         <g
           fill="#FF7477"

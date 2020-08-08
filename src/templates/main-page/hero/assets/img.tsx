@@ -3,7 +3,11 @@ import * as React from 'react';
 
 function SvgImage(props: any) {
     return (
-        <svg /* width={1308} height={487} */ fill="none" {...props}>
+        <svg
+            /* width={1308} height={487} */ viewBox="0 0 1308 487"
+            fill="none"
+            {...props}
+        >
             <g opacity={0.2} fill="#FF7477">
                 <path
                     opacity={0.2}

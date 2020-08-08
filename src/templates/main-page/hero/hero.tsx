@@ -10,8 +10,8 @@ import {
     ColorProps,
 } from 'styled-system';
 
-import Img from './img';
-import ImgSmall from './img-small';
+import Img from './assets/img';
+import ImgSmall from './assets/img-small';
 import HeroForm from './hero-form';
 import { PositioningProps, OuterWrapper, theme } from 'styles';
 
@@ -74,14 +74,16 @@ const Background: React.FC<BackgroundProps> = styled.div<BackgroundProps>`
 
         #img-hero {
             display: block;
+            height: 100%;
+            width: 200%;
+            transform: scale(1.1) translate(0, 10%);
+            /* position: absolute; */
+            /* width: 1308px;
+            height: 487px; */
 
-            position: absolute;
-            width: 1308px;
-            height: 487px;
-
-            transform: scale(0.6);
-            bottom: 0;
-            left: -32%;
+            /* transform: scale(0.6); */
+            /* bottom: 0;
+            left: -32%; */
         }
     }
 
@@ -89,10 +91,10 @@ const Background: React.FC<BackgroundProps> = styled.div<BackgroundProps>`
 
         #img-hero {
             position: relative;
-
+/* 
             left: 0;
             bottom: 10%;
-            transform: scale(1.1);
+            transform: scale(1.1); */
         }
     }
 `;
@@ -115,7 +117,7 @@ const Hero: React.FC<Props> = () => {
 
     return (
         <>
-            <Container bg="bg" pt={[0, 0, '10%']}>
+            <Container bg="light.1" pt={[0, 0, '10%']}>
                 <OuterWrapper
                     position="relative"
                     display="flex"
@@ -126,7 +128,7 @@ const Hero: React.FC<Props> = () => {
                         'column-reverse',
                         'column',
                     ]}
-                    height={['100vh', '80vh', '100vh']}
+                    minHeight={['100vh', '80vh', '100vh']}
                     css={`
                         @media screen and (max-width: 400px) and (max-height: 640px) {
                             height: 120vh;
@@ -145,6 +147,7 @@ const Hero: React.FC<Props> = () => {
                         justifyContent="center"
                         overflowX="visible"
                         height={['30%', '0', '50%']}
+                        width={1}
                         zIndex={1}
                         css={`
                             @media screen and (max-width: 400px) and (max-height: 640px) {

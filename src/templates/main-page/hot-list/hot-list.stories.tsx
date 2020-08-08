@@ -28,7 +28,7 @@ story.add('Component', () => {
             imgs: [
                 {
                     image:
-                        'https://res.cloudinary.com/dsvdffre0/image/upload/v1596031267/w3ufcacls7mqfmhbwpe4.png',
+                        'https://res.cloudinary.com/dsvdffre0/image/upload/v1596838654/felix-lam-J7fxkhtOqt0-unsplash_wcncna.jpg',
                     imgAlt: 'Lakers logo',
                 },
                 {

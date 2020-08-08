@@ -5,14 +5,19 @@ exports[`Product card component matches snapshot 1`] = `
   className="sc-AxmLO hsJuql"
   width="fit-content"
 >
-  <img
-    alt="github-icon"
-    src="https://res.cloudinary.com/dsvdffre0/image/upload/v1596016031/github-icon.png"
-  />
   <div
-    className="sc-fzozJi hMofS"
+    className="sc-fzpans ifwKAe"
+    overflow="hidden"
+  >
+    <img
+      alt="github-icon"
+      src="https://res.cloudinary.com/dsvdffre0/image/upload/v1596016031/github-icon.png"
+    />
+  </div>
+  <div
+    className="sc-fzozJi hRuFrg"
     display="flex"
-    width={1}
+    width="auto"
   >
     <h3
       className="sc-AxiKw dsegVB"

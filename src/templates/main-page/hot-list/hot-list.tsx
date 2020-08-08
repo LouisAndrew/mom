@@ -1,8 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
-import { color, space, ColorProps, SpaceProps } from 'styled-system';
+import {
+    color,
+    space,
+    flexbox,
+    layout,
+    ColorProps,
+    SpaceProps,
+} from 'styled-system';
 
-import { OuterWrapper, H2 } from 'styles';
+import { OuterWrapper, H2, PositioningProps } from 'styles';
 import { Property } from 'interfaces/Property';
 import { Props as CardProps, Card } from 'components/product-card/card';
 
@@ -13,12 +20,20 @@ type Props = {
 
 type ContainerProps = ColorProps & SpaceProps & {};
 
+type HotListBoxProps = PositioningProps & {};
+
 const Container: React.FC<ContainerProps> = styled.div<ContainerProps>`
     display: grid;
     place-items: center;
 
     ${color}
     ${space}
+`;
+
+const HotListBox: React.FC<HotListBoxProps> = styled.div<HotListBoxProps>`
+    ${flexbox} 
+    ${space} 
+    ${layout}
 `;
 
 const HotList: React.FC<Props> = ({ hotProperties }) => {
@@ -63,13 +78,22 @@ const HotList: React.FC<Props> = ({ hotProperties }) => {
                 <H2 mb={[4, 4, 5]} textAlign="center">
                     {headingText}
                 </H2>
-                {hotPropertiesToRender.map(propertyCard => (
-                    <Card
-                        my={[5, 5, 6]}
-                        key={propertyCard.headingText}
-                        {...propertyCard}
-                    />
-                ))}
+                <HotListBox
+                    display="flex"
+                    flexDirection="row"
+                    flexWrap="wrap"
+                    alignItems="center"
+                >
+                    {hotPropertiesToRender.map(propertyCard => (
+                        <Card
+                            my={[5, 5, 6]}
+                            mx={['5%', '2.5%', '5%']}
+                            key={propertyCard.headingText}
+                            width={[0.9, 0.45, 0.4]}
+                            {...propertyCard}
+                        />
+                    ))}
+                </HotListBox>
             </OuterWrapper>
         </Container>
     );

@@ -37,6 +37,8 @@ type DetailsContainerProps = PositioningProps & StylingProps & BorderProps & {};
 
 type TagsWrapperProps = PositioningProps & {};
 
+type ImgBoxProps = PositioningProps & {};
+
 const Container: React.FC<ContainerProps> = styled.div<ContainerProps>`
 
     ${flexbox}
@@ -61,6 +63,10 @@ const TagsWrapper: React.FC<TagsWrapperProps> = styled.div<TagsWrapperProps>`
     ${flexbox}
 `;
 
+const ImgBox: React.FC<ImgBoxProps> = styled.div<ImgBoxProps>`
+    ${layout}
+`;
+
 const Card: React.FC<Props> = ({
     headingText,
     bodyText,
@@ -79,34 +85,46 @@ const Card: React.FC<Props> = ({
             justifyContent={['center', 'center', 'space-evenly']}
             boxShadow="blend"
             width="fit-content"
-            css={`
-                & > img {
-                    /* height: 300px; */
-                    /* width: 300px; */
-                    width: 100%;
-                    max-width: 465px;
-                    /* img aspect ratio is about 4:3 */
-
-                    border-top-right-radius: 4px;
-                    border-top-left-radius: 4px;
-                }
-            `}
             {...rest}
         >
-            {fluid ? (
-                <Img fluid={fluid} alt={alt} />
-            ) : (
-                // TODO: change / to a remote url: show that image is not found
-                <img src={src ? src : '/'} alt={alt} />
-            )}
+            {/* img aspect ratio is about 3:2 */}
+            {/* ImgBox serves as a container to help retain the aspect ratio.  */}
+            <ImgBox
+                overflow="hidden"
+                css={`
+                    position: relative;
+                    border-top-right-radius: 4px;
+                    border-top-left-radius: 4px;
+
+                    &::after {
+                        display: block;
+                        content: '';
+                        padding-top: 66.6%;
+                    }
+
+                    & > img {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        height: 100%;
+                        width: 100%;
+                    }
+                `}
+            >
+                {fluid ? (
+                    <Img fluid={fluid} alt={alt} />
+                ) : (
+                    // TODO: change / to a remote url: show that image is not found
+                    <img src={src ? src : '/'} alt={alt} />
+                )}
+            </ImgBox>
             <DetailsContainer
                 display="flex"
                 flexDirection="column"
                 alignItems={['flex-start']}
                 px={[3, 3, 4]}
                 py={[3, 3, 4]}
-                width={1}
-                maxWidth={465}
+                width={'auto'}
                 bg="light.0"
                 borderWidth={1}
                 borderStyle="solid"

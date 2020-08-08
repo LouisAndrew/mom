@@ -57,6 +57,7 @@ const DetailsWrapper: React.FC<DetailsWrapperProps> = styled.div<
 /**
  * Providing imgSrc to get the flexibility to develop in storybook
  * On the actual project: gotta be using the imgFluidSrc and get the text contents from gatsby
+ * img aspect ratio: 2:3. -> Figure out if img box is needed here!
  */
 const About: React.FC<Props> = ({ imgAlt, imgSrc, imgFluidSrc }) => {
     const headingText =

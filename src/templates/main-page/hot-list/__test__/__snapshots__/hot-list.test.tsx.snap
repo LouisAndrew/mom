@@ -2,7 +2,7 @@
 
 exports[`Hot List component matches snapshot 1`] = `
 <div
-  className="sc-fzpans eETnsG"
+  className="sc-fzplWN bPWPuX"
 >
   <div
     className="sc-AxgMl iCGIdZ"
@@ -22,240 +22,278 @@ exports[`Hot List component matches snapshot 1`] = `
       Lagi hot!! 🔥🔥🔥
     </h2>
     <div
-      className="sc-AxmLO lkqzKm"
-      width="fit-content"
+      className="sc-fznyAO hAAIXr"
+      display="flex"
     >
-      <img
-        alt="Handsome boy"
-        src="https://res.cloudinary.com/dsvdffre0/image/upload/v1595340453/ovmhcixqqpfjla4mxovf.jpg"
-      />
       <div
-        className="sc-fzozJi hMofS"
-        display="flex"
-        width={1}
+        className="sc-AxmLO iAzqPU"
+        width={
+          Array [
+            0.9,
+            0.45,
+            0.4,
+          ]
+        }
       >
-        <h3
-          className="sc-AxiKw dsegVB"
-          fontFamily="heading"
-          fontSize={
-            Array [
-              3,
-              3,
-              4,
-              4,
-            ]
-          }
-        >
-          Rumah 1
-        </h3>
-        <p
-          className="sc-AxhUy iPnAqk"
-          fontFamily="body"
-          fontSize={
-            Array [
-              1,
-              1,
-              2,
-              2,
-            ]
-          }
-        >
-          jalan Mangga 24 blok G nomor 167
-        </p>
         <div
-          className="sc-fzoLsD cwA-duP"
-        />
-        <h2
-          className="sc-AxirZ jrdOBY"
-          fontFamily="heading"
-          fontSize={
-            Array [
-              4,
-              4,
-              5,
-              5,
-            ]
-          }
-        />
-        <button
-          className="sc-AxheI cjQULr"
-          fontFamily="body"
-          fontSize={
-            Array [
-              1,
-              1,
-              2,
-              2,
-            ]
-          }
-          fontWeight="bold"
-          onClick={[Function]}
-          width={
-            Array [
-              1,
-            ]
-          }
+          className="sc-fzpans ifwKAe"
+          overflow="hidden"
         >
-          More info
-        </button>
+          <img
+            alt="Handsome boy"
+            src="https://res.cloudinary.com/dsvdffre0/image/upload/v1595340453/ovmhcixqqpfjla4mxovf.jpg"
+          />
+        </div>
+        <div
+          className="sc-fzozJi hRuFrg"
+          display="flex"
+          width="auto"
+        >
+          <h3
+            className="sc-AxiKw dsegVB"
+            fontFamily="heading"
+            fontSize={
+              Array [
+                3,
+                3,
+                4,
+                4,
+              ]
+            }
+          >
+            Rumah 1
+          </h3>
+          <p
+            className="sc-AxhUy iPnAqk"
+            fontFamily="body"
+            fontSize={
+              Array [
+                1,
+                1,
+                2,
+                2,
+              ]
+            }
+          >
+            jalan Mangga 24 blok G nomor 167
+          </p>
+          <div
+            className="sc-fzoLsD cwA-duP"
+          />
+          <h2
+            className="sc-AxirZ jrdOBY"
+            fontFamily="heading"
+            fontSize={
+              Array [
+                4,
+                4,
+                5,
+                5,
+              ]
+            }
+          />
+          <button
+            className="sc-AxheI cjQULr"
+            fontFamily="body"
+            fontSize={
+              Array [
+                1,
+                1,
+                2,
+                2,
+              ]
+            }
+            fontWeight="bold"
+            onClick={[Function]}
+            width={
+              Array [
+                1,
+              ]
+            }
+          >
+            More info
+          </button>
+        </div>
       </div>
-    </div>
-    <div
-      className="sc-AxmLO lkqzKm"
-      width="fit-content"
-    >
-      <img
-        alt="Lakers logo"
-        src="https://res.cloudinary.com/dsvdffre0/image/upload/v1596031267/w3ufcacls7mqfmhbwpe4.png"
-      />
       <div
-        className="sc-fzozJi hMofS"
-        display="flex"
-        width={1}
+        className="sc-AxmLO iAzqPU"
+        width={
+          Array [
+            0.9,
+            0.45,
+            0.4,
+          ]
+        }
       >
-        <h3
-          className="sc-AxiKw dsegVB"
-          fontFamily="heading"
-          fontSize={
-            Array [
-              3,
-              3,
-              4,
-              4,
-            ]
-          }
-        >
-          Rumah 2
-        </h3>
-        <p
-          className="sc-AxhUy iPnAqk"
-          fontFamily="body"
-          fontSize={
-            Array [
-              1,
-              1,
-              2,
-              2,
-            ]
-          }
-        >
-          jalan Mangga 25 blok F nomor 167
-        </p>
         <div
-          className="sc-fzoLsD cwA-duP"
-        />
-        <h2
-          className="sc-AxirZ jrdOBY"
-          fontFamily="heading"
-          fontSize={
-            Array [
-              4,
-              4,
-              5,
-              5,
-            ]
-          }
-        />
-        <button
-          className="sc-AxheI cjQULr"
-          fontFamily="body"
-          fontSize={
-            Array [
-              1,
-              1,
-              2,
-              2,
-            ]
-          }
-          fontWeight="bold"
-          onClick={[Function]}
-          width={
-            Array [
-              1,
-            ]
-          }
+          className="sc-fzpans ifwKAe"
+          overflow="hidden"
         >
-          More info
-        </button>
+          <img
+            alt="Lakers logo"
+            src="https://res.cloudinary.com/dsvdffre0/image/upload/v1596031267/w3ufcacls7mqfmhbwpe4.png"
+          />
+        </div>
+        <div
+          className="sc-fzozJi hRuFrg"
+          display="flex"
+          width="auto"
+        >
+          <h3
+            className="sc-AxiKw dsegVB"
+            fontFamily="heading"
+            fontSize={
+              Array [
+                3,
+                3,
+                4,
+                4,
+              ]
+            }
+          >
+            Rumah 2
+          </h3>
+          <p
+            className="sc-AxhUy iPnAqk"
+            fontFamily="body"
+            fontSize={
+              Array [
+                1,
+                1,
+                2,
+                2,
+              ]
+            }
+          >
+            jalan Mangga 25 blok F nomor 167
+          </p>
+          <div
+            className="sc-fzoLsD cwA-duP"
+          />
+          <h2
+            className="sc-AxirZ jrdOBY"
+            fontFamily="heading"
+            fontSize={
+              Array [
+                4,
+                4,
+                5,
+                5,
+              ]
+            }
+          />
+          <button
+            className="sc-AxheI cjQULr"
+            fontFamily="body"
+            fontSize={
+              Array [
+                1,
+                1,
+                2,
+                2,
+              ]
+            }
+            fontWeight="bold"
+            onClick={[Function]}
+            width={
+              Array [
+                1,
+              ]
+            }
+          >
+            More info
+          </button>
+        </div>
       </div>
-    </div>
-    <div
-      className="sc-AxmLO lkqzKm"
-      width="fit-content"
-    >
-      <img
-        alt="No image provided"
-        src="/"
-      />
       <div
-        className="sc-fzozJi hMofS"
-        display="flex"
-        width={1}
+        className="sc-AxmLO iAzqPU"
+        width={
+          Array [
+            0.9,
+            0.45,
+            0.4,
+          ]
+        }
       >
-        <h3
-          className="sc-AxiKw dsegVB"
-          fontFamily="heading"
-          fontSize={
-            Array [
-              3,
-              3,
-              4,
-              4,
-            ]
-          }
-        >
-          Apartment 2
-        </h3>
-        <p
-          className="sc-AxhUy iPnAqk"
-          fontFamily="body"
-          fontSize={
-            Array [
-              1,
-              1,
-              2,
-              2,
-            ]
-          }
-        >
-          jalan Mangga 25 blok F nomor 167
-        </p>
         <div
-          className="sc-fzoLsD cwA-duP"
-        />
-        <h2
-          className="sc-AxirZ jrdOBY"
-          fontFamily="heading"
-          fontSize={
-            Array [
-              4,
-              4,
-              5,
-              5,
-            ]
-          }
-        />
-        <button
-          className="sc-AxheI cjQULr"
-          fontFamily="body"
-          fontSize={
-            Array [
-              1,
-              1,
-              2,
-              2,
-            ]
-          }
-          fontWeight="bold"
-          onClick={[Function]}
-          width={
-            Array [
-              1,
-            ]
-          }
+          className="sc-fzpans ifwKAe"
+          overflow="hidden"
         >
-          More info
-        </button>
+          <img
+            alt="No image provided"
+            src="/"
+          />
+        </div>
+        <div
+          className="sc-fzozJi hRuFrg"
+          display="flex"
+          width="auto"
+        >
+          <h3
+            className="sc-AxiKw dsegVB"
+            fontFamily="heading"
+            fontSize={
+              Array [
+                3,
+                3,
+                4,
+                4,
+              ]
+            }
+          >
+            Apartment 2
+          </h3>
+          <p
+            className="sc-AxhUy iPnAqk"
+            fontFamily="body"
+            fontSize={
+              Array [
+                1,
+                1,
+                2,
+                2,
+              ]
+            }
+          >
+            jalan Mangga 25 blok F nomor 167
+          </p>
+          <div
+            className="sc-fzoLsD cwA-duP"
+          />
+          <h2
+            className="sc-AxirZ jrdOBY"
+            fontFamily="heading"
+            fontSize={
+              Array [
+                4,
+                4,
+                5,
+                5,
+              ]
+            }
+          />
+          <button
+            className="sc-AxheI cjQULr"
+            fontFamily="body"
+            fontSize={
+              Array [
+                1,
+                1,
+                2,
+                2,
+              ]
+            }
+            fontWeight="bold"
+            onClick={[Function]}
+            width={
+              Array [
+                1,
+              ]
+            }
+          >
+            More info
+          </button>
+        </div>
       </div>
     </div>
   </div>
