@@ -165,6 +165,7 @@ const HeroForm: React.FC<Props> = ({
         <Container
             flexDirection="column"
             alignItems={['center', 'center', 'flex-start']}
+            flexWrap="wrap"
             py={[4, 4, 5, 5]}
             px={[4, 6, 5, 5]}
             position={'relative'}

@@ -8,7 +8,7 @@ import closeIcon from '@iconify/icons-uil/multiply';
 
 import Logo from 'components/logo';
 import Links from './links';
-import { PositioningProps, StylingProps, theme } from 'styles';
+import { OuterWrapper, PositioningProps, StylingProps, theme } from 'styles';
 import Button from 'components/button';
 
 type Props = {};
@@ -18,7 +18,6 @@ type ContainerProps = PositioningProps & PositionProps & StylingProps & {};
 const Container: React.FC<ContainerProps> = styled.nav<ContainerProps>`
     ${layout}
     ${position}
-    ${flexbox}
     ${space}
 `;
 
@@ -34,62 +33,74 @@ const Nav: React.FC<Props> = () => {
 
     return (
         <Container
-            display="flex"
-            justifyContent="space-between"
-            alignItems="center"
-            position="relative"
             width={1}
-            py={[3]}
-            px={[3]}
+            position={'fixed'}
+            zIndex={2}
             css={`
-                #logo {
-                    transition: 0.2s;
-                    height: 32px;
-                    width: 96px;
-
-                    path {
-                        fill: ${displayMenu
-                            ? theme.colors.bg
-                            : theme.colors.dark[0]};
-                    }
-                }
-
-                #menu {
-                    transition: 0.2s;
-                    height: 24px;
-                    width: 24px;
-                    transform: translateY(20%) !important;
-                }
-
-                @media screen and (min-width: ${theme.breakpoints[1]}) {
-                    #menu {
-                        display: none;
-                    }
-                }
+                display: grid;
+                place-items: center;
             `}
         >
-            <Logo id="logo" />
-            <Links displayMenu={displayMenu} clickButton={clickButton} />
-            <span
-                onClick={toggleMenu}
-                onKeyDown={toggleMenu}
-                role="button"
-                tabIndex={0}
+            <OuterWrapper
+                display="flex"
+                justifyContent="space-between"
+                alignItems="center"
+                position="relative"
+                width={1}
+                py={[3]}
+                px={[3]}
+                css={`
+                    #logo {
+                        transition: 0.2s;
+                        height: 32px;
+                        width: 96px;
+
+                        path {
+                            fill: ${displayMenu
+                                ? theme.colors.bg
+                                : theme.colors.dark[0]};
+                        }
+                    }
+
+                    #menu {
+                        transition: 0.2s;
+                        height: 24px;
+                        width: 24px;
+                        transform: translateY(20%) !important;
+                    }
+
+                    @media screen and (min-width: ${theme.breakpoints[1]}) {
+                        #menu {
+                            display: none;
+                        }
+                    }
+                `}
             >
-                <Icon
-                    icon={displayMenu ? closeIcon : menuIcon}
-                    color={displayMenu ? theme.colors.bg : theme.colors.dark[0]}
-                    id="menu"
-                />
-            </span>
-            <Button
-                display={['none', 'none', 'block']}
-                handleClick={clickButton}
-                variant="primary"
-                width="fit-content"
-            >
-                Hubungi Saya!
-            </Button>
+                <Logo id="logo" />
+                <Links displayMenu={displayMenu} clickButton={clickButton} />
+                <span
+                    onClick={toggleMenu}
+                    onKeyDown={toggleMenu}
+                    role="button"
+                    tabIndex={0}
+                >
+                    <Icon
+                        icon={displayMenu ? closeIcon : menuIcon}
+                        color={
+                            displayMenu ? theme.colors.bg : theme.colors.dark[0]
+                        }
+                        id="menu"
+                    />
+                </span>
+                <Button
+                    display={['none', 'none', 'block']}
+                    handleClick={clickButton}
+                    variant="primary"
+                    width="fit-content"
+                >
+                    Hubungi Saya!
+                </Button>
+            </OuterWrapper>
         </Container>
     );
 };

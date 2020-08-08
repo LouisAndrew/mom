@@ -17,7 +17,7 @@ import { PositioningProps, OuterWrapper, theme } from 'styles';
 
 type Props = {};
 
-type ContainerProps = PositioningProps & ColorProps & {};
+type ContainerProps = PositioningProps & ColorProps & PositionProps & {};
 
 type BackgroundProps = PositioningProps & PositionProps & {};
 
@@ -29,6 +29,7 @@ const Container: React.FC<ContainerProps> = styled.div<ContainerProps>`
 
     ${color}
     ${space}
+    ${position}
 `;
 
 const Background: React.FC<BackgroundProps> = styled.div<BackgroundProps>`
@@ -77,13 +78,6 @@ const Background: React.FC<BackgroundProps> = styled.div<BackgroundProps>`
             height: 100%;
             width: 200%;
             transform: scale(1.1) translate(0, 10%);
-            /* position: absolute; */
-            /* width: 1308px;
-            height: 487px; */
-
-            /* transform: scale(0.6); */
-            /* bottom: 0;
-            left: -32%; */
         }
     }
 
@@ -91,10 +85,8 @@ const Background: React.FC<BackgroundProps> = styled.div<BackgroundProps>`
 
         #img-hero {
             position: relative;
-/* 
-            left: 0;
-            bottom: 10%;
-            transform: scale(1.1); */
+
+            width: 100vw;
         }
     }
 `;
@@ -117,7 +109,7 @@ const Hero: React.FC<Props> = () => {
 
     return (
         <>
-            <Container bg="light.1" pt={[0, 0, '10%']}>
+            <Container bg="light.1" pt={0} position="relative" zIndex={1}>
                 <OuterWrapper
                     position="relative"
                     display="flex"
