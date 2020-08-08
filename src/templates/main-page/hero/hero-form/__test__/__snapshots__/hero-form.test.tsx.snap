@@ -2,10 +2,10 @@
 
 exports[`Form on hero component matches snapshot 1`] = `
 <div
-  className="sc-fznKkj kINJkk"
+  className="sc-fznKkj dBOEcr"
 >
   <h1
-    className="sc-AxjAm csPxEV"
+    className="sc-AxjAm fyIHLZ"
     color="dark.0"
     fontFamily="heading"
     fontSize={
@@ -21,7 +21,7 @@ exports[`Form on hero component matches snapshot 1`] = `
     Heading text about finding a house
   </h1>
   <p
-    className="sc-AxhUy dLUeTM"
+    className="sc-AxhUy jFOsJE"
     fontFamily="body"
     fontSize={
       Array [
@@ -36,9 +36,16 @@ exports[`Form on hero component matches snapshot 1`] = `
     Exercitation aute eu nostrud do sit labore ex minim reprehenderit ut ipsum veniam ad laborum. Minim eiusmod sint officia ipsum ad dolore Lorem sunt tempor ut. Esse in elit exercitation elit ex laborum nulla do veniam amet. Ut est reprehenderit nisi laboris. In amet ea ut elit nulla officia ex. Est exercitation aliqua sunt nostrud enim velit non duis ipsum ea officia.
   </p>
   <form
-    className="sc-fznZeY dpqyGJ"
+    className="sc-fznZeY cuBfly"
     color="dark.0"
-    width={1}
+    width={
+      Array [
+        1,
+        1,
+        0.6,
+        0.5,
+      ]
+    }
   >
     <span
       className="select-span"
@@ -71,7 +78,7 @@ exports[`Form on hero component matches snapshot 1`] = `
         width={1}
       >
         <label
-          className="sc-AxmLO hNJrFt"
+          className="sc-AxmLO fPFTiL"
           fontFamily="body"
           fontSize={
             Array [
@@ -87,8 +94,6 @@ exports[`Form on hero component matches snapshot 1`] = `
           width={
             Array [
               1,
-              1,
-              0.8,
             ]
           }
         >
@@ -120,7 +125,7 @@ exports[`Form on hero component matches snapshot 1`] = `
       </div>
     </span>
     <label
-      className="sc-fzokOt gSFrd"
+      className="sc-fzokOt kTYgPP"
       display="flex"
       fontFamily="body"
       fontSize={
@@ -137,8 +142,6 @@ exports[`Form on hero component matches snapshot 1`] = `
       width={
         Array [
           "fit-content",
-          "fit-content",
-          "100%",
         ]
       }
     >
@@ -267,9 +270,8 @@ exports[`Form on hero component matches snapshot 1`] = `
         </label>
       </div>
     </span>
-    <label
-      className="sc-fzokOt joBVJa"
-      display="flex"
+    <button
+      className="sc-fznyAO hdmVWB"
       fontFamily="body"
       fontSize={
         Array [
@@ -280,35 +282,15 @@ exports[`Form on hero component matches snapshot 1`] = `
         ]
       }
       fontWeight="bold"
-      for="hero-form-area"
-      htmlFor="hero-form-area"
-      width={1}
+      onClick={[Function]}
+      width={
+        Array [
+          1,
+        ]
+      }
     >
-      Tunggu apa lagi?
-      <button
-        className="sc-fznyAO jkPYUK"
-        fontFamily="body"
-        fontSize={
-          Array [
-            1,
-            1,
-            2,
-            2,
-          ]
-        }
-        fontWeight="bold"
-        onClick={[Function]}
-        width={
-          Array [
-            "100%",
-            "100%",
-            "fit-content",
-          ]
-        }
-      >
-        Cari Sekarang!
-      </button>
-    </label>
+      Cari Sekarang!
+    </button>
   </form>
 </div>
 `;

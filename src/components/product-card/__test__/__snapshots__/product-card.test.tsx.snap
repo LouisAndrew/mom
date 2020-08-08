@@ -63,7 +63,7 @@ exports[`Product card component matches snapshot 1`] = `
       }
     />
     <button
-      className="sc-AxheI cjQULr"
+      className="sc-AxheI eICHae"
       fontFamily="body"
       fontSize={
         Array [

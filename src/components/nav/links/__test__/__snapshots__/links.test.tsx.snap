@@ -717,7 +717,7 @@ exports[`Link component on navigation matches snapshot 1`] = `
     </div>
   </li>
   <button
-    className="sc-fzoLsD dDccGz"
+    className="sc-fzoLsD cmsPyc"
     display={
       Array [
         "block",

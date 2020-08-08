@@ -131,7 +131,7 @@ exports[`Mailing list component on footer matches snapshot 1`] = `
       />
     </label>
     <button
-      className="sc-fznyAO qqNJj"
+      className="sc-fznyAO gBqOlI"
       fontFamily="body"
       fontSize={
         Array [

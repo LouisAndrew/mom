@@ -10,8 +10,6 @@ import {
     ColorProps,
 } from 'styled-system';
 
-import Img from './assets/img';
-import ImgSmall from './assets/img-small';
 import HeroForm from './hero-form';
 import { PositioningProps, OuterWrapper, theme } from 'styles';
 
@@ -38,57 +36,6 @@ const Background: React.FC<BackgroundProps> = styled.div<BackgroundProps>`
     ${flexbox}
     ${space}
     ${layout}
-
-    /* add media query for smaller devices */
-
-    #img-hero-small {
-        display: block;
-
-        position: relative;
-
-        height: 145px;
-        width: 322px;
-
-        transform: scale(1.15)
-    }
-
-    #img-hero {
-        display: none;
-    }
-
-    @media screen and (max-width: 400px) and (max-height: 640px) {
-
-        #img-hero-small {
-            display: block;
-
-            position: absolute;
-            transform: scale(0.8);
-            bottom: 0;
-            left: -8%;
-        }
-    }
-
-    @media screen and (min-width: ${theme.breakpoints[1]}) {
-        #img-hero-small {
-            display: none;
-        }
-
-        #img-hero {
-            display: block;
-            height: 100%;
-            width: 200%;
-            transform: scale(1.1) translate(0, 10%);
-        }
-    }
-
-    @media screen and (min-width: ${theme.breakpoints[2]}) {
-
-        #img-hero {
-            position: relative;
-
-            width: 100vw;
-        }
-    }
 `;
 
 const Hero: React.FC<Props> = () => {
@@ -109,7 +56,109 @@ const Hero: React.FC<Props> = () => {
 
     return (
         <>
-            <Container bg="light.1" pt={0} position="relative" zIndex={1}>
+            <Container
+                bg="bg"
+                pt={0}
+                position="relative"
+                zIndex={1}
+                minHeight={['100vh', '80vh', '100vh']}
+            >
+                <Background
+                    position="absolute"
+                    top={0}
+                    left={0}
+                    // display="flex"
+                    // alignItems={['flex-start', 'flex-start', 'flex-end']}
+                    // justifyContent={['flex-start', 'flex-start', 'flex-end']}
+                    overflowX="visible"
+                    height={['100%']}
+                    width={1}
+                    zIndex={2}
+                    css={`
+                        --border-radius: 16px;
+
+                        #hero-img {
+                            position: absolute;
+                            width: 100%;
+                            bottom: -15%;
+                            left: 0;
+
+                            border-top-left-radius: calc(
+                                4 * var(--border-radius)
+                            );
+                        }
+
+                        @media screen and (min-width: ${theme.breakpoints[1]}) {
+                            #hero-img {
+                                height: 60%;
+                                width: auto;
+
+                                left: auto;
+                                right: 0;
+
+                                z-index: 2;
+                                border-top-left-radius: 0;
+                            }
+
+                            &:after {
+                                content: '';
+                                position: absolute;
+                                z-index: 1;
+
+                                height: 40%;
+                                width: 50%;
+
+                                bottom: 8%;
+                                right: 10%;
+
+                                background-color: ${theme.colors.accent[1]};
+
+                                border-top-right-radius: var(--border-radius);
+                                border-bottom-left-radius: var(--border-radius);
+                            }
+                        }
+
+                        @media screen and (min-width: ${theme.breakpoints[2]}) {
+                            #hero-img {
+                                height: 100%;
+                                top: -15%;
+                                right: -10%;
+                                border-bottom-left-radius: var(--border-radius);
+                            }
+
+                            &:after {
+                                height: 80%;
+                                width: 40%;
+                                max-width: 500px;
+
+                                right: 5%;
+                                top: 10%;
+
+                                border-top-right-radius: 0;
+                                border-top-left-radius: calc(
+                                    var(--border-radius) / 2
+                                );
+                                border-bottom-right-radius: calc(
+                                    var(--border-radius) / 2
+                                );
+                            }
+                        }
+
+                        @media screen and (min-width: 1440px) {
+                            #hero-img {
+                                right: -5%;
+                            }
+                        }
+                    `}
+                >
+                    {/* <Img className="img" id="img-hero" />
+                        <ImgSmall className="img" id="img-hero-small" /> */}
+                    <img
+                        src="https://res.cloudinary.com/dsvdffre0/image/upload/v1596883624/sonnie-hiles-L0BaowhFe4c-unsplash_jwo8ie.jpg"
+                        alt="img"
+                        id="hero-img"
+                    />
+                </Background>
                 <OuterWrapper
                     position="relative"
                     display="flex"
@@ -133,23 +182,6 @@ const Hero: React.FC<Props> = () => {
                         allLocations={mockAllLocations}
                         submitForm={submitForm}
                     />
-                    <Background
-                        display="flex"
-                        alignItems="center"
-                        justifyContent="center"
-                        overflowX="visible"
-                        height={['30%', '0', '50%']}
-                        width={1}
-                        zIndex={1}
-                        css={`
-                            @media screen and (max-width: 400px) and (max-height: 640px) {
-                                height: 0;
-                            }
-                        `}
-                    >
-                        <Img className="img" id="img-hero" />
-                        <ImgSmall className="img" id="img-hero-small" />
-                    </Background>
                 </OuterWrapper>
             </Container>
         </>

@@ -161,7 +161,7 @@ const MailingList: React.FC<Props> = ({ imgFluidSrc }) => {
                 </Label>
                 <Button
                     handleClick={handleClick}
-                    variant="primary"
+                    variant="primary-outer"
                     width="fit-content"
                     height="fit-content"
                     py={[2]}

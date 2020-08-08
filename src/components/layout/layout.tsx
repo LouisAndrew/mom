@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { ThemeProvider } from 'styled-components';
+import { ThemeProvider } from 'styled-components';
 // import { useStaticQuery, graphql } from 'gatsby';
 import { theme, GlobalStyles } from '../../styles';
 // Components

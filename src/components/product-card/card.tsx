@@ -168,7 +168,7 @@ const Card: React.FC<Props> = ({
                 </H2>
                 <Button
                     handleClick={navigate}
-                    variant="primary-outer"
+                    variant="secondary-outer"
                     ml={[2]}
                     alignSelf={['center']}
                     width={[1]}

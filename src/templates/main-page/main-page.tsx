@@ -1,6 +1,5 @@
 import React from 'react';
 
-import Layout from 'components/layout';
 import Hero from './hero';
 import About from './about';
 import HotList from './hot-list';
@@ -54,11 +53,11 @@ const MainPage = () => {
     const imgAlt = 'smiling-woman';
 
     return (
-        <Layout>
+        <>
             <Hero />
             <About imgSrc={src} imgAlt={imgAlt} />
             <HotList hotProperties={mockProperties} />
-        </Layout>
+        </>
     );
 };
 

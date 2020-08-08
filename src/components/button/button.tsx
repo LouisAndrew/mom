@@ -32,7 +32,7 @@ const SButton: React.FC<SProps> = styled.button<SProps>`
         variants: {
             primary: {
                 bg: 'accent.1',
-                color: 'bg',
+                color: 'dark.0',
             },
             secondary: {
                 bg: 'accent.0',
@@ -46,7 +46,7 @@ const SButton: React.FC<SProps> = styled.button<SProps>`
                 borderColor: 'accent.1',
                 '&:hover': {
                     bg: 'accent.1',
-                    color: 'bg',
+                    color: 'dark.0',
                 },
             },
             'secondary-outer': {

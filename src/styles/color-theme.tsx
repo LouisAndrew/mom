@@ -12,5 +12,5 @@ export const colors: ColorTheme = {
     // font color
     dark: ['#2E282A'],
     //      green accent, pink accent, stroke-shade
-    accent: ['#2EC4B6', '#FF7477', '#C3C2C2'],
+    accent: ['#587B7F', '#F2D9C6', '#C3C2C2'],
 };

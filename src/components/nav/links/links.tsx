@@ -108,7 +108,7 @@ const Links: React.FC<Props> = ({ displayMenu, clickButton }) => {
             </LinkItem>
             <Button
                 handleClick={clickButton}
-                variant="primary"
+                variant="primary-outer"
                 mx={[4, 5]}
                 my={[2]}
                 mb={3}

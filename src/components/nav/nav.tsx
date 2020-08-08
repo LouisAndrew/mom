@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import styled from 'styled-components';
-import { layout, position, flexbox, space, PositionProps } from 'styled-system';
+import { layout, position, space, PositionProps } from 'styled-system';
 import { Icon } from '@iconify/react';
 import menuIcon from '@iconify/icons-uil/bars';
 import closeIcon from '@iconify/icons-uil/multiply';
@@ -35,6 +35,7 @@ const Nav: React.FC<Props> = () => {
         <Container
             width={1}
             position={'fixed'}
+            left={0}
             zIndex={2}
             css={`
                 display: grid;
@@ -95,7 +96,7 @@ const Nav: React.FC<Props> = () => {
                 <Button
                     display={['none', 'none', 'block']}
                     handleClick={clickButton}
-                    variant="primary"
+                    variant="secondary"
                     width="fit-content"
                 >
                     Hubungi Saya!
