@@ -2,7 +2,7 @@
 
 exports[`Hero element matches snapshot 1`] = `
 <div
-  className="sc-fzqBZW fMIXjC"
+  className="sc-fzqBZW fMIXjC top"
 >
   <div
     className="sc-fzqNJr cqsWMP"
@@ -13,14 +13,30 @@ exports[`Hero element matches snapshot 1`] = `
     }
     width={1}
   >
-    <img
-      alt="img"
+    <div
       id="hero-img"
-      src="https://res.cloudinary.com/dsvdffre0/image/upload/v1596883624/sonnie-hiles-L0BaowhFe4c-unsplash_jwo8ie.jpg"
+    >
+      <img
+        alt="img"
+        id="hero-img"
+        src="https://res.cloudinary.com/dsvdffre0/image/upload/v1596883624/sonnie-hiles-L0BaowhFe4c-unsplash_jwo8ie.jpg"
+        style={
+          Object {
+            "height": "100%",
+            "left": 0,
+            "position": "absolute",
+            "top": 0,
+            "width": "100%",
+          }
+        }
+      />
+    </div>
+    <div
+      id="bg-shade"
     />
   </div>
   <div
-    className="sc-AxgMl iMjOvJ"
+    className="sc-AxgMl gWoUtq"
     display="flex"
   >
     <div
@@ -58,7 +74,7 @@ exports[`Hero element matches snapshot 1`] = `
         Cari rumah idamanmu sekarang! Cukup cantumkan kriteria mu, tanpa ribet
       </p>
       <form
-        className="sc-fznZeY cuBfly"
+        className="sc-fznZeY cniRBJ"
         color="dark.0"
         width={
           Array [
@@ -172,7 +188,7 @@ exports[`Hero element matches snapshot 1`] = `
             className="sc-fzplWN czaqLz"
           >
             <input
-              className="sc-fzoLsD czsoaZ"
+              className="sc-fzoLsD kDWymi"
               fontFamily="body"
               fontSize={
                 Array [

@@ -4,9 +4,15 @@ import Hero from './hero';
 import About from './about';
 import HotList from './hot-list';
 import { Property } from 'interfaces/Property';
+import { FluidObject } from 'gatsby-image';
+
+type Props = {
+    heroImgFluid?: FluidObject;
+    aboutImgFluid?: FluidObject;
+};
 
 // TODO: gatsby context handling!
-const MainPage = () => {
+const MainPage: React.FC<Props> = ({ heroImgFluid, aboutImgFluid }) => {
     const mockProperties: Property[] = [
         {
             name: 'Rumah 1',
@@ -54,8 +60,8 @@ const MainPage = () => {
 
     return (
         <>
-            <Hero />
-            <About imgSrc={src} imgAlt={imgAlt} />
+            <Hero heroImgFluid={heroImgFluid} />
+            <About imgSrc={src} imgFluidSrc={aboutImgFluid} imgAlt={imgAlt} />
             <HotList hotProperties={mockProperties} />
         </>
     );

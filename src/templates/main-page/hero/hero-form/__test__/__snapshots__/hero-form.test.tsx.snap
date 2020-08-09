@@ -36,7 +36,7 @@ exports[`Form on hero component matches snapshot 1`] = `
     Exercitation aute eu nostrud do sit labore ex minim reprehenderit ut ipsum veniam ad laborum. Minim eiusmod sint officia ipsum ad dolore Lorem sunt tempor ut. Esse in elit exercitation elit ex laborum nulla do veniam amet. Ut est reprehenderit nisi laboris. In amet ea ut elit nulla officia ex. Est exercitation aliqua sunt nostrud enim velit non duis ipsum ea officia.
   </p>
   <form
-    className="sc-fznZeY cuBfly"
+    className="sc-fznZeY cniRBJ"
     color="dark.0"
     width={
       Array [
@@ -150,7 +150,7 @@ exports[`Form on hero component matches snapshot 1`] = `
         className="sc-fzplWN czaqLz"
       >
         <input
-          className="sc-fzoLsD czsoaZ"
+          className="sc-fzoLsD kDWymi"
           fontFamily="body"
           fontSize={
             Array [

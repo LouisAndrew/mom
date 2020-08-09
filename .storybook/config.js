@@ -1,10 +1,11 @@
-import { configure, addDecorator } from '@storybook/react';
+import { configure, addDecorator, addParameters } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, optionsKnob } from '@storybook/addon-knobs';
 import { withSmartKnobs } from 'storybook-addon-smart-knobs';
 import { checkA11y } from '@storybook/addon-a11y';
 import { withInfo } from '@storybook/addon-info';
 import { withResponsiveViews } from 'storybook-addon-responsive-views';
+import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 
 import ThemeDecorator from './theme-decorator';
 
@@ -20,6 +21,39 @@ addDecorator(
         wide: 64 * 16,
     })
 );
+
+addParameters({
+    viewport: {
+        viewports: {
+            ...INITIAL_VIEWPORTS,
+            ipad: {
+                name: 'Ipad',
+                width: '768px',
+                height: '1024px',
+            },
+            iphoneX: {
+                name: 'Iphone x',
+                width: '375px',
+                height: '812px',
+            },
+            ipadPro: {
+                name: 'Ipad pro',
+                width: '1024px',
+                height: '1366px',
+            },
+            desktopStandard: {
+                name: '19 inch standard',
+                width: '1280px',
+                height: '1024px',
+            },
+            desktop24: {
+                name: '24inch',
+                width: '1900px',
+                height: '1200px',
+            },
+        },
+    },
+});
 
 addDecorator(ThemeDecorator);
 

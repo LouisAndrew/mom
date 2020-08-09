@@ -110,7 +110,7 @@ exports[`Footer component matches snapshot 1`] = `
       >
         Alamat email
         <input
-          className="sc-AxheI kvCOGc"
+          className="sc-AxheI gIfcYb"
           fontFamily="body"
           fontSize={
             Array [
@@ -158,7 +158,7 @@ exports[`Footer component matches snapshot 1`] = `
     width={1}
   >
     <div
-      className="sc-AxgMl cKjZzA"
+      className="sc-AxgMl cdtCDX"
       display="flex"
       width={1}
     >

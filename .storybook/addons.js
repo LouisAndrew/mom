@@ -6,11 +6,7 @@ import '@storybook/addon-viewport/register';
 import 'storybook-addon-responsive-views/register';
 
 import { addParameters } from '@storybook/react';
-import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 
 addParameters({
     info: { inline: true },
-    viewport: {
-        viewports: INITIAL_VIEWPORTS,
-    },
 });

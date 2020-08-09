@@ -1,11 +1,60 @@
-import React from 'react'
-import { Layout } from '../components/layout'
-import { SEO } from '../components/seo'
+import React from 'react';
+import { graphql } from 'gatsby';
 
-const App = () => (
+import Layout from 'components/layout';
+import { SEO } from 'components/seo';
+import MainPage from 'templates/main-page';
+import { FluidObject } from 'gatsby-image';
+import { Query } from '@testing-library/react';
+
+type FluidImg = {
+    childImageSharp: {
+        fluid: FluidObject;
+    };
+};
+
+type QueryReturn = {
+    heroImg: FluidImg;
+    aboutImg: FluidImg;
+};
+
+const App = (props: any) => {
+    const { data } = props;
+    const { heroImg, aboutImg } = data as QueryReturn;
+
+    console.log(heroImg);
+    console.log(aboutImg);
+
+    return (
         <Layout>
-                <SEO />
+            <SEO />
+            <MainPage
+                heroImgFluid={heroImg.childImageSharp.fluid}
+                aboutImgFluid={aboutImg.childImageSharp.fluid}
+            />
         </Layout>
-)
+    );
+};
 
-export default App
+export const query = graphql`
+    query {
+        heroImg: file(relativePath: { eq: "hero-img.jpg" }) {
+            childImageSharp {
+                fluid {
+                    ...GatsbyImageSharpFluid
+                }
+            }
+        }
+        aboutImg: file(relativePath: { eq: "about-img-mock.jpg" }) {
+            childImageSharp {
+                fluid {
+                    ...GatsbyImageSharpFluid
+                }
+            }
+        }
+    }
+`;
+
+export default App;
+
+// 6042481188

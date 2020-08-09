@@ -10,6 +10,14 @@ const GlobalStyles = createGlobalStyle`
     body {
       overflow-x: hidden;
     }
+
+    .top {
+      padding-top: 5vh !important;
+
+      @media screen and (max-width: 768px) and (orientation: landscape) {
+        padding-top: 20vh !important;
+      }
+    }
 `;
 
 export { GlobalStyles };
