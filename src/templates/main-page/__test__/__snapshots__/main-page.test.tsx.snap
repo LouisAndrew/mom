@@ -19,7 +19,6 @@ Array [
       >
         <img
           alt="img"
-          id="hero-img"
           src="https://res.cloudinary.com/dsvdffre0/image/upload/v1596883624/sonnie-hiles-L0BaowhFe4c-unsplash_jwo8ie.jpg"
           style={
             Object {
@@ -350,10 +349,14 @@ Array [
           ]
         }
       >
-        <img
-          alt="smiling-woman"
-          src="https://res.cloudinary.com/dsvdffre0/image/upload/v1596841161/stefan-stefancik-QXevDflbl8A-unsplash_ei8bvp.jpg"
-        />
+        <div
+          id="about-img"
+        >
+          <img
+            alt="smiling-woman"
+            src="https://res.cloudinary.com/dsvdffre0/image/upload/v1596841161/stefan-stefancik-QXevDflbl8A-unsplash_ei8bvp.jpg"
+          />
+        </div>
         <div
           className="sc-fzoXzr cgnpEw"
         >

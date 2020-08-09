@@ -75,10 +75,12 @@ const About: React.FC<Props> = ({ imgAlt, imgSrc, imgFluidSrc }) => {
                     alignItems="center"
                     justifyContent="center"
                     css={`
-                        & > img {
+                        #about-img {
                             border-radius: 8px;
                             width: 80%;
                             transform: translateY(24px);
+
+                            overflow: hidden;
 
                             @media screen and (min-width: ${theme
                                     .breakpoints[1]}) {
@@ -89,11 +91,13 @@ const About: React.FC<Props> = ({ imgAlt, imgSrc, imgFluidSrc }) => {
                         }
                     `}
                 >
-                    {imgFluidSrc ? (
-                        <Img fluid={imgFluidSrc} alt={imgAlt} />
-                    ) : (
-                        <img src={imgSrc} alt={imgAlt} />
-                    )}
+                    <div id="about-img">
+                        {imgFluidSrc ? (
+                            <Img fluid={imgFluidSrc} alt={imgAlt} />
+                        ) : (
+                            <img src={imgSrc} alt={imgAlt} />
+                        )}
+                    </div>
 
                     <DetailsWrapper
                         bg="light.0"

@@ -17,9 +17,13 @@ exports[`About component matches snapshot 1`] = `
         ]
       }
     >
-      <img
-        alt="github-icon"
-      />
+      <div
+        id="about-img"
+      >
+        <img
+          alt="github-icon"
+        />
+      </div>
       <div
         className="sc-AxmLO jNJDTw"
       >

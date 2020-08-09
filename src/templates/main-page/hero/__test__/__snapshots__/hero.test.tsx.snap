@@ -18,7 +18,6 @@ exports[`Hero element matches snapshot 1`] = `
     >
       <img
         alt="img"
-        id="hero-img"
         src="https://res.cloudinary.com/dsvdffre0/image/upload/v1596883624/sonnie-hiles-L0BaowhFe4c-unsplash_jwo8ie.jpg"
         style={
           Object {
