@@ -24,6 +24,7 @@ const App = (props: any) => {
 
     console.log(heroImg);
     console.log(aboutImg);
+    console.log(props);
 
     return (
         <Layout>
