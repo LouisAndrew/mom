@@ -92,6 +92,7 @@ export const Label: React.FC<LabelProps> = styled.label.attrs(
     ${layout} /* 100% width */
     ${flexbox} /* flexbox properties for the second label */
     ${grid}
+    ${color}
 `;
 
 const HeroForm: React.FC<Props> = ({

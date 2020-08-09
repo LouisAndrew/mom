@@ -73,7 +73,16 @@ const HotList: React.FC<Props> = ({ hotProperties }) => {
     });
 
     return (
-        <Container bg="bg" py={[5, 5, 6]}>
+        <Container
+            bg="bg"
+            py={[5, 5, 6]}
+            css={`
+                @media screen and (max-width: 768px) and (min-height: 568px) {
+                    position: relative;
+                    top: -3vh;
+                }
+            `}
+        >
             <OuterWrapper>
                 <H2 mb={[4, 4, 5]} textAlign="center">
                     {headingText}

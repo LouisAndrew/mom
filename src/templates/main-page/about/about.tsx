@@ -66,7 +66,16 @@ const About: React.FC<Props> = ({ imgAlt, imgSrc, imgFluidSrc }) => {
         'Quis ut sunt labore commodo amet velit laborum eu laboris. Lorem officia consectetur reprehenderit in ut ad anim cillum. Aute proident quis consequat nisi nulla non. Est ex minim aute qui commodo. Reprehenderit exercitation consectetur tempor aliquip nulla tempor cillum. Qui sint reprehenderit in anim aliqua labore veniam magna enim.';
 
     return (
-        <Container bg="bg" py={[6, 6, 7, 7]}>
+        <Container
+            bg="accent.1"
+            py={[6, 6, 7, 7]}
+            css={`
+                @media screen and (max-width: 768px) and (min-height: 568px) {
+                    position: relative;
+                    top: -3vh;
+                }
+            `}
+        >
             <OuterWrapper display="flex" justifyContent="center">
                 <Wrapper
                     width={[0.9]}

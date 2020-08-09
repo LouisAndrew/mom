@@ -88,7 +88,7 @@ exports[`Footer component matches snapshot 1`] = `
         Daftar ke mailing list kammiiii?
       </p>
       <label
-        className="sc-fzokOt fgLxTH"
+        className="sc-fzokOt gsqCoe"
         fontFamily="body"
         fontSize={
           Array [

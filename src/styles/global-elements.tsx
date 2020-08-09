@@ -100,7 +100,7 @@ const H1: React.FC<WithChildrenProps & FullSystemProps> = ({
         <SH1
             fontFamily="heading"
             fontWeight="extraBold"
-            fontSize={[4, 5, 6, 6]}
+            fontSize={[5, 5, 6, 6]}
             {...rest}
         >
             {children}

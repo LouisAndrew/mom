@@ -17,6 +17,8 @@ const GlobalStyles = createGlobalStyle`
       @media screen and (max-width: 768px) and (orientation: landscape) {
         padding-top: 20vh !important;
       }
+
+      
     }
 `;
 

@@ -43,12 +43,12 @@ Array [
         className="sc-fznKkj dBOEcr"
       >
         <h1
-          className="sc-AxjAm fyIHLZ"
+          className="sc-AxjAm dQWbKG"
           color="dark.0"
           fontFamily="heading"
           fontSize={
             Array [
-              4,
+              5,
               5,
               6,
               6,
@@ -94,7 +94,7 @@ Array [
             }
           >
             <label
-              className="sc-fzokOt fhoVCF"
+              className="sc-fzokOt emYOXI"
               fontFamily="body"
               fontSize={
                 Array [
@@ -163,7 +163,7 @@ Array [
             </div>
           </span>
           <label
-            className="sc-fzokOt kTYgPP"
+            className="sc-fzokOt fTZazG"
             display="flex"
             fontFamily="body"
             fontSize={
@@ -240,7 +240,7 @@ Array [
             className="select-span type"
           >
             <label
-              className="sc-fzokOt iwKsXs"
+              className="sc-fzokOt ilPzEh"
               display="flex"
               fontFamily="body"
               fontSize={

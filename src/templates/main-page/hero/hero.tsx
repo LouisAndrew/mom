@@ -73,6 +73,14 @@ const Hero: React.FC<Props> = ({ heroImgFluid }) => {
                 zIndex={1}
                 minHeight={['100vh', '80vh', '100vh']}
                 className="top"
+                css={`
+                    @media screen and (max-width: 768px) and (min-height: 568px) {
+                        &.top {
+                            padding-top: 0 !important;
+                            top: -3vh;
+                        }
+                    }
+                `}
             >
                 <Background
                     position="absolute"
@@ -132,6 +140,8 @@ const Hero: React.FC<Props> = ({ heroImgFluid }) => {
                                 }
                             }
                         }
+
+                        
                     `}
                 >
                     {/* <Img className="img" id="img-hero" />

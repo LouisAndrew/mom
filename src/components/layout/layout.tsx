@@ -3,7 +3,7 @@ import { ThemeProvider } from 'styled-components';
 // import { useStaticQuery, graphql } from 'gatsby';
 import { theme, GlobalStyles } from '../../styles';
 // Components
-import { CSSDebugger } from '../css-debugger';
+// import { CSSDebugger } from '../css-debugger';
 import Nav from 'components/nav';
 import Footer from 'components/foot';
 
@@ -24,8 +24,8 @@ const Layout: React.FC = ({ children }) => {
     return (
         <ThemeProvider theme={theme}>
             <GlobalStyles />
-            <CSSDebugger />
-            <main>
+            {/* <CSSDebugger /> */}
+            <main style={{ backgroundColor: theme.colors.bg }}>
                 <Nav />
                 {children}
                 <Footer />
