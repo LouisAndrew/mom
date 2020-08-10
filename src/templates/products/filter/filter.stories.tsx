@@ -6,4 +6,22 @@ import { Filter } from './filter';
 
 const story = storiesOf('Products.Filter component', module);
 
-story.add('Component', () => <Filter />);
+story.add('Component', () => (
+    <Filter
+        locationOptions={[]}
+        saleTypeOptions={[]}
+        propTypeOptions={[]}
+        handleChangeAddress={() => {
+            return;
+        }}
+        handleSelectLocations={() => {
+            return;
+        }}
+        handleSelectSaleType={() => {
+            return;
+        }}
+        handleSelectPropertyType={() => {
+            return;
+        }}
+    />
+));

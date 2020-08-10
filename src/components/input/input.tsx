@@ -19,7 +19,8 @@ import {
 import { StylingProps, PositioningProps, theme } from 'styles';
 
 type Props = PositioningProps &
-    StylingProps & {
+    StylingProps &
+    BorderColorProps & {
         placeholderText: string;
         // for labeling!
         id: string;
@@ -27,8 +28,6 @@ type Props = PositioningProps &
         variant?: string;
         // custom input type if needed.
         inputType?: string;
-        color?: string;
-        borderColor?: string;
         append?: boolean;
         appendContent?: string;
         handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
@@ -74,10 +73,19 @@ const SInput: React.FC<SProps> = styled.input.attrs(
     ${inVariant({
         variants: {
             primary: {
+                bg: 'light.0',
                 color: 'dark',
+                borderColor: 'accent.2',
             },
             secondary: {
+                bg: 'light.0',
                 color: 'dark',
+                borderColor: 'accent.2',
+            },
+            filter: {
+                bg: 'dark.1',
+                color: 'bg',
+                borderColor: 'dark.2',
             },
         },
     })}
@@ -95,6 +103,9 @@ const SInput: React.FC<SProps> = styled.input.attrs(
                 secondary: {
                     borderColor: 'accent.0',
                 },
+                filter: {
+                    borderColor: 'accent.0',
+                },
             },
         })}
 
@@ -106,10 +117,17 @@ const SInput: React.FC<SProps> = styled.input.attrs(
                         primary: {
                             bg: 'accent.1',
                             color: 'dark.0',
+                            borderColor: 'accent.2',
                         },
                         secondary: {
                             bg: 'accent.0',
                             color: 'bg',
+                            borderColor: 'accent.2',
+                        },
+                        filter: {
+                            bg: 'dark.1',
+                            color: 'bg',
+                            borderColor: 'dark.2',
                         },
                     },
                 })}
@@ -190,8 +208,7 @@ const Input: React.FC<Props> = ({
                 onChange={handleChange}
                 pr={[2, 2, 3]}
                 py={[1, 1, 2]}
-                pl={icon ? [4, 4, 5, 5] : [2, 2, 3, 3]}
-                bg="light.0"
+                pl={icon ? [4, 4, 5, 5] : [2, 2, 3]}
                 fontSize={[1, 1, 2, 2]}
                 fontFamily="body"
                 fontWeight="bold"
@@ -207,7 +224,6 @@ const Input: React.FC<Props> = ({
                 pr={[2, 2, 3]}
                 py={[1, 1, 2]}
                 pl={icon ? [4, 4, 5, 5] : [2, 2, 3, 3]}
-                bg="accent.3"
                 fontSize={[1, 1, 2, 2]}
                 fontFamily="body"
                 fontWeight="bold"

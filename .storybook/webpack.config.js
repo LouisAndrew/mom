@@ -42,6 +42,7 @@ module.exports = ({ config }) => {
             scenes: path.resolve(__dirname, `../src/scenes/`),
             styles: path.resolve(__dirname, `../src/styles/`),
             templates: path.resolve(__dirname, '../src/templates'),
+            helper: path.resolve(__dirname, '../src/helper'),
         },
     };
 

@@ -76,6 +76,7 @@ module.exports = {
                 scenes: path.join(__dirname, 'src/scenes'),
                 styles: path.join(__dirname, 'src/styles'),
                 templates: path.join(__dirname, 'src/templates'),
+                helper: path.join(__dirname, 'src/helper'),
             },
         },
         {

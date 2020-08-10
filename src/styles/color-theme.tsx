@@ -22,7 +22,7 @@ export const colors: ColorTheme = {
     // plain white!     // lighhter shade of pink.
     light: ['#FFFFFF', '#FFECEC', '#f0f0f0', '#f3f3f3'],
     // font color
-    dark: ['#2E282A'],
+    dark: ['#2E282A', '#1F1D1E', '#3C3639'],
     //      green accent, pink accent, stroke-shade
     accent: ['#587B7F', '#F2D9C6', '#C3C2C2'],
     //

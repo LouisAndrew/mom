@@ -1,21 +1,35 @@
-import Select from 'components/select';
-import { SelectItem } from 'components/select/select';
-import Input from 'components/input';
 import React from 'react';
 
 import styled from 'styled-components';
-import { color, position, layout, PositionProps } from 'styled-system';
+import {
+    color,
+    position,
+    layout,
+    flexbox,
+    space,
+    typography,
+    PositionProps,
+} from 'styled-system';
 
+import {
+    labelFontStyles,
+    horizontalFormStyles,
+    calculateAreaFormWidth,
+    labelTypographyStyles,
+} from './styling-helper';
 import { H2, H3, StylingProps, PositioningProps } from 'styles';
 import { Label } from 'templates/main-page/hero/hero-form/hero-form';
-
-type Props = PositioningProps & {};
+import Select from 'components/select';
+import Input from 'components/input';
+import { SelectItem } from 'components/select/select';
 
 type ContainerProps = PositionProps & StylingProps & PositioningProps & {};
 
 type FormProps = PositioningProps & {};
 
 type AreaWrapperProps = {};
+
+type FormHorizontalBoxProps = StylingProps & PositioningProps & {};
 
 const Container: React.FC<ContainerProps> = styled.div<ContainerProps>`
     ${position}
@@ -27,97 +41,50 @@ const Form: React.FC<FormProps> = styled.form<FormProps>``;
 
 const AreaWrapper: React.FC<AreaWrapperProps> = styled.div<AreaWrapperProps>``;
 
-const Filter: React.FC<Props> = () => {
-    const handleSelectLocations = (value: string) => {
-        console.log(value);
-    };
+const PriceWrapper: React.FC<AreaWrapperProps> = styled(AreaWrapper)``;
 
-    const handleChangeAddress = (
-        event: React.ChangeEvent<HTMLInputElement>
-    ) => {
-        return;
-    };
+const FormHorizontalBox: React.FC<FormHorizontalBoxProps> = styled.div<
+    FormHorizontalBoxProps
+>`
+    ${color}
+    ${flexbox}
+    ${layout}
+    ${space}
 
-    const handleSelectSaleType = (value: string) => {
-        console.log(value);
-    };
+    & > span {
+        ${color}
+        ${typography}
+        margin: 0 8px;
+    }
+`;
 
-    const handleSelectPropertyType = (value: string) => {
-        console.log(value);
-    };
+type Props = PositioningProps & {
+    locationOptions: SelectItem[];
+    saleTypeOptions: SelectItem[];
+    propTypeOptions: SelectItem[];
+    handleChangeAddress: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    handleSelectLocations: (value: string) => void;
+    handleSelectSaleType: (value: string) => void;
+    handleSelectPropertyType: (value: string) => void;
+};
 
-    const mockSelectLocations: SelectItem[] = [
-        {
-            key: 'Penang',
-            value: 'penang',
-        },
-        {
-            key: 'Malaysia',
-            value: 'malay',
-        },
-    ];
-
-    const selectPropertyTypeItems: SelectItem[] = [
-        {
-            key: 'Rumah',
-            value: 'house',
-        },
-        {
-            key: 'Apartment',
-            value: 'apartment',
-        },
-        {
-            key: 'Ruko',
-            value: 'home-office',
-        },
-        {
-            key: 'Kavling',
-            value: 'kavling',
-        },
-    ];
-
-    const selectSaleTypeItems: SelectItem[] = [
-        {
-            key: 'Jual',
-            value: 'sell',
-        },
-        {
-            key: 'Sewa',
-            value: 'rent',
-        },
-    ];
-
-    const labelFontStyles: {
-        fontFamily: string;
-        fontSize: number[];
-        fontWeight: string;
-    } = {
-        fontFamily: 'body',
-        fontSize: [1, 1, 2],
-        fontWeight: 'regular',
-    };
-
-    const labelTypographyStyles: string[] = ['bg'];
-
+/**
+ * A display component for filtering properties to be displayed!
+ *
+ */
+const Filter: React.FC<Props> = ({
+    locationOptions,
+    saleTypeOptions,
+    propTypeOptions,
+    handleChangeAddress,
+    handleSelectLocations,
+    handleSelectSaleType,
+    handleSelectPropertyType,
+}) => {
     return (
         <Container height={['100vh']} bg={['dark.0']}>
             <H2 color={['bg']}>Filters</H2>
             <Form>
-                <>
-                    <Label
-                        for="location-filter"
-                        color={labelTypographyStyles}
-                        {...labelFontStyles}
-                    >
-                        Daerah
-                    </Label>
-                    <Select
-                        id="location-filter"
-                        items={mockSelectLocations}
-                        handleSelect={handleSelectLocations}
-                        variant="primary"
-                    />
-                </>
                 <Label
                     for="address-filter"
                     color={labelTypographyStyles}
@@ -128,9 +95,27 @@ const Filter: React.FC<Props> = () => {
                         placeholderText="Alamat rumah"
                         id="address-filter"
                         handleChange={handleChangeAddress}
-                        variant="primary"
+                        variant="filter"
                     />
                 </Label>
+
+                <>
+                    <Label
+                        for="location-filter"
+                        color={labelTypographyStyles}
+                        {...labelFontStyles}
+                    >
+                        Daerah
+                    </Label>
+                    <Select
+                        id="location-filter"
+                        items={locationOptions}
+                        handleSelect={handleSelectLocations}
+                        variant="filter"
+                        multiple={true}
+                    />
+                </>
+
                 <>
                     <Label
                         for="sale-type-filter"
@@ -141,12 +126,13 @@ const Filter: React.FC<Props> = () => {
                     </Label>
                     <Select
                         id="sale-type-filter"
-                        items={selectSaleTypeItems}
-                        variant="primary"
+                        items={saleTypeOptions}
+                        variant="filter"
                         multiple={true}
                         handleSelect={handleSelectSaleType}
                     />
                 </>
+
                 <>
                     <Label
                         for="property-type-filter"
@@ -157,45 +143,180 @@ const Filter: React.FC<Props> = () => {
                     </Label>
                     <Select
                         id="property-type-filter"
-                        items={selectPropertyTypeItems}
-                        variant="primary"
+                        items={propTypeOptions}
+                        variant="filter"
                         multiple={true}
                         handleSelect={handleSelectPropertyType}
                     />
                 </>
+
                 <AreaWrapper>
                     <H3 {...labelFontStyles} color={labelTypographyStyles}>
                         Luas rumah
                     </H3>
-                    <Label
-                        for="min-area-filter"
-                        color={labelTypographyStyles}
-                        {...labelFontStyles}
-                        fontSize={[0, 0, 1]}
+                    <FormHorizontalBox
+                        width={1}
+                        display="flex"
+                        alignItems="center"
+                        justifyContent="flex-start"
+                        bg={['dark.1']}
+                        px={[2]}
+                        py={[2]}
+                        color={['bg']}
+                        fontSize={[2, 2, 3]}
+                        fontFamily="body"
+                        fontWeight="regular"
+                        css={`
+                            border-radius: 4px;
+                        `}
                     >
-                        Dari
-                        <Input
-                            placeholderText="MIN"
-                            id="min-area-filter"
-                            handleChange={handleChangeAddress}
-                            variant="primary"
-                        />
-                    </Label>
-                    <Label
-                        for="max-area-filter"
-                        color={labelTypographyStyles}
-                        {...labelFontStyles}
-                        fontSize={[0, 0, 1]}
-                    >
-                        Sampai
-                        <Input
-                            placeholderText="MAX"
-                            id="max-area-filter"
-                            handleChange={handleChangeAddress}
-                            variant="primary"
-                        />
-                    </Label>
+                        <Label for="area-min">
+                            <Input
+                                inputType="number"
+                                placeholderText="Min"
+                                id="area-min"
+                                variant="filter"
+                                handleChange={() => {
+                                    return;
+                                }}
+                                width={calculateAreaFormWidth(4)}
+                                {...horizontalFormStyles}
+                            />
+                        </Label>
+                        <span>-</span>
+                        <Label for="area-max">
+                            <Input
+                                inputType="number"
+                                placeholderText="Max"
+                                variant="filter"
+                                id="area-max"
+                                handleChange={() => {
+                                    return;
+                                }}
+                                width={calculateAreaFormWidth(4)}
+                                {...horizontalFormStyles}
+                            />
+                        </Label>
+                        <span>M²</span>
+                    </FormHorizontalBox>
                 </AreaWrapper>
+
+                <PriceWrapper>
+                    <H3 {...labelFontStyles} color={labelTypographyStyles}>
+                        Harga rumah
+                    </H3>
+                    <FormHorizontalBox
+                        bg={['dark.1']}
+                        px={[2]}
+                        py={[1]}
+                        width={1}
+                        css={`
+                            span {
+                                display: block;
+                                width: 30%;
+                            }
+                        `}
+                    >
+                        <FormHorizontalBox
+                            width={1}
+                            display="flex"
+                            alignItems="center"
+                            justifyContent="flex-start"
+                            py={[1]}
+                            color={['bg']}
+                            fontSize={[2, 2, 3]}
+                            fontFamily="body"
+                            fontWeight="regular"
+                            css={`
+                                border-radius: 4px;
+                            `}
+                        >
+                            <span>Dari Rp</span>
+                            <Label for="price-min">
+                                <Input
+                                    inputType="number"
+                                    placeholderText="dari harga"
+                                    variant="filter"
+                                    id="price-min"
+                                    width={calculateAreaFormWidth(6)}
+                                    handleChange={() => {
+                                        return;
+                                    }}
+                                    {...horizontalFormStyles}
+                                />
+                            </Label>
+                            <Select
+                                width="fit-content"
+                                items={[
+                                    {
+                                        key: 'Jt',
+                                        value: 'million',
+                                    },
+                                    {
+                                        key: 'M',
+                                        value: 'billion',
+                                    },
+                                ]}
+                                defaultValue={{ key: 'Jt', value: 'million' }}
+                                id="price-min-select"
+                                handleSelect={() => {
+                                    return;
+                                }}
+                                // {...horizontalFormStyles}
+                                variant="filter"
+                            />
+                        </FormHorizontalBox>
+                        <FormHorizontalBox
+                            width={1}
+                            display="flex"
+                            alignItems="center"
+                            justifyContent="flex-start"
+                            py={[1]}
+                            color={['bg']}
+                            fontSize={[2, 2, 3]}
+                            fontFamily="body"
+                            fontWeight="regular"
+                            css={`
+                                border-radius: 4px;
+                            `}
+                        >
+                            <span>Sampai Rp</span>
+                            <Label for="price-max">
+                                <Input
+                                    inputType="number"
+                                    placeholderText="Sampai harga"
+                                    variant="filter"
+                                    id="price-max"
+                                    width={calculateAreaFormWidth(6)}
+                                    handleChange={() => {
+                                        return;
+                                    }}
+                                    {...horizontalFormStyles}
+                                />
+                            </Label>
+                            <Select
+                                width="fit-content"
+                                items={[
+                                    {
+                                        key: 'Jt',
+                                        value: 'million',
+                                    },
+                                    {
+                                        key: 'M',
+                                        value: 'billion',
+                                    },
+                                ]}
+                                defaultValue={{ key: 'Jt', value: 'million' }}
+                                id="price-max-select"
+                                handleSelect={() => {
+                                    return;
+                                }}
+                                // {...horizontalFormStyles}
+                                variant="filter"
+                            />
+                        </FormHorizontalBox>
+                    </FormHorizontalBox>
+                </PriceWrapper>
             </Form>
         </Container>
     );

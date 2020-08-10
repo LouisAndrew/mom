@@ -34,12 +34,16 @@ type Props = PositioningProps &
     StylingProps & {
         items: SelectItem[];
         id: string; // should not contain whitespace!
+        defaultValue?: SelectItem;
         optionWidth?: string | string[] | number[];
         defaultOption?: string;
         optionPadX?: number[];
         optionPadY?: number[];
         multiple?: boolean;
         variant?: string;
+        borderColorInactive?: string;
+        borderColorActive?: string;
+        iconColor?: string;
         handleSelect: (value: string) => void;
     };
 
@@ -64,7 +68,8 @@ type InputProps = PositioningProps &
     };
 
 type OptionContainerProps = PositioningProps &
-    PositionProps & { variant?: string };
+    PositionProps &
+    StylingProps & { variant?: string };
 
 const SelectContainer: React.FC<SelectContainerProps> = styled.div<
     SelectContainerProps
@@ -162,14 +167,19 @@ const Input: React.FC<InputProps> = styled.label.attrs((props: InputProps) => ({
                 primary: {
                     bg: 'light.0',
                     color: 'dark.0',
-                    borderColor: expand ? 'accent.1' : 'rgba(0, 0, 0, 0)',
+                    borderColor: expand ? 'accent.1' : 'accent.2',
                     // boxShadow: 'blend',
                 },
                 secondary: {
                     bg: 'light.0',
                     color: 'dark.0',
-                    borderColor: expand ? 'accent.0' : 'rgba(0, 0, 0, 0)',
+                    borderColor: expand ? 'accent.0' : 'accent.2',
                     // boxShadow: 'blend',
+                },
+                filter: {
+                    bg: 'dark.1',
+                    color: 'bg',
+                    borderColor: expand ? 'accent.0' : 'dark.2',
                 },
             },
         })}
@@ -192,10 +202,39 @@ const Input: React.FC<InputProps> = styled.label.attrs((props: InputProps) => ({
         transition: .2s;
         transform: ${({ expand }: InputProps) =>
             expand && 'rotate(180deg)'} scale(1.2) !important;
+
+        path {
+            fill: ${(props: OptionContainerProps) => {
+                const { variant } = props;
+                if (variant) {
+                    switch (variant) {
+                        case 'filter':
+                            return `${theme.colors.bg} !important`;
+                        default:
+                            return '';
+                    }
+                } else {
+                    return '';
+                }
+            }};
+        }
     }
 
     &:hover {
         cursor: pointer;
+    }
+
+    @media screen and (min-width: ${theme.breakpoints[1]}) {
+        ${({ expand }: InputProps) =>
+            selectVariant({
+                variants: {
+                    filter: {
+                        bg: 'light.1',
+                        color: 'dark.0',
+                        borderColor: expand ? 'accent.0' : 'dark.2',
+                    },
+                },
+            })}
     }
 `;
 
@@ -219,6 +258,11 @@ const Options: React.FC<OptionsProps> = styled.div<OptionsProps>`
                 bg: 'light.0',
                 color: 'dark.0',
             },
+            filter: {
+                bg: 'dark.1',
+                color: 'bg',
+                borderColor: 'dark.2',
+            },
         },
     })}
 
@@ -231,6 +275,7 @@ const Options: React.FC<OptionsProps> = styled.div<OptionsProps>`
 const Select: React.FC<Props> = ({
     items,
     id,
+    defaultValue,
     defaultOption,
     multiple,
     variant,
@@ -239,8 +284,10 @@ const Select: React.FC<Props> = ({
     optionPadY,
     bg,
     // eslint-disable-next-line @typescript-eslint/tslint/config
-    color,
-    borderColor,
+    color: colorProps,
+    iconColor,
+    // borderColorActive,
+    // borderColorInactive,
     handleSelect,
     ...rest
 }) => {
@@ -256,6 +303,13 @@ const Select: React.FC<Props> = ({
     const debouncedExpand = debounce(setExpand, 200);
 
     useEffect(() => {
+        if (defaultValue) {
+            setDefaultDisplay(defaultValue.key);
+            setSelectedValue(defaultValue.value);
+
+            return;
+        }
+
         if (defaultOption) {
             setDefaultDisplay(defaultOption);
         }
@@ -273,7 +327,7 @@ const Select: React.FC<Props> = ({
 
                 setInputDisplay(selectedSelectItem.key);
             }
-        } else {
+        } else if (!defaultValue) {
             setInputDisplay(defaultDisplay);
         }
     }, [selectedValue]);
@@ -324,13 +378,19 @@ const Select: React.FC<Props> = ({
                 alignItems="center"
                 width={optionWidth}
                 bg={bg}
-                color={color}
+                color={colorProps}
                 {...typographyStyle}
             >
                 {inputDisplay}
                 <Icon
                     icon={arrowIcon}
-                    color={variant ? theme.colors.dark[0] : '#C3C2C2'} // when variant not provided: color from props
+                    color={
+                        iconColor
+                            ? iconColor
+                            : variant
+                            ? theme.colors.dark[0]
+                            : '#C3C2C2'
+                    } // when variant not provided: color from props
                 />
                 <input type="checkbox" id={id} onChange={handleChangeExpand} />
             </Input>
