@@ -36,3 +36,15 @@ export const calculateAreaFormWidth = (numOfLetters: number): number[] => {
 };
 
 export const labelTypographyStyles: string[] = ['bg'];
+
+export const inputElementSpacingProps: {
+    mt: number[] | string[];
+    mb: number[] | string[];
+} = {
+    mb: [2],
+    mt: [1],
+};
+
+// i 4 -1
+// -1 -3 5
+// 5 19 -18

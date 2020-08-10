@@ -61,26 +61,35 @@ const Products: React.FC<Props> = () => {
         originalItems: SelectItem[],
         stateItem: string[]
     ) => filter(originalItems, item => indexOf(stateItem, item.value) === -1);
-    // filterDisplayByValue(selectSaleTypeItems, saleTypeFilters);
-    // filterDisplayByValue(selectPropertyTypeItems, propTypeFilters);
+
+    const selectSaleTypeItems: SelectItem[] = [
+        { key: 'Jual', value: 'sell' },
+        { key: 'Sewa', value: 'rent' },
+    ];
+
+    const selectPropertyTypeItems: SelectItem[] = [
+        { key: 'Rumah', value: 'house' },
+        { key: 'Apartment', value: 'apartment' },
+        { key: 'Kavling', value: 'kavling' },
+        { key: 'Ruko', value: 'home-office' },
+    ];
+
     return (
         <>
             <Filter
                 locationOptions={[]}
-                saleTypeOptions={[]}
-                propTypeOptions={[]}
-                handleChangeAddress={() => {
-                    return;
-                }}
-                handleSelectLocations={() => {
-                    return;
-                }}
-                handleSelectSaleType={() => {
-                    return;
-                }}
-                handleSelectPropertyType={() => {
-                    return;
-                }}
+                saleTypeOptions={filterDisplayByValue(
+                    selectSaleTypeItems,
+                    saleTypeFilters
+                )}
+                propTypeOptions={filterDisplayByValue(
+                    selectPropertyTypeItems,
+                    propTypeFilters
+                )}
+                handleChangeAddress={handleChangeAddress}
+                handleSelectLocations={handleSelectLocations}
+                handleSelectSaleType={handleSelectSaleType}
+                handleSelectPropertyType={handleSelectPropertyType}
             />
         </>
     );

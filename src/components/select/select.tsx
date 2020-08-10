@@ -225,7 +225,7 @@ const Input: React.FC<InputProps> = styled.label.attrs((props: InputProps) => ({
     }
 
     @media screen and (min-width: ${theme.breakpoints[1]}) {
-        ${({ expand }: InputProps) =>
+        /* ${({ expand }: InputProps) =>
             selectVariant({
                 variants: {
                     filter: {
@@ -234,7 +234,7 @@ const Input: React.FC<InputProps> = styled.label.attrs((props: InputProps) => ({
                         borderColor: expand ? 'accent.0' : 'dark.2',
                     },
                 },
-            })}
+            })} */
     }
 `;
 

@@ -8,7 +8,9 @@ import {
     flexbox,
     space,
     typography,
+    border,
     PositionProps,
+    BordeProps,
 } from 'styled-system';
 
 import {
@@ -16,6 +18,7 @@ import {
     horizontalFormStyles,
     calculateAreaFormWidth,
     labelTypographyStyles,
+    inputElementSpacingProps,
 } from './styling-helper';
 import { H2, H3, StylingProps, PositioningProps } from 'styles';
 import { Label } from 'templates/main-page/hero/hero-form/hero-form';
@@ -23,7 +26,10 @@ import Select from 'components/select';
 import Input from 'components/input';
 import { SelectItem } from 'components/select/select';
 
-type ContainerProps = PositionProps & StylingProps & PositioningProps & {};
+type ContainerProps = PositionProps &
+    StylingProps &
+    PositioningProps &
+    BorderProps & {};
 
 type FormProps = PositioningProps & {};
 
@@ -35,9 +41,13 @@ const Container: React.FC<ContainerProps> = styled.div<ContainerProps>`
     ${position}
     ${color}
     ${layout}
+    ${space}
+    ${border}
 `;
 
-const Form: React.FC<FormProps> = styled.form<FormProps>``;
+const Form: React.FC<FormProps> = styled.form<FormProps>`
+    ${space}
+`;
 
 const AreaWrapper: React.FC<AreaWrapperProps> = styled.div<AreaWrapperProps>``;
 
@@ -82,9 +92,20 @@ const Filter: React.FC<Props> = ({
     handleSelectPropertyType,
 }) => {
     return (
-        <Container height={['100vh']} bg={['dark.0']}>
-            <H2 color={['bg']}>Filters</H2>
-            <Form>
+        <Container
+            height={['100vh', '100vh', 'fit-content']}
+            bg={['dark.0']}
+            width={['100%', '100%', 'fit-content']}
+            borderStyle="solid"
+            borderColor={['rgba(0, 0, 0, 0)', 'rgba(0, 0, 0, 0)']}
+            borderRadius={[0, 0, 4]}
+            py={[3, 3, 5]}
+            px={[3, 3, 4]}
+        >
+            <H2 color={['bg']} mb={[2, 2]}>
+                Filters
+            </H2>
+            <Form px={[2]}>
                 <Label
                     for="address-filter"
                     color={labelTypographyStyles}
@@ -96,6 +117,7 @@ const Filter: React.FC<Props> = ({
                         id="address-filter"
                         handleChange={handleChangeAddress}
                         variant="filter"
+                        {...inputElementSpacingProps}
                     />
                 </Label>
 
@@ -113,6 +135,7 @@ const Filter: React.FC<Props> = ({
                         handleSelect={handleSelectLocations}
                         variant="filter"
                         multiple={true}
+                        {...inputElementSpacingProps}
                     />
                 </>
 
@@ -130,6 +153,7 @@ const Filter: React.FC<Props> = ({
                         variant="filter"
                         multiple={true}
                         handleSelect={handleSelectSaleType}
+                        {...inputElementSpacingProps}
                     />
                 </>
 
@@ -147,6 +171,7 @@ const Filter: React.FC<Props> = ({
                         variant="filter"
                         multiple={true}
                         handleSelect={handleSelectPropertyType}
+                        {...inputElementSpacingProps}
                     />
                 </>
 
@@ -166,6 +191,7 @@ const Filter: React.FC<Props> = ({
                         fontSize={[2, 2, 3]}
                         fontFamily="body"
                         fontWeight="regular"
+                        {...inputElementSpacingProps}
                         css={`
                             border-radius: 4px;
                         `}
@@ -211,11 +237,14 @@ const Filter: React.FC<Props> = ({
                         py={[1]}
                         width={1}
                         css={`
+                            border-radius: 4px;
+
                             span {
                                 display: block;
                                 width: 30%;
                             }
                         `}
+                        {...inputElementSpacingProps}
                     >
                         <FormHorizontalBox
                             width={1}
