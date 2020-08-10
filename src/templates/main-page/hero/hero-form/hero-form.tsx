@@ -194,7 +194,7 @@ const HeroForm: React.FC<Props> = ({
                 boxShadow="blend"
                 px={[3, 3, 4, 4]}
                 py={[2, 2, 3, 3]}
-                bg="light.0"
+                bg="light.3"
                 color="dark.0"
             >
                 <span className="select-span" style={{ width: '100%' }}>
@@ -216,6 +216,7 @@ const HeroForm: React.FC<Props> = ({
                         id="hero-form-location"
                         handleSelect={handleSelectLocation}
                         variant="secondary"
+                        bg="light.0"
                     />
                     {/* Weird bug here: select doesn't function correctly when it is the child of label */}
                 </span>
@@ -243,6 +244,7 @@ const HeroForm: React.FC<Props> = ({
                         append={true}
                         appendContent="m²"
                         inputType="number"
+                        bg="light.0"
                     />
                 </Label>
                 <span className="select-span type">
@@ -266,6 +268,7 @@ const HeroForm: React.FC<Props> = ({
                         id="hero-form-type"
                         handleSelect={handleSelectType}
                         variant="secondary"
+                        bg="light.0"
                     />
                 </span>
                 <Button

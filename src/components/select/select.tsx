@@ -30,7 +30,8 @@ export type SelectItem = {
 };
 
 type Props = PositioningProps &
-    PositionProps & {
+    PositionProps &
+    StylingProps & {
         items: SelectItem[];
         id: string; // should not contain whitespace!
         optionWidth?: string | string[] | number[];
@@ -161,14 +162,14 @@ const Input: React.FC<InputProps> = styled.label.attrs((props: InputProps) => ({
                 primary: {
                     bg: 'light.0',
                     color: 'dark.0',
-                    borderColor: expand ? 'accent.1' : 'accent.2',
-                    boxShadow: 'blend',
+                    borderColor: expand ? 'accent.1' : 'rgba(0, 0, 0, 0)',
+                    // boxShadow: 'blend',
                 },
                 secondary: {
                     bg: 'light.0',
                     color: 'dark.0',
-                    borderColor: expand ? 'accent.0' : 'accent.2',
-                    boxShadow: 'blend',
+                    borderColor: expand ? 'accent.0' : 'rgba(0, 0, 0, 0)',
+                    // boxShadow: 'blend',
                 },
             },
         })}
@@ -236,6 +237,10 @@ const Select: React.FC<Props> = ({
     optionWidth,
     optionPadX,
     optionPadY,
+    bg,
+    // eslint-disable-next-line @typescript-eslint/tslint/config
+    color,
+    borderColor,
     handleSelect,
     ...rest
 }) => {
@@ -318,6 +323,8 @@ const Select: React.FC<Props> = ({
                 expand={expand}
                 alignItems="center"
                 width={optionWidth}
+                bg={bg}
+                color={color}
                 {...typographyStyle}
             >
                 {inputDisplay}
@@ -343,6 +350,8 @@ const Select: React.FC<Props> = ({
                         inputHeightD,
                         inputHeightD,
                     ]}
+                    bg={bg}
+                    color={color}
                 >
                     {items.map((item, i) => (
                         <Options

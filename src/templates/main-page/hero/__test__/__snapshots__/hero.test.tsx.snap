@@ -115,7 +115,7 @@ exports[`Hero element matches snapshot 1`] = `
             width={1}
           >
             <label
-              className="sc-AxmLO fPFTiL"
+              className="sc-AxmLO bKDZKl"
               fontFamily="body"
               fontSize={
                 Array [
@@ -187,7 +187,7 @@ exports[`Hero element matches snapshot 1`] = `
             className="sc-fzplWN czaqLz"
           >
             <input
-              className="sc-fzoLsD kDWymi"
+              className="sc-fzoLsD hxLDNQ"
               fontFamily="body"
               fontSize={
                 Array [
@@ -211,7 +211,7 @@ exports[`Hero element matches snapshot 1`] = `
               }
             />
             <span
-              className="sc-fzpans ewQpsq"
+              className="sc-fzpans hugAaw"
               fontFamily="body"
               fontSize={
                 Array [
@@ -266,7 +266,7 @@ exports[`Hero element matches snapshot 1`] = `
             width={1}
           >
             <label
-              className="sc-AxmLO emALWw"
+              className="sc-AxmLO hZMNqi"
               fontFamily="body"
               fontSize={
                 Array [

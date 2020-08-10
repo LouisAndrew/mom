@@ -20,7 +20,7 @@ export interface ColorTheme {
 export const colors: ColorTheme = {
     bg: '#F3F0F0',
     // plain white!     // lighhter shade of pink.
-    light: ['#FFFFFF', '#FFECEC'],
+    light: ['#FFFFFF', '#FFECEC', '#f0f0f0', '#f3f3f3'],
     // font color
     dark: ['#2E282A'],
     //      green accent, pink accent, stroke-shade

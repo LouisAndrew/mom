@@ -18,20 +18,21 @@ import {
 
 import { StylingProps, PositioningProps, theme } from 'styles';
 
-type Props = PositioningProps & {
-    placeholderText: string;
-    // for labeling!
-    id: string;
-    icon?: React.ReactNode;
-    variant?: string;
-    // custom input type if needed.
-    inputType?: string;
-    color?: string;
-    borderColor?: string;
-    append?: boolean;
-    appendContent?: string;
-    handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-};
+type Props = PositioningProps &
+    StylingProps & {
+        placeholderText: string;
+        // for labeling!
+        id: string;
+        icon?: React.ReactNode;
+        variant?: string;
+        // custom input type if needed.
+        inputType?: string;
+        color?: string;
+        borderColor?: string;
+        append?: boolean;
+        appendContent?: string;
+        handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    };
 
 type SProps = PositioningProps &
     StylingProps &
@@ -63,7 +64,6 @@ const SInput: React.FC<SProps> = styled.input.attrs(
     outline: none;
     transition: .2s;
     /* border: none; */
-    border-style: solid;
     border: 2px solid rgba(0, 0, 0, 0);
     border-radius: 4px;
 
@@ -74,11 +74,9 @@ const SInput: React.FC<SProps> = styled.input.attrs(
     ${inVariant({
         variants: {
             primary: {
-                borderColor: 'accent.2',
                 color: 'dark',
             },
             secondary: {
-                borderColor: 'accent.2',
                 color: 'dark',
             },
         },
@@ -193,11 +191,11 @@ const Input: React.FC<Props> = ({
                 pr={[2, 2, 3]}
                 py={[1, 1, 2]}
                 pl={icon ? [4, 4, 5, 5] : [2, 2, 3, 3]}
-                bg="accent.3"
+                bg="light.0"
                 fontSize={[1, 1, 2, 2]}
                 fontFamily="body"
                 fontWeight="bold"
-                boxShadow="blend"
+                // boxShadow="blend"
                 {...rest}
             />
             {icon}
@@ -213,7 +211,7 @@ const Input: React.FC<Props> = ({
                 fontSize={[1, 1, 2, 2]}
                 fontFamily="body"
                 fontWeight="bold"
-                boxShadow="blend"
+                // boxShadow="blend"
                 append={append}
                 {...rest}
             />
@@ -225,7 +223,7 @@ const Input: React.FC<Props> = ({
                 fontSize={[1, 1, 2, 2]}
                 fontFamily="body"
                 fontWeight="bold"
-                boxShadow="blend"
+                // boxShadow="blend"
                 {...rest}
             >
                 {appendContent}
