@@ -284,7 +284,7 @@ const Select: React.FC<Props> = ({
     optionPadY,
     bg,
     // eslint-disable-next-line @typescript-eslint/tslint/config
-    color: colorProps,
+    // color: colorProps,
     iconColor,
     // borderColorActive,
     // borderColorInactive,
@@ -378,7 +378,6 @@ const Select: React.FC<Props> = ({
                 alignItems="center"
                 width={optionWidth}
                 bg={bg}
-                color={colorProps}
                 {...typographyStyle}
             >
                 {inputDisplay}
@@ -411,7 +410,6 @@ const Select: React.FC<Props> = ({
                         inputHeightD,
                     ]}
                     bg={bg}
-                    color={color}
                 >
                     {items.map((item, i) => (
                         <Options

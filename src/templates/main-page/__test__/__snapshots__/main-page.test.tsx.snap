@@ -74,7 +74,7 @@ Array [
           Cari rumah idamanmu sekarang! Cukup cantumkan kriteria mu, tanpa ribet
         </p>
         <form
-          className="sc-fznZeY cniRBJ"
+          className="sc-fznZeY bZVXuS"
           color="dark.0"
           width={
             Array [
@@ -116,7 +116,7 @@ Array [
               width={1}
             >
               <label
-                className="sc-AxmLO bKDZKl"
+                className="sc-AxmLO hLHJyu"
                 fontFamily="body"
                 fontSize={
                   Array [
@@ -188,7 +188,7 @@ Array [
               className="sc-fzplWN czaqLz"
             >
               <input
-                className="sc-fzoLsD hxLDNQ"
+                className="sc-fzoLsD bEayjX"
                 fontFamily="body"
                 fontSize={
                   Array [
@@ -212,7 +212,7 @@ Array [
                 }
               />
               <span
-                className="sc-fzpans hugAaw"
+                className="sc-fzpans jZioCe"
                 fontFamily="body"
                 fontSize={
                   Array [
@@ -267,7 +267,7 @@ Array [
               width={1}
             >
               <label
-                className="sc-AxmLO hZMNqi"
+                className="sc-AxmLO ksJwFR"
                 fontFamily="body"
                 fontSize={
                   Array [

@@ -44,7 +44,3 @@ export const inputElementSpacingProps: {
     mb: [2],
     mt: [1],
 };
-
-// i 4 -1
-// -1 -3 5
-// 5 19 -18

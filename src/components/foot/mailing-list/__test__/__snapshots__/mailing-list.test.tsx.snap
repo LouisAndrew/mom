@@ -107,7 +107,7 @@ exports[`Mailing list component on footer matches snapshot 1`] = `
     >
       Alamat email
       <input
-        className="sc-AxheI ixzKKN"
+        className="sc-AxheI ipdDoa"
         fontFamily="body"
         fontSize={
           Array [

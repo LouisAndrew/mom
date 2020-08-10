@@ -1,0 +1,633 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Filter component matches snapshot 1`] = `
+<div
+  className="sc-fzqBZW gehxGC"
+  height={
+    Array [
+      "100vh",
+      "100vh",
+      "fit-content",
+    ]
+  }
+  width={
+    Array [
+      "100%",
+      "100%",
+      "fit-content",
+    ]
+  }
+>
+  <h2
+    className="sc-AxirZ eeOdJO"
+    color={
+      Array [
+        "bg",
+      ]
+    }
+    fontFamily="heading"
+    fontSize={
+      Array [
+        4,
+        4,
+        5,
+        5,
+      ]
+    }
+  >
+    Filters
+  </h2>
+  <form
+    className="sc-fzqNJr gCkrCl"
+  >
+    <label
+      className="sc-fzokOt eSGGfa"
+      color={
+        Array [
+          "bg",
+        ]
+      }
+      fontFamily="body"
+      fontSize={
+        Array [
+          1,
+          1,
+          2,
+        ]
+      }
+      fontWeight="regular"
+      for="address-filter"
+      htmlFor="address-filter"
+    >
+      Alamat
+      <input
+        className="sc-fzoLsD cviBCK"
+        fontFamily="body"
+        fontSize={
+          Array [
+            1,
+            1,
+            2,
+            2,
+          ]
+        }
+        fontWeight="bold"
+        id="address-filter"
+        onChange={[Function]}
+        placeholder="Alamat rumah"
+      />
+    </label>
+    <label
+      className="sc-fzokOt eSGGfa"
+      color={
+        Array [
+          "bg",
+        ]
+      }
+      fontFamily="body"
+      fontSize={
+        Array [
+          1,
+          1,
+          2,
+        ]
+      }
+      fontWeight="regular"
+      for="location-filter"
+      htmlFor="location-filter"
+    >
+      Daerah
+    </label>
+    <div
+      className="sc-AxheI kudZHY"
+      width={1}
+    >
+      <label
+        className="sc-AxmLO DIKJg"
+        fontFamily="body"
+        fontSize={
+          Array [
+            1,
+            1,
+            2,
+            2,
+          ]
+        }
+        fontWeight="bold"
+        for="location-filter"
+        htmlFor="location-filter"
+      >
+        
+        <svg
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "<path d=\\"M17 9.17a1 1 0 0 0-1.41 0L12 12.71L8.46 9.17a1 1 0 0 0-1.41 0a1 1 0 0 0 0 1.42l4.24 4.24a1 1 0 0 0 1.42 0L17 10.59a1 1 0 0 0 0-1.42z\\" fill=\\"#2E282A\\"/>",
+            }
+          }
+          focusable={false}
+          height="1em"
+          preserveAspectRatio="xMidYMid meet"
+          style={
+            Object {
+              "transform": "rotate(360deg)",
+            }
+          }
+          viewBox="0 0 24 24"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        />
+        <input
+          id="location-filter"
+          onChange={[Function]}
+          type="checkbox"
+        />
+      </label>
+    </div>
+    <label
+      className="sc-fzokOt eSGGfa"
+      color={
+        Array [
+          "bg",
+        ]
+      }
+      fontFamily="body"
+      fontSize={
+        Array [
+          1,
+          1,
+          2,
+        ]
+      }
+      fontWeight="regular"
+      for="sale-type-filter"
+      htmlFor="sale-type-filter"
+    >
+      Tipe penjualan property
+    </label>
+    <div
+      className="sc-AxheI kudZHY"
+      width={1}
+    >
+      <label
+        className="sc-AxmLO DIKJg"
+        fontFamily="body"
+        fontSize={
+          Array [
+            1,
+            1,
+            2,
+            2,
+          ]
+        }
+        fontWeight="bold"
+        for="sale-type-filter"
+        htmlFor="sale-type-filter"
+      >
+        
+        <svg
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "<path d=\\"M17 9.17a1 1 0 0 0-1.41 0L12 12.71L8.46 9.17a1 1 0 0 0-1.41 0a1 1 0 0 0 0 1.42l4.24 4.24a1 1 0 0 0 1.42 0L17 10.59a1 1 0 0 0 0-1.42z\\" fill=\\"#2E282A\\"/>",
+            }
+          }
+          focusable={false}
+          height="1em"
+          preserveAspectRatio="xMidYMid meet"
+          style={
+            Object {
+              "transform": "rotate(360deg)",
+            }
+          }
+          viewBox="0 0 24 24"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        />
+        <input
+          id="sale-type-filter"
+          onChange={[Function]}
+          type="checkbox"
+        />
+      </label>
+    </div>
+    <label
+      className="sc-fzokOt eSGGfa"
+      color={
+        Array [
+          "bg",
+        ]
+      }
+      fontFamily="body"
+      fontSize={
+        Array [
+          1,
+          1,
+          2,
+        ]
+      }
+      fontWeight="regular"
+      for="property-type-filter"
+      htmlFor="property-type-filter"
+    >
+      Tipe property
+    </label>
+    <div
+      className="sc-AxheI kudZHY"
+      width={1}
+    >
+      <label
+        className="sc-AxmLO DIKJg"
+        fontFamily="body"
+        fontSize={
+          Array [
+            1,
+            1,
+            2,
+            2,
+          ]
+        }
+        fontWeight="bold"
+        for="property-type-filter"
+        htmlFor="property-type-filter"
+      >
+        
+        <svg
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "<path d=\\"M17 9.17a1 1 0 0 0-1.41 0L12 12.71L8.46 9.17a1 1 0 0 0-1.41 0a1 1 0 0 0 0 1.42l4.24 4.24a1 1 0 0 0 1.42 0L17 10.59a1 1 0 0 0 0-1.42z\\" fill=\\"#2E282A\\"/>",
+            }
+          }
+          focusable={false}
+          height="1em"
+          preserveAspectRatio="xMidYMid meet"
+          style={
+            Object {
+              "transform": "rotate(360deg)",
+            }
+          }
+          viewBox="0 0 24 24"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        />
+        <input
+          id="property-type-filter"
+          onChange={[Function]}
+          type="checkbox"
+        />
+      </label>
+    </div>
+    <div
+      className="sc-fzoyAV lgNqAT"
+    >
+      <h3
+        className="sc-AxiKw fkFCOK"
+        color={
+          Array [
+            "bg",
+          ]
+        }
+        fontFamily="body"
+        fontSize={
+          Array [
+            1,
+            1,
+            2,
+          ]
+        }
+        fontWeight="regular"
+      >
+        Luas rumah
+      </h3>
+      <div
+        className="sc-fzoXzr ieZCcH"
+        color={
+          Array [
+            "bg",
+          ]
+        }
+        display="flex"
+        fontFamily="body"
+        fontSize={
+          Array [
+            2,
+            2,
+            3,
+          ]
+        }
+        fontWeight="regular"
+        width={1}
+      >
+        <label
+          className="sc-fzokOt hAKGIV"
+          for="area-min"
+          htmlFor="area-min"
+        >
+          <input
+            className="sc-fzoLsD eGQWEZ"
+            color={
+              Array [
+                "bg",
+              ]
+            }
+            fontFamily="body"
+            fontSize={
+              Array [
+                1,
+                1,
+                2,
+                2,
+              ]
+            }
+            fontWeight="bold"
+            id="area-min"
+            onChange={[Function]}
+            placeholder="Min"
+            type="number"
+            width={
+              Array [
+                72,
+                72,
+                96,
+              ]
+            }
+          />
+        </label>
+        <span>
+          -
+        </span>
+        <label
+          className="sc-fzokOt hAKGIV"
+          for="area-max"
+          htmlFor="area-max"
+        >
+          <input
+            className="sc-fzoLsD eGQWEZ"
+            color={
+              Array [
+                "bg",
+              ]
+            }
+            fontFamily="body"
+            fontSize={
+              Array [
+                1,
+                1,
+                2,
+                2,
+              ]
+            }
+            fontWeight="bold"
+            id="area-max"
+            onChange={[Function]}
+            placeholder="Max"
+            type="number"
+            width={
+              Array [
+                72,
+                72,
+                96,
+              ]
+            }
+          />
+        </label>
+        <span>
+          M²
+        </span>
+      </div>
+    </div>
+    <div
+      className="sc-fzoyAV sc-fzoLag fjoIQy"
+    >
+      <h3
+        className="sc-AxiKw fkFCOK"
+        color={
+          Array [
+            "bg",
+          ]
+        }
+        fontFamily="body"
+        fontSize={
+          Array [
+            1,
+            1,
+            2,
+          ]
+        }
+        fontWeight="regular"
+      >
+        Harga rumah
+      </h3>
+      <div
+        className="sc-fzoXzr cazspI"
+        width={1}
+      >
+        <div
+          className="sc-fzoXzr hgZeOg"
+          color={
+            Array [
+              "bg",
+            ]
+          }
+          display="flex"
+          fontFamily="body"
+          fontSize={
+            Array [
+              2,
+              2,
+              3,
+            ]
+          }
+          fontWeight="regular"
+          width={1}
+        >
+          <span>
+            Dari Rp
+          </span>
+          <label
+            className="sc-fzokOt hAKGIV"
+            for="price-min"
+            htmlFor="price-min"
+          >
+            <input
+              className="sc-fzoLsD hGTPfR"
+              color={
+                Array [
+                  "bg",
+                ]
+              }
+              fontFamily="body"
+              fontSize={
+                Array [
+                  1,
+                  1,
+                  2,
+                  2,
+                ]
+              }
+              fontWeight="bold"
+              id="price-min"
+              onChange={[Function]}
+              placeholder="dari harga"
+              type="number"
+              width={
+                Array [
+                  100,
+                  100,
+                  128,
+                ]
+              }
+            />
+          </label>
+          <div
+            className="sc-AxheI loDikT"
+            width="fit-content"
+          >
+            <label
+              className="sc-AxmLO DIKJg"
+              fontFamily="body"
+              fontSize={
+                Array [
+                  1,
+                  1,
+                  2,
+                  2,
+                ]
+              }
+              fontWeight="bold"
+              for="price-min-select"
+              htmlFor="price-min-select"
+            >
+              
+              <svg
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "<path d=\\"M17 9.17a1 1 0 0 0-1.41 0L12 12.71L8.46 9.17a1 1 0 0 0-1.41 0a1 1 0 0 0 0 1.42l4.24 4.24a1 1 0 0 0 1.42 0L17 10.59a1 1 0 0 0 0-1.42z\\" fill=\\"#2E282A\\"/>",
+                  }
+                }
+                focusable={false}
+                height="1em"
+                preserveAspectRatio="xMidYMid meet"
+                style={
+                  Object {
+                    "transform": "rotate(360deg)",
+                  }
+                }
+                viewBox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              />
+              <input
+                id="price-min-select"
+                onChange={[Function]}
+                type="checkbox"
+              />
+            </label>
+          </div>
+        </div>
+        <div
+          className="sc-fzoXzr hgZeOg"
+          color={
+            Array [
+              "bg",
+            ]
+          }
+          display="flex"
+          fontFamily="body"
+          fontSize={
+            Array [
+              2,
+              2,
+              3,
+            ]
+          }
+          fontWeight="regular"
+          width={1}
+        >
+          <span>
+            Sampai Rp
+          </span>
+          <label
+            className="sc-fzokOt hAKGIV"
+            for="price-max"
+            htmlFor="price-max"
+          >
+            <input
+              className="sc-fzoLsD hGTPfR"
+              color={
+                Array [
+                  "bg",
+                ]
+              }
+              fontFamily="body"
+              fontSize={
+                Array [
+                  1,
+                  1,
+                  2,
+                  2,
+                ]
+              }
+              fontWeight="bold"
+              id="price-max"
+              onChange={[Function]}
+              placeholder="Sampai harga"
+              type="number"
+              width={
+                Array [
+                  100,
+                  100,
+                  128,
+                ]
+              }
+            />
+          </label>
+          <div
+            className="sc-AxheI loDikT"
+            width="fit-content"
+          >
+            <label
+              className="sc-AxmLO DIKJg"
+              fontFamily="body"
+              fontSize={
+                Array [
+                  1,
+                  1,
+                  2,
+                  2,
+                ]
+              }
+              fontWeight="bold"
+              for="price-max-select"
+              htmlFor="price-max-select"
+            >
+              
+              <svg
+                dangerouslySetInnerHTML={
+                  Object {
+                    "__html": "<path d=\\"M17 9.17a1 1 0 0 0-1.41 0L12 12.71L8.46 9.17a1 1 0 0 0-1.41 0a1 1 0 0 0 0 1.42l4.24 4.24a1 1 0 0 0 1.42 0L17 10.59a1 1 0 0 0 0-1.42z\\" fill=\\"#2E282A\\"/>",
+                  }
+                }
+                focusable={false}
+                height="1em"
+                preserveAspectRatio="xMidYMid meet"
+                style={
+                  Object {
+                    "transform": "rotate(360deg)",
+                  }
+                }
+                viewBox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              />
+              <input
+                id="price-max-select"
+                onChange={[Function]}
+                type="checkbox"
+              />
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;

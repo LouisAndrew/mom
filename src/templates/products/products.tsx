@@ -1,17 +1,31 @@
 import React, { useState, useEffect } from 'react';
-import { filter, indexOf } from 'lodash';
+import { filter, indexOf, get } from 'lodash';
 
+import styled from 'styled-components';
+import { color } from 'styled-system';
+
+import { OuterWrapper, StylingProps, PositioningProps } from 'styles';
 import Filter from './filter';
 import { SelectItem } from 'components/select/select';
+import { Property } from 'interfaces/Property';
+import { filter as initFilter } from 'helper/filter';
 
-type MinMaxObj = {
+type ContainerProps = StylingProps & PositioningProps & {};
+
+const Container: React.FC<ContainerProps> = styled.div<ContainerProps>`
+    ${color}
+`;
+
+export type MinMaxObj = {
     min: number;
     max: number;
 };
 
-type Props = {};
+type Props = {
+    properties: Property[];
+};
 
-const Products: React.FC<Props> = () => {
+const Products: React.FC<Props> = ({ properties }) => {
     const [addressFilter, setAddressFilter] = useState('');
 
     const [locationFilters, setlocationFilters] = useState<string[]>([]);
@@ -20,16 +34,43 @@ const Products: React.FC<Props> = () => {
 
     const [areaFilter, setAreaFilter] = useState<MinMaxObj>({
         min: 0,
-        max: 0,
+        max: 999,
     });
     const [priceFilter, setPriceFilter] = useState<MinMaxObj>({
         min: 0,
-        max: 0,
+        max: 999,
     });
+
+    const [display, setDisplay] = useState<Property[]>([]);
+    const [isLoading, setIsLoading] = useState(false);
+
+    useEffect(() => {
+        setDisplay(properties);
+    }, []);
 
     useEffect(() => {
         // call filter method and then update proivder.
-        console.table({ locationFilters, saleTypeFilters, propTypeFilters });
+
+        console.log('chnge');
+
+        setIsLoading(true);
+
+        (async () => {
+            const newDisplay = await initFilter({
+                addressFilter,
+                locationFilters,
+                saleTypeFilters,
+                propTypeFilters,
+                areaFilter,
+                priceFilter,
+                properties,
+            });
+
+            console.log(newDisplay);
+
+            await setIsLoading(false);
+            await setDisplay(newDisplay);
+        })();
     }, [
         addressFilter,
         locationFilters,
@@ -42,7 +83,7 @@ const Products: React.FC<Props> = () => {
     const handleChangeAddress = (
         event: React.ChangeEvent<HTMLInputElement>
     ) => {
-        return;
+        setAddressFilter(event.target.value);
     };
 
     const handleSelectLocations = (value: string) => {
@@ -55,6 +96,22 @@ const Products: React.FC<Props> = () => {
 
     const handleSelectPropertyType = (value: string) => {
         setPropTypeFilters([...propTypeFilters, value]);
+    };
+
+    const handleChangeArea = (value: number, max: boolean) => {
+        if (max) {
+            setAreaFilter(prev => ({ ...prev, max: value }));
+        } else {
+            setAreaFilter(prev => ({ ...prev, min: value }));
+        }
+    };
+
+    const handleChangePrice = (value: number, max: boolean) => {
+        if (max) {
+            setPriceFilter(prev => ({ ...prev, max: value }));
+        } else {
+            setPriceFilter(prev => ({ ...prev, min: value }));
+        }
     };
 
     const filterDisplayByValue = (
@@ -74,24 +131,52 @@ const Products: React.FC<Props> = () => {
         { key: 'Ruko', value: 'home-office' },
     ];
 
+    // mock data here..
+    const mockLocations: SelectItem[] = properties.map(property => {
+        const location = get(property, 'location', '');
+        return {
+            key: location,
+            value: location,
+        };
+    });
+    // .filter(item => item !== undefined);
+
+    console.table(display);
+
     return (
-        <>
-            <Filter
-                locationOptions={[]}
-                saleTypeOptions={filterDisplayByValue(
-                    selectSaleTypeItems,
-                    saleTypeFilters
-                )}
-                propTypeOptions={filterDisplayByValue(
-                    selectPropertyTypeItems,
-                    propTypeFilters
-                )}
-                handleChangeAddress={handleChangeAddress}
-                handleSelectLocations={handleSelectLocations}
-                handleSelectSaleType={handleSelectSaleType}
-                handleSelectPropertyType={handleSelectPropertyType}
-            />
-        </>
+        <Container
+            bg="bg"
+            css={`
+                display: grid;
+                place-items: center;
+            `}
+        >
+            <OuterWrapper width={1} bg="dark.2">
+                <Filter
+                    locationOptions={filterDisplayByValue(
+                        mockLocations,
+                        locationFilters
+                    )}
+                    saleTypeOptions={filterDisplayByValue(
+                        selectSaleTypeItems,
+                        saleTypeFilters
+                    )}
+                    propTypeOptions={filterDisplayByValue(
+                        selectPropertyTypeItems,
+                        propTypeFilters
+                    )}
+                    area={areaFilter}
+                    price={priceFilter}
+                    handleChangeAddress={handleChangeAddress}
+                    handleSelectLocations={handleSelectLocations}
+                    handleSelectSaleType={handleSelectSaleType}
+                    handleSelectPropertyType={handleSelectPropertyType}
+                    handleChangeArea={handleChangeArea}
+                    handleChangePrice={handleChangePrice}
+                />
+                {isLoading && <h1>AAAAA LOADINGGG</h1>}
+            </OuterWrapper>
+        </Container>
     );
 };
 

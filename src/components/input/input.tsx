@@ -26,6 +26,7 @@ type Props = PositioningProps &
         id: string;
         icon?: React.ReactNode;
         variant?: string;
+        value?: any;
         // custom input type if needed.
         inputType?: string;
         append?: boolean;
@@ -38,6 +39,7 @@ type SProps = PositioningProps &
     BorderColorProps &
     BoxShadowProps & {
         placeholderText: string;
+        value?: any;
         variant?: string;
         inputType?: string;
         append?: boolean;

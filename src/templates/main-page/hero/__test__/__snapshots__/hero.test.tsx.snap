@@ -73,7 +73,7 @@ exports[`Hero element matches snapshot 1`] = `
         Cari rumah idamanmu sekarang! Cukup cantumkan kriteria mu, tanpa ribet
       </p>
       <form
-        className="sc-fznZeY cniRBJ"
+        className="sc-fznZeY bZVXuS"
         color="dark.0"
         width={
           Array [
@@ -115,7 +115,7 @@ exports[`Hero element matches snapshot 1`] = `
             width={1}
           >
             <label
-              className="sc-AxmLO bKDZKl"
+              className="sc-AxmLO hLHJyu"
               fontFamily="body"
               fontSize={
                 Array [
@@ -187,7 +187,7 @@ exports[`Hero element matches snapshot 1`] = `
             className="sc-fzplWN czaqLz"
           >
             <input
-              className="sc-fzoLsD hxLDNQ"
+              className="sc-fzoLsD bEayjX"
               fontFamily="body"
               fontSize={
                 Array [
@@ -211,7 +211,7 @@ exports[`Hero element matches snapshot 1`] = `
               }
             />
             <span
-              className="sc-fzpans hugAaw"
+              className="sc-fzpans jZioCe"
               fontFamily="body"
               fontSize={
                 Array [
@@ -266,7 +266,7 @@ exports[`Hero element matches snapshot 1`] = `
             width={1}
           >
             <label
-              className="sc-AxmLO hZMNqi"
+              className="sc-AxmLO ksJwFR"
               fontFamily="body"
               fontSize={
                 Array [
