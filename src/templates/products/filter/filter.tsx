@@ -1,7 +1,6 @@
 /* eslint-disable immutable/no-mutation */
 /* eslint-disable @typescript-eslint/tslint/config */
-import React, { useState } from 'react';
-import { debounce } from 'lodash';
+import React from 'react';
 
 import styled from 'styled-components';
 import {
@@ -23,7 +22,7 @@ import {
     labelTypographyStyles,
     inputElementSpacingProps,
 } from './styling-helper';
-import { H2, H3, StylingProps, PositioningProps, theme } from 'styles';
+import { H2, H3, StylingProps, PositioningProps } from 'styles';
 import { Label } from 'templates/main-page/hero/hero-form/hero-form';
 import Select from 'components/select';
 import Input from 'components/input';
@@ -102,25 +101,6 @@ const Filter: React.FC<Props> = ({
     handleChangeArea,
     handleChangePrice,
 }) => {
-    const [priceErrMsg, setPriceErrMsg] = useState('');
-    const [areaErrMsg, setAreaErrMsg] = useState('');
-
-    const checkIfSmallerThanZero = (
-        event: React.ChangeEvent<HTMLInputElement>,
-        num: number
-    ): boolean => {
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars, immutable/no-let
-        let borderColorStyle = event.target.style.borderColor;
-
-        if (num < 0) {
-            borderColorStyle = 'red';
-            return true;
-        } else {
-            borderColorStyle = theme.colors.accent[0];
-            return false;
-        }
-    };
-
     return (
         <Container
             height={['100vh', '100vh', 'fit-content']}
@@ -145,7 +125,7 @@ const Filter: React.FC<Props> = ({
                     <Input
                         placeholderText="Alamat rumah"
                         id="address-filter"
-                        handleChange={debounce(handleChangeAddress, 500)}
+                        handleChange={handleChangeAddress}
                         variant="filter"
                         {...inputElementSpacingProps}
                     />
@@ -214,6 +194,7 @@ const Filter: React.FC<Props> = ({
                         display="flex"
                         alignItems="center"
                         justifyContent="flex-start"
+                        flexWrap="wrap"
                         bg={['dark.1']}
                         px={[2]}
                         py={[2]}
@@ -235,17 +216,13 @@ const Filter: React.FC<Props> = ({
                                 value={area.min}
                                 handleChange={(
                                     event: React.ChangeEvent<HTMLInputElement>
-                                ) =>
-                                    debounce(() => {
-                                        const num: number = parseFloat(
-                                            event.target.value
-                                        );
+                                ) => {
+                                    const num: number = parseFloat(
+                                        event.target.value
+                                    );
 
-                                        handleChangeArea(num, false);
-
-                                        return;
-                                    }, 500)
-                                }
+                                    handleChangeArea(num, false);
+                                }}
                                 width={calculateAreaFormWidth(4)}
                                 {...horizontalFormStyles}
                             />
@@ -260,21 +237,13 @@ const Filter: React.FC<Props> = ({
                                 value={area.max}
                                 handleChange={(
                                     event: React.ChangeEvent<HTMLInputElement>
-                                ) =>
-                                    debounce(() => {
-                                        const num: number = parseFloat(
-                                            event.target.value
-                                        );
+                                ) => {
+                                    const num: number = parseFloat(
+                                        event.target.value
+                                    );
 
-                                        checkIfSmallerThanZero(event, num);
-
-                                        if (num < area.min) {
-                                            console.log('errpr');
-                                        } else {
-                                            handleChangeArea(num, true);
-                                        }
-                                    }, 500)
-                                }
+                                    handleChangeArea(num, true);
+                                }}
                                 width={calculateAreaFormWidth(4)}
                                 {...horizontalFormStyles}
                             />
@@ -329,16 +298,13 @@ const Filter: React.FC<Props> = ({
                                         event: React.ChangeEvent<
                                             HTMLInputElement
                                         >
-                                    ) =>
-                                        debounce(() => {
-                                            const num: number = parseFloat(
-                                                event.target.value
-                                            );
+                                    ) => {
+                                        const num: number = parseFloat(
+                                            event.target.value
+                                        );
 
-                                            handleChangePrice(num, false);
-                                            return;
-                                        }, 500)
-                                    }
+                                        handleChangePrice(num, false);
+                                    }}
                                     {...horizontalFormStyles}
                                 />
                             </Label>
@@ -390,16 +356,13 @@ const Filter: React.FC<Props> = ({
                                         event: React.ChangeEvent<
                                             HTMLInputElement
                                         >
-                                    ) =>
-                                        debounce(() => {
-                                            const num: number = parseFloat(
-                                                event.target.value
-                                            );
+                                    ) => {
+                                        const num: number = parseFloat(
+                                            event.target.value
+                                        );
 
-                                            handleChangePrice(num, true);
-                                            return;
-                                        }, 500)
-                                    }
+                                        handleChangePrice(num, true);
+                                    }}
                                     {...horizontalFormStyles}
                                 />
                             </Label>

@@ -298,7 +298,7 @@ exports[`Filter component matches snapshot 1`] = `
         Luas rumah
       </h3>
       <div
-        className="sc-fzoXzr ieZCcH"
+        className="sc-fzoXzr bhBBAA"
         color={
           Array [
             "bg",
@@ -342,6 +342,7 @@ exports[`Filter component matches snapshot 1`] = `
             onChange={[Function]}
             placeholder="Min"
             type="number"
+            value={0}
             width={
               Array [
                 72,
@@ -380,6 +381,7 @@ exports[`Filter component matches snapshot 1`] = `
             onChange={[Function]}
             placeholder="Max"
             type="number"
+            value={0}
             width={
               Array [
                 72,
@@ -468,6 +470,7 @@ exports[`Filter component matches snapshot 1`] = `
               onChange={[Function]}
               placeholder="dari harga"
               type="number"
+              value={0}
               width={
                 Array [
                   100,
@@ -571,6 +574,7 @@ exports[`Filter component matches snapshot 1`] = `
               onChange={[Function]}
               placeholder="Sampai harga"
               type="number"
+              value={0}
               width={
                 Array [
                   100,

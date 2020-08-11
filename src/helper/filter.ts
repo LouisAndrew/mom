@@ -3,7 +3,7 @@ import { intersection, flatten } from 'lodash';
 import { Property } from 'interfaces/Property';
 import { MinMaxObj } from 'templates/products/products';
 
-type FilterObj = {
+export type FilterObj = {
     addressFilter: string;
     locationFilters: string[];
     saleTypeFilters: string[];
@@ -96,7 +96,7 @@ export const filter = ({
     const filteredByPrice = filterByPrice(priceFilter, properties);
 
     // returns a promise to provide the ability to use any loader.
-    return new Promise<Property[]>((res, rej) => {
+    return new Promise<Property[]>(res => {
         res(
             intersection(
                 properties,
