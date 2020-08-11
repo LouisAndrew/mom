@@ -15,6 +15,7 @@ import {
     theme,
 } from 'styles';
 import Filter from './filter';
+import Display from './display';
 import { SelectItem } from 'components/select/select';
 import { Property } from 'interfaces/Property';
 import { filter as initFilter } from 'helper/filter';
@@ -78,37 +79,9 @@ const Products: React.FC<Props> = ({ properties }) => {
         setDisplay(properties);
     }, []);
 
-    // useEffect(() => {
-    //     // call filter method and then update proivder.
-
-    //     console.log('chnge');
-
-    //     setIsLoading(true);
-
-    //     (async () => {
-    //         const newDisplay = await initFilter({
-    //             addressFilter,
-    //             locationFilters,
-    //             saleTypeFilters,
-    //             propTypeFilters,
-    //             areaFilter,
-    //             priceFilter,
-    //             properties,
-    //         });
-
-    //         console.log(newDisplay);
-
-    //         await setIsLoading(false);
-    //         await setDisplay(newDisplay);
-    //     })();
-    // }, [
-    //     addressFilter,
-    //     locationFilters,
-    //     saleTypeFilters,
-    //     propTypeFilters,
-    //     areaFilter,
-    //     priceFilter,
-    // ]);
+    const toggleFilterView = () => {
+        setShowFilter(prev => !prev);
+    };
 
     const applyFilters = () => {
         (async () => {
@@ -183,10 +156,6 @@ const Products: React.FC<Props> = ({ properties }) => {
             (checkIfPriceIsFiltered() ? 1 : 0) +
             (checkIfAreaIsFiltered() ? 1 : 0)
         );
-    };
-
-    const toggleFilterView = () => {
-        setShowFilter(prev => !prev);
     };
 
     const selectSaleTypeItems: SelectItem[] = [
@@ -384,6 +353,7 @@ const Products: React.FC<Props> = ({ properties }) => {
 
                         {filterTagsComponent}
                     </FilterTagsContainer>
+                    <Display display={display} />
                 </InnerWrapper>
             </OuterWrapper>
         </Container>

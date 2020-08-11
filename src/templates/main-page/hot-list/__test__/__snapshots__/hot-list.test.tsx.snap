@@ -26,7 +26,8 @@ exports[`Hot List component matches snapshot 1`] = `
       display="flex"
     >
       <div
-        className="sc-AxmLO iAzqPU"
+        className="sc-AxmLO jwVhxh"
+        display="flex"
         width={
           Array [
             0.9,
@@ -36,8 +37,18 @@ exports[`Hot List component matches snapshot 1`] = `
         }
       >
         <div
-          className="sc-fzpans ifwKAe"
+          className="sc-fzpans cWuRwg"
+          height={
+            Array [
+              "auto",
+            ]
+          }
           overflow="hidden"
+          width={
+            Array [
+              1,
+            ]
+          }
         >
           <img
             alt="Handsome boy"
@@ -45,9 +56,9 @@ exports[`Hot List component matches snapshot 1`] = `
           />
         </div>
         <div
-          className="sc-fzozJi hRuFrg"
+          className="sc-fzozJi gxxysj"
           display="flex"
-          width="auto"
+          width={1}
         >
           <h3
             className="sc-AxiKw dsegVB"
@@ -78,7 +89,9 @@ exports[`Hot List component matches snapshot 1`] = `
             jalan Mangga 24 blok G nomor 167
           </p>
           <div
-            className="sc-fzoLsD cwA-duP"
+            className="sc-fzoLsD kMKfsv"
+            display="flex"
+            width={1}
           />
           <h2
             className="sc-AxirZ jrdOBY"
@@ -116,7 +129,8 @@ exports[`Hot List component matches snapshot 1`] = `
         </div>
       </div>
       <div
-        className="sc-AxmLO iAzqPU"
+        className="sc-AxmLO jwVhxh"
+        display="flex"
         width={
           Array [
             0.9,
@@ -126,8 +140,18 @@ exports[`Hot List component matches snapshot 1`] = `
         }
       >
         <div
-          className="sc-fzpans ifwKAe"
+          className="sc-fzpans cWuRwg"
+          height={
+            Array [
+              "auto",
+            ]
+          }
           overflow="hidden"
+          width={
+            Array [
+              1,
+            ]
+          }
         >
           <img
             alt="Lakers logo"
@@ -135,9 +159,9 @@ exports[`Hot List component matches snapshot 1`] = `
           />
         </div>
         <div
-          className="sc-fzozJi hRuFrg"
+          className="sc-fzozJi gxxysj"
           display="flex"
-          width="auto"
+          width={1}
         >
           <h3
             className="sc-AxiKw dsegVB"
@@ -168,7 +192,9 @@ exports[`Hot List component matches snapshot 1`] = `
             jalan Mangga 25 blok F nomor 167
           </p>
           <div
-            className="sc-fzoLsD cwA-duP"
+            className="sc-fzoLsD kMKfsv"
+            display="flex"
+            width={1}
           />
           <h2
             className="sc-AxirZ jrdOBY"
@@ -206,7 +232,8 @@ exports[`Hot List component matches snapshot 1`] = `
         </div>
       </div>
       <div
-        className="sc-AxmLO iAzqPU"
+        className="sc-AxmLO jwVhxh"
+        display="flex"
         width={
           Array [
             0.9,
@@ -216,8 +243,18 @@ exports[`Hot List component matches snapshot 1`] = `
         }
       >
         <div
-          className="sc-fzpans ifwKAe"
+          className="sc-fzpans cWuRwg"
+          height={
+            Array [
+              "auto",
+            ]
+          }
           overflow="hidden"
+          width={
+            Array [
+              1,
+            ]
+          }
         >
           <img
             alt="No image provided"
@@ -225,9 +262,9 @@ exports[`Hot List component matches snapshot 1`] = `
           />
         </div>
         <div
-          className="sc-fzozJi hRuFrg"
+          className="sc-fzozJi gxxysj"
           display="flex"
-          width="auto"
+          width={1}
         >
           <h3
             className="sc-AxiKw dsegVB"
@@ -258,7 +295,9 @@ exports[`Hot List component matches snapshot 1`] = `
             jalan Mangga 25 blok F nomor 167
           </p>
           <div
-            className="sc-fzoLsD cwA-duP"
+            className="sc-fzoLsD kMKfsv"
+            display="flex"
+            width={1}
           />
           <h2
             className="sc-AxirZ jrdOBY"

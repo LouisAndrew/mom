@@ -135,7 +135,7 @@ const Filter: React.FC<Props> = ({
         <Container
             position="absolute"
             zIndex={2}
-            height={['100vh', '100vh', 'fit-content']}
+            minHeight={['100vh', '100vh', 'fit-content']}
             bg={['dark.0']}
             width={['100%', '100%', 'fit-content']}
             maxWidth={['100%', '100%', '50vw']}

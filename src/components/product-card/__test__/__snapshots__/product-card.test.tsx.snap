@@ -2,12 +2,23 @@
 
 exports[`Product card component matches snapshot 1`] = `
 <div
-  className="sc-AxmLO hsJuql"
+  className="sc-AxmLO diUVoI"
+  display="flex"
   width="fit-content"
 >
   <div
-    className="sc-fzpans ifwKAe"
+    className="sc-fzpans cWuRwg"
+    height={
+      Array [
+        "auto",
+      ]
+    }
     overflow="hidden"
+    width={
+      Array [
+        1,
+      ]
+    }
   >
     <img
       alt="github-icon"
@@ -15,9 +26,9 @@ exports[`Product card component matches snapshot 1`] = `
     />
   </div>
   <div
-    className="sc-fzozJi hRuFrg"
+    className="sc-fzozJi gxxysj"
     display="flex"
-    width="auto"
+    width={1}
   >
     <h3
       className="sc-AxiKw dsegVB"
@@ -48,7 +59,9 @@ exports[`Product card component matches snapshot 1`] = `
       Body
     </p>
     <div
-      className="sc-fzoLsD cwA-duP"
+      className="sc-fzoLsD kMKfsv"
+      display="flex"
+      width={1}
     />
     <h2
       className="sc-AxirZ jrdOBY"

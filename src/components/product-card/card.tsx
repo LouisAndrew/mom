@@ -31,7 +31,7 @@ export type Props = PositioningProps & {
     navigate: () => void;
 };
 
-type ContainerProps = PositioningProps & BoxShadowProps & {};
+type ContainerProps = PositioningProps & BoxShadowProps & BorderProps & {};
 
 type DetailsContainerProps = PositioningProps & StylingProps & BorderProps & {};
 
@@ -46,6 +46,7 @@ const Container: React.FC<ContainerProps> = styled.div<ContainerProps>`
     ${color}
     ${layout}
     ${boxShadow}
+    ${border}
 `;
 
 const DetailsContainer: React.FC<DetailsContainerProps> = styled.div<
@@ -80,17 +81,21 @@ const Card: React.FC<Props> = ({
 }) => {
     return (
         <Container
+            display="flex"
             flexDirection="column"
             alignItems="center"
             justifyContent={['center', 'center', 'space-evenly']}
             boxShadow="blend"
             width="fit-content"
+            borderRadius="4px"
             {...rest}
         >
             {/* img aspect ratio is about 3:2 */}
             {/* ImgBox serves as a container to help retain the aspect ratio.  */}
             <ImgBox
                 overflow="hidden"
+                width={[1]}
+                height={['auto']}
                 css={`
                     position: relative;
                     border-top-right-radius: 4px;
@@ -124,11 +129,12 @@ const Card: React.FC<Props> = ({
                 alignItems={['flex-start']}
                 px={[3, 3, 4]}
                 py={[3, 3, 4]}
-                width={'auto'}
+                width={1}
                 bg="light.0"
                 borderWidth={1}
                 borderStyle="solid"
                 borderColor="accent.2"
+                // height={'100%'}
                 css={`
                     border-bottom-right-radius: 4px;
                     border-bottom-left-radius: 4px;
@@ -139,10 +145,10 @@ const Card: React.FC<Props> = ({
                     {bodyText}
                 </P>
                 <TagsWrapper
+                    display="flex"
                     alignSelf={['flex-start']}
-                    css={`
-                        width: fit-content;
-                    `}
+                    flexWrap="wrap"
+                    width={1}
                 >
                     {tags &&
                         tags.map((tag, i) => (
@@ -152,6 +158,7 @@ const Card: React.FC<Props> = ({
                                 variant={tag.tagType}
                                 tabIndex={i}
                                 mx={[2]}
+                                my={[1]}
                             >
                                 {tag.text}
                             </Tag>

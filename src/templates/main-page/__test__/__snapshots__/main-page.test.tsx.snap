@@ -419,7 +419,8 @@ Array [
         display="flex"
       >
         <div
-          className="sc-fznxsB fRxGcM"
+          className="sc-fznxsB hUhafR"
+          display="flex"
           width={
             Array [
               0.9,
@@ -429,8 +430,18 @@ Array [
           }
         >
           <div
-            className="sc-fzoiQi fONNiU"
+            className="sc-fzoiQi erLQbi"
+            height={
+              Array [
+                "auto",
+              ]
+            }
             overflow="hidden"
+            width={
+              Array [
+                1,
+              ]
+            }
           >
             <img
               alt="Handsome boy"
@@ -438,9 +449,9 @@ Array [
             />
           </div>
           <div
-            className="sc-fznJRM glXgPt"
+            className="sc-fznJRM bnqtNa"
             display="flex"
-            width="auto"
+            width={1}
           >
             <h3
               className="sc-AxiKw dsegVB"
@@ -471,7 +482,9 @@ Array [
               jalan Mangga 24 blok G nomor 167
             </p>
             <div
-              className="sc-fznWqX dLFXNr"
+              className="sc-fznWqX lkcJuP"
+              display="flex"
+              width={1}
             />
             <h2
               className="sc-AxirZ jrdOBY"
@@ -509,7 +522,8 @@ Array [
           </div>
         </div>
         <div
-          className="sc-fznxsB fRxGcM"
+          className="sc-fznxsB hUhafR"
+          display="flex"
           width={
             Array [
               0.9,
@@ -519,8 +533,18 @@ Array [
           }
         >
           <div
-            className="sc-fzoiQi fONNiU"
+            className="sc-fzoiQi erLQbi"
+            height={
+              Array [
+                "auto",
+              ]
+            }
             overflow="hidden"
+            width={
+              Array [
+                1,
+              ]
+            }
           >
             <img
               alt="Lakers logo"
@@ -528,9 +552,9 @@ Array [
             />
           </div>
           <div
-            className="sc-fznJRM glXgPt"
+            className="sc-fznJRM bnqtNa"
             display="flex"
-            width="auto"
+            width={1}
           >
             <h3
               className="sc-AxiKw dsegVB"
@@ -561,7 +585,9 @@ Array [
               jalan Mangga 25 blok F nomor 167
             </p>
             <div
-              className="sc-fznWqX dLFXNr"
+              className="sc-fznWqX lkcJuP"
+              display="flex"
+              width={1}
             />
             <h2
               className="sc-AxirZ jrdOBY"
@@ -599,7 +625,8 @@ Array [
           </div>
         </div>
         <div
-          className="sc-fznxsB fRxGcM"
+          className="sc-fznxsB hUhafR"
+          display="flex"
           width={
             Array [
               0.9,
@@ -609,8 +636,18 @@ Array [
           }
         >
           <div
-            className="sc-fzoiQi fONNiU"
+            className="sc-fzoiQi erLQbi"
+            height={
+              Array [
+                "auto",
+              ]
+            }
             overflow="hidden"
+            width={
+              Array [
+                1,
+              ]
+            }
           >
             <img
               alt="No image provided"
@@ -618,9 +655,9 @@ Array [
             />
           </div>
           <div
-            className="sc-fznJRM glXgPt"
+            className="sc-fznJRM bnqtNa"
             display="flex"
-            width="auto"
+            width={1}
           >
             <h3
               className="sc-AxiKw dsegVB"
@@ -651,7 +688,9 @@ Array [
               jalan Mangga 25 blok F nomor 167
             </p>
             <div
-              className="sc-fznWqX dLFXNr"
+              className="sc-fznWqX lkcJuP"
+              display="flex"
+              width={1}
             />
             <h2
               className="sc-AxirZ jrdOBY"
