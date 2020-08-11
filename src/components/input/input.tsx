@@ -56,9 +56,10 @@ type InputGroupProps = PositioningProps & {
 };
 
 const SInput: React.FC<SProps> = styled.input.attrs(
-    ({ inputType, placeholderText }: SProps) => ({
+    ({ inputType, placeholderText, value }: SProps) => ({
         type: inputType,
         placeholder: placeholderText,
+        value,
     })
 )<SProps>`
 

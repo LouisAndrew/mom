@@ -14,7 +14,13 @@ const mockProperty: Property[] = [
         propertyType: 'house',
         saleType: 'sell',
 
-        imgs: [],
+        imgs: [
+            {
+                image:
+                    'https://res.cloudinary.com/dsvdffre0/image/upload/v1597137791/webaliser-_TPTXZd9mOo-unsplash_pqtm1r.jpg',
+                imgAlt: 'Beautiful house',
+            },
+        ],
         description: 'Deskripsi bum bum bum',
         location: 'Penang',
         price: 200,
@@ -26,7 +32,13 @@ const mockProperty: Property[] = [
         propertyType: 'apartment',
         saleType: 'rent',
 
-        imgs: [],
+        imgs: [
+            {
+                image:
+                    'https://res.cloudinary.com/dsvdffre0/image/upload/v1597137791/jacques-bopp-Hh18POSx5qk-unsplash_lweaht.jpg',
+                imgAlt: 'Beautiful house 2',
+            },
+        ],
         description: 'Deskripsi bum bum bum',
         location: 'PIK',
         price: 500,
@@ -38,7 +50,13 @@ const mockProperty: Property[] = [
         propertyType: 'home-office',
         saleType: 'rent',
 
-        imgs: [],
+        imgs: [
+            {
+                image:
+                    'https://res.cloudinary.com/dsvdffre0/image/upload/v1597137792/digital-marketing-agency-ntwrk-g39p1kDjvSY-unsplash_kh6gti.jpg',
+                imgAlt: 'Beautiful house 3',
+            },
+        ],
         description: 'Deskripsi bum bum bum',
         location: 'jkarta Timur',
         price: 700,

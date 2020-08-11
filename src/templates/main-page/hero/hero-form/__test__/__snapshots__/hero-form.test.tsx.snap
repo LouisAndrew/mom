@@ -78,7 +78,7 @@ exports[`Form on hero component matches snapshot 1`] = `
         width={1}
       >
         <label
-          className="sc-AxmLO hLHJyu"
+          className="sc-AxmLO kTvrhn"
           fontFamily="body"
           fontSize={
             Array [
@@ -229,7 +229,7 @@ exports[`Form on hero component matches snapshot 1`] = `
         width={1}
       >
         <label
-          className="sc-AxmLO ksJwFR"
+          className="sc-AxmLO dzNXgs"
           fontFamily="body"
           fontSize={
             Array [

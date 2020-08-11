@@ -31,6 +31,7 @@ const Container: React.FC<ContainerProps> = styled.span<ContainerProps>`
 
     border-radius: 4px;
     transition: .2s;
+    white-space: nowrap;
 
     ${tagVariant({
         variants: {
@@ -65,6 +66,17 @@ const Container: React.FC<ContainerProps> = styled.span<ContainerProps>`
             kavling: {
                 bg: 'badges.propertyType.kavling',
                 color: '#fff',
+            },
+            location: {
+                bg: 'accent.1',
+                color: 'dark.0',
+            },
+            misc: {
+                bg: 'bg',
+                color: 'accent.0',
+                borderWidth: '1px',
+                borderStyle: 'solid',
+                borderColor: 'accent.0',
             },
         },
     })}

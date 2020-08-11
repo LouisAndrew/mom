@@ -1,7 +1,9 @@
 /* eslint-disable immutable/no-mutation */
 /* eslint-disable @typescript-eslint/tslint/config */
-import React from 'react';
+import React, { useState } from 'react';
 
+import { InlineIcon } from '@iconify/react';
+import collapseFIlterIcon from '@iconify/icons-uil/angle-double-left';
 import styled from 'styled-components';
 import {
     color,
@@ -22,12 +24,13 @@ import {
     labelTypographyStyles,
     inputElementSpacingProps,
 } from './styling-helper';
-import { H2, H3, StylingProps, PositioningProps } from 'styles';
+import { H2, H3, StylingProps, PositioningProps, theme } from 'styles';
 import { Label } from 'templates/main-page/hero/hero-form/hero-form';
 import Select from 'components/select';
 import Input from 'components/input';
 import { SelectItem } from 'components/select/select';
 import { MinMaxObj } from '../products';
+import Button from 'components/button';
 
 type ContainerProps = PositionProps &
     StylingProps &
@@ -74,14 +77,18 @@ type Props = PositioningProps & {
     locationOptions: SelectItem[];
     saleTypeOptions: SelectItem[];
     propTypeOptions: SelectItem[];
+    addressFilter: string;
     price: MinMaxObj;
     area: MinMaxObj;
+    filterTags?: React.ReactNode;
     handleChangeAddress: (event: React.ChangeEvent<HTMLInputElement>) => void;
     handleSelectLocations: (value: string) => void;
     handleSelectSaleType: (value: string) => void;
     handleSelectPropertyType: (value: string) => void;
     handleChangePrice: (value: number, max: boolean) => void;
     handleChangeArea: (value: number, max: boolean) => void;
+    applyFilters: () => void;
+    collapseFilter: () => void;
 };
 
 /**
@@ -92,30 +99,114 @@ const Filter: React.FC<Props> = ({
     locationOptions,
     saleTypeOptions,
     propTypeOptions,
+    addressFilter,
     price,
     area,
+    filterTags,
     handleChangeAddress,
     handleSelectLocations,
     handleSelectSaleType,
     handleSelectPropertyType,
     handleChangeArea,
     handleChangePrice,
+    applyFilters,
+    collapseFilter,
 }) => {
+    const [priceMinAccu, setPriceMinAccu] = useState(1);
+    const [priceMaxAccu, setPriceMaxAccu] = useState(1);
+
+    const handleChangeMinAccu = (value: string) => {
+        if (value === 'billion') {
+            setPriceMinAccu(1000);
+        } else {
+            setPriceMinAccu(1);
+        }
+    };
+
+    const handleChangeMaxAccu = (value: string) => {
+        if (value === 'billion') {
+            setPriceMaxAccu(1000);
+        } else {
+            setPriceMaxAccu(1);
+        }
+    };
+
     return (
         <Container
+            position="absolute"
+            zIndex={2}
             height={['100vh', '100vh', 'fit-content']}
             bg={['dark.0']}
             width={['100%', '100%', 'fit-content']}
+            maxWidth={['100%', '100%', '50vw']}
             borderStyle="solid"
             borderColor={['rgba(0, 0, 0, 0)', 'rgba(0, 0, 0, 0)']}
             borderRadius={[0, 0, 4]}
             py={[3, 3, 5]}
             px={[3, 3, 4]}
+            css={`
+                &.filter-enter {
+                    opacity: 0;
+                    left: -100%;
+                }
+                &.filter-enter-active {
+                    opacity: 1;
+                    transition: 200ms;
+                    left: 0;
+                }
+                &.filter-exit {
+                    opacity: 1;
+                    left: 0;
+                }
+                &.filtere-exit-active {
+                    opacity: 0;
+                    transition: 200ms;
+                    left: -100%;
+                }
+            `}
         >
-            <H2 color={['bg']} mb={[2, 2]}>
-                Filters
-            </H2>
-            <Form px={[2]}>
+            <span
+                onClick={collapseFilter}
+                onKeyDown={collapseFilter}
+                tabIndex={0}
+                role="button"
+            >
+                <H2
+                    color={['bg']}
+                    mb={[2, 2]}
+                    css={`
+                        &,
+                        svg {
+                            transition: 0.2s;
+                        }
+
+                        svg {
+                            margin-left: 8px;
+                        }
+
+                        &:hover {
+                            transform: translateX(-8px);
+                            cursor: pointer;
+                            svg {
+                                transform: scale(1.2) !important;
+                            }
+
+                            @media screen and (min-width: ${theme
+                                    .breakpoints[1]}) {
+                                transform: translateX(-16px);
+                            }
+                        }
+                    `}
+                >
+                    Filters
+                    <InlineIcon
+                        icon={collapseFIlterIcon}
+                        color={theme.colors.bg}
+                    />
+                </H2>
+            </span>
+            {filterTags}
+            <Form p={[2]}>
                 <Label
                     for="address-filter"
                     color={labelTypographyStyles}
@@ -127,6 +218,7 @@ const Filter: React.FC<Props> = ({
                         id="address-filter"
                         handleChange={handleChangeAddress}
                         variant="filter"
+                        value={addressFilter}
                         {...inputElementSpacingProps}
                     />
                 </Label>
@@ -293,7 +385,7 @@ const Filter: React.FC<Props> = ({
                                     variant="filter"
                                     id="price-min"
                                     width={calculateAreaFormWidth(6)}
-                                    value={price.min}
+                                    value={price.min / priceMinAccu}
                                     handleChange={(
                                         event: React.ChangeEvent<
                                             HTMLInputElement
@@ -303,7 +395,10 @@ const Filter: React.FC<Props> = ({
                                             event.target.value
                                         );
 
-                                        handleChangePrice(num, false);
+                                        handleChangePrice(
+                                            num * priceMinAccu,
+                                            false
+                                        );
                                     }}
                                     {...horizontalFormStyles}
                                 />
@@ -321,10 +416,8 @@ const Filter: React.FC<Props> = ({
                                     },
                                 ]}
                                 defaultValue={{ key: 'Jt', value: 'million' }}
-                                id="price-min-select"
-                                handleSelect={() => {
-                                    return;
-                                }}
+                                id="price-min-accumulator"
+                                handleSelect={handleChangeMinAccu}
                                 // {...horizontalFormStyles}
                                 variant="filter"
                             />
@@ -351,7 +444,7 @@ const Filter: React.FC<Props> = ({
                                     variant="filter"
                                     id="price-max"
                                     width={calculateAreaFormWidth(6)}
-                                    value={price.max}
+                                    value={price.max / priceMaxAccu}
                                     handleChange={(
                                         event: React.ChangeEvent<
                                             HTMLInputElement
@@ -361,7 +454,10 @@ const Filter: React.FC<Props> = ({
                                             event.target.value
                                         );
 
-                                        handleChangePrice(num, true);
+                                        handleChangePrice(
+                                            num * priceMaxAccu,
+                                            true
+                                        );
                                     }}
                                     {...horizontalFormStyles}
                                 />
@@ -379,10 +475,8 @@ const Filter: React.FC<Props> = ({
                                     },
                                 ]}
                                 defaultValue={{ key: 'Jt', value: 'million' }}
-                                id="price-max-select"
-                                handleSelect={() => {
-                                    return;
-                                }}
+                                id="price-max-accumulator"
+                                handleSelect={handleChangeMaxAccu}
                                 // {...horizontalFormStyles}
                                 variant="filter"
                             />
@@ -390,6 +484,13 @@ const Filter: React.FC<Props> = ({
                     </FormHorizontalBox>
                 </PriceWrapper>
             </Form>
+            <Button
+                handleClick={applyFilters}
+                variant="primary-outer"
+                width={1}
+            >
+                Cari Sekarang
+            </Button>
         </Container>
     );
 };

@@ -2,7 +2,7 @@
 
 exports[`Filter component matches snapshot 1`] = `
 <div
-  className="sc-fzqBZW gehxGC"
+  className="sc-fzqBZW fkLulN"
   height={
     Array [
       "100vh",
@@ -18,27 +18,51 @@ exports[`Filter component matches snapshot 1`] = `
     ]
   }
 >
-  <h2
-    className="sc-AxirZ eeOdJO"
-    color={
-      Array [
-        "bg",
-      ]
-    }
-    fontFamily="heading"
-    fontSize={
-      Array [
-        4,
-        4,
-        5,
-        5,
-      ]
-    }
+  <span
+    role="button"
+    tabIndex={0}
   >
-    Filters
-  </h2>
+    <h2
+      className="sc-AxirZ eeOdJO"
+      color={
+        Array [
+          "bg",
+        ]
+      }
+      fontFamily="heading"
+      fontSize={
+        Array [
+          4,
+          4,
+          5,
+          5,
+        ]
+      }
+    >
+      Filters
+      <svg
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "<path d=\\"M11.46 8.29a1 1 0 0 0-1.42 0l-3 3a1 1 0 0 0 0 1.42l3 3a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.42L9.16 12l2.3-2.29a1 1 0 0 0 0-1.42zm3.2 3.71L17 9.71a1 1 0 0 0-1.42-1.42l-3 3a1 1 0 0 0 0 1.42l3 3a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.42z\\" fill=\\"#F3F0F0\\"/>",
+          }
+        }
+        focusable={false}
+        height="1em"
+        preserveAspectRatio="xMidYMid meet"
+        style={
+          Object {
+            "transform": "rotate(360deg)",
+            "verticalAlign": "-0.125em",
+          }
+        }
+        viewBox="0 0 24 24"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+    </h2>
+  </span>
   <form
-    className="sc-fzqNJr gCkrCl"
+    className="sc-fzqNJr kTEIeG"
   >
     <label
       className="sc-fzokOt eSGGfa"
@@ -103,7 +127,7 @@ exports[`Filter component matches snapshot 1`] = `
       width={1}
     >
       <label
-        className="sc-AxmLO DIKJg"
+        className="sc-AxmLO gpLzHo"
         fontFamily="body"
         fontSize={
           Array [
@@ -169,7 +193,7 @@ exports[`Filter component matches snapshot 1`] = `
       width={1}
     >
       <label
-        className="sc-AxmLO DIKJg"
+        className="sc-AxmLO gpLzHo"
         fontFamily="body"
         fontSize={
           Array [
@@ -235,7 +259,7 @@ exports[`Filter component matches snapshot 1`] = `
       width={1}
     >
       <label
-        className="sc-AxmLO DIKJg"
+        className="sc-AxmLO gpLzHo"
         fontFamily="body"
         fontSize={
           Array [
@@ -485,7 +509,7 @@ exports[`Filter component matches snapshot 1`] = `
             width="fit-content"
           >
             <label
-              className="sc-AxmLO DIKJg"
+              className="sc-AxmLO gpLzHo"
               fontFamily="body"
               fontSize={
                 Array [
@@ -496,8 +520,8 @@ exports[`Filter component matches snapshot 1`] = `
                 ]
               }
               fontWeight="bold"
-              for="price-min-select"
-              htmlFor="price-min-select"
+              for="price-min-accumulator"
+              htmlFor="price-min-accumulator"
             >
               
               <svg
@@ -519,7 +543,7 @@ exports[`Filter component matches snapshot 1`] = `
                 xmlns="http://www.w3.org/2000/svg"
               />
               <input
-                id="price-min-select"
+                id="price-min-accumulator"
                 onChange={[Function]}
                 type="checkbox"
               />
@@ -589,7 +613,7 @@ exports[`Filter component matches snapshot 1`] = `
             width="fit-content"
           >
             <label
-              className="sc-AxmLO DIKJg"
+              className="sc-AxmLO gpLzHo"
               fontFamily="body"
               fontSize={
                 Array [
@@ -600,8 +624,8 @@ exports[`Filter component matches snapshot 1`] = `
                 ]
               }
               fontWeight="bold"
-              for="price-max-select"
-              htmlFor="price-max-select"
+              for="price-max-accumulator"
+              htmlFor="price-max-accumulator"
             >
               
               <svg
@@ -623,7 +647,7 @@ exports[`Filter component matches snapshot 1`] = `
                 xmlns="http://www.w3.org/2000/svg"
               />
               <input
-                id="price-max-select"
+                id="price-max-accumulator"
                 onChange={[Function]}
                 type="checkbox"
               />
@@ -633,5 +657,21 @@ exports[`Filter component matches snapshot 1`] = `
       </div>
     </div>
   </form>
+  <button
+    className="sc-fznyAO fUmhzH"
+    fontFamily="body"
+    fontSize={
+      Array [
+        1,
+        1,
+        2,
+        2,
+      ]
+    }
+    fontWeight="bold"
+    width={1}
+  >
+    Cari Sekarang
+  </button>
 </div>
 `;
