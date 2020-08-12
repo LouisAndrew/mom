@@ -305,13 +305,18 @@ const Filter: React.FC<Props> = ({
                                 placeholderText="Min"
                                 id="area-min"
                                 variant="filter"
-                                value={area.min}
+                                value={area.min === 0 ? '' : area.min}
                                 handleChange={(
                                     event: React.ChangeEvent<HTMLInputElement>
                                 ) => {
                                     const num: number = parseFloat(
                                         event.target.value
                                     );
+
+                                    if (isNaN(num)) {
+                                        handleChangeArea(0, false);
+                                        return;
+                                    }
 
                                     handleChangeArea(num, false);
                                 }}
@@ -326,13 +331,25 @@ const Filter: React.FC<Props> = ({
                                 placeholderText="Max"
                                 variant="filter"
                                 id="area-max"
-                                value={area.max}
+                                value={
+                                    area.max === Number.MAX_SAFE_INTEGER
+                                        ? ''
+                                        : area.max
+                                }
                                 handleChange={(
                                     event: React.ChangeEvent<HTMLInputElement>
                                 ) => {
                                     const num: number = parseFloat(
                                         event.target.value
                                     );
+
+                                    if (isNaN(num)) {
+                                        handleChangeArea(
+                                            Number.MAX_SAFE_INTEGER,
+                                            true
+                                        );
+                                        return;
+                                    }
 
                                     handleChangeArea(num, true);
                                 }}
@@ -385,7 +402,11 @@ const Filter: React.FC<Props> = ({
                                     variant="filter"
                                     id="price-min"
                                     width={calculateAreaFormWidth(6)}
-                                    value={price.min / priceMinAccu}
+                                    value={
+                                        price.min !== 0
+                                            ? price.min / priceMinAccu
+                                            : ''
+                                    }
                                     handleChange={(
                                         event: React.ChangeEvent<
                                             HTMLInputElement
@@ -394,6 +415,11 @@ const Filter: React.FC<Props> = ({
                                         const num: number = parseFloat(
                                             event.target.value
                                         );
+
+                                        if (isNaN(num)) {
+                                            handleChangePrice(0, false);
+                                            return;
+                                        }
 
                                         handleChangePrice(
                                             num * priceMinAccu,
@@ -444,7 +470,11 @@ const Filter: React.FC<Props> = ({
                                     variant="filter"
                                     id="price-max"
                                     width={calculateAreaFormWidth(6)}
-                                    value={price.max / priceMaxAccu}
+                                    value={
+                                        price.max !== Number.MAX_SAFE_INTEGER
+                                            ? price.max / priceMaxAccu
+                                            : ''
+                                    }
                                     handleChange={(
                                         event: React.ChangeEvent<
                                             HTMLInputElement
@@ -453,6 +483,14 @@ const Filter: React.FC<Props> = ({
                                         const num: number = parseFloat(
                                             event.target.value
                                         );
+
+                                        if (isNaN(num)) {
+                                            handleChangePrice(
+                                                Number.MAX_SAFE_INTEGER,
+                                                true
+                                            );
+                                            return;
+                                        }
 
                                         handleChangePrice(
                                             num * priceMaxAccu,
