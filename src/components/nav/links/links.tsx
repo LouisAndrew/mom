@@ -90,7 +90,7 @@ const Links: React.FC<Props> = ({ displayMenu, clickButton }) => {
                 Home
             </LinkItem>
             <LinkItem
-                to="/"
+                to="/products"
                 px={[4, 5, 3]}
                 py={[2, 2, 3]}
                 position="relative"
@@ -99,8 +99,8 @@ const Links: React.FC<Props> = ({ displayMenu, clickButton }) => {
                 zIndex={1}
                 dropdownElement={<Dropdown expand={expand} />}
                 expand={expand}
-                onMouseEnter={() => setExpand(prevExpand => !prevExpand)}
-                onMouseLeave={() => setExpand(prevExpand => !prevExpand)}
+                onMouseEnter={() => setExpand(true)}
+                onMouseLeave={() => setExpand(false)}
             >
                 <InlineIcon icon={shoppingBagIcon} />
                 Katalog

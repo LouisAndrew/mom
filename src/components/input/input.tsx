@@ -79,16 +79,25 @@ const SInput: React.FC<SProps> = styled.input.attrs(
                 bg: 'light.0',
                 color: 'dark',
                 borderColor: 'accent.2',
+                '& + span': {
+                    borderColor: 'accent.2',
+                },
             },
             secondary: {
                 bg: 'light.0',
                 color: 'dark',
                 borderColor: 'accent.2',
+                '& + span': {
+                    borderColor: 'accent.2',
+                },
             },
             filter: {
                 bg: 'dark.1',
                 color: 'bg',
                 borderColor: 'dark.2',
+                '& + span': {
+                    borderColor: 'accent.2',
+                },
             },
         },
     })}
@@ -120,12 +129,12 @@ const SInput: React.FC<SProps> = styled.input.attrs(
                         primary: {
                             bg: 'accent.1',
                             color: 'dark.0',
-                            borderColor: 'accent.2',
+                            borderColor: 'accent.1',
                         },
                         secondary: {
                             bg: 'accent.0',
                             color: 'bg',
-                            borderColor: 'accent.2',
+                            borderColor: 'accent.0',
                         },
                         filter: {
                             bg: 'dark.1',
@@ -183,6 +192,7 @@ const SAppend: React.FC<SAppendProps> = styled.span<SAppendProps>`
 
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
+    border: 2px solid rgba(0, 0, 0, 0);
 
     transition: .2s;
 

@@ -150,7 +150,7 @@ exports[`Form on hero component matches snapshot 1`] = `
         className="sc-fzplWN czaqLz"
       >
         <input
-          className="sc-fzoLsD bEayjX"
+          className="sc-fzoLsD kiVBAN"
           fontFamily="body"
           fontSize={
             Array [
@@ -174,7 +174,7 @@ exports[`Form on hero component matches snapshot 1`] = `
           }
         />
         <span
-          className="sc-fzpans jZioCe"
+          className="sc-fzpans gYQvQx"
           fontFamily="body"
           fontSize={
             Array [

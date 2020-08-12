@@ -25,6 +25,7 @@ import Tag from 'components/tag';
 type ContainerProps = StylingProps &
     PositioningProps & {
         id: string;
+        className: string;
     };
 
 type InnerWrapperProps = PositioningProps & {};
@@ -247,12 +248,13 @@ const Products: React.FC<Props> = ({ properties }) => {
         <Container
             bg="bg"
             id="display-top"
+            className="top"
             css={`
                 display: grid;
                 place-items: center;
             `}
         >
-            <OuterWrapper width={1} position="relative">
+            <OuterWrapper width={1} position="relative" pt={[5]}>
                 <CSSTransition
                     in={showFilter}
                     timeout={200}
@@ -296,6 +298,7 @@ const Products: React.FC<Props> = ({ properties }) => {
                         <H2
                             color={['dark.2']}
                             mb={[2, 2]}
+                            width="fit-content"
                             css={`
                                 &,
                                 svg {
@@ -409,6 +412,7 @@ const Products: React.FC<Props> = ({ properties }) => {
                     </FilterTagsContainer>
                     <Display
                         display={display}
+                        blur={showFilter}
                         handleSelectLocations={handleSelectLocations}
                         handleSelectPropertyType={handleSelectPropertyType}
                         handleSelectSaleType={handleSelectSaleType}

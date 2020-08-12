@@ -21,6 +21,7 @@ const Container: React.FC<ContainerProps> = styled.div<ContainerProps>`
 
 type Props = {
     display: Property[];
+    blur: boolean;
     handleSelectLocations: (value: string) => void;
     handleSelectSaleType: (value: string) => void;
     handleSelectPropertyType: (value: string) => void;
@@ -29,13 +30,23 @@ type Props = {
 
 const Display: React.FC<Props> = ({
     display,
+    blur,
     handleSelectLocations,
     handleSelectPropertyType,
     handleSelectSaleType,
     applyFilters,
 }) => {
     return (
-        <Container display="flex" flexWrap="wrap" width={1} bg="bg">
+        <Container
+            display="flex"
+            flexWrap="wrap"
+            width={1}
+            bg="bg"
+            css={`
+                transition: 0.2s;
+                filter: ${blur && 'blur(8px)'};
+            `}
+        >
             {display.map(property => {
                 const {
                     name,

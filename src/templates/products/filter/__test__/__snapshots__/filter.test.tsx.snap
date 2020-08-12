@@ -16,7 +16,7 @@ exports[`Filter component matches snapshot 1`] = `
     tabIndex={0}
   >
     <h2
-      className="sc-AxirZ eeOdJO"
+      className="sc-AxirZ kopktq"
       color={
         Array [
           "bg",
@@ -31,6 +31,7 @@ exports[`Filter component matches snapshot 1`] = `
           5,
         ]
       }
+      width="fit-content"
     >
       Filters
       <svg
@@ -78,7 +79,7 @@ exports[`Filter component matches snapshot 1`] = `
     >
       Alamat
       <input
-        className="sc-fzoLsD cviBCK"
+        className="sc-fzoLsD eKoCBG"
         fontFamily="body"
         fontSize={
           Array [
@@ -339,7 +340,7 @@ exports[`Filter component matches snapshot 1`] = `
           htmlFor="area-min"
         >
           <input
-            className="sc-fzoLsD eGQWEZ"
+            className="sc-fzoLsD KnxUl"
             color={
               Array [
                 "bg",
@@ -359,7 +360,7 @@ exports[`Filter component matches snapshot 1`] = `
             onChange={[Function]}
             placeholder="Min"
             type="number"
-            value={0}
+            value=""
             width={
               Array [
                 72,
@@ -378,7 +379,7 @@ exports[`Filter component matches snapshot 1`] = `
           htmlFor="area-max"
         >
           <input
-            className="sc-fzoLsD eGQWEZ"
+            className="sc-fzoLsD KnxUl"
             color={
               Array [
                 "bg",
@@ -467,7 +468,7 @@ exports[`Filter component matches snapshot 1`] = `
             htmlFor="price-min"
           >
             <input
-              className="sc-fzoLsD hGTPfR"
+              className="sc-fzoLsD edxtsp"
               color={
                 Array [
                   "bg",
@@ -487,7 +488,7 @@ exports[`Filter component matches snapshot 1`] = `
               onChange={[Function]}
               placeholder="dari harga"
               type="number"
-              value={0}
+              value=""
               width={
                 Array [
                   100,
@@ -571,7 +572,7 @@ exports[`Filter component matches snapshot 1`] = `
             htmlFor="price-max"
           >
             <input
-              className="sc-fzoLsD hGTPfR"
+              className="sc-fzoLsD edxtsp"
               color={
                 Array [
                   "bg",

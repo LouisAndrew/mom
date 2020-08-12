@@ -135,15 +135,16 @@ const Filter: React.FC<Props> = ({
         <Container
             position="absolute"
             zIndex={2}
-            minHeight={['100vh', '100vh', 'fit-content']}
+            // minHeight={['100vh', '100vh', 'fit-content']}
             bg={['dark.0']}
-            width={['100%', '100%', 'fit-content']}
+            width={['90%', '90%', 'fit-content']}
+            mx={['5', '5%', 0]}
             maxWidth={['100%', '100%', '50vw']}
             borderStyle="solid"
             borderColor={['rgba(0, 0, 0, 0)', 'rgba(0, 0, 0, 0)']}
-            borderRadius={[0, 0, 4]}
-            py={[3, 3, 5]}
-            px={[3, 3, 4]}
+            borderRadius={[4]}
+            py={[5]}
+            px={[4]}
             css={`
                 &.filter-enter {
                     opacity: 0;
@@ -174,6 +175,7 @@ const Filter: React.FC<Props> = ({
                 <H2
                     color={['bg']}
                     mb={[2, 2]}
+                    width="fit-content"
                     css={`
                         &,
                         svg {

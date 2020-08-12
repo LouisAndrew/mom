@@ -9,7 +9,11 @@ const GlobalStyles = createGlobalStyle`
 
     body {
       overflow-x: hidden;
-      scroll-behavior: smoothl;
+      scroll-behavior: smooth;
+
+      *:focus {
+        outline none;
+      }
     }
 
     .top {

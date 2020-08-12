@@ -5,7 +5,6 @@ import Layout from 'components/layout';
 import { SEO } from 'components/seo';
 import MainPage from 'templates/main-page';
 import { FluidObject } from 'gatsby-image';
-import { Query } from '@testing-library/react';
 
 type FluidImg = {
     childImageSharp: {
@@ -21,10 +20,6 @@ type QueryReturn = {
 const App = (props: any) => {
     const { data } = props;
     const { heroImg, aboutImg } = data as QueryReturn;
-
-    console.log(heroImg);
-    console.log(aboutImg);
-    console.log(props);
 
     return (
         <Layout>
