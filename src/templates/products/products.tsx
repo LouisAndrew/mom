@@ -15,13 +15,17 @@ import {
     theme,
 } from 'styles';
 import Filter from './filter';
-import Display from './display';
+// there's an error on storybook while importing display from its index.ts file.
+import { Display } from './display/display';
 import { SelectItem } from 'components/select/select';
 import { Property } from 'interfaces/Property';
 import { filter as initFilter } from 'helper/filter';
 import Tag from 'components/tag';
 
-type ContainerProps = StylingProps & PositioningProps & {};
+type ContainerProps = StylingProps &
+    PositioningProps & {
+        id: string;
+    };
 
 type InnerWrapperProps = PositioningProps & {};
 
@@ -50,6 +54,18 @@ export type MinMaxObj = {
 type Props = {
     properties: Property[];
 };
+
+export const selectSaleTypeItems: SelectItem[] = [
+    { key: 'Jual', value: 'sell' },
+    { key: 'Sewa', value: 'rent' },
+];
+
+export const selectPropertyTypeItems: SelectItem[] = [
+    { key: 'Rumah', value: 'house' },
+    { key: 'Apartment', value: 'apartment' },
+    { key: 'Kavling', value: 'kavling' },
+    { key: 'Ruko', value: 'home-office' },
+];
 
 const Products: React.FC<Props> = ({ properties }) => {
     const [display, setDisplay] = useState<Property[]>([]);
@@ -97,6 +113,10 @@ const Products: React.FC<Props> = ({ properties }) => {
 
             await setIsLoading(false);
             await setDisplay(newDisplay);
+
+            // eslint-disable-next-line @typescript-eslint/tslint/config, immutable/no-mutation
+            location.href = '#display-top';
+
             await toggleFilterView();
         })();
     };
@@ -108,15 +128,21 @@ const Products: React.FC<Props> = ({ properties }) => {
     };
 
     const handleSelectLocations = (value: string) => {
-        setlocationFilters([...locationFilters, value]);
+        if (locationFilters.indexOf(value) === -1) {
+            setlocationFilters([...locationFilters, value]);
+        }
     };
 
     const handleSelectSaleType = (value: string) => {
-        setSaleTypeFilters([...saleTypeFilters, value]);
+        if (saleTypeFilters.indexOf(value) === -1) {
+            setSaleTypeFilters([...saleTypeFilters, value]);
+        }
     };
 
     const handleSelectPropertyType = (value: string) => {
-        setPropTypeFilters([...propTypeFilters, value]);
+        if (propTypeFilters.indexOf(value) === -1) {
+            setPropTypeFilters([...propTypeFilters, value]);
+        }
     };
 
     const handleChangeArea = (value: number, max: boolean) => {
@@ -158,18 +184,6 @@ const Products: React.FC<Props> = ({ properties }) => {
         );
     };
 
-    const selectSaleTypeItems: SelectItem[] = [
-        { key: 'Jual', value: 'sell' },
-        { key: 'Sewa', value: 'rent' },
-    ];
-
-    const selectPropertyTypeItems: SelectItem[] = [
-        { key: 'Rumah', value: 'house' },
-        { key: 'Apartment', value: 'apartment' },
-        { key: 'Kavling', value: 'kavling' },
-        { key: 'Ruko', value: 'home-office' },
-    ];
-
     // mock data here..
     const mockLocations: SelectItem[] = properties.map(property => {
         const location = get(property, 'location', '');
@@ -179,7 +193,7 @@ const Products: React.FC<Props> = ({ properties }) => {
         };
     });
 
-    const filterTagsComponent = (
+    const filterTagsComponent: JSX.Element = (
         <FilterTagsContainer flexWrap="wrap" width={1}>
             {locationFilters.map((location, i) => (
                 <Tag
@@ -232,6 +246,7 @@ const Products: React.FC<Props> = ({ properties }) => {
     return (
         <Container
             bg="bg"
+            id="display-top"
             css={`
                 display: grid;
                 place-items: center;
@@ -240,6 +255,7 @@ const Products: React.FC<Props> = ({ properties }) => {
             <OuterWrapper width={1} position="relative">
                 <CSSTransition
                     in={showFilter}
+                    timeout={200}
                     classNames="filter"
                     unmountOnExit={true}
                 >
@@ -350,10 +366,54 @@ const Products: React.FC<Props> = ({ properties }) => {
                                     }  `}
                             </Tag>
                         )}
-
-                        {filterTagsComponent}
+                        {locationFilters.map((location, i) => (
+                            <Tag
+                                m={[1]}
+                                key={`${location}-filter-tag`}
+                                variant="location"
+                                handleClick={toggleFilterView}
+                            >
+                                {location}
+                            </Tag>
+                        ))}
+                        {saleTypeFilters.map((saleType, i) => (
+                            <Tag
+                                m={[1]}
+                                key={`${saleType}-filter-tag`}
+                                variant={saleType}
+                                handleClick={toggleFilterView}
+                            >
+                                {
+                                    find(
+                                        selectSaleTypeItems,
+                                        o => o.value === saleType
+                                    )?.key
+                                }
+                            </Tag>
+                        ))}
+                        {propTypeFilters.map((propType, i) => (
+                            <Tag
+                                m={[1]}
+                                key={`${propType}-filter-tag`}
+                                variant={propType}
+                                handleClick={toggleFilterView}
+                            >
+                                {
+                                    find(
+                                        selectPropertyTypeItems,
+                                        o => o.value === propType
+                                    )?.key
+                                }
+                            </Tag>
+                        ))}
                     </FilterTagsContainer>
-                    <Display display={display} />
+                    <Display
+                        display={display}
+                        handleSelectLocations={handleSelectLocations}
+                        handleSelectPropertyType={handleSelectPropertyType}
+                        handleSelectSaleType={handleSelectSaleType}
+                        applyFilters={applyFilters}
+                    />
                 </InnerWrapper>
             </OuterWrapper>
         </Container>

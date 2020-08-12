@@ -26,7 +26,7 @@ exports[`Hot List component matches snapshot 1`] = `
       display="flex"
     >
       <div
-        className="sc-AxmLO jwVhxh"
+        className="sc-AxmLO kMpPmY"
         display="flex"
         width={
           Array [
@@ -37,62 +37,75 @@ exports[`Hot List component matches snapshot 1`] = `
         }
       >
         <div
-          className="sc-fzpans cWuRwg"
-          height={
-            Array [
-              "auto",
-            ]
-          }
-          overflow="hidden"
-          width={
-            Array [
-              1,
-            ]
+          style={
+            Object {
+              "width": "100%",
+            }
           }
         >
-          <img
-            alt="Handsome boy"
-            src="https://res.cloudinary.com/dsvdffre0/image/upload/v1595340453/ovmhcixqqpfjla4mxovf.jpg"
-          />
-        </div>
-        <div
-          className="sc-fzozJi gxxysj"
-          display="flex"
-          width={1}
-        >
-          <h3
-            className="sc-AxiKw dsegVB"
-            fontFamily="heading"
-            fontSize={
-              Array [
-                3,
-                3,
-                4,
-                4,
-              ]
-            }
-          >
-            Rumah 1
-          </h3>
-          <p
-            className="sc-AxhUy iPnAqk"
-            fontFamily="body"
-            fontSize={
-              Array [
-                1,
-                1,
-                2,
-                2,
-              ]
-            }
-          >
-            jalan Mangga 24 blok G nomor 167
-          </p>
           <div
-            className="sc-fzoLsD kMKfsv"
+            className="sc-fzpans cWuRwg"
+            height={
+              Array [
+                "auto",
+              ]
+            }
+            overflow="hidden"
+            width={
+              Array [
+                1,
+              ]
+            }
+          >
+            <img
+              alt="Handsome boy"
+              src="https://res.cloudinary.com/dsvdffre0/image/upload/v1595340453/ovmhcixqqpfjla4mxovf.jpg"
+            />
+          </div>
+          <div
+            className="sc-fzozJi deZYli"
             display="flex"
             width={1}
-          />
+          >
+            <h3
+              className="sc-AxiKw dsegVB"
+              fontFamily="heading"
+              fontSize={
+                Array [
+                  3,
+                  3,
+                  4,
+                  4,
+                ]
+              }
+            >
+              Rumah 1
+            </h3>
+            <p
+              className="sc-AxhUy iPnAqk"
+              fontFamily="body"
+              fontSize={
+                Array [
+                  1,
+                  1,
+                  2,
+                  2,
+                ]
+              }
+            >
+              jalan Mangga 24 blok G nomor 167
+            </p>
+            <div
+              className="sc-fzoLsD kMKfsv"
+              display="flex"
+              width={1}
+            />
+          </div>
+        </div>
+        <div
+          className="sc-fzozJi bngyJH"
+          width={1}
+        >
           <h2
             className="sc-AxirZ jrdOBY"
             fontFamily="heading"
@@ -129,7 +142,7 @@ exports[`Hot List component matches snapshot 1`] = `
         </div>
       </div>
       <div
-        className="sc-AxmLO jwVhxh"
+        className="sc-AxmLO kMpPmY"
         display="flex"
         width={
           Array [
@@ -140,62 +153,75 @@ exports[`Hot List component matches snapshot 1`] = `
         }
       >
         <div
-          className="sc-fzpans cWuRwg"
-          height={
-            Array [
-              "auto",
-            ]
-          }
-          overflow="hidden"
-          width={
-            Array [
-              1,
-            ]
+          style={
+            Object {
+              "width": "100%",
+            }
           }
         >
-          <img
-            alt="Lakers logo"
-            src="https://res.cloudinary.com/dsvdffre0/image/upload/v1596031267/w3ufcacls7mqfmhbwpe4.png"
-          />
-        </div>
-        <div
-          className="sc-fzozJi gxxysj"
-          display="flex"
-          width={1}
-        >
-          <h3
-            className="sc-AxiKw dsegVB"
-            fontFamily="heading"
-            fontSize={
-              Array [
-                3,
-                3,
-                4,
-                4,
-              ]
-            }
-          >
-            Rumah 2
-          </h3>
-          <p
-            className="sc-AxhUy iPnAqk"
-            fontFamily="body"
-            fontSize={
-              Array [
-                1,
-                1,
-                2,
-                2,
-              ]
-            }
-          >
-            jalan Mangga 25 blok F nomor 167
-          </p>
           <div
-            className="sc-fzoLsD kMKfsv"
+            className="sc-fzpans cWuRwg"
+            height={
+              Array [
+                "auto",
+              ]
+            }
+            overflow="hidden"
+            width={
+              Array [
+                1,
+              ]
+            }
+          >
+            <img
+              alt="Lakers logo"
+              src="https://res.cloudinary.com/dsvdffre0/image/upload/v1596031267/w3ufcacls7mqfmhbwpe4.png"
+            />
+          </div>
+          <div
+            className="sc-fzozJi deZYli"
             display="flex"
             width={1}
-          />
+          >
+            <h3
+              className="sc-AxiKw dsegVB"
+              fontFamily="heading"
+              fontSize={
+                Array [
+                  3,
+                  3,
+                  4,
+                  4,
+                ]
+              }
+            >
+              Rumah 2
+            </h3>
+            <p
+              className="sc-AxhUy iPnAqk"
+              fontFamily="body"
+              fontSize={
+                Array [
+                  1,
+                  1,
+                  2,
+                  2,
+                ]
+              }
+            >
+              jalan Mangga 25 blok F nomor 167
+            </p>
+            <div
+              className="sc-fzoLsD kMKfsv"
+              display="flex"
+              width={1}
+            />
+          </div>
+        </div>
+        <div
+          className="sc-fzozJi bngyJH"
+          width={1}
+        >
           <h2
             className="sc-AxirZ jrdOBY"
             fontFamily="heading"
@@ -232,7 +258,7 @@ exports[`Hot List component matches snapshot 1`] = `
         </div>
       </div>
       <div
-        className="sc-AxmLO jwVhxh"
+        className="sc-AxmLO kMpPmY"
         display="flex"
         width={
           Array [
@@ -243,62 +269,75 @@ exports[`Hot List component matches snapshot 1`] = `
         }
       >
         <div
-          className="sc-fzpans cWuRwg"
-          height={
-            Array [
-              "auto",
-            ]
-          }
-          overflow="hidden"
-          width={
-            Array [
-              1,
-            ]
+          style={
+            Object {
+              "width": "100%",
+            }
           }
         >
-          <img
-            alt="No image provided"
-            src="/"
-          />
-        </div>
-        <div
-          className="sc-fzozJi gxxysj"
-          display="flex"
-          width={1}
-        >
-          <h3
-            className="sc-AxiKw dsegVB"
-            fontFamily="heading"
-            fontSize={
-              Array [
-                3,
-                3,
-                4,
-                4,
-              ]
-            }
-          >
-            Apartment 2
-          </h3>
-          <p
-            className="sc-AxhUy iPnAqk"
-            fontFamily="body"
-            fontSize={
-              Array [
-                1,
-                1,
-                2,
-                2,
-              ]
-            }
-          >
-            jalan Mangga 25 blok F nomor 167
-          </p>
           <div
-            className="sc-fzoLsD kMKfsv"
+            className="sc-fzpans cWuRwg"
+            height={
+              Array [
+                "auto",
+              ]
+            }
+            overflow="hidden"
+            width={
+              Array [
+                1,
+              ]
+            }
+          >
+            <img
+              alt="No image provided"
+              src="/"
+            />
+          </div>
+          <div
+            className="sc-fzozJi deZYli"
             display="flex"
             width={1}
-          />
+          >
+            <h3
+              className="sc-AxiKw dsegVB"
+              fontFamily="heading"
+              fontSize={
+                Array [
+                  3,
+                  3,
+                  4,
+                  4,
+                ]
+              }
+            >
+              Apartment 2
+            </h3>
+            <p
+              className="sc-AxhUy iPnAqk"
+              fontFamily="body"
+              fontSize={
+                Array [
+                  1,
+                  1,
+                  2,
+                  2,
+                ]
+              }
+            >
+              jalan Mangga 25 blok F nomor 167
+            </p>
+            <div
+              className="sc-fzoLsD kMKfsv"
+              display="flex"
+              width={1}
+            />
+          </div>
+        </div>
+        <div
+          className="sc-fzozJi bngyJH"
+          width={1}
+        >
           <h2
             className="sc-AxirZ jrdOBY"
             fontFamily="heading"

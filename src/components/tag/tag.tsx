@@ -48,7 +48,7 @@ const Container: React.FC<ContainerProps> = styled.span<ContainerProps>`
                 color: '#fff',
             },
             rent: {
-                bg: 'badges.sellType.rent',
+                bg: 'badges.saleType.rent',
                 color: '#fff',
             },
             house: {

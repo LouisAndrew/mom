@@ -64,4 +64,20 @@ const mockProperty: Property[] = [
     },
 ];
 
-story.add('Component', () => <Display display={mockProperty} />);
+story.add('Component', () => (
+    <Display
+        display={mockProperty}
+        handleSelectLocations={() => {
+            return;
+        }}
+        handleSelectPropertyType={() => {
+            return;
+        }}
+        handleSelectSaleType={() => {
+            return;
+        }}
+        applyFilters={() => {
+            return;
+        }}
+    />
+));

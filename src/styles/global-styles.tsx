@@ -9,6 +9,7 @@ const GlobalStyles = createGlobalStyle`
 
     body {
       overflow-x: hidden;
+      scroll-behavior: smoothl;
     }
 
     .top {

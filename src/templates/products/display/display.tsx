@@ -1,4 +1,5 @@
 import React from 'react';
+import { find } from 'lodash';
 
 import styled from 'styled-components';
 import { layout, flexbox, space, color } from 'styled-system';
@@ -7,22 +8,34 @@ import { StylingProps, PositioningProps } from 'styles';
 import { Property } from 'interfaces/Property';
 import Card from 'components/product-card';
 import { FluidObject } from 'gatsby-image';
+import { selectSaleTypeItems, selectPropertyTypeItems } from '../products';
 
-type ContainerProps = PositioningProps & {};
+type ContainerProps = PositioningProps & StylingProps & {};
 
 const Container: React.FC<ContainerProps> = styled.div<ContainerProps>`
     ${layout}
     ${space}
     ${flexbox}
+    ${color}
 `;
 
 type Props = {
     display: Property[];
+    handleSelectLocations: (value: string) => void;
+    handleSelectSaleType: (value: string) => void;
+    handleSelectPropertyType: (value: string) => void;
+    applyFilters: () => void;
 };
 
-const Display: React.FC<Props> = ({ display }) => {
+const Display: React.FC<Props> = ({
+    display,
+    handleSelectLocations,
+    handleSelectPropertyType,
+    handleSelectSaleType,
+    applyFilters,
+}) => {
     return (
-        <Container display="flex" flexWrap="wrap" width={1}>
+        <Container display="flex" flexWrap="wrap" width={1} bg="bg">
             {display.map(property => {
                 const {
                     name,
@@ -35,7 +48,7 @@ const Display: React.FC<Props> = ({ display }) => {
                 } = property;
 
                 type Tag = {
-                    text: string;
+                    text: string | undefined;
                     tagType: string;
                     handleClick: () => void;
                 };
@@ -56,25 +69,34 @@ const Display: React.FC<Props> = ({ display }) => {
                               text: location,
                               tagType: 'location',
                               handleClick: () => {
-                                  console.log(location);
+                                  handleSelectLocations(location);
+                                  applyFilters();
                               },
                           }
                         : undefined,
                     propertyType
                         ? {
-                              text: propertyType,
+                              text: find(
+                                  selectPropertyTypeItems,
+                                  o => o.value === propertyType
+                              )?.key,
                               tagType: propertyType,
                               handleClick: () => {
-                                  console.log(propertyType);
+                                  handleSelectPropertyType(propertyType);
+                                  applyFilters();
                               },
                           }
                         : undefined,
                     saleType
                         ? {
-                              text: saleType,
+                              text: find(
+                                  selectSaleTypeItems,
+                                  o => o.value === saleType
+                              )?.key,
                               tagType: saleType,
                               handleClick: () => {
-                                  console.log(saleType);
+                                  handleSelectSaleType(saleType);
+                                  applyFilters();
                               },
                           }
                         : undefined,
