@@ -20,7 +20,7 @@ export type Props = PositioningProps & {
     headingText: string;
     bodyText: string;
     alt: string;
-    price?: string;
+    price?: number;
     src?: string;
     tags?: {
         text: string | undefined;
@@ -28,6 +28,7 @@ export type Props = PositioningProps & {
         handleClick?: () => void;
     }[];
     fluid?: FluidObject | FluidObject[] | undefined;
+    fixed?: FixedObject | FixedObject[] | undefined;
     navigate: () => void;
 };
 
@@ -75,6 +76,7 @@ const Card: React.FC<Props> = ({
     headingText,
     bodyText,
     fluid,
+    fixed,
     src,
     price,
     alt,
@@ -86,10 +88,11 @@ const Card: React.FC<Props> = ({
         <Container
             display="flex"
             flexDirection="column"
+            overflow="hidden"
             alignItems="center"
             justifyContent={'space-between'}
+            maxWidth={[300, 300, 420]}
             boxShadow="blend"
-            width="fit-content"
             borderRadius="4px"
             bg="light.0"
             borderWidth={1}
@@ -109,23 +112,25 @@ const Card: React.FC<Props> = ({
                         border-top-right-radius: 4px;
                         border-top-left-radius: 4px;
 
-                        &::after {
-                            display: block;
-                            content: '';
-                            padding-top: 66.6%;
-                        }
+                        display: grid;
+                        place-items: center;
 
                         & > img {
                             position: absolute;
                             top: 0;
                             left: 0;
-                            height: 100%;
+                            height: 100% !important;
                             width: 100%;
                         }
                     `}
                 >
-                    {fluid ? (
-                        <Img fluid={fluid} alt={alt} />
+                    {fluid || fixed ? (
+                        <Img
+                            fluid={fluid}
+                            alt={alt}
+                            fixed={fixed}
+                            imgStyle={{ objectFit: 'contain' }}
+                        />
                     ) : (
                         // TODO: change / to a remote url: show that image is not found
                         <img src={src ? src : '/'} alt={alt} />
@@ -172,7 +177,7 @@ const Card: React.FC<Props> = ({
             </div>
             <DetailsContainer px={[3, 3, 4]} py={[3, 3, 4]} width={1}>
                 <H2 textAlign="right" py={[2]} alignSelf="flex-end">
-                    {price}
+                    {price / 1000 < 1 ? `${price} Jt` : `${price / 1000} M`}
                 </H2>
                 <Button
                     handleClick={navigate}

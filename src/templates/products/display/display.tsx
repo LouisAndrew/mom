@@ -7,7 +7,7 @@ import { layout, flexbox, space, color } from 'styled-system';
 import { StylingProps, PositioningProps } from 'styles';
 import { Property } from 'interfaces/Property';
 import Card from 'components/product-card';
-import { FluidObject } from 'gatsby-image';
+import { FixedObject, FluidObject } from 'gatsby-image';
 import { selectSaleTypeItems, selectPropertyTypeItems } from '../products';
 
 type ContainerProps = PositioningProps & StylingProps & {};
@@ -39,6 +39,8 @@ const Display: React.FC<Props> = ({
     return (
         <Container
             display="flex"
+            flexDirection={['column', 'column', 'row']}
+            alignItems={['center', 'center', 'unset']}
             flexWrap="wrap"
             width={1}
             bg="bg"
@@ -68,6 +70,7 @@ const Display: React.FC<Props> = ({
                     alt: string;
                     src?: string;
                     fluid?: FluidObject | FluidObject[];
+                    fixed?: FixedObject | FixedObject[];
                 };
 
                 const navigateTo = () => {
@@ -126,9 +129,13 @@ const Display: React.FC<Props> = ({
                 // have the type of string (regular src) or FluidObject (gatsby-image format)
                 const imgProps: ImgProps = {
                     alt: isImgArrayExist && imgs ? imgs[0].imgAlt : 'No-image',
-                    fluid:
+                    // fluid:
+                    //     isImgArrayExist && imgs && isMainImageFluid
+                    //         ? (imgs[0].image as FluidObject | FluidObject[])
+                    //         : undefined,
+                    fixed:
                         isImgArrayExist && imgs && isMainImageFluid
-                            ? (imgs[0].image as FluidObject | FluidObject[])
+                            ? (imgs[0].image as FixedObject | FixedObject[])
                             : undefined,
                     src:
                         isImgArrayExist && imgs && !isMainImageFluid
@@ -141,20 +148,14 @@ const Display: React.FC<Props> = ({
                         key={name}
                         headingText={name}
                         bodyText={address}
-                        price={
-                            price
-                                ? price / 1000 < 1
-                                    ? `${price} Jt`
-                                    : `${price} M`
-                                : undefined
-                        }
+                        price={price}
                         // casted to overcome an error that says tags is an array of undefined.
                         tags={tags.filter(tag => tag !== undefined) as Tag[]}
                         navigate={navigateTo}
                         {...imgProps}
                         // start of styling props
                         width={[0.9, 0.8, 0.45, 0.4]}
-                        mx={['5%', '10%', '2.5%', '5%']}
+                        mx={['0', '0', '2.5%', '5%']}
                         my={[3, 3]}
                     />
                 );

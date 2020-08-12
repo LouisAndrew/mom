@@ -1,4 +1,4 @@
-import { FluidObject } from 'gatsby-image';
+import { FixedObject, FluidObject } from 'gatsby-image';
 
 export type Property = {
     name: string;
@@ -8,7 +8,15 @@ export type Property = {
 
     // optional fields..
     location?: string;
-    imgs?: { image: string | FluidObject | FluidObject[]; imgAlt: string }[];
+    imgs?: {
+        image:
+            | string
+            | FluidObject
+            | FluidObject[]
+            | FixedObject
+            | FixedObject[];
+        imgAlt: string;
+    }[];
     description?: string;
     isTrending?: boolean;
     geolocation?: { lat: number; lng: number };

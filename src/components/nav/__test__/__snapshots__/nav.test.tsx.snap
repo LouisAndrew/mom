@@ -99,8 +99,7 @@ exports[`Navigation component matches snapshot 1`] = `
         onMouseLeave={[Function]}
       >
         <a
-          aria-current="page"
-          href="/"
+          href="/products"
           onClick={[Function]}
         >
           <svg

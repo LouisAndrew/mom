@@ -90,7 +90,7 @@ const MailingList: React.FC<Props> = ({ imgFluidSrc }) => {
                 css={`
                     & > img {
                         height: 375px;
-                        width: 464px;
+                        width: 100%;
                         overflow: hidden;
 
                         @media screen and (min-width: ${theme.breakpoints[0]}) {

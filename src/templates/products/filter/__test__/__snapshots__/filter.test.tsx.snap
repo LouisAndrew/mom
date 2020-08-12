@@ -2,11 +2,11 @@
 
 exports[`Filter component matches snapshot 1`] = `
 <div
-  className="sc-fzqBZW jURsOK"
+  className="sc-fzqBZW cZeasb"
   width={
     Array [
-      "100%",
-      "100%",
+      "90%",
+      "90%",
       "fit-content",
     ]
   }

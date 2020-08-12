@@ -9,10 +9,11 @@ const GlobalStyles = createGlobalStyle`
 
     body {
       overflow-x: hidden;
+      width: 100vw;
       scroll-behavior: smooth;
 
       *:focus {
-        outline none;
+        outline: none;
       }
     }
 
