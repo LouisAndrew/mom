@@ -67,6 +67,7 @@ const mockProperty: Property[] = [
 story.add('Component', () => (
     <Display
         display={mockProperty}
+        blur={true}
         handleSelectLocations={() => {
             return;
         }}

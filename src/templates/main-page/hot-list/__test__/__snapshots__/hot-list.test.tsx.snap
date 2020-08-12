@@ -2,7 +2,7 @@
 
 exports[`Hot List component matches snapshot 1`] = `
 <div
-  className="sc-fzplWN bPWPuX"
+  className="sc-fzoXWK TxTJZ"
 >
   <div
     className="sc-AxgMl danYDG"
@@ -22,12 +22,13 @@ exports[`Hot List component matches snapshot 1`] = `
       Lagi hot!! 🔥🔥🔥
     </h2>
     <div
-      className="sc-fznyAO hAAIXr"
+      className="sc-fzpmMD jIjIjJ"
       display="flex"
     >
       <div
-        className="sc-AxmLO kMpPmY"
+        className="sc-AxmLO clDedP"
         display="flex"
+        overflow="hidden"
         width={
           Array [
             0.9,
@@ -99,25 +100,33 @@ exports[`Hot List component matches snapshot 1`] = `
               className="sc-fzoLsD kMKfsv"
               display="flex"
               width={1}
-            />
+            >
+              <span
+                className="sc-Axmtr jcmgys"
+                color="dark.3"
+                fontFamily="body"
+                fontSize={
+                  Array [
+                    1,
+                    1,
+                    2,
+                    2,
+                  ]
+                }
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="button"
+                tabIndex={1}
+              >
+                Jual
+              </span>
+            </div>
           </div>
         </div>
         <div
           className="sc-fzozJi bngyJH"
           width={1}
         >
-          <h2
-            className="sc-AxirZ jrdOBY"
-            fontFamily="heading"
-            fontSize={
-              Array [
-                4,
-                4,
-                5,
-                5,
-              ]
-            }
-          />
           <button
             className="sc-AxheI eICHae"
             fontFamily="body"
@@ -142,8 +151,9 @@ exports[`Hot List component matches snapshot 1`] = `
         </div>
       </div>
       <div
-        className="sc-AxmLO kMpPmY"
+        className="sc-AxmLO clDedP"
         display="flex"
+        overflow="hidden"
         width={
           Array [
             0.9,
@@ -215,25 +225,33 @@ exports[`Hot List component matches snapshot 1`] = `
               className="sc-fzoLsD kMKfsv"
               display="flex"
               width={1}
-            />
+            >
+              <span
+                className="sc-Axmtr hFDSlT"
+                color="dark.3"
+                fontFamily="body"
+                fontSize={
+                  Array [
+                    1,
+                    1,
+                    2,
+                    2,
+                  ]
+                }
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="button"
+                tabIndex={1}
+              >
+                Sewa
+              </span>
+            </div>
           </div>
         </div>
         <div
           className="sc-fzozJi bngyJH"
           width={1}
         >
-          <h2
-            className="sc-AxirZ jrdOBY"
-            fontFamily="heading"
-            fontSize={
-              Array [
-                4,
-                4,
-                5,
-                5,
-              ]
-            }
-          />
           <button
             className="sc-AxheI eICHae"
             fontFamily="body"
@@ -258,8 +276,9 @@ exports[`Hot List component matches snapshot 1`] = `
         </div>
       </div>
       <div
-        className="sc-AxmLO kMpPmY"
+        className="sc-AxmLO clDedP"
         display="flex"
+        overflow="hidden"
         width={
           Array [
             0.9,
@@ -331,25 +350,33 @@ exports[`Hot List component matches snapshot 1`] = `
               className="sc-fzoLsD kMKfsv"
               display="flex"
               width={1}
-            />
+            >
+              <span
+                className="sc-Axmtr hFDSlT"
+                color="dark.3"
+                fontFamily="body"
+                fontSize={
+                  Array [
+                    1,
+                    1,
+                    2,
+                    2,
+                  ]
+                }
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="button"
+                tabIndex={1}
+              >
+                Sewa
+              </span>
+            </div>
           </div>
         </div>
         <div
           className="sc-fzozJi bngyJH"
           width={1}
         >
-          <h2
-            className="sc-AxirZ jrdOBY"
-            fontFamily="heading"
-            fontSize={
-              Array [
-                4,
-                4,
-                5,
-                5,
-              ]
-            }
-          />
           <button
             className="sc-AxheI eICHae"
             fontFamily="body"

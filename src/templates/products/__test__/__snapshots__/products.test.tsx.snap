@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`All products component matches snapshot 1`] = `
+<div
+  className="sc-fzqNqU cvqekU top"
+  id="display-top"
+>
+  <div
+    className="sc-AxgMl kmOOQF"
+    width={1}
+  >
+    <div
+      className="sc-fzoyTs gfpYqA"
+    >
+      <span
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
+      >
+        <h2
+          className="sc-AxirZ iOcOP"
+          color={
+            Array [
+              "dark.2",
+            ]
+          }
+          fontFamily="heading"
+          fontSize={
+            Array [
+              4,
+              4,
+              5,
+              5,
+            ]
+          }
+          width="fit-content"
+        >
+          Filters 
+          0
+          <svg
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "<path d=\\"M8.46 8.29A1 1 0 1 0 7 9.71L9.34 12L7 14.29a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0l3-3a1 1 0 0 0 0-1.42zm8.5 3l-3-3a1 1 0 0 0-1.42 1.42l2.3 2.29l-2.3 2.29a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0l3-3a1 1 0 0 0 .04-1.42z\\" fill=\\"#3C3639\\"/>",
+              }
+            }
+            focusable={false}
+            height="1em"
+            preserveAspectRatio="xMidYMid meet"
+            style={
+              Object {
+                "transform": "rotate(360deg)",
+                "verticalAlign": "-0.125em",
+              }
+            }
+            viewBox="0 0 24 24"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          />
+        </h2>
+      </span>
+      <div
+        className="sc-fzoNJl bHfWpV"
+      />
+      <div
+        className="sc-fzqARJ ijyxGz"
+        display="flex"
+        width={1}
+      />
+    </div>
+  </div>
+</div>
+`;

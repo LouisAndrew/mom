@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql, PageProps } from 'gatsby';
-import { get, find, unset } from 'lodash';
+import { get } from 'lodash';
 
 import { theme } from 'styles';
 import Layout from 'components/layout';
@@ -130,13 +130,14 @@ const ProductPage = (props: PageProps) => {
                         // image is an array of fluidobject -> added media here to give a sense of respnosiveness..
                         image: [
                             imgObj.image,
-                            {
-                                ...imgM.image,
-                                media: `(min-width: ${theme.breakpoints[1]})`,
-                            },
+                            // bug here? imgL must be ABOVE the smaller img(imgM)
                             {
                                 ...imgL.image,
                                 media: `(min-width: ${theme.breakpoints[2]})`,
+                            },
+                            {
+                                ...imgM.image,
+                                media: `(min-width: ${theme.breakpoints[1]})`,
                             },
                         ],
                         imgAlt: imgL.imgAlt,

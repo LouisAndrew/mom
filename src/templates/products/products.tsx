@@ -70,7 +70,7 @@ export const selectPropertyTypeItems: SelectItem[] = [
 
 const Products: React.FC<Props> = ({ properties }) => {
     const [display, setDisplay] = useState<Property[]>([]);
-    const [isLoading, setIsLoading] = useState(false);
+    // const [isLoading, setIsLoading] = useState(false);
     const [showFilter, setShowFilter] = useState(false);
 
     // filter states
@@ -112,7 +112,7 @@ const Products: React.FC<Props> = ({ properties }) => {
                 properties,
             });
 
-            await setIsLoading(false);
+            // await setIsLoading(false);
             await setDisplay(newDisplay);
 
             // eslint-disable-next-line @typescript-eslint/tslint/config, immutable/no-mutation
@@ -196,7 +196,7 @@ const Products: React.FC<Props> = ({ properties }) => {
 
     const filterTagsComponent: JSX.Element = (
         <FilterTagsContainer flexWrap="wrap" width={1}>
-            {locationFilters.map((location, i) => (
+            {locationFilters.map(location => (
                 <Tag
                     m={[1]}
                     key={`${location}-filter-tag`}
@@ -210,7 +210,7 @@ const Products: React.FC<Props> = ({ properties }) => {
                     {location}
                 </Tag>
             ))}
-            {saleTypeFilters.map((saleType, i) => (
+            {saleTypeFilters.map(saleType => (
                 <Tag
                     m={[1]}
                     key={`${saleType}-filter-tag`}
@@ -224,7 +224,7 @@ const Products: React.FC<Props> = ({ properties }) => {
                     {find(selectSaleTypeItems, o => o.value === saleType)?.key}
                 </Tag>
             ))}
-            {propTypeFilters.map((propType, i) => (
+            {propTypeFilters.map(propType => (
                 <Tag
                     m={[1]}
                     key={`${propType}-filter-tag`}
@@ -369,7 +369,7 @@ const Products: React.FC<Props> = ({ properties }) => {
                                     }  `}
                             </Tag>
                         )}
-                        {locationFilters.map((location, i) => (
+                        {locationFilters.map(location => (
                             <Tag
                                 m={[1]}
                                 key={`${location}-filter-tag`}
@@ -379,7 +379,7 @@ const Products: React.FC<Props> = ({ properties }) => {
                                 {location}
                             </Tag>
                         ))}
-                        {saleTypeFilters.map((saleType, i) => (
+                        {saleTypeFilters.map(saleType => (
                             <Tag
                                 m={[1]}
                                 key={`${saleType}-filter-tag`}
@@ -394,7 +394,7 @@ const Products: React.FC<Props> = ({ properties }) => {
                                 }
                             </Tag>
                         ))}
-                        {propTypeFilters.map((propType, i) => (
+                        {propTypeFilters.map(propType => (
                             <Tag
                                 m={[1]}
                                 key={`${propType}-filter-tag`}

@@ -1,0 +1,544 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Display component on products matches snapshot 1`] = `
+<div
+  className="sc-fzoNJl kIBoOM"
+  display="flex"
+  width={1}
+>
+  <div
+    className="sc-AxmLO bOahTC"
+    display="flex"
+    overflow="hidden"
+    width={
+      Array [
+        0.9,
+        0.8,
+        0.45,
+        0.4,
+      ]
+    }
+  >
+    <div
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        className="sc-fzpans cWuRwg"
+        height={
+          Array [
+            "auto",
+          ]
+        }
+        overflow="hidden"
+        width={
+          Array [
+            1,
+          ]
+        }
+      >
+        <img
+          alt="Beautiful house"
+          src="https://res.cloudinary.com/dsvdffre0/image/upload/v1597137791/webaliser-_TPTXZd9mOo-unsplash_pqtm1r.jpg"
+        />
+      </div>
+      <div
+        className="sc-fzozJi deZYli"
+        display="flex"
+        width={1}
+      >
+        <h3
+          className="sc-AxiKw dsegVB"
+          fontFamily="heading"
+          fontSize={
+            Array [
+              3,
+              3,
+              4,
+              4,
+            ]
+          }
+        >
+          Rumah 1
+        </h3>
+        <p
+          className="sc-AxhUy iPnAqk"
+          fontFamily="body"
+          fontSize={
+            Array [
+              1,
+              1,
+              2,
+              2,
+            ]
+          }
+        >
+          Jalan rumah 1
+        </p>
+        <div
+          className="sc-fzoLsD kMKfsv"
+          display="flex"
+          width={1}
+        >
+          <span
+            className="sc-Axmtr iNVGjd"
+            color="dark.3"
+            fontFamily="body"
+            fontSize={
+              Array [
+                1,
+                1,
+                2,
+                2,
+              ]
+            }
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+            tabIndex={1}
+          >
+            Penang
+          </span>
+          <span
+            className="sc-Axmtr ibIjVG"
+            color="dark.3"
+            fontFamily="body"
+            fontSize={
+              Array [
+                1,
+                1,
+                2,
+                2,
+              ]
+            }
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+            tabIndex={1}
+          >
+            Rumah
+          </span>
+          <span
+            className="sc-Axmtr jcmgys"
+            color="dark.3"
+            fontFamily="body"
+            fontSize={
+              Array [
+                1,
+                1,
+                2,
+                2,
+              ]
+            }
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+            tabIndex={2}
+          >
+            Jual
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      className="sc-fzozJi bngyJH"
+      width={1}
+    >
+      <h2
+        className="sc-AxirZ jrdOBY"
+        fontFamily="heading"
+        fontSize={
+          Array [
+            4,
+            4,
+            5,
+            5,
+          ]
+        }
+      >
+        200 Jt
+      </h2>
+      <button
+        className="sc-AxheI eICHae"
+        fontFamily="body"
+        fontSize={
+          Array [
+            1,
+            1,
+            2,
+            2,
+          ]
+        }
+        fontWeight="bold"
+        onClick={[Function]}
+        width={
+          Array [
+            1,
+          ]
+        }
+      >
+        More info
+      </button>
+    </div>
+  </div>
+  <div
+    className="sc-AxmLO bOahTC"
+    display="flex"
+    overflow="hidden"
+    width={
+      Array [
+        0.9,
+        0.8,
+        0.45,
+        0.4,
+      ]
+    }
+  >
+    <div
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        className="sc-fzpans cWuRwg"
+        height={
+          Array [
+            "auto",
+          ]
+        }
+        overflow="hidden"
+        width={
+          Array [
+            1,
+          ]
+        }
+      >
+        <img
+          alt="Beautiful house 2"
+          src="https://res.cloudinary.com/dsvdffre0/image/upload/v1597137791/jacques-bopp-Hh18POSx5qk-unsplash_lweaht.jpg"
+        />
+      </div>
+      <div
+        className="sc-fzozJi deZYli"
+        display="flex"
+        width={1}
+      >
+        <h3
+          className="sc-AxiKw dsegVB"
+          fontFamily="heading"
+          fontSize={
+            Array [
+              3,
+              3,
+              4,
+              4,
+            ]
+          }
+        >
+          Rumah 2
+        </h3>
+        <p
+          className="sc-AxhUy iPnAqk"
+          fontFamily="body"
+          fontSize={
+            Array [
+              1,
+              1,
+              2,
+              2,
+            ]
+          }
+        >
+          Jalan apartment 2
+        </p>
+        <div
+          className="sc-fzoLsD kMKfsv"
+          display="flex"
+          width={1}
+        >
+          <span
+            className="sc-Axmtr iNVGjd"
+            color="dark.3"
+            fontFamily="body"
+            fontSize={
+              Array [
+                1,
+                1,
+                2,
+                2,
+              ]
+            }
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+            tabIndex={1}
+          >
+            PIK
+          </span>
+          <span
+            className="sc-Axmtr fEcKHw"
+            color="dark.3"
+            fontFamily="body"
+            fontSize={
+              Array [
+                1,
+                1,
+                2,
+                2,
+              ]
+            }
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+            tabIndex={1}
+          >
+            Apartment
+          </span>
+          <span
+            className="sc-Axmtr hFDSlT"
+            color="dark.3"
+            fontFamily="body"
+            fontSize={
+              Array [
+                1,
+                1,
+                2,
+                2,
+              ]
+            }
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+            tabIndex={2}
+          >
+            Sewa
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      className="sc-fzozJi bngyJH"
+      width={1}
+    >
+      <h2
+        className="sc-AxirZ jrdOBY"
+        fontFamily="heading"
+        fontSize={
+          Array [
+            4,
+            4,
+            5,
+            5,
+          ]
+        }
+      >
+        500 Jt
+      </h2>
+      <button
+        className="sc-AxheI eICHae"
+        fontFamily="body"
+        fontSize={
+          Array [
+            1,
+            1,
+            2,
+            2,
+          ]
+        }
+        fontWeight="bold"
+        onClick={[Function]}
+        width={
+          Array [
+            1,
+          ]
+        }
+      >
+        More info
+      </button>
+    </div>
+  </div>
+  <div
+    className="sc-AxmLO bOahTC"
+    display="flex"
+    overflow="hidden"
+    width={
+      Array [
+        0.9,
+        0.8,
+        0.45,
+        0.4,
+      ]
+    }
+  >
+    <div
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        className="sc-fzpans cWuRwg"
+        height={
+          Array [
+            "auto",
+          ]
+        }
+        overflow="hidden"
+        width={
+          Array [
+            1,
+          ]
+        }
+      >
+        <img
+          alt="Beautiful house 3"
+          src="https://res.cloudinary.com/dsvdffre0/image/upload/v1597137792/digital-marketing-agency-ntwrk-g39p1kDjvSY-unsplash_kh6gti.jpg"
+        />
+      </div>
+      <div
+        className="sc-fzozJi deZYli"
+        display="flex"
+        width={1}
+      >
+        <h3
+          className="sc-AxiKw dsegVB"
+          fontFamily="heading"
+          fontSize={
+            Array [
+              3,
+              3,
+              4,
+              4,
+            ]
+          }
+        >
+          Rumah 10
+        </h3>
+        <p
+          className="sc-AxhUy iPnAqk"
+          fontFamily="body"
+          fontSize={
+            Array [
+              1,
+              1,
+              2,
+              2,
+            ]
+          }
+        >
+          Jalan ke dufan
+        </p>
+        <div
+          className="sc-fzoLsD kMKfsv"
+          display="flex"
+          width={1}
+        >
+          <span
+            className="sc-Axmtr iNVGjd"
+            color="dark.3"
+            fontFamily="body"
+            fontSize={
+              Array [
+                1,
+                1,
+                2,
+                2,
+              ]
+            }
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+            tabIndex={1}
+          >
+            jkarta Timur
+          </span>
+          <span
+            className="sc-Axmtr gieWuX"
+            color="dark.3"
+            fontFamily="body"
+            fontSize={
+              Array [
+                1,
+                1,
+                2,
+                2,
+              ]
+            }
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+            tabIndex={1}
+          >
+            Ruko
+          </span>
+          <span
+            className="sc-Axmtr hFDSlT"
+            color="dark.3"
+            fontFamily="body"
+            fontSize={
+              Array [
+                1,
+                1,
+                2,
+                2,
+              ]
+            }
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+            tabIndex={2}
+          >
+            Sewa
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      className="sc-fzozJi bngyJH"
+      width={1}
+    >
+      <h2
+        className="sc-AxirZ jrdOBY"
+        fontFamily="heading"
+        fontSize={
+          Array [
+            4,
+            4,
+            5,
+            5,
+          ]
+        }
+      >
+        700 Jt
+      </h2>
+      <button
+        className="sc-AxheI eICHae"
+        fontFamily="body"
+        fontSize={
+          Array [
+            1,
+            1,
+            2,
+            2,
+          ]
+        }
+        fontWeight="bold"
+        onClick={[Function]}
+        width={
+          Array [
+            1,
+          ]
+        }
+      >
+        More info
+      </button>
+    </div>
+  </div>
+</div>
+`;

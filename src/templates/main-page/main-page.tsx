@@ -9,10 +9,15 @@ import { FluidObject } from 'gatsby-image';
 type Props = {
     heroImgFluid?: FluidObject;
     aboutImgFluid?: FluidObject;
+    hotProperties?: Property[];
 };
 
 // TODO: gatsby context handling!
-const MainPage: React.FC<Props> = ({ heroImgFluid, aboutImgFluid }) => {
+const MainPage: React.FC<Props> = ({
+    heroImgFluid,
+    aboutImgFluid,
+    hotProperties,
+}) => {
     const mockProperties: Property[] = [
         {
             name: 'Rumah 1',
@@ -24,7 +29,7 @@ const MainPage: React.FC<Props> = ({ heroImgFluid, aboutImgFluid }) => {
                     imgAlt: 'Handsome boy',
                 },
             ],
-            porpertyType: 'house',
+            propertyType: 'house',
             saleType: 'sell',
         },
         {
@@ -42,14 +47,14 @@ const MainPage: React.FC<Props> = ({ heroImgFluid, aboutImgFluid }) => {
                     imgAlt: 'Flower',
                 },
             ],
-            porpertyType: 'apartment',
+            propertyType: 'apartment',
             saleType: 'rent',
         },
         {
             name: 'Apartment 2',
             address: 'jalan Mangga 25 blok F nomor 167',
             imgs: undefined,
-            porpertyType: 'apartment',
+            propertyType: 'apartment',
             saleType: 'rent',
         },
     ];
@@ -62,7 +67,9 @@ const MainPage: React.FC<Props> = ({ heroImgFluid, aboutImgFluid }) => {
         <>
             <Hero heroImgFluid={heroImgFluid} />
             <About imgSrc={src} imgFluidSrc={aboutImgFluid} imgAlt={imgAlt} />
-            <HotList hotProperties={mockProperties} />
+            <HotList
+                hotProperties={hotProperties ? hotProperties : mockProperties}
+            />
         </>
     );
 };

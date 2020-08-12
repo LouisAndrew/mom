@@ -395,7 +395,7 @@ Array [
     </div>
   </div>,
   <div
-    className="sc-fzqARJ jhRlni"
+    className="sc-fzolEj ldiddS"
   >
     <div
       className="sc-AxgMl danYDG"
@@ -415,12 +415,13 @@ Array [
         Lagi hot!! 🔥🔥🔥
       </h2>
       <div
-        className="sc-fzqNqU kma-DUF"
+        className="sc-fzqBkg idtrRq"
         display="flex"
       >
         <div
-          className="sc-fznxsB beNtcM"
+          className="sc-fznxsB iBarJD"
           display="flex"
+          overflow="hidden"
           width={
             Array [
               0.9,
@@ -492,25 +493,52 @@ Array [
                 className="sc-fznWqX lkcJuP"
                 display="flex"
                 width={1}
-              />
+              >
+                <span
+                  className="sc-fzpjYC dxixKC"
+                  color="dark.3"
+                  fontFamily="body"
+                  fontSize={
+                    Array [
+                      1,
+                      1,
+                      2,
+                      2,
+                    ]
+                  }
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="button"
+                  tabIndex={1}
+                >
+                  Jual
+                </span>
+                <span
+                  className="sc-fzpjYC fiMiKI"
+                  color="dark.3"
+                  fontFamily="body"
+                  fontSize={
+                    Array [
+                      1,
+                      1,
+                      2,
+                      2,
+                    ]
+                  }
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="button"
+                  tabIndex={1}
+                >
+                  Rumah
+                </span>
+              </div>
             </div>
           </div>
           <div
             className="sc-fznJRM dNKsKG"
             width={1}
           >
-            <h2
-              className="sc-AxirZ jrdOBY"
-              fontFamily="heading"
-              fontSize={
-                Array [
-                  4,
-                  4,
-                  5,
-                  5,
-                ]
-              }
-            />
             <button
               className="sc-fznyAO cGHROC"
               fontFamily="body"
@@ -535,8 +563,9 @@ Array [
           </div>
         </div>
         <div
-          className="sc-fznxsB beNtcM"
+          className="sc-fznxsB iBarJD"
           display="flex"
+          overflow="hidden"
           width={
             Array [
               0.9,
@@ -608,25 +637,52 @@ Array [
                 className="sc-fznWqX lkcJuP"
                 display="flex"
                 width={1}
-              />
+              >
+                <span
+                  className="sc-fzpjYC cSmsWh"
+                  color="dark.3"
+                  fontFamily="body"
+                  fontSize={
+                    Array [
+                      1,
+                      1,
+                      2,
+                      2,
+                    ]
+                  }
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="button"
+                  tabIndex={1}
+                >
+                  Sewa
+                </span>
+                <span
+                  className="sc-fzpjYC jTqKfa"
+                  color="dark.3"
+                  fontFamily="body"
+                  fontSize={
+                    Array [
+                      1,
+                      1,
+                      2,
+                      2,
+                    ]
+                  }
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="button"
+                  tabIndex={1}
+                >
+                  Apartment
+                </span>
+              </div>
             </div>
           </div>
           <div
             className="sc-fznJRM dNKsKG"
             width={1}
           >
-            <h2
-              className="sc-AxirZ jrdOBY"
-              fontFamily="heading"
-              fontSize={
-                Array [
-                  4,
-                  4,
-                  5,
-                  5,
-                ]
-              }
-            />
             <button
               className="sc-fznyAO cGHROC"
               fontFamily="body"
@@ -651,8 +707,9 @@ Array [
           </div>
         </div>
         <div
-          className="sc-fznxsB beNtcM"
+          className="sc-fznxsB iBarJD"
           display="flex"
+          overflow="hidden"
           width={
             Array [
               0.9,
@@ -724,25 +781,52 @@ Array [
                 className="sc-fznWqX lkcJuP"
                 display="flex"
                 width={1}
-              />
+              >
+                <span
+                  className="sc-fzpjYC cSmsWh"
+                  color="dark.3"
+                  fontFamily="body"
+                  fontSize={
+                    Array [
+                      1,
+                      1,
+                      2,
+                      2,
+                    ]
+                  }
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="button"
+                  tabIndex={1}
+                >
+                  Sewa
+                </span>
+                <span
+                  className="sc-fzpjYC jTqKfa"
+                  color="dark.3"
+                  fontFamily="body"
+                  fontSize={
+                    Array [
+                      1,
+                      1,
+                      2,
+                      2,
+                    ]
+                  }
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="button"
+                  tabIndex={1}
+                >
+                  Apartment
+                </span>
+              </div>
             </div>
           </div>
           <div
             className="sc-fznJRM dNKsKG"
             width={1}
           >
-            <h2
-              className="sc-AxirZ jrdOBY"
-              fontFamily="heading"
-              fontSize={
-                Array [
-                  4,
-                  4,
-                  5,
-                  5,
-                ]
-              }
-            />
             <button
               className="sc-fznyAO cGHROC"
               fontFamily="body"

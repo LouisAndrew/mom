@@ -2,9 +2,9 @@
 
 exports[`Product card component matches snapshot 1`] = `
 <div
-  className="sc-AxmLO injSHN"
+  className="sc-AxmLO dEnkqx"
   display="flex"
-  width="fit-content"
+  overflow="hidden"
 >
   <div
     style={
@@ -76,18 +76,6 @@ exports[`Product card component matches snapshot 1`] = `
     className="sc-fzozJi bngyJH"
     width={1}
   >
-    <h2
-      className="sc-AxirZ jrdOBY"
-      fontFamily="heading"
-      fontSize={
-        Array [
-          4,
-          4,
-          5,
-          5,
-        ]
-      }
-    />
     <button
       className="sc-AxheI eICHae"
       fontFamily="body"

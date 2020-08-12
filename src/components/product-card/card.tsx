@@ -10,7 +10,7 @@ import {
     BorderProps,
     BoxShadowProps,
 } from 'styled-system';
-import Img, { FluidObject } from 'gatsby-image';
+import Img, { FluidObject, FixedObject } from 'gatsby-image';
 
 import { PositioningProps, H3, H2, P, StylingProps } from 'styles';
 import Button from 'components/button';
@@ -176,9 +176,11 @@ const Card: React.FC<Props> = ({
                 </DetailsContainer>
             </div>
             <DetailsContainer px={[3, 3, 4]} py={[3, 3, 4]} width={1}>
-                <H2 textAlign="right" py={[2]} alignSelf="flex-end">
-                    {price / 1000 < 1 ? `${price} Jt` : `${price / 1000} M`}
-                </H2>
+                {price && (
+                    <H2 textAlign="right" py={[2]} alignSelf="flex-end">
+                        {price / 1000 < 1 ? `${price} Jt` : `${price / 1000} M`}
+                    </H2>
+                )}
                 <Button
                     handleClick={navigate}
                     variant="secondary-outer"

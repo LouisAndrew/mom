@@ -1,4 +1,7 @@
 import React from 'react';
+import { find } from 'lodash';
+import { FixedObject } from 'gatsby-image';
+
 import styled from 'styled-components';
 import {
     color,
@@ -12,6 +15,10 @@ import {
 import { OuterWrapper, H2, PositioningProps } from 'styles';
 import { Property } from 'interfaces/Property';
 import { Props as CardProps, Card } from 'components/product-card/card';
+import {
+    selectSaleTypeItems,
+    selectPropertyTypeItems,
+} from 'templates/products/products';
 
 // hotProperties: fetched from gatsby and will be limited to either 3 or 4.
 type Props = {
@@ -44,12 +51,62 @@ const HotList: React.FC<Props> = ({ hotProperties }) => {
     };
 
     const hotPropertiesToRender: CardProps[] = hotProperties.map(property => {
-        const { name, address, /* saleType, porpertyType, */ imgs } = property;
+        const {
+            name,
+            address,
+            saleType,
+            propertyType,
+            imgs,
+            location,
+            price,
+        } = property;
         // check if the property contains an image
         // Todo: provide a default image.
         const imgSrc =
             imgs !== undefined && imgs.length > 0 ? imgs[0] : undefined;
+
+        type TagProps = {
+            text: string | undefined;
+            tagType: string;
+            handleClick: () => void;
+        };
+
+        const tags: TagProps[] = [
+            location
+                ? {
+                      text: location,
+                      tagType: 'location',
+                      handleClick: () => {
+                          return;
+                      },
+                  }
+                : undefined,
+            saleType
+                ? {
+                      text: find(selectSaleTypeItems, o => o.value === saleType)
+                          ?.key,
+                      tagType: saleType,
+                      handleClick: () => {
+                          return;
+                      },
+                  }
+                : undefined,
+            propertyType
+                ? {
+                      text: find(
+                          selectPropertyTypeItems,
+                          o => o.value === propertyType
+                      )?.key,
+                      tagType: propertyType,
+                      handleClick: () => {
+                          return;
+                      },
+                  }
+                : undefined,
+        ].filter((o: TagProps | undefined) => o !== undefined) as TagProps[];
+
         const item: CardProps = {
+            price,
             headingText: name,
             bodyText: address,
             alt: imgSrc ? imgSrc.imgAlt : 'No image provided',
@@ -59,11 +116,11 @@ const HotList: React.FC<Props> = ({ hotProperties }) => {
                     ? imgSrc.image
                     : undefined,
             // if type is not string -> img has been formatted to fluid, as the type is either string or FluidObject and/or FluidObject[]
-            fluid:
-                imgSrc && typeof imgSrc.image !== 'string'
-                    ? imgSrc.image
+            fixed:
+                imgSrc !== undefined && typeof imgSrc.image !== 'string'
+                    ? (imgSrc.image as FixedObject | FixedObject[] | undefined)
                     : undefined,
-
+            tags,
             navigate: () => {
                 navigateTo(name);
             },
@@ -89,9 +146,9 @@ const HotList: React.FC<Props> = ({ hotProperties }) => {
                 </H2>
                 <HotListBox
                     display="flex"
-                    flexDirection="row"
+                    flexDirection={['column', 'row', 'row']}
                     flexWrap="wrap"
-                    alignItems="center"
+                    alignItems={['center', 'unset', 'unset']}
                 >
                     {hotPropertiesToRender.map(propertyCard => (
                         <Card
