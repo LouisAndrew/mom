@@ -58,7 +58,7 @@ const ProductPageTemplate: React.FC<Props> = ({ property }) => {
         imgs,
     } = property;
 
-    console.log(process.env.GOOGLE_MAPS_API_KEY);
+    console.log(process.env.GATSBY_GOOGLE_MAPS_API_KEY);
 
     const GoogleMapsComponent: any = withScriptjs(
         withGoogleMap(({ lat, lng }) => (
@@ -136,7 +136,7 @@ const ProductPageTemplate: React.FC<Props> = ({ property }) => {
                             Cek lokasi
                         </H2>
                         <GoogleMapsComponent
-                            googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${process.env.GOOGLE_MAPS_API_KEY}&callback=initMap`}
+                            googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${process.env.GATSBY_GOOGLE_MAPS_API_KEY}&callback=initMap`}
                             loadingElement={<div style={{ height: `100%` }} />}
                             containerElement={
                                 <div
