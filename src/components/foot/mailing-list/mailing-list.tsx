@@ -155,19 +155,22 @@ const MailingList: React.FC<Props> = ({ imgFluidSrc }) => {
                         placeholderText="Isi alamat emailmu disini"
                         handleChange={handleChange}
                         id="mailing-list"
-                        variant="primary"
+                        variant="filter"
                         width={[1, 1, 0.9]}
                     />
                 </Label>
                 <Button
                     handleClick={handleClick}
-                    variant="primary-outer"
                     width="fit-content"
                     height="fit-content"
                     py={[2]}
                     mt={[0, 0, 33]}
+                    bg="dark.1"
+                    color="bg"
                     css={`
-                        border: 2px solid ${theme.colors.accent[1]};
+                        & {
+                            border: 1px solid ${theme.colors.dark[2]};
+                        }
                     `}
                 >
                     Daftarkan email

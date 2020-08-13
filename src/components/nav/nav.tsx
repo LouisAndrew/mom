@@ -2,14 +2,16 @@ import React, { useState } from 'react';
 
 import styled from 'styled-components';
 import { layout, position, space, PositionProps } from 'styled-system';
-import { Icon } from '@iconify/react';
+import { Icon, InlineIcon } from '@iconify/react';
 import menuIcon from '@iconify/icons-uil/bars';
 import closeIcon from '@iconify/icons-uil/multiply';
+import waIcon from '@iconify/icons-uil/whatsapp';
 
 import Logo from 'components/logo';
 import Links from './links';
 import { OuterWrapper, PositioningProps, StylingProps, theme } from 'styles';
 import Button from 'components/button';
+import { contact } from 'helper/consts';
 
 type Props = {};
 
@@ -26,10 +28,6 @@ const Nav: React.FC<Props> = () => {
 
     const toggleMenu = () =>
         setDisplayMenu(prevDisplayMenu => !prevDisplayMenu);
-
-    const clickButton = () => {
-        return;
-    };
 
     return (
         <Container
@@ -78,7 +76,7 @@ const Nav: React.FC<Props> = () => {
                 `}
             >
                 <Logo id="logo" />
-                <Links displayMenu={displayMenu} clickButton={clickButton} />
+                <Links displayMenu={displayMenu} clickButton={contact} />
                 <span
                     onClick={toggleMenu}
                     onKeyDown={toggleMenu}
@@ -95,10 +93,16 @@ const Nav: React.FC<Props> = () => {
                 </span>
                 <Button
                     display={['none', 'none', 'block']}
-                    handleClick={clickButton}
+                    handleClick={contact}
                     variant="secondary"
                     width="fit-content"
+                    css={`
+                        & > svg {
+                            transform: scale(1.2) !important;
+                        }
+                    `}
                 >
+                    <InlineIcon icon={waIcon} />
                     Hubungi Saya!
                 </Button>
             </OuterWrapper>

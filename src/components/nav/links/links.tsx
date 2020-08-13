@@ -15,6 +15,7 @@ import { InlineIcon } from '@iconify/react';
 import homeIcon from '@iconify/icons-uil/home';
 import shoppingBagIcon from '@iconify/icons-uil/shopping-bag';
 import expandIcon from '@iconify/icons-uil/angle-down';
+import waIcon from '@iconify/icons-uil/whatsapp';
 
 // TODO: create dropdown component
 
@@ -113,7 +114,13 @@ const Links: React.FC<Props> = ({ displayMenu, clickButton }) => {
                 my={[2]}
                 mb={3}
                 display={['block', 'block', 'none']}
+                css={`
+                    & > svg {
+                        transform: scale(1.2) !important;
+                    }
+                `}
             >
+                <InlineIcon icon={waIcon} color={theme.colors.accent[1]} />
                 Hubungi Saya!
             </Button>
         </Container>

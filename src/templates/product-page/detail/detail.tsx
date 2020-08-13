@@ -15,7 +15,7 @@ import {
     selectSaleTypeItems,
     selectPropertyTypeItems,
 } from 'templates/products/products';
-import { clickToChatLink } from 'helper/consts';
+import { contact } from 'helper/consts';
 
 type ContainerProps = PositioningProps & {};
 
@@ -56,10 +56,6 @@ const Detail: React.FC<Props> = ({
     propertyType,
     ...rest
 }) => {
-    const contact = () => {
-        window.open(clickToChatLink, '_blank');
-    };
-
     return (
         <Container display="flex" flexDirection="column" {...rest}>
             <H1 textAlign={['center', 'center', 'center', 'left']}>
