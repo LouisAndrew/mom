@@ -1,0 +1,213 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Detail on product page matches snapshot 1`] = `
+<div
+  className="sc-fzpmMD fnAHmJ"
+  display="flex"
+>
+  <h1
+    className="sc-AxjAm bKBrqz"
+    fontFamily="heading"
+    fontSize={
+      Array [
+        5,
+        5,
+        6,
+        6,
+      ]
+    }
+    fontWeight="extraBold"
+  >
+    Rumah 1
+    <br />
+    <span
+      style={
+        Object {
+          "border": "2px solid #007bff",
+          "borderRadius": 4,
+          "color": "#007bff",
+          "marginBottom": 8,
+          "padding": "4px 8px",
+        }
+      }
+    >
+      Jual
+    </span>
+    <br />
+    <span
+      style={
+        Object {
+          "border": "2px solid #28a745",
+          "borderRadius": 4,
+          "color": "#28a745",
+          "marginBottom": 8,
+          "padding": "4px 8px",
+        }
+      }
+    >
+      Rumah
+    </span>
+  </h1>
+  <h3
+    className="sc-AxiKw ldbMTq"
+    fontFamily="heading"
+    fontSize={
+      Array [
+        3,
+        3,
+        4,
+        4,
+      ]
+    }
+  >
+    Jalan rumah 1
+    <span
+      style={
+        Object {
+          "border": "2px solid #587B7F",
+          "borderRadius": 4,
+          "color": "#587B7F",
+          "marginLeft": 32,
+          "padding": "4px 8px",
+        }
+      }
+    >
+      Penang
+    </span>
+  </h3>
+  <div
+    className="sc-fzoXWK dDTsOr"
+  >
+    <h3
+      className="sc-AxiKw hvMtGq"
+      fontFamily="heading"
+      fontSize={
+        Array [
+          3,
+          3,
+          4,
+          4,
+        ]
+      }
+    >
+      <svg
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "<path d=\\"M3 19a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14zm9-13h6v6h-2V8h-4V6zm-6 6h2v4h4v2H6v-6z\\" fill=\\"currentColor\\"/>",
+          }
+        }
+        focusable={false}
+        height="1em"
+        preserveAspectRatio="xMidYMid meet"
+        style={
+          Object {
+            "transform": "rotate(360deg)",
+            "verticalAlign": "-0.125em",
+          }
+        }
+        viewBox="0 0 24 24"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+      125
+    </h3>
+    <h3
+      className="sc-AxiKw hvMtGq"
+      fontFamily="heading"
+      fontSize={
+        Array [
+          3,
+          3,
+          4,
+          4,
+        ]
+      }
+    >
+      <svg
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "<path d=\\"M20 9.556V3h-2v2H6V3H4v6.557C2.81 10.25 2 11.526 2 13v4a1 1 0 0 0 1 1h1v4h2v-4h12v4h2v-4h1a1 1 0 0 0 1-1v-4c0-1.474-.811-2.75-2-3.444zM11 9H6V7h5v2zm7 0h-5V7h5v2z\\" fill=\\"currentColor\\"/>",
+          }
+        }
+        focusable={false}
+        height="1em"
+        preserveAspectRatio="xMidYMid meet"
+        style={
+          Object {
+            "transform": "rotate(360deg)",
+            "verticalAlign": "-0.125em",
+          }
+        }
+        viewBox="0 0 24 24"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+      3
+    </h3>
+    <h3
+      className="sc-AxiKw hvMtGq"
+      fontFamily="heading"
+      fontSize={
+        Array [
+          3,
+          3,
+          4,
+          4,
+        ]
+      }
+    >
+      <svg
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "<path d=\\"M21 10H7V7.113c0-.997.678-1.923 1.661-2.085A2.003 2.003 0 0 1 11 7h2a4.003 4.003 0 0 0-4.398-3.98C6.523 3.222 5 5.089 5 7.178V10H3a1 1 0 0 0-1 1v2c0 2.606 1.674 4.823 4 5.65V22h2v-3h8v3h2v-3.35c2.326-.827 4-3.044 4-5.65v-2a1 1 0 0 0-1-1z\\" fill=\\"currentColor\\"/>",
+          }
+        }
+        focusable={false}
+        height="1em"
+        preserveAspectRatio="xMidYMid meet"
+        style={
+          Object {
+            "transform": "rotate(360deg)",
+            "verticalAlign": "-0.125em",
+          }
+        }
+        viewBox="0 0 24 24"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      />
+      2
+    </h3>
+  </div>
+  <h2
+    className="sc-AxirZ iLnAXc"
+    fontFamily="heading"
+    fontSize={
+      Array [
+        4,
+        4,
+        5,
+        5,
+      ]
+    }
+  >
+    200 Jt
+  </h2>
+  <button
+    className="sc-AxheI hMzLqx"
+    fontFamily="body"
+    fontSize={
+      Array [
+        1,
+        1,
+        2,
+        2,
+      ]
+    }
+    fontWeight="bold"
+    onClick={[Function]}
+    width={1}
+  >
+    Hubungi Saya
+  </button>
+</div>
+`;

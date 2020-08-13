@@ -28,6 +28,7 @@
     },
     "dependencies": {
         "@types/react-transition-group": "^4.4.0",
+        "dotenv": "^8.2.0",
         "firebase-tools": "^8.6.0",
         "framer-motion": "^1.9.1",
         "gatsby": "^2.19.32",
@@ -49,6 +50,7 @@
         "modern-css-reset": "^1.1.0",
         "react": "^16.13.0",
         "react-dom": "^16.13.0",
+        "react-google-maps": "^9.4.5",
         "react-helmet": "^5.2.1",
         "react-test-renderer": "^16.13.1",
         "react-transition-group": "^4.4.1",

@@ -41,7 +41,7 @@ const Box: React.FC<BoxProps> = styled.div<BoxProps>`
     ${space}
 `;
 
-type ImgObject = {
+export type ImgObject = {
     image: string | FluidObject | FluidObject[] | FixedObject | FixedObject[];
     imgAlt: string;
 };
