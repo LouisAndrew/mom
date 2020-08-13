@@ -58,6 +58,8 @@ const ProductPageTemplate: React.FC<Props> = ({ property }) => {
         imgs,
     } = property;
 
+    console.log(process.env.GOOGLE_MAPS_API_KEY);
+
     const GoogleMapsComponent: any = withScriptjs(
         withGoogleMap(({ lat, lng }) => (
             <GoogleMap

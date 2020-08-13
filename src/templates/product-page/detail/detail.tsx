@@ -70,6 +70,13 @@ const Detail: React.FC<Props> = ({
                             border-radius: 4px;
                             padding: 4px 8px;
                             margin: 0 8px;
+
+                            font-size: 18px;
+
+                            @media screen and (min-width: ${theme
+                                    .breakpoints[1]}) {
+                                font-size: 24px;
+                            }
                         }
                     `}
                 >
