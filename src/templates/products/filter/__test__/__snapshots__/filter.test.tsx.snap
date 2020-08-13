@@ -12,6 +12,8 @@ exports[`Filter component matches snapshot 1`] = `
   }
 >
   <span
+    onClick={[Function]}
+    onKeyDown={[Function]}
     role="button"
     tabIndex={0}
   >
@@ -93,6 +95,7 @@ exports[`Filter component matches snapshot 1`] = `
         id="address-filter"
         onChange={[Function]}
         placeholder="Alamat rumah"
+        value=""
       />
     </label>
     <label
@@ -663,6 +666,7 @@ exports[`Filter component matches snapshot 1`] = `
       ]
     }
     fontWeight="bold"
+    onClick={[Function]}
     width={1}
   >
     Cari Sekarang

@@ -125,6 +125,25 @@ exports[`Hot List component matches snapshot 1`] = `
               >
                 Jual
               </span>
+              <span
+                className="sc-Axmtr ibIjVG"
+                color="dark.3"
+                fontFamily="body"
+                fontSize={
+                  Array [
+                    1,
+                    1,
+                    2,
+                    2,
+                  ]
+                }
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="button"
+                tabIndex={1}
+              >
+                Rumah
+              </span>
             </div>
           </div>
         </div>
@@ -250,6 +269,25 @@ exports[`Hot List component matches snapshot 1`] = `
               >
                 Sewa
               </span>
+              <span
+                className="sc-Axmtr fEcKHw"
+                color="dark.3"
+                fontFamily="body"
+                fontSize={
+                  Array [
+                    1,
+                    1,
+                    2,
+                    2,
+                  ]
+                }
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="button"
+                tabIndex={1}
+              >
+                Apartment
+              </span>
             </div>
           </div>
         </div>
@@ -374,6 +412,25 @@ exports[`Hot List component matches snapshot 1`] = `
                 tabIndex={1}
               >
                 Sewa
+              </span>
+              <span
+                className="sc-Axmtr fEcKHw"
+                color="dark.3"
+                fontFamily="body"
+                fontSize={
+                  Array [
+                    1,
+                    1,
+                    2,
+                    2,
+                  ]
+                }
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="button"
+                tabIndex={1}
+              >
+                Apartment
               </span>
             </div>
           </div>

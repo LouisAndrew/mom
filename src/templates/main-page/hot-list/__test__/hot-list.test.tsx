@@ -20,7 +20,7 @@ describe('Hot List component', () => {
                     imgAlt: 'Handsome boy',
                 },
             ],
-            porpertyType: 'house',
+            propertyType: 'house',
             saleType: 'sell',
         },
         {
@@ -38,14 +38,14 @@ describe('Hot List component', () => {
                     imgAlt: 'Flower',
                 },
             ],
-            porpertyType: 'apartment',
+            propertyType: 'apartment',
             saleType: 'rent',
         },
         {
             name: 'Apartment 2',
             address: 'jalan Mangga 25 blok F nomor 167',
             imgs: undefined,
-            porpertyType: 'apartment',
+            propertyType: 'apartment',
             saleType: 'rent',
         },
     ];

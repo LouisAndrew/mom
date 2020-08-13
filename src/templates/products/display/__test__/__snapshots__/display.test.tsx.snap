@@ -2,7 +2,7 @@
 
 exports[`Display component on products matches snapshot 1`] = `
 <div
-  className="sc-fzoNJl kIBoOM"
+  className="sc-fzoNJl biBLgF"
   display="flex"
   width={1}
 >

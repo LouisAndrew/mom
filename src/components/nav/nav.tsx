@@ -36,7 +36,7 @@ const Nav: React.FC<Props> = () => {
             width={1}
             position={'fixed'}
             left={0}
-            zIndex={2}
+            zIndex={3}
             css={`
                 display: grid;
                 place-items: center;

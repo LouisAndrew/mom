@@ -13,6 +13,7 @@ describe('Filter component', () => {
             locationOptions={[]}
             saleTypeOptions={[]}
             propTypeOptions={[]}
+            addressFilter={''}
             price={{ min: 0, max: 0 }}
             area={{ min: 0, max: 0 }}
             handleChangeAddress={() => {
@@ -31,6 +32,12 @@ describe('Filter component', () => {
                 return;
             }}
             handleChangePrice={() => {
+                return;
+            }}
+            applyFilters={() => {
+                return;
+            }}
+            collapseFilter={() => {
                 return;
             }}
         />

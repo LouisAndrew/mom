@@ -33,6 +33,8 @@ type InnerWrapperProps = PositioningProps & {};
 type FilterTagsContainerProps = PositioningProps & {};
 const Container: React.FC<ContainerProps> = styled.div<ContainerProps>`
     ${color}
+    ${layout}
+    ${space}
 `;
 
 const InnerWrapper: React.FC<InnerWrapperProps> = styled.div<InnerWrapperProps>`
@@ -249,6 +251,8 @@ const Products: React.FC<Props> = ({ properties }) => {
             bg="bg"
             id="display-top"
             className="top"
+            minHeight={'70vh'}
+            py={[5, 4]}
             css={`
                 display: grid;
                 place-items: center;

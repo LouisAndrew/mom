@@ -21,7 +21,7 @@ import Logo from 'components/logo';
 
 type Props = {};
 
-type ContainerProps = StylingProps & PositioningProps & {};
+type ContainerProps = StylingProps & PositioningProps & PositionProps & {};
 type FootContainerProps = StylingProps & PositioningProps & PositionProps & {};
 type ContactContainerProps = PositioningProps & {};
 type SContactProps = StylingProps & PositioningProps & {};
@@ -34,6 +34,7 @@ const Container: React.FC<ContainerProps> = styled.footer<ContainerProps>`
     ${color}
     ${space}
     ${layout}
+    ${position}
 `;
 
 const FootContainer: React.FC<FootContainerProps> = styled.div<
@@ -64,7 +65,7 @@ const Footer: React.FC<Props> = () => {
     const emailAddr = 'mock-email@yahoo.dev';
 
     return (
-        <Container bg="bg">
+        <Container bg="bg" position="relative" zIndex={1}>
             <MailingList />
             <FootContainer
                 position="relative"

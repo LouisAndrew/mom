@@ -43,6 +43,7 @@ const Display: React.FC<Props> = ({
             alignItems={['center', 'center', 'unset']}
             flexWrap="wrap"
             width={1}
+            minHeight={'60vh'}
             bg="bg"
             css={`
                 transition: 0.2s;

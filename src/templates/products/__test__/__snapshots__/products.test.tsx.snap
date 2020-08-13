@@ -2,7 +2,7 @@
 
 exports[`All products component matches snapshot 1`] = `
 <div
-  className="sc-fzqNqU cvqekU top"
+  className="sc-fzqNqU MkuiH top"
   id="display-top"
 >
   <div
@@ -63,7 +63,7 @@ exports[`All products component matches snapshot 1`] = `
         className="sc-fzoNJl bHfWpV"
       />
       <div
-        className="sc-fzqARJ ijyxGz"
+        className="sc-fzqARJ ipTxAW"
         display="flex"
         width={1}
       />
