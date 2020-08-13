@@ -7,6 +7,7 @@ import '@testing-library/jest-dom';
 
 import HotList from '..';
 import { Property } from 'interfaces/Property';
+import { withReachRouter } from 'helper/reach-router';
 
 describe('Hot List component', () => {
     const mockProperties: Property[] = [
@@ -50,7 +51,9 @@ describe('Hot List component', () => {
         },
     ];
     afterEach(cleanup);
-    const el: React.ReactElement = <HotList hotProperties={mockProperties} />;
+    const el: React.ReactElement = withReachRouter(
+        <HotList hotProperties={mockProperties} />
+    ) as React.ReactElement;
 
     it('renders without crashing', () => {
         const div = document.createElement('div');

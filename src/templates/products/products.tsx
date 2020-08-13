@@ -96,6 +96,7 @@ const Products: React.FC<Props> = ({ properties }) => {
 
     useEffect(() => {
         setDisplay(properties);
+        console.log(location);
     }, []);
 
     const toggleFilterView = () => {

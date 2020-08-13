@@ -6,10 +6,13 @@ import { cleanup } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import { MainPage } from '../main-page';
+import { withReachRouter } from 'helper/reach-router';
 
 describe('Main page.', () => {
     afterEach(cleanup);
-    const el: React.ReactElement = <MainPage />;
+    const el: React.ReactElement = withReachRouter(
+        <MainPage />
+    ) as React.ReactElement;
 
     it('renders without crashing', () => {
         const div = document.createElement('div');

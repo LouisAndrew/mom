@@ -7,6 +7,7 @@ import '@testing-library/jest-dom';
 
 import { Property } from 'interfaces/Property';
 import Display from '..';
+import { withReachRouter } from 'helper/reach-router';
 
 describe('Display component on products', () => {
     const mockProperty: Property[] = [
@@ -80,7 +81,7 @@ describe('Display component on products', () => {
         return;
     });
 
-    const el: React.ReactElement = (
+    const el: React.ReactElement = withReachRouter(
         <Display
             display={mockProperty}
             blur={true}
@@ -89,7 +90,7 @@ describe('Display component on products', () => {
             handleSelectSaleType={mockHandleSelectSale}
             applyFilters={mockApplyFilters}
         />
-    );
+    ) as React.ReactElement;
 
     afterEach(cleanup);
 

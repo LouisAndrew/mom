@@ -7,6 +7,7 @@ import '@testing-library/jest-dom';
 
 import Products from '..';
 import { Property } from 'interfaces/Property';
+import { withReachRouter } from 'helper/reach-router';
 
 describe('All products component', () => {
     const mockProperty: Property[] = [
@@ -66,7 +67,9 @@ describe('All products component', () => {
         },
     ];
 
-    const el: React.ReactElement = <Products properties={mockProperty} />;
+    const el: React.ReactElement = withReachRouter(
+        <Products properties={mockProperty} />
+    ) as React.ReactElement;
 
     afterEach(cleanup);
     it('renders without crashing', () => {
