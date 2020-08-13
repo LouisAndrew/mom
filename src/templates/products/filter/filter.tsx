@@ -138,7 +138,7 @@ const Filter: React.FC<Props> = ({
             // minHeight={['100vh', '100vh', 'fit-content']}
             bg={['dark.0']}
             width={['90%', '90%', 'fit-content']}
-            mx={['5', '5%', 0]}
+            mx={['5%', '5%', 0]}
             maxWidth={['100%', '100%', '50vw']}
             borderStyle="solid"
             borderColor={['rgba(0, 0, 0, 0)', 'rgba(0, 0, 0, 0)']}
@@ -148,7 +148,7 @@ const Filter: React.FC<Props> = ({
             css={`
                 &.filter-enter {
                     opacity: 0;
-                    left: -100%;
+                    left: -20%;
                 }
                 &.filter-enter-active {
                     opacity: 1;
@@ -162,7 +162,7 @@ const Filter: React.FC<Props> = ({
                 &.filtere-exit-active {
                     opacity: 0;
                     transition: 200ms;
-                    left: -100%;
+                    left: -20%;
                 }
             `}
         >

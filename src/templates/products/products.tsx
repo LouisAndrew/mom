@@ -257,7 +257,7 @@ const Products: React.FC<Props> = ({ properties }) => {
             <OuterWrapper width={1} position="relative" pt={[5]}>
                 <CSSTransition
                     in={showFilter}
-                    timeout={200}
+                    timeout={0}
                     classNames="filter"
                     unmountOnExit={true}
                 >

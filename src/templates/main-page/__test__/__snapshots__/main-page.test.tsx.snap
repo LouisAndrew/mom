@@ -398,7 +398,12 @@ Array [
     className="sc-fzolEj ldiddS"
   >
     <div
-      className="sc-AxgMl danYDG"
+      className="sc-AxgMl cWTsJB"
+      width={
+        Array [
+          1,
+        ]
+      }
     >
       <h2
         className="sc-AxirZ eWTEun"

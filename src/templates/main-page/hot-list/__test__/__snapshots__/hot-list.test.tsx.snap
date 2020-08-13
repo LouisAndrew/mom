@@ -5,7 +5,12 @@ exports[`Hot List component matches snapshot 1`] = `
   className="sc-fzoXWK TxTJZ"
 >
   <div
-    className="sc-AxgMl danYDG"
+    className="sc-AxgMl cWTsJB"
+    width={
+      Array [
+        1,
+      ]
+    }
   >
     <h2
       className="sc-AxirZ eWTEun"

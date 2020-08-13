@@ -140,7 +140,7 @@ const HotList: React.FC<Props> = ({ hotProperties }) => {
                 }
             `}
         >
-            <OuterWrapper>
+            <OuterWrapper width={[1]}>
                 <H2 mb={[4, 4, 5]} textAlign="center">
                     {headingText}
                 </H2>

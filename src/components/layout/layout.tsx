@@ -25,11 +25,18 @@ const Layout: React.FC = ({ children }) => {
         <ThemeProvider theme={theme}>
             <GlobalStyles />
             {/* <CSSDebugger /> */}
-            <main style={{ backgroundColor: theme.colors.bg }}>
-                <Nav />
+            <Nav />
+
+            <main
+                style={{
+                    backgroundColor: theme.colors.bg,
+                    position: 'relative',
+                    zIndex: 2,
+                }}
+            >
                 {children}
-                <Footer />
             </main>
+            <Footer />
         </ThemeProvider>
     );
 };

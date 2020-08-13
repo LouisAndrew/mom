@@ -1,0 +1,120 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Product img component. matches snapshot 1`] = `
+<div
+  className="sc-AxirZ nQITg"
+  width={
+    Array [
+      "fit-content",
+    ]
+  }
+>
+  <div
+    className="sc-AxjAm kQoZeu"
+    height={
+      Array [
+        180,
+        222,
+        300,
+      ]
+    }
+    overflow="hidden"
+    width={
+      Array [
+        270,
+        330,
+        450,
+      ]
+    }
+  >
+    <img
+      alt="Image not found"
+      data-testid="main"
+      src="https://res.cloudinary.com/dsvdffre0/image/upload/v1597323293/sarah-kilian-52jRtc2S_VE-unsplash_rgrekp.jpg"
+    />
+  </div>
+  <div
+    className="sc-AxiKw ldVjDC"
+    display="flex"
+  >
+    <div
+      className="sc-AxhCb fZIOmp"
+      height={
+        Array [
+          40,
+          40,
+          60,
+        ]
+      }
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="button"
+      tabIndex={-3}
+      width={
+        Array [
+          60,
+          60,
+          90,
+        ]
+      }
+    >
+      <img
+        alt="Beautiful house"
+        src="https://res.cloudinary.com/dsvdffre0/image/upload/v1597137791/webaliser-_TPTXZd9mOo-unsplash_pqtm1r.jpg"
+      />
+    </div>
+    <div
+      className="sc-AxhCb fZIOmp"
+      height={
+        Array [
+          40,
+          40,
+          60,
+        ]
+      }
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="button"
+      tabIndex={-2}
+      width={
+        Array [
+          60,
+          60,
+          90,
+        ]
+      }
+    >
+      <img
+        alt="Beautiful house 2"
+        src="https://res.cloudinary.com/dsvdffre0/image/upload/v1597137791/jacques-bopp-Hh18POSx5qk-unsplash_lweaht.jpg"
+      />
+    </div>
+    <div
+      className="sc-AxhCb fZIOmp"
+      height={
+        Array [
+          40,
+          40,
+          60,
+        ]
+      }
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="button"
+      tabIndex={-1}
+      width={
+        Array [
+          60,
+          60,
+          90,
+        ]
+      }
+    >
+      <img
+        alt="Beautiful house 3"
+        src="https://res.cloudinary.com/dsvdffre0/image/upload/v1597137792/digital-marketing-agency-ntwrk-g39p1kDjvSY-unsplash_kh6gti.jpg"
+      />
+    </div>
+  </div>
+</div>
+`;
