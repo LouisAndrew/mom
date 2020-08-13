@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { filter, indexOf, get, find } from 'lodash';
+import { filter, indexOf, get, find, set } from 'lodash';
 import { CSSTransition } from 'react-transition-group';
 
 import { InlineIcon } from '@iconify/react';
@@ -95,8 +95,40 @@ const Products: React.FC<Props> = ({ properties }) => {
     // end of filter states
 
     useEffect(() => {
-        setDisplay(properties);
-        console.log(location);
+        if (location.search) {
+            const searchParams: { [key: string]: string } = {};
+
+            // extract filter parameters from the url
+            location.search
+                .substr(1)
+                .split('&')
+                .forEach(param => {
+                    // then assign the corresponding parameter into the searchParams object
+                    set(searchParams, param.split('=')[0], param.split('=')[1]);
+                });
+
+            // then apply filter if needed.
+            const urlSaleFilter: string = get(searchParams, 'sale', '');
+            const urlPropFilter: string = get(searchParams, 'prop', '');
+            const urlLocationFilter: string = get(searchParams, 'loc', '');
+
+            if (urlSaleFilter) {
+                setSaleTypeFilters([urlSaleFilter]);
+            }
+
+            if (urlPropFilter) {
+                setPropTypeFilters([urlPropFilter]);
+            }
+
+            if (urlLocationFilter) {
+                setlocationFilters([urlLocationFilter]);
+            }
+
+            // eslint-disable-next-line @typescript-eslint/no-use-before-define
+            applyFilters();
+        } else {
+            setDisplay(properties);
+        }
     }, []);
 
     const toggleFilterView = () => {
