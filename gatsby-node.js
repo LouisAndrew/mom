@@ -1,7 +1,30 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+const path = require('path');
+const { createSlug } = require('./src/helper/lower-case');
 
-// You can delete this file if you're not using it
+exports.createPages = async ({ graphql, actions }) => {
+    const { createPage } = actions;
+
+    const result = await graphql(`
+        query {
+            allSanityProperty {
+                edges {
+                    node {
+                        name
+                    }
+                }
+            }
+        }
+    `);
+
+    result.data.allSanityProperty.edges.forEach(({ node }) => {
+        createPage({
+            path: `/products/${createSlug(node.name)}`,
+            component: path.resolve(
+                './src/templates/product-page/product-page-template.tsx'
+            ),
+            context: {
+                name: node.name,
+            },
+        });
+    });
+};

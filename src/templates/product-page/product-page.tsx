@@ -58,10 +58,7 @@ const ProductPageTemplate: React.FC<Props> = ({ property }) => {
         imgs,
     } = property;
 
-    const GoogleMapsComponent: React.FC<{
-        lat: number;
-        lng: number;
-    }> = withScriptjs(
+    const GoogleMapsComponent: any = withScriptjs(
         withGoogleMap(({ lat, lng }) => (
             <GoogleMap
                 defaultZoom={16}
@@ -81,7 +78,7 @@ const ProductPageTemplate: React.FC<Props> = ({ property }) => {
     );
 
     return (
-        <Container py={[3, 3, 4]}>
+        <Container py={[8, 8, 9]}>
             <OuterWrapper
                 width={1}
                 display="flex"
@@ -91,7 +88,7 @@ const ProductPageTemplate: React.FC<Props> = ({ property }) => {
                 <Upper
                     display="flex"
                     flexDirection={['column', 'column', 'column', 'row']}
-                    alignItems={['center', 'center', 'center', 'unser']}
+                    alignItems={['center', 'center', 'center', 'unset']}
                 >
                     <ProductImg
                         imgs={
@@ -121,11 +118,15 @@ const ProductPageTemplate: React.FC<Props> = ({ property }) => {
                     />
                 </Upper>
 
-                <Desc py={[3]}>
+                <Desc py={[4]}>
                     <H2 textAlign="center" my={[2, 2, 3]}>
                         Informasi lebih lanjut
                     </H2>
-                    <P textAlign="center">{description}</P>
+                    <P textAlign="center">
+                        {description
+                            ? description
+                            : 'Maaf, informasi lebih lanjut tidak tersedia'}
+                    </P>
                 </Desc>
                 {geolocation && geolocation.lat !== 0 ? (
                     <Container width={1}>

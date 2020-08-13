@@ -130,15 +130,15 @@ const ProductPage = (props: PageProps) => {
                         // image is an array of fluidobject -> added media here to give a sense of respnosiveness..
                         image: [
                             imgObj.image,
-                            // bug here? imgL must be ABOVE the smaller img(imgM)
                             {
                                 ...imgL.image,
-                                media: `(min-width: ${theme.breakpoints[2]})`,
+                                media: `(min-width: ${theme.breakpoints[1]})`,
                             },
                             {
                                 ...imgM.image,
-                                media: `(min-width: ${theme.breakpoints[1]})`,
+                                media: `(min-width: ${theme.breakpoints[0]})`,
                             },
+                            // bug here? imgL must be ABOVE the smaller img(imgM)
                         ],
                         imgAlt: imgL.imgAlt,
                     };

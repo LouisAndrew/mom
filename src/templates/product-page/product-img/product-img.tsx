@@ -93,7 +93,7 @@ const ProductImg: React.FC<Props> = ({ imgs }) => {
                 ) : (
                     <Img
                         fixed={activeImg.image as FixedObject | FixedObject[]}
-                        fluid={activeImg.image as FluidObject | FluidObject[]}
+                        // fluid={activeImg.image as FluidObject | FluidObject[]}
                         alt={activeImg.imgAlt}
                     />
                 )}

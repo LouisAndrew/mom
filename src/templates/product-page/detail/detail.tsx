@@ -7,6 +7,7 @@ import { InlineIcon } from '@iconify/react';
 import areaIcon from '@iconify/icons-bx/bxs-area';
 import bathIcon from '@iconify/icons-bx/bxs-bath';
 import roomIcon from '@iconify/icons-bx/bxs-bed';
+import waIcon from '@iconify/icons-uil/whatsapp';
 
 import { H1, H3, H2, PositioningProps, theme } from 'styles';
 import Button from 'components/button';
@@ -61,75 +62,77 @@ const Detail: React.FC<Props> = ({
 
     return (
         <Container display="flex" flexDirection="column" {...rest}>
-            <H1
-                textAlign={['center', 'center', 'center', 'left']}
-                // css={`
-                //     white-space: nowrap;
-                // `}
-            >
+            <H1 textAlign={['center', 'center', 'center', 'left']}>
                 {name}
-                {saleType && (
-                    <>
-                        <br />
-                        <span
-                            style={{
-                                padding: '4px 8px',
-                                borderRadius: 4,
-                                border: `2px solid ${
-                                    saleType === 'sell'
-                                        ? theme.colors.badges.saleType.sell
-                                        : theme.colors.badges.saleType.rent
-                                }`,
-                                color:
-                                    saleType === 'sell'
-                                        ? theme.colors.badges.saleType.sell
-                                        : theme.colors.badges.saleType.rent,
-                                marginBottom: 8,
-                            }}
-                        >
-                            {
-                                find(
-                                    selectSaleTypeItems,
-                                    o => o.value === saleType
-                                )?.key
-                            }
-                        </span>
-                    </>
-                )}
-                {propertyType && (
-                    <>
-                        <br />
-                        <span
-                            style={{
-                                padding: '4px 8px',
-                                borderRadius: 4,
-                                border: `2px solid ${get(
-                                    theme.colors.badges.propertyType,
-                                    propertyType,
-                                    ''
-                                )}`,
-                                color: get(
-                                    theme.colors.badges.propertyType,
-                                    propertyType,
-                                    ''
-                                ),
-                                marginBottom: 8,
-                                // marginLeft: 32,
-                            }}
-                        >
-                            {
-                                find(
-                                    selectPropertyTypeItems,
-                                    o => o.value === propertyType
-                                )?.key
-                            }
-                        </span>
-                    </>
-                )}
+                <TagContainer
+                    mb={[3, 3, 4]}
+                    css={`
+                        & > span {
+                            display: inline-block;
+                            width: 'fit-content';
+
+                            border-radius: 4px;
+                            padding: 4px 8px;
+                            margin: 0 8px;
+                        }
+                    `}
+                >
+                    {saleType && (
+                        <>
+                            <span
+                                style={{
+                                    border: `2px solid ${
+                                        saleType === 'sell'
+                                            ? theme.colors.badges.saleType.sell
+                                            : theme.colors.badges.saleType.rent
+                                    }`,
+                                    color:
+                                        saleType === 'sell'
+                                            ? theme.colors.badges.saleType.sell
+                                            : theme.colors.badges.saleType.rent,
+                                }}
+                            >
+                                {
+                                    find(
+                                        selectSaleTypeItems,
+                                        o => o.value === saleType
+                                    )?.key
+                                }
+                            </span>
+                        </>
+                    )}
+                    {propertyType && (
+                        <>
+                            <span
+                                style={{
+                                    border: `2px solid ${get(
+                                        theme.colors.badges.propertyType,
+                                        propertyType,
+                                        ''
+                                    )}`,
+                                    color: get(
+                                        theme.colors.badges.propertyType,
+                                        propertyType,
+                                        ''
+                                    ),
+                                    // marginLeft: 32,
+                                }}
+                            >
+                                {
+                                    find(
+                                        selectPropertyTypeItems,
+                                        o => o.value === propertyType
+                                    )?.key
+                                }
+                            </span>
+                        </>
+                    )}
+                </TagContainer>
             </H1>
             <H3
                 my={[2]}
-                textAlign={['center', 'center', 'center', 'left']}
+                textAlign={['left']}
+                width={1}
                 // css={`
                 //     white-space: nowrap;
                 // `}
@@ -193,7 +196,14 @@ const Detail: React.FC<Props> = ({
                 variant="primary"
                 width={1}
                 mt={[2, 2, 3]}
+                css={`
+                    & > svg {
+                        margin-right: 16px;
+                        transform: scale(1.6) !important;
+                    }
+                `}
             >
+                <InlineIcon icon={waIcon} />
                 Hubungi Saya
             </Button>
         </Container>
