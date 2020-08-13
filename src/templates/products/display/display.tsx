@@ -1,5 +1,6 @@
 import React from 'react';
 import { find } from 'lodash';
+import { useNavigate } from '@reach/router';
 
 import styled from 'styled-components';
 import { layout, flexbox, space, color } from 'styled-system';
@@ -9,6 +10,7 @@ import { Property } from 'interfaces/Property';
 import Card from 'components/product-card';
 import { FixedObject, FluidObject } from 'gatsby-image';
 import { selectSaleTypeItems, selectPropertyTypeItems } from '../products';
+import { createSlug } from 'helper/lower-case';
 
 type ContainerProps = PositioningProps & StylingProps & {};
 
@@ -36,6 +38,8 @@ const Display: React.FC<Props> = ({
     handleSelectSaleType,
     applyFilters,
 }) => {
+    const navigate = useNavigate();
+
     return (
         <Container
             display="flex"
@@ -74,8 +78,10 @@ const Display: React.FC<Props> = ({
                     fixed?: FixedObject | FixedObject[];
                 };
 
-                const navigateTo = () => {
-                    console.log(name);
+                const navigateTo = (link: string) => {
+                    navigate(`/products/${createSlug(link)}`, {
+                        replace: false,
+                    });
                 };
 
                 const tags: (Tag | undefined)[] = [
@@ -152,7 +158,9 @@ const Display: React.FC<Props> = ({
                         price={price}
                         // casted to overcome an error that says tags is an array of undefined.
                         tags={tags.filter(tag => tag !== undefined) as Tag[]}
-                        navigate={navigateTo}
+                        navigate={() => {
+                            navigateTo(name);
+                        }}
                         {...imgProps}
                         // start of styling props
                         width={[0.9, 0.8, 0.45, 0.4]}

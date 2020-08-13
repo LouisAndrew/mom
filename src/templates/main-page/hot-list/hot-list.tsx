@@ -1,6 +1,7 @@
 import React from 'react';
 import { find } from 'lodash';
 import { FixedObject } from 'gatsby-image';
+import { useNavigate } from '@reach/router';
 
 import styled from 'styled-components';
 import {
@@ -19,6 +20,7 @@ import {
     selectSaleTypeItems,
     selectPropertyTypeItems,
 } from 'templates/products/products';
+import { createSlug } from 'helper/lower-case';
 
 // hotProperties: fetched from gatsby and will be limited to either 3 or 4.
 type Props = {
@@ -45,9 +47,10 @@ const HotListBox: React.FC<HotListBoxProps> = styled.div<HotListBoxProps>`
 
 const HotList: React.FC<Props> = ({ hotProperties }) => {
     const headingText = 'Lagi hot!! 🔥🔥🔥';
+    const navigate = useNavigate();
 
     const navigateTo = (link: string) => {
-        console.log(link);
+        navigate(`/products/${createSlug(link)}`, { replace: false });
     };
 
     const hotPropertiesToRender: CardProps[] = hotProperties.map(property => {
@@ -77,7 +80,7 @@ const HotList: React.FC<Props> = ({ hotProperties }) => {
                       text: location,
                       tagType: 'location',
                       handleClick: () => {
-                          return;
+                          navigate(`/products?loc=${location}`);
                       },
                   }
                 : undefined,
@@ -87,7 +90,7 @@ const HotList: React.FC<Props> = ({ hotProperties }) => {
                           ?.key,
                       tagType: saleType,
                       handleClick: () => {
-                          return;
+                          navigate(`/products?sale=${saleType}`);
                       },
                   }
                 : undefined,
@@ -99,7 +102,7 @@ const HotList: React.FC<Props> = ({ hotProperties }) => {
                       )?.key,
                       tagType: propertyType,
                       handleClick: () => {
-                          return;
+                          navigate(`/products?prop=${propertyType}`);
                       },
                   }
                 : undefined,
