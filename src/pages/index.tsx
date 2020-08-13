@@ -112,8 +112,6 @@ const App = (props: any) => {
         return property;
     });
 
-    console.log(hotListData);
-
     return (
         <Layout>
             <SEO />

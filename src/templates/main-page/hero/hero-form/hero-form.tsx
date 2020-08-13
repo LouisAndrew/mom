@@ -14,7 +14,8 @@ import {
     BoxShadowProps,
     PositionProps,
 } from 'styled-system';
-import { debounce } from 'lodash';
+
+import { throttle } from 'lodash';
 
 import Select from 'components/select';
 import Input from 'components/input';
@@ -104,7 +105,6 @@ const HeroForm: React.FC<Props> = ({
     const [selectedLocation, setSelectedLocation] = useState('');
     const [selectedArea, setSelectedArea] = useState(0);
     const [selectedType, setSelectedType] = useState<'buy' | 'rent' | ''>('');
-
     const types: SelectItem[] = [
         {
             key: 'Beli',
@@ -115,8 +115,6 @@ const HeroForm: React.FC<Props> = ({
             value: 'rent',
         },
     ];
-
-    const submitDebounced = debounce(submitForm, 1000);
 
     const locationItems = useMemo(() => {
         return allLocations.map(location => {
@@ -159,7 +157,7 @@ const HeroForm: React.FC<Props> = ({
     };
 
     const handleClick = () => {
-        submitDebounced(selectedLocation, selectedArea, selectedType);
+        throttle(submitForm)(selectedLocation, selectedArea, selectedType);
     };
 
     return (

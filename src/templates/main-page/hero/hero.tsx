@@ -1,7 +1,10 @@
 import React from 'react';
 import Img, { FluidObject } from 'gatsby-image';
+import { useNavigate } from '@reach/router';
+import { useStaticQuery, graphql } from 'gatsby';
+import { throttle } from 'lodash';
 
-import styled from 'styled-components';
+import styled, { AnyStyledComponent } from 'styled-components';
 import {
     layout,
     flexbox,
@@ -50,7 +53,25 @@ const Hero: React.FC<Props> = ({ heroImgFluid }) => {
     const mockheadingText = 'Siapa bilang cari rumah jaman sekarang susah?';
     const mockBodyText =
         'Cari rumah idamanmu sekarang! Cukup cantumkan kriteria mu, tanpa ribet';
-    const mockAllLocations: string[] = ['PIK', 'Muara Karang', 'BSD'];
+
+    const navigate = useNavigate();
+    const data: any = useStaticQuery(graphql`
+        query {
+            allSanityLocation {
+                edges {
+                    node {
+                        locationName
+                    }
+                }
+            }
+        }
+    `);
+
+    const allLocations: string[] = data.allSanityLocation.edges.map(
+        (edge: AnyStyledComponent) => edge.node.locationName as string
+    );
+
+    // navigate(`/products?prop=${propertyType}`);
 
     const submitForm = (
         location: string,
@@ -58,11 +79,13 @@ const Hero: React.FC<Props> = ({ heroImgFluid }) => {
         type: 'buy' | 'rent' | ''
     ) => {
         // naivgate to search page
-        console.log({ location, area, type });
-        return;
+        // bug here: reach router won't navigate directly to the url,
+        // but instead redirecting to /products/?
+        const params = `loc=${location}&area=${area}&sale=${type}`;
+        throttle(navigate)(`/products/?${params}`, {
+            replace: true,
+        });
     };
-
-    console.log(heroImgFluid);
 
     return (
         <>
@@ -186,7 +209,7 @@ const Hero: React.FC<Props> = ({ heroImgFluid }) => {
                     <HeroForm
                         headingText={mockheadingText}
                         bodyText={mockBodyText}
-                        allLocations={mockAllLocations}
+                        allLocations={allLocations}
                         submitForm={submitForm}
                     />
                 </OuterWrapper>

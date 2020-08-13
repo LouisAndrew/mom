@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { filter, indexOf, get, find, set } from 'lodash';
 import { CSSTransition } from 'react-transition-group';
+import { useNavigate } from '@reach/router';
 
 import { InlineIcon } from '@iconify/react';
 import expandFilterIcon from '@iconify/icons-uil/angle-double-right';
@@ -76,12 +77,13 @@ const Products: React.FC<Props> = ({ properties }) => {
     const [showFilter, setShowFilter] = useState(false);
 
     // filter states
-
     const [addressFilter, setAddressFilter] = useState('');
 
     const [locationFilters, setlocationFilters] = useState<string[]>([]);
     const [saleTypeFilters, setSaleTypeFilters] = useState<string[]>([]);
     const [propTypeFilters, setPropTypeFilters] = useState<string[]>([]);
+
+    const navigate = useNavigate();
 
     const [areaFilter, setAreaFilter] = useState<MinMaxObj>({
         min: 0,
@@ -111,6 +113,7 @@ const Products: React.FC<Props> = ({ properties }) => {
             const urlSaleFilter: string = get(searchParams, 'sale', '');
             const urlPropFilter: string = get(searchParams, 'prop', '');
             const urlLocationFilter: string = get(searchParams, 'loc', '');
+            const urlAreaFilter: string = get(searchParams, 'area', '');
 
             if (urlSaleFilter) {
                 setSaleTypeFilters([urlSaleFilter]);
@@ -124,8 +127,20 @@ const Products: React.FC<Props> = ({ properties }) => {
                 setlocationFilters([urlLocationFilter]);
             }
 
+            if (urlAreaFilter && urlAreaFilter !== '0') {
+                setAreaFilter(prev => ({
+                    ...prev,
+                    min: parseInt(urlAreaFilter, 10),
+                }));
+            }
+
             // eslint-disable-next-line @typescript-eslint/no-use-before-define
             applyFilters();
+        } else if (location.href[location.href.length - 1] === '?') {
+            // check if last of the url is just ? -> means a bug from the hero-form
+            // where reach router can't directly navigate to the url but instead redirecting
+            // to /products/?
+            navigate(-1);
         } else {
             setDisplay(properties);
         }

@@ -8,7 +8,27 @@ import '@testing-library/jest-dom';
 import { MainPage } from '../main-page';
 import { withReachRouter } from 'helper/reach-router';
 
+import * as Gatsby from 'gatsby';
+
 describe('Main page.', () => {
+    const useStaticQuery = jest.spyOn(Gatsby, 'useStaticQuery');
+
+    beforeEach(() => {
+        useStaticQuery.mockImplementationOnce(() => {
+            return {
+                allSanityLocation: {
+                    edges: [
+                        {
+                            node: {
+                                locationName: 'Mock name',
+                            },
+                        },
+                    ],
+                },
+            };
+        });
+    });
+
     afterEach(cleanup);
     const el: React.ReactElement = withReachRouter(
         <MainPage />
