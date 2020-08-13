@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import styled from 'styled-components';
-import { layout, position, space, PositionProps } from 'styled-system';
+import { layout, position, space, color, PositionProps } from 'styled-system';
 import { Icon, InlineIcon } from '@iconify/react';
 import menuIcon from '@iconify/icons-uil/bars';
 import closeIcon from '@iconify/icons-uil/multiply';
@@ -21,6 +21,7 @@ const Container: React.FC<ContainerProps> = styled.nav<ContainerProps>`
     ${layout}
     ${position}
     ${space}
+    ${color}
 `;
 
 const Nav: React.FC<Props> = () => {
@@ -31,6 +32,7 @@ const Nav: React.FC<Props> = () => {
 
     return (
         <Container
+            bg="bg"
             width={1}
             position={'fixed'}
             left={0}
@@ -49,6 +51,10 @@ const Nav: React.FC<Props> = () => {
                 py={[3]}
                 px={[3]}
                 css={`
+                    border-bottom: 1px solid
+                        ${displayMenu
+                            ? 'rgba(0, 0, 0, 0)'
+                            : theme.colors.accent[2]};
                     #logo {
                         transition: 0.2s;
                         height: 32px;
@@ -94,7 +100,7 @@ const Nav: React.FC<Props> = () => {
                 <Button
                     display={['none', 'none', 'block']}
                     handleClick={contact}
-                    variant="secondary"
+                    variant="primary"
                     width="fit-content"
                     css={`
                         & > svg {

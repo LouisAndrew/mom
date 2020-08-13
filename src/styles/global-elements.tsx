@@ -156,7 +156,7 @@ const OuterWrapper: React.FC<WithChildrenProps &
     PositionProps> = ({ children, ...rest }) => (
     <SOuterWrapper
         maxWidth={[
-            '100%',
+            '95%',
             theme.breakpoints[0],
             theme.breakpoints[1],
             theme.breakpoints[2],

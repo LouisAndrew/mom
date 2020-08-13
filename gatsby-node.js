@@ -1,5 +1,10 @@
 const path = require('path');
-const { createSlug } = require('./src/helper/lower-case');
+
+const createSlug = name =>
+    name
+        .toLowerCase()
+        .split(' ')
+        .join('-');
 
 exports.createPages = async ({ graphql, actions }) => {
     const { createPage } = actions;

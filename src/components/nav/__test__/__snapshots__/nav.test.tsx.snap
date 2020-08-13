@@ -2,11 +2,11 @@
 
 exports[`Navigation component matches snapshot 1`] = `
 <nav
-  className="sc-fznyAO gTtpAU"
+  className="sc-fznyAO cJWgsr"
   width={1}
 >
   <div
-    className="sc-AxgMl eKbbri"
+    className="sc-AxgMl cKYHvy"
     display="flex"
     width={1}
   >
@@ -806,7 +806,7 @@ exports[`Navigation component matches snapshot 1`] = `
       />
     </span>
     <button
-      className="sc-fzoLsD gRCgbK"
+      className="sc-fzoLsD jehfts"
       display={
         Array [
           "none",
