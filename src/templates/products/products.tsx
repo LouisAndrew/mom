@@ -94,6 +94,8 @@ const Products: React.FC<Props> = ({ properties }) => {
         max: Number.MAX_SAFE_INTEGER,
     });
 
+    const [searchParam, setSearchParam] = useState('');
+
     // end of filter states
     // Function to extract filters from the url request...
     // Separated this funcyion from the useEffect hook to provide reusability.. -> This function could be called everytime
@@ -142,6 +144,7 @@ const Products: React.FC<Props> = ({ properties }) => {
 
     useEffect(() => {
         if (location.search) {
+            setSearchParam(location.search);
             getFiltersFromQuery(location.search);
         } else if (location.href[location.href.length - 1] === '?') {
             // check if last of the url is just ? -> means a bug from the hero-form
@@ -154,8 +157,11 @@ const Products: React.FC<Props> = ({ properties }) => {
     }, []);
 
     useEffect(() => {
-        getFiltersFromQuery(location.search);
-    }, [location.search]);
+        if (location && location.search !== searchParam) {
+            setSearchParam(location.search);
+            getFiltersFromQuery(location.search);
+        }
+    });
 
     // There's an error here? msg: cannot read property 'baseVal' of undefined
     // https://stackoverflow.com/questions/55380937/typeerror-cannot-read-property-baseval-of-undefined -> error thrown from CSSTransition element?
