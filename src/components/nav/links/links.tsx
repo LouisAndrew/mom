@@ -73,7 +73,7 @@ const Links: React.FC<Props> = ({ displayMenu, clickButton }) => {
             position={['absolute', 'absolute', 'relative']}
             top={0}
             //               theme.breakpoints[0] / 2 in pixels.
-            left={['-2.6%', `-${(window.innerWidth - 640) / 2}px`, '32px']}
+            left={['-2.6%', `calc((100vw - 640px) / -2)`, '32px']}
             width={['100vw', '100vw', 'auto']}
             zIndex={[-1, -1, 2]}
             overflow={['hidden', 'hidden', 'visible']}
@@ -112,16 +112,26 @@ const Links: React.FC<Props> = ({ displayMenu, clickButton }) => {
                     // comparing browser width with the tablet breakpoint from theme.
                     onKeyDown={() => {
                         if (
+                            window &&
                             window.innerWidth <
-                            parseInt(theme.breakpoints[1].substr(0, 2), 10) * 16
+                                parseInt(
+                                    theme.breakpoints[1].substr(0, 2),
+                                    10
+                                ) *
+                                    16
                         ) {
                             setExpand(prev => !prev);
                         }
                     }}
                     onClick={() => {
                         if (
+                            window &&
                             window.innerWidth <
-                            parseInt(theme.breakpoints[1].substr(0, 2), 10) * 16
+                                parseInt(
+                                    theme.breakpoints[1].substr(0, 2),
+                                    10
+                                ) *
+                                    16
                         ) {
                             setExpand(prev => !prev);
                         }
