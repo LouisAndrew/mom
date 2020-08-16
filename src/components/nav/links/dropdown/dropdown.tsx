@@ -98,25 +98,25 @@ const Dropdown: React.FC<Props> = ({ expand }) => {
         {
             textContent: 'Rumah',
             id: 'house',
-            to: '/',
+            to: '/products?prop=house',
             imgContent: <HouseSvg id="house-svg" />,
         },
         {
             textContent: 'Apartment',
             id: 'apartment',
-            to: '/',
+            to: '/products?prop=apartment',
             imgContent: <ApartmentSvg id="apartment-svg" />,
         },
         {
             textContent: 'Kavling',
             id: 'kavling',
-            to: '/',
+            to: '/products?prop=kavling',
             imgContent: <KavlingSvg id="kavling-svg" />,
         },
         {
             textContent: 'Ruko',
             id: 'home-office',
-            to: '/',
+            to: '/products?prop=home-office',
             imgContent: <HomeOfficeSvg id="home-office-svg" />,
         },
     ];

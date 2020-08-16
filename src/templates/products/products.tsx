@@ -94,48 +94,56 @@ const Products: React.FC<Props> = ({ properties }) => {
         max: Number.MAX_SAFE_INTEGER,
     });
 
+    const searchQuery: string = location.search;
+
     // end of filter states
+    // Function to extract filters from the url request...
+    // Separated this funcyion from the useEffect hook to provide reusability.. -> This function could be called everytime
+    // The search params changes.
+    const getFiltersFromQuery = (query: string) => {
+        const searchParams: { [key: string]: string } = {};
+
+        // extract filter parameters from the url
+        query
+            .substr(1)
+            .split('&')
+            .forEach(param => {
+                // then assign the corresponding parameter into the searchParams object
+                set(searchParams, param.split('=')[0], param.split('=')[1]);
+            });
+
+        // then apply filter if needed.
+        const urlSaleFilter: string = get(searchParams, 'sale', '');
+        const urlPropFilter: string = get(searchParams, 'prop', '');
+        const urlLocationFilter: string = get(searchParams, 'loc', '');
+        const urlAreaFilter: string = get(searchParams, 'area', '');
+
+        if (urlSaleFilter) {
+            setSaleTypeFilters([urlSaleFilter]);
+        }
+
+        if (urlPropFilter) {
+            setPropTypeFilters([urlPropFilter]);
+        }
+
+        if (urlLocationFilter) {
+            setlocationFilters([urlLocationFilter]);
+        }
+
+        if (urlAreaFilter && urlAreaFilter !== '0') {
+            setAreaFilter(prev => ({
+                ...prev,
+                min: parseInt(urlAreaFilter, 10),
+            }));
+        }
+
+        // eslint-disable-next-line @typescript-eslint/no-use-before-define
+        applyFilters();
+    };
 
     useEffect(() => {
-        if (location.search) {
-            const searchParams: { [key: string]: string } = {};
-
-            // extract filter parameters from the url
-            location.search
-                .substr(1)
-                .split('&')
-                .forEach(param => {
-                    // then assign the corresponding parameter into the searchParams object
-                    set(searchParams, param.split('=')[0], param.split('=')[1]);
-                });
-
-            // then apply filter if needed.
-            const urlSaleFilter: string = get(searchParams, 'sale', '');
-            const urlPropFilter: string = get(searchParams, 'prop', '');
-            const urlLocationFilter: string = get(searchParams, 'loc', '');
-            const urlAreaFilter: string = get(searchParams, 'area', '');
-
-            if (urlSaleFilter) {
-                setSaleTypeFilters([urlSaleFilter]);
-            }
-
-            if (urlPropFilter) {
-                setPropTypeFilters([urlPropFilter]);
-            }
-
-            if (urlLocationFilter) {
-                setlocationFilters([urlLocationFilter]);
-            }
-
-            if (urlAreaFilter && urlAreaFilter !== '0') {
-                setAreaFilter(prev => ({
-                    ...prev,
-                    min: parseInt(urlAreaFilter, 10),
-                }));
-            }
-
-            // eslint-disable-next-line @typescript-eslint/no-use-before-define
-            applyFilters();
+        if (searchQuery) {
+            getFiltersFromQuery(searchQuery);
         } else if (location.href[location.href.length - 1] === '?') {
             // check if last of the url is just ? -> means a bug from the hero-form
             // where reach router can't directly navigate to the url but instead redirecting
@@ -146,6 +154,13 @@ const Products: React.FC<Props> = ({ properties }) => {
         }
     }, []);
 
+    useEffect(() => {
+        getFiltersFromQuery(searchQuery);
+    }, [searchQuery]);
+
+    // There's an error here? msg: cannot read property 'baseVal' of undefined
+    // https://stackoverflow.com/questions/55380937/typeerror-cannot-read-property-baseval-of-undefined -> error thrown from CSSTransition element?
+    // Fix error?
     const toggleFilterView = () => {
         setShowFilter(prev => !prev);
     };

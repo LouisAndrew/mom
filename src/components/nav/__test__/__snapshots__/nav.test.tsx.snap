@@ -190,8 +190,7 @@ exports[`Navigation component matches snapshot 1`] = `
               onMouseLeave={[Function]}
             >
               <a
-                aria-current="page"
-                href="/"
+                href="/products?prop=house"
                 onClick={[Function]}
               >
                 Rumah
@@ -214,8 +213,7 @@ exports[`Navigation component matches snapshot 1`] = `
               onMouseLeave={[Function]}
             >
               <a
-                aria-current="page"
-                href="/"
+                href="/products?prop=apartment"
                 onClick={[Function]}
               >
                 Apartment
@@ -238,8 +236,7 @@ exports[`Navigation component matches snapshot 1`] = `
               onMouseLeave={[Function]}
             >
               <a
-                aria-current="page"
-                href="/"
+                href="/products?prop=kavling"
                 onClick={[Function]}
               >
                 Kavling
@@ -262,8 +259,7 @@ exports[`Navigation component matches snapshot 1`] = `
               onMouseLeave={[Function]}
             >
               <a
-                aria-current="page"
-                href="/"
+                href="/products?prop=home-office"
                 onClick={[Function]}
               >
                 Ruko
