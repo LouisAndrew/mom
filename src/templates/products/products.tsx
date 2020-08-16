@@ -324,6 +324,11 @@ const Products: React.FC<Props> = ({ properties }) => {
             css={`
                 display: grid;
                 place-items: center;
+
+                @supports not (place-items: center) {
+                    align-items: center;
+                    justify-items: center;
+                }
             `}
         >
             <OuterWrapper width={1} position="relative" pt={[5]}>

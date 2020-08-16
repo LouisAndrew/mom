@@ -3,7 +3,7 @@
 exports[`Main page. matches snapshot 1`] = `
 Array [
   <div
-    className="sc-fzqBZW fMIXjC top"
+    className="sc-fzqBZW hNDyBQ top"
   >
     <div
       className="sc-fzqNJr cqsWMP"
@@ -334,7 +334,7 @@ Array [
     </div>
   </div>,
   <div
-    className="sc-fzoyAV jJvQi"
+    className="sc-fzoyAV klyhbc"
   >
     <div
       className="sc-AxgMl hwXOOv"
@@ -395,7 +395,7 @@ Array [
     </div>
   </div>,
   <div
-    className="sc-fzolEj ldiddS"
+    className="sc-fzolEj kOtFls"
   >
     <div
       className="sc-AxgMl ieeLqA"

@@ -31,6 +31,11 @@ const Container: React.FC<ContainerProps> = styled.footer<ContainerProps>`
     display: grid;
     place-items: center;
 
+    @supports not (place-items: center) {
+        align-items: center;
+        justify-items: center;
+    }
+
     ${color}
     ${space}
     ${layout}
@@ -77,6 +82,11 @@ const Footer: React.FC<Props> = () => {
                 css={`
                     display: grid;
                     place-items: center;
+
+                    @supports not (place-items: center) {
+                        align-items: center;
+                        justify-items: center;
+                    }
                 `}
             >
                 <OuterWrapper

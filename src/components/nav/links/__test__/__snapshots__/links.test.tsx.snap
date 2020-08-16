@@ -2,7 +2,7 @@
 
 exports[`Link component on navigation matches snapshot 1`] = `
 <ul
-  className="sc-fzpans eqpxJa"
+  className="sc-fzpans hXoaWX"
   display="flex"
   height={
     Array [
@@ -20,8 +20,8 @@ exports[`Link component on navigation matches snapshot 1`] = `
   }
   width={
     Array [
-      1,
-      1,
+      "100vw",
+      "100vw",
       "auto",
     ]
   }
@@ -101,26 +101,33 @@ exports[`Link component on navigation matches snapshot 1`] = `
         xmlns="http://www.w3.org/2000/svg"
       />
       Katalog
-      <svg
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "<path d=\\"M17 9.17a1 1 0 0 0-1.41 0L12 12.71L8.46 9.17a1 1 0 0 0-1.41 0a1 1 0 0 0 0 1.42l4.24 4.24a1 1 0 0 0 1.42 0L17 10.59a1 1 0 0 0 0-1.42z\\" fill=\\"currentColor\\"/>",
+      <span
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
+      >
+        <svg
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "<path d=\\"M17 9.17a1 1 0 0 0-1.41 0L12 12.71L8.46 9.17a1 1 0 0 0-1.41 0a1 1 0 0 0 0 1.42l4.24 4.24a1 1 0 0 0 1.42 0L17 10.59a1 1 0 0 0 0-1.42z\\" fill=\\"currentColor\\"/>",
+            }
           }
-        }
-        focusable={false}
-        height="1em"
-        id="expand-svg"
-        preserveAspectRatio="xMidYMid meet"
-        style={
-          Object {
-            "transform": "rotate(360deg)",
-            "verticalAlign": "-0.125em",
+          focusable={false}
+          height="1em"
+          id="expand-svg"
+          preserveAspectRatio="xMidYMid meet"
+          style={
+            Object {
+              "transform": "rotate(360deg)",
+              "verticalAlign": "-0.125em",
+            }
           }
-        }
-        viewBox="0 0 24 24"
-        width="1em"
-        xmlns="http://www.w3.org/2000/svg"
-      />
+          viewBox="0 0 24 24"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        />
+      </span>
     </a>
     <div
       className="sc-fzozJi kNjACt"

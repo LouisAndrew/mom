@@ -2,7 +2,7 @@
 
 exports[`Hero element matches snapshot 1`] = `
 <div
-  className="sc-fzqBZW fMIXjC top"
+  className="sc-fzqBZW hNDyBQ top"
 >
   <div
     className="sc-fzqNJr cqsWMP"

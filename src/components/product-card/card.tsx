@@ -115,6 +115,11 @@ const Card: React.FC<Props> = ({
                         display: grid;
                         place-items: center;
 
+                        @supports not (place-items: center) {
+                            justify-items: center;
+                            align-items: center;
+                        }
+
                         & > img {
                             position: absolute;
                             top: 0;

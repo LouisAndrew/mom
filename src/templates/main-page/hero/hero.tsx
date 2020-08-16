@@ -36,6 +36,11 @@ const Container: React.FC<ContainerProps> = styled.div<ContainerProps>`
 
     overflow: hidden;
 
+    @supports not (place-items: center) {
+        align-items: center;
+        justify-items: center;
+    }
+
     ${color}
     ${space}
     ${position}

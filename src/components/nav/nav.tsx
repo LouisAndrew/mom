@@ -32,7 +32,11 @@ const Nav: React.FC<Props> = () => {
 
     return (
         <Container
-            bg="bg"
+            bg={[
+                // displayMenu ? 'dark.0' : 'bg',
+                // displayMenu ? 'dark.0' : 'bg',
+                'bg',
+            ]}
             width={1}
             position={'fixed'}
             left={0}
@@ -40,6 +44,11 @@ const Nav: React.FC<Props> = () => {
             css={`
                 display: grid;
                 place-items: center;
+
+                @supports not (place-items: center) {
+                    align-items: center;
+                    justify-items: center;
+                }
             `}
         >
             <OuterWrapper

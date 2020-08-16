@@ -35,6 +35,11 @@ const Container: React.FC<ContainerProps> = styled.div<ContainerProps>`
     display: grid;
     place-items: center;
 
+    @supports not (place-items: center) {
+        justify-items: center;
+        align-items: center;
+    }
+
     ${color}
     ${space}
 `;
