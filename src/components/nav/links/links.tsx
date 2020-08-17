@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from '@reach/router';
 
 import styled from 'styled-components';
@@ -33,6 +33,7 @@ type LinkItemProps = SLinkItemProps & {
     to: string;
     dropdownElement?: React.ReactNode;
     expand?: boolean;
+    isActive?: boolean;
     onMouseEnter?: () => void;
     onMouseLeave?: () => void;
 };
@@ -63,6 +64,13 @@ const SLinkItem: React.FC<SLinkItemProps> = styled.li<SLinkItemProps>`
 const Links: React.FC<Props> = ({ displayMenu, clickButton }) => {
     const [expand, setExpand] = useState(false);
 
+    const checkIfActive = (pathname: string): boolean =>
+        location && location.pathname === pathname;
+
+    useEffect(() => {
+        console.log(location);
+    }, []);
+
     return (
         <Container
             display="flex"
@@ -87,12 +95,19 @@ const Links: React.FC<Props> = ({ displayMenu, clickButton }) => {
                 transition: height 0.2s;
             `}
         >
-            <LinkItem to="/" px={[4, 5, 3]} py={[2, 2, 3]} mt={[7, 7, 0]}>
+            <LinkItem
+                isActive={checkIfActive('/')}
+                to="/"
+                px={[4, 5, 3]}
+                py={[2, 2, 3]}
+                mt={[7, 7, 0]}
+            >
                 <InlineIcon icon={homeIcon} />
                 Home
             </LinkItem>
             <LinkItem
                 to="/products"
+                isActive={checkIfActive('/products')}
                 px={[4, 5, 3]}
                 py={[2, 2, 3]}
                 position="relative"
@@ -165,6 +180,7 @@ const LinkItem: React.FC<LinkItemProps> = ({
     to,
     dropdownElement,
     expand,
+    isActive,
     onMouseEnter,
     onMouseLeave,
     ...rest
@@ -174,9 +190,25 @@ const LinkItem: React.FC<LinkItemProps> = ({
         fontWeight="heading"
         fontSize={[1, 2]}
         css={`
+            --highlight-color: ${theme.colors.accent[1]};
+
             a {
                 text-decoration: none;
                 color: ${theme.colors.bg};
+
+                transisiton: 0.2s;
+
+                &:hover,
+                &.active {
+                    background-image: linear-gradient(
+                        transparent 0%,
+                        transparent calc(50% - 9px),
+                        var(--highlight-color) calc(50% - 9px),
+                        var(--highlight-color) 100%
+                    );
+
+                    background-size: 100% 250%;
+                }
             }
 
             svg {
@@ -216,7 +248,9 @@ const LinkItem: React.FC<LinkItemProps> = ({
         onMouseLeave={onMouseLeave}
         {...rest}
     >
-        <Link to={to}>{children}</Link>
+        <Link className={isActive ? 'active' : ''} to={to}>
+            {children}
+        </Link>
         {dropdownElement}
     </SLinkItem>
 );

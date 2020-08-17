@@ -23,7 +23,7 @@ exports[`Navigation component matches snapshot 1`] = `
       />
     </svg>
     <ul
-      className="sc-fzpans fLQKSb"
+      className="sc-fzpans hnxfiK"
       display="flex"
       height={
         Array [
@@ -60,6 +60,7 @@ exports[`Navigation component matches snapshot 1`] = `
       >
         <a
           aria-current="page"
+          className="active"
           href="/"
           onClick={[Function]}
         >
@@ -99,6 +100,7 @@ exports[`Navigation component matches snapshot 1`] = `
         onMouseLeave={[Function]}
       >
         <a
+          className=""
           href="/products"
           onClick={[Function]}
         >

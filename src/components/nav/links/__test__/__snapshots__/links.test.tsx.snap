@@ -2,7 +2,7 @@
 
 exports[`Link component on navigation matches snapshot 1`] = `
 <ul
-  className="sc-fzpans hXoaWX"
+  className="sc-fzpans defOK"
   display="flex"
   height={
     Array [
@@ -39,6 +39,7 @@ exports[`Link component on navigation matches snapshot 1`] = `
   >
     <a
       aria-current="page"
+      className="active"
       href="/"
       onClick={[Function]}
     >
@@ -78,6 +79,7 @@ exports[`Link component on navigation matches snapshot 1`] = `
     onMouseLeave={[Function]}
   >
     <a
+      className=""
       href="/products"
       onClick={[Function]}
     >
