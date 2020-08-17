@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from '@reach/router';
 
 import styled from 'styled-components';
@@ -64,12 +64,15 @@ const SLinkItem: React.FC<SLinkItemProps> = styled.li<SLinkItemProps>`
 const Links: React.FC<Props> = ({ displayMenu, clickButton }) => {
     const [expand, setExpand] = useState(false);
 
-    const checkIfActive = (pathname: string): boolean =>
-        location && location.pathname === pathname;
-
-    useEffect(() => {
-        console.log(location);
-    }, []);
+    // check current location and add active class name its corresponding link elemeent.
+    const checkIfActive = (pathname: string): boolean => {
+        // check if window object is available -> SSR
+        if (typeof window !== 'undefined') {
+            return location && location.pathname === pathname;
+        } else {
+            return false;
+        }
+    };
 
     return (
         <Container
@@ -198,6 +201,7 @@ const LinkItem: React.FC<LinkItemProps> = ({
 
                 transisiton: 0.2s;
 
+                /* Inspiration from hackernoon link copmonent. https://hackernoon.com/ */
                 &:hover,
                 &.active {
                     background-image: linear-gradient(
