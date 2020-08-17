@@ -1,81 +1,118 @@
 import * as React from 'react';
 
 // eslint-disable-next-line @typescript-eslint/tslint/config
-function SvgKavling(props: any) {
+function SvgKavlingHover(props: any) {
     return (
-        <svg width={220} height={145} fill="none" {...props}>
-            <path
-                d="M106.385 36L220 64l-113.615 81L0 105l106.385-69z"
-                fill="#2EC4B6"
-            />
-            <path
-                d="M106.385 25L220 53l-113.615 81L0 94l106.385-69z"
-                fill="#fff"
-            />
-            <path
-                d="M109.318 4.2l7.327 8.4 8.29-8.4"
-                stroke="#37474F"
-                strokeMiterlimit={10}
-            />
-            <path
-                d="M107.005 0h-4.628v33h4.628V0z"
-                fill="url(#kavling_svg__paint0_linear)"
-            />
-            <path d="M107.005.6h-4.049v31.2h4.049V.6z" fill="#F5F5F5" />
-            <path
-                d="M130.141 1.2h-28.92v6h28.92v-6z"
-                fill="url(#kavling_svg__paint1_linear)"
-            />
-            <path d="M101.799 1.8v4.8h27.764V1.8h-27.764z" fill="#F5F5F5" />
-            <path
-                d="M126.092 12h-17.93v13.8h17.93V12z"
-                fill="url(#kavling_svg__paint2_linear)"
-            />
-            <path d="M126.092 12h-17.93v13.2h17.93V12z" fill="#2EC4B6" />
-            <path
-                d="M123.2 14.4h-12.725v1.2H123.2v-1.2zM121.465 16.8h-8.676V18h8.676v-1.2zM122.622 19.2h-10.99v1.2h10.99v-1.2zM123.2 21.6h-12.725v1.2H123.2v-1.2z"
-                fill="#fff"
-            />
+        <svg width={228} height={153} fill="none" {...props}>
+            <g filter="url(#kavling-hover_svg__filter0_d)">
+                <path
+                    d="M110.205 133.966l.253.098.22-.159 100.919-72.858 11.262 3.153-112.547 80.238L5.089 104.875l10.973-7.315 94.143 36.406z"
+                    stroke="#fff"
+                />
+            </g>
+            <g filter="url(#kavling-hover_svg__filter1_d)">
+                <path
+                    d="M5.103 93.88l105.372-68.343 112.348 27.688-112.511 80.213L5.103 93.881z"
+                    stroke="#fff"
+                />
+            </g>
+            <g filter="url(#kavling-hover_svg__filter2_d)" stroke="#fff">
+                <path
+                    d="M113.318 4.2l7.327 8.4 8.29-8.4"
+                    strokeMiterlimit={10}
+                />
+                <path d="M106.877 32.5V.5h3.628v32h-3.628z" />
+                <path d="M107.456 31.3V1.1h3.049v30.2h-3.049z" />
+                <path d="M105.721 6.7v-5h27.92v5h-27.92z" />
+                <path d="M133.063 6.1h-26.764V2.3h26.764v3.8zM112.662 25.3V12.5h16.93v12.8h-16.93z" />
+                <path d="M112.662 24.7V12.5h16.93v12.2h-16.93z" />
+                <path d="M114.975 15.1v-.2H126.7v.2h-11.725zM117.289 17.5v-.2h7.676v.2h-7.676zM116.132 19.9v-.2h9.99v.2h-9.99zM114.975 22.3v-.2H126.7v.2h-11.725z" />
+            </g>
             <defs>
-                <linearGradient
-                    id="kavling_svg__paint0_linear"
-                    x1={311.621}
-                    y1={24690.6}
-                    x2={311.621}
-                    y2={15450.6}
-                    gradientUnits="userSpaceOnUse"
+                <filter
+                    id="kavling-hover_svg__filter0_d"
+                    x={0}
+                    y={60.5}
+                    width={228}
+                    height={92.5}
+                    filterUnits="userSpaceOnUse"
+                    colorInterpolationFilters="sRGB"
                 >
-                    <stop stopColor="gray" stopOpacity={0.25} />
-                    <stop offset={0.54} stopColor="gray" stopOpacity={0.12} />
-                    <stop offset={1} stopColor="gray" stopOpacity={0.1} />
-                </linearGradient>
-                <linearGradient
-                    id="kavling_svg__paint1_linear"
-                    x1={4352.49}
-                    y1={3173.04}
-                    x2={4352.49}
-                    y2={2879.76}
-                    gradientUnits="userSpaceOnUse"
+                    <feFlood floodOpacity={0} result="BackgroundImageFix" />
+                    <feColorMatrix
+                        in="SourceAlpha"
+                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                    />
+                    <feOffset dy={4} />
+                    <feGaussianBlur stdDeviation={2} />
+                    <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+                    <feBlend
+                        in2="BackgroundImageFix"
+                        result="effect1_dropShadow"
+                    />
+                    <feBlend
+                        in="SourceGraphic"
+                        in2="effect1_dropShadow"
+                        result="shape"
+                    />
+                </filter>
+                <filter
+                    id="kavling-hover_svg__filter1_d"
+                    x={0}
+                    y={25}
+                    width={228}
+                    height={117}
+                    filterUnits="userSpaceOnUse"
+                    colorInterpolationFilters="sRGB"
                 >
-                    <stop stopColor="gray" stopOpacity={0.25} />
-                    <stop offset={0.54} stopColor="gray" stopOpacity={0.12} />
-                    <stop offset={1} stopColor="gray" stopOpacity={0.1} />
-                </linearGradient>
-                <linearGradient
-                    id="kavling_svg__paint2_linear"
-                    x1={1468.91}
-                    y1={8675.09}
-                    x2={4544.89}
-                    y2={8675.09}
-                    gradientUnits="userSpaceOnUse"
+                    <feFlood floodOpacity={0} result="BackgroundImageFix" />
+                    <feColorMatrix
+                        in="SourceAlpha"
+                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                    />
+                    <feOffset dy={4} />
+                    <feGaussianBlur stdDeviation={2} />
+                    <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+                    <feBlend
+                        in2="BackgroundImageFix"
+                        result="effect1_dropShadow"
+                    />
+                    <feBlend
+                        in="SourceGraphic"
+                        in2="effect1_dropShadow"
+                        result="shape"
+                    />
+                </filter>
+                <filter
+                    id="kavling-hover_svg__filter2_d"
+                    x={101.221}
+                    y={0}
+                    width={36.92}
+                    height={41}
+                    filterUnits="userSpaceOnUse"
+                    colorInterpolationFilters="sRGB"
                 >
-                    <stop stopColor="gray" stopOpacity={0.25} />
-                    <stop offset={0.54} stopColor="gray" stopOpacity={0.12} />
-                    <stop offset={1} stopColor="gray" stopOpacity={0.1} />
-                </linearGradient>
+                    <feFlood floodOpacity={0} result="BackgroundImageFix" />
+                    <feColorMatrix
+                        in="SourceAlpha"
+                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                    />
+                    <feOffset dy={4} />
+                    <feGaussianBlur stdDeviation={2} />
+                    <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+                    <feBlend
+                        in2="BackgroundImageFix"
+                        result="effect1_dropShadow"
+                    />
+                    <feBlend
+                        in="SourceGraphic"
+                        in2="effect1_dropShadow"
+                        result="shape"
+                    />
+                </filter>
             </defs>
         </svg>
     );
 }
 
-export default SvgKavling;
+export default SvgKavlingHover;
