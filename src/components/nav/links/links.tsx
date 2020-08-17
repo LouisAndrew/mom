@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from '@reach/router';
 
 import styled from 'styled-components';
@@ -33,7 +33,6 @@ type LinkItemProps = SLinkItemProps & {
     to: string;
     dropdownElement?: React.ReactNode;
     expand?: boolean;
-    isActive?: boolean;
     onMouseEnter?: () => void;
     onMouseLeave?: () => void;
 };
@@ -64,16 +63,6 @@ const SLinkItem: React.FC<SLinkItemProps> = styled.li<SLinkItemProps>`
 const Links: React.FC<Props> = ({ displayMenu, clickButton }) => {
     const [expand, setExpand] = useState(false);
 
-    // check current location and add active class name its corresponding link elemeent.
-    const checkIfActive = (pathname: string): boolean => {
-        // check if window object is available -> SSR
-        if (typeof window !== 'undefined') {
-            return location && location.pathname === pathname;
-        } else {
-            return false;
-        }
-    };
-
     return (
         <Container
             display="flex"
@@ -98,19 +87,12 @@ const Links: React.FC<Props> = ({ displayMenu, clickButton }) => {
                 transition: height 0.2s;
             `}
         >
-            <LinkItem
-                isActive={checkIfActive('/')}
-                to="/"
-                px={[4, 5, 3]}
-                py={[2, 2, 3]}
-                mt={[7, 7, 0]}
-            >
+            <LinkItem to="/" px={[4, 5, 3]} py={[2, 2, 3]} mt={[7, 7, 0]}>
                 <InlineIcon icon={homeIcon} />
                 Home
             </LinkItem>
             <LinkItem
                 to="/products"
-                isActive={checkIfActive('/products')}
                 px={[4, 5, 3]}
                 py={[2, 2, 3]}
                 position="relative"
@@ -183,80 +165,93 @@ const LinkItem: React.FC<LinkItemProps> = ({
     to,
     dropdownElement,
     expand,
-    isActive,
     onMouseEnter,
     onMouseLeave,
     ...rest
-}) => (
-    <SLinkItem
-        fontFamily="body"
-        fontWeight="heading"
-        fontSize={[1, 2]}
-        css={`
-            --highlight-color: ${theme.colors.accent[1]};
+}) => {
+    const [isLinkActive, setIsLinkActive] = useState(false);
 
-            a {
-                text-decoration: none;
-                color: ${theme.colors.bg};
+    // check current path and compare it to the pathname of this component is linking to.
+    // set active is it matches.
+    useEffect(() => {
+        if (location.pathname === to) {
+            setIsLinkActive(true);
+        }
+    }, []);
 
-                transisiton: 0.2s;
+    return (
+        <SLinkItem
+            fontFamily="body"
+            fontWeight="heading"
+            fontSize={[1, 2]}
+            css={`
+                --highlight-color: ${theme.colors.accent[1]};
 
-                /* Inspiration from hackernoon link copmonent. https://hackernoon.com/ */
-                &:hover,
-                &.active {
-                    background-image: linear-gradient(
-                        transparent 0%,
-                        transparent calc(50% - 9px),
-                        var(--highlight-color) calc(50% - 9px),
-                        var(--highlight-color) 100%
-                    );
-
-                    background-size: 100% 250%;
-                }
-            }
-
-            svg {
-                transition: 0.2s;
-
-                &:first-child {
-                    margin-right: 4px;
-                }
-
-                /* means is a last-child, but not a first child */
-                &#expand-svg {
-                    margin-left: 4px;
-                    ${expand &&
-                        `
-                        transform: rotate(180deg) !important;
-                    `}
-                }
-            }
-
-            @media screen and (min-width: ${theme.breakpoints[1]}) {
                 a {
-                    color: ${expand ? theme.colors.bg : theme.colors.dark[0]};
+                    text-decoration: none;
+                    color: ${theme.colors.bg};
+
+                    transisiton: 0.2s;
+
+                    /* Inspiration from hackernoon link copmonent. https://hackernoon.com/ */
+                    &:hover,
+                    &.active {
+                        background-image: linear-gradient(
+                            transparent 0%,
+                            transparent calc(50% - 9px),
+                            var(--highlight-color) calc(50% - 9px),
+                            var(--highlight-color) 100%
+                        );
+
+                        background-size: 100% 250%;
+                    }
                 }
 
                 svg {
+                    transition: 0.2s;
+
                     &:first-child {
-                        margin-right: 8px;
+                        margin-right: 4px;
                     }
 
+                    /* means is a last-child, but not a first child */
                     &#expand-svg {
-                        margin-left: 8px;
+                        margin-left: 4px;
+                        ${expand &&
+                            `
+                        transform: rotate(180deg) !important;
+                    `}
                     }
                 }
-            }
-        `}
-        onMouseEnter={onMouseEnter}
-        onMouseLeave={onMouseLeave}
-        {...rest}
-    >
-        <Link className={isActive ? 'active' : ''} to={to}>
-            {children}
-        </Link>
-        {dropdownElement}
-    </SLinkItem>
-);
+
+                @media screen and (min-width: ${theme.breakpoints[1]}) {
+                    a {
+                        color: ${expand
+                            ? theme.colors.bg
+                            : theme.colors.dark[0]};
+                    }
+
+                    svg {
+                        &:first-child {
+                            margin-right: 8px;
+                        }
+
+                        &#expand-svg {
+                            margin-left: 8px;
+                        }
+                    }
+                }
+            `}
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
+            {...rest}
+        >
+            <Link className={isLinkActive ? 'active' : ''} to={to}>
+                {children}
+            </Link>
+            {dropdownElement}
+        </SLinkItem>
+    );
+};
 
 export { Links };

@@ -39,7 +39,7 @@ exports[`Link component on navigation matches snapshot 1`] = `
   >
     <a
       aria-current="page"
-      className="active"
+      className=""
       href="/"
       onClick={[Function]}
     >
