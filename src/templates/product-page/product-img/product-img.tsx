@@ -65,6 +65,20 @@ const ProductImg: React.FC<Props> = ({ imgs }) => {
         }
     }, []);
 
+    const getSrcFromImgObj = (imgObj: ImgObject): string => {
+        // return image if imgObj is not a fluid/fixed object
+        if (typeof imgObj.image === 'string') {
+            return imgObj.image;
+        } else {
+            // check if media array is provided (in case of fluid and fixed object.)
+            if (Array.isArray(imgObj.image)) {
+                return imgObj.image[0].src;
+            } else {
+                return imgObj.image.src;
+            }
+        }
+    };
+
     return (
         <Container width={['fit-content']} maxWidth={[270, 330, 450]}>
             <ImgBox
@@ -131,7 +145,13 @@ const ProductImg: React.FC<Props> = ({ imgs }) => {
                                     display: absolute;
                                     left: 0;
                                     top: 0;
-                                }
+
+                                    filter: brightness(${
+                                        getSrcFromImgObj(imgObj) ===
+                                        getSrcFromImgObj(activeImg)
+                                            ? 0.6
+                                            : 1
+                                    });
 
                                 &:hover {
                                     cursor: pointer;
@@ -140,13 +160,7 @@ const ProductImg: React.FC<Props> = ({ imgs }) => {
                             `}
                         >
                             <img
-                                src={
-                                    typeof imgObj.image === 'string'
-                                        ? imgObj.image
-                                        : Array.isArray(imgObj.image)
-                                        ? imgObj.image[0].src
-                                        : imgObj.image.src
-                                }
+                                src={getSrcFromImgObj(imgObj)}
                                 alt={imgObj.imgAlt}
                             />
                         </Box>

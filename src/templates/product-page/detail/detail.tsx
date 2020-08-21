@@ -159,32 +159,51 @@ const Detail: React.FC<Props> = ({
                 my={[2, 2, 3]}
                 alignSelf="flex-start"
                 css={`
-                    h3 > svg {
-                        margin-right: 16px;
+                    h3 {
+                        margin-bottom: 4px;
+
+                        & > svg {
+                            margin-right: 16px;
+                        }
+                    }
+
+                    p {
+                        font-family: 'Raleway', sans-serif;
+                        color: #333;
+                        font-size: 14px;
                     }
                 `}
             >
                 {area && area > 0 ? (
-                    <H3>
-                        <InlineIcon icon={areaIcon} />
-                        {area}
-                    </H3>
+                    <>
+                        <p>Luas</p>
+                        <H3>
+                            <InlineIcon icon={areaIcon} />
+                            {area}
+                        </H3>
+                    </>
                 ) : (
                     <></>
                 )}
                 {roomQty && roomQty > 0 ? (
-                    <H3>
-                        <InlineIcon icon={roomIcon} />
-                        {roomQty}
-                    </H3>
+                    <>
+                        <p>Kamar tidur</p>
+                        <H3>
+                            <InlineIcon icon={roomIcon} />
+                            {roomQty}
+                        </H3>
+                    </>
                 ) : (
                     <></>
                 )}
                 {bathQty && bathQty > 0 ? (
-                    <H3>
-                        <InlineIcon icon={bathIcon} />
-                        {bathQty}
-                    </H3>
+                    <>
+                        <p>Kamar mandi</p>
+                        <H3>
+                            <InlineIcon icon={bathIcon} />
+                            {bathQty}
+                        </H3>
+                    </>
                 ) : (
                     <></>
                 )}

@@ -1,10 +1,10 @@
-const siteTitle = 'gatsby-starter-typescript-deluxe';
+const siteTitle = 'Agen property PIK, BSD dan sekitarnya';
 const siteDescription =
-    'A Gatsby starter with TypeScript, Storybook, Styled Components, Framer Motion, Jest, and more.';
-const siteAuthor = '@gojutin';
-const siteUrl = 'https://gatsby-starter-typescript-deluxe.netlify.com';
+    'Temukan rumah / apartment idamanmu tanpa ribet. 100% terpercaya dan tanpa ribet.';
+const siteAuthor = '@louisandrew3';
+const siteUrl = 'https://connie-property.com';
 const siteImage = `${siteUrl}/icons/icon_512x512.png`;
-const siteKeywords = ['gatsby', 'typescript', 'starter', 'javascript', 'react'];
+const siteKeywords = ['beli rumah', 'rumah', 'sewa rumah', 'apartment'];
 
 const path = require('path');
 require('dotenv').config({

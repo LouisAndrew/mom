@@ -75,6 +75,9 @@ exports[`Detail on product page matches snapshot 1`] = `
   <div
     className="sc-fzoXWK dDTsOr"
   >
+    <p>
+      Luas
+    </p>
     <h3
       className="sc-AxiKw hvMtGq"
       fontFamily="heading"
@@ -108,6 +111,9 @@ exports[`Detail on product page matches snapshot 1`] = `
       />
       125
     </h3>
+    <p>
+      Kamar tidur
+    </p>
     <h3
       className="sc-AxiKw hvMtGq"
       fontFamily="heading"
@@ -141,6 +147,9 @@ exports[`Detail on product page matches snapshot 1`] = `
       />
       3
     </h3>
+    <p>
+      Kamar mandi
+    </p>
     <h3
       className="sc-AxiKw hvMtGq"
       fontFamily="heading"
